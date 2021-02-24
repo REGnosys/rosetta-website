@@ -1,0 +1,117 @@
+/**
+ * Local colors.
+ */
+
+$background-color:       $brand-two;
+$background-hover-color: $brand-one;
+$text-color:             $brand-three;
+$text-hover-color:       $brand-aux-two;
+
+/**
+ * .button.
+ */
+
+.button {
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Display.
+     */
+
+    display: inline-flex;
+
+    /**
+     * Flex.
+     */
+
+    align-items: center;
+
+    /**
+     * Padding.
+     */
+
+    padding: 12px 20px 12px 25px;
+
+    /**
+     * Background.
+     */
+
+    background-color: $background-color;
+
+    /**
+     * Font related.
+     */
+
+    color: $text-color;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+
+    /**
+     * @include.
+     */
+
+    @include letter-space();
+
+    /**
+     * Border.
+     */
+
+    border-radius: 20px;
+
+    /**
+     * Transition.
+     */
+
+    transition: background-color 0.1s ease, color 0.12s ease;
+
+    /**
+     * @include.
+     */
+
+    @include mini-arrow($brand-three, right);
+
+    /**
+     * &:hover.
+     */
+
+    &:hover {
+
+        /**
+         * Background.
+         */
+
+        background-color: $brand-three;
+        
+        /**
+         * Font related.
+         */
+
+        text-decoration: none;
+        color: $brand-aux-two;
+
+        /**
+         * @include.
+         */
+
+        @include mini-arrow($brand-aux-two, right, true);
+
+    }
+
+    /**
+     * 
+     */
+
+    &--theme-a {
+
+        background-color: $brand-aux-five;
+
+    }
+
+}

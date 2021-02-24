@@ -1,0 +1,57 @@
+/**
+ * @mixin.
+ */
+
+@mixin background-mini-arrow($color, $direction: down) {
+
+    /**
+     * Grab the rgb components from the $color.
+     */
+
+    $hexString: 
+        dec-to-hex(red($color))   + 
+        dec-to-hex(green($color)) + 
+        dec-to-hex(blue($color));
+
+    /**
+     * Add the # as url encoded.
+     */
+
+    $hexForInlineSvg: '%23' + $hexString;
+
+    /**
+     * 
+     */
+
+    $svgData: "";
+
+    /**
+     * Concat the svg data with the new hex value.
+     */
+
+    @if $direction == down {
+
+        /**
+         * 
+         */
+
+        $svgData: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62.64 38.29'%3E%3Ctitle%3Emini-arrow%3C/title%3E%3Cpolygon points='55.7 0 55.55 0 31.29 24.26 7.03 0 7 0 0 7 31.29 38.29 62.64 6.94 55.7 0' fill='" + $hexForInlineSvg + "'/%3E%3C/svg%3E%0A";
+
+    } @else if $direction == right {
+
+        /**
+         * 
+         */
+
+        $svgData: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38.3 62.6'%3E%3Cpolygon points='0,6.9 0,7.1 24.3,31.3 0,55.6 0,55.6 7,62.6 38.3,31.3 6.9,0' fill='" + $hexForInlineSvg + "'/%3E%3C/svg%3E%0A";
+
+    }
+
+    /**
+     * Background.
+     */
+
+    background-image: url($svgData);
+    background-repeat: no-repeat;
+
+}

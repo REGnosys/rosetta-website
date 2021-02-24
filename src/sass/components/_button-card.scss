@@ -1,0 +1,61 @@
+/**
+ * .button-card.
+ */
+
+.button-card {
+
+    /**
+     * Display.
+     */
+
+    display: inline-block;
+
+    /**
+     * Margin.
+     */
+
+    margin-right: 30px;
+
+    /**
+     * Font related.
+     */
+
+    text-align: center;
+    color: $brand-aux-two;
+
+    /**
+     * ul.
+     */
+
+    ul {
+
+        /**
+         * Margin.
+         */
+
+        margin-top: 10px;
+
+        /**
+         * li.
+         */
+
+        li {
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 5px;
+
+            /**
+             * Font related.
+             */
+
+            text-align: center;
+            font-size: 14px;
+
+        }
+
+    }
+
+}

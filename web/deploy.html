@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta charset="utf-8">
+
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link href="/assets/css/styles.css" rel="stylesheet">
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" /> -->
+
+		<title>Deploy - Rosetta</title>
+	</head>
+
+	<body>
+		
+		<!-- -->
+
+		<header class="page-header">
+			<div class="container">
+				<div class="row page-header__outer-row">
+
+					<div class="col-sm-4 col-md-3 col-lg-2 page-header__col-logo">
+						<a href="/"><img src="assets/svg/common/logo.svg" alt="Rosetta logo"></a>
+					</div>
+
+					<div class="col-lg-5 page-header__col-nav">
+						<ul class="page-header__nav-list">
+							<li class="page-header__nav-list-item page-header__nav-list-item--with-arrow">
+								Products
+								<div class="page-header__subnav-wrapper">
+									<div class="container">
+										<div class="row">
+											<div class="col-md-4 mb-30">
+												<a href="design.html" class="icon-info-block icon-info-block--menu">
+													<div class="icon-info-block__col-icon">
+														<object 
+															data="assets/svg/product/icons-animated/product-design-ani.svg?global=paused" 
+															type="image/svg+xml" 
+															class="icon-info-block__icon animated-icon"
+														></object>
+													</div>
+													<div class="icon-info-block__col-info">
+														<p class="icon-info-block__heading">Design</p>
+														<p class="icon-info-block__info">Model development tool</p>
+													</div>
+												</a>
+											</div>
+											<div class="col-md-4 mb-30">
+												<a href="ingest-and-translate.html" class="icon-info-block icon-info-block--menu">
+													<div class="icon-info-block__col-icon">
+														<object 
+															data="assets/svg/product/icons-animated/product-ingest-ani.svg?global=paused" 
+															type="image/svg+xml" 
+															class="icon-info-block__icon animated-icon"
+														></object>
+													</div>
+													<div class="icon-info-block__col-info">
+														<p class="icon-info-block__heading">Ingest</p>
+														<p class="icon-info-block__info">Universal integration API</p>
+													</div>
+												</a>
+											</div>
+											<div class="col-md-4 mb-30">
+												<a href="ingest-and-translate.html" class="icon-info-block icon-info-block--menu">
+													<div class="icon-info-block__col-icon">
+														<object 
+															data="assets/svg/product/icons-animated/product-translate-ani.svg?global=paused" 
+															type="image/svg+xml" 
+															class="icon-info-block__icon animated-icon"
+														></object>
+													</div>
+													<div class="icon-info-block__col-info">
+														<p class="icon-info-block__heading">Translate</p>
+														<p class="icon-info-block__info">Data mappings</p>
+													</div>
+												</a>
+											</div>
+											<div class="col-md-4 mb-30">
+												<a href="engine.html" class="icon-info-block icon-info-block--menu">
+													<div class="icon-info-block__col-icon">
+														<object 
+															data="assets/svg/product/icons-animated/product-engine-ani.svg?global=paused" 
+															type="image/svg+xml" 
+															class="icon-info-block__icon animated-icon"
+														></object>
+													</div>
+													<div class="icon-info-block__col-info">
+														<p class="icon-info-block__heading">Engine</p>
+														<p class="icon-info-block__info">Run-time engine</p>
+													</div>
+												</a>
+											</div>
+											<div class="col-md-4 mb-30">
+												<a href="monitor.html" class="icon-info-block icon-info-block--menu">
+													<div class="icon-info-block__col-icon">
+														<object 
+															data="assets/svg/product/icons-animated/product-monitor-ani.svg?global=paused" 
+															type="image/svg+xml" 
+															class="icon-info-block__icon animated-icon"
+														></object>
+													</div>
+													<div class="icon-info-block__col-info">
+														<p class="icon-info-block__heading">Monitor</p>
+														<p class="icon-info-block__info">Audit and traceability</p>
+													</div>
+												</a>
+											</div>
+											<div class="col-md-4 mb-30">
+												<a href="deploy.html" class="icon-info-block icon-info-block--menu">
+													<div class="icon-info-block__col-icon">
+														<object 
+															data="assets/svg/product/icons-animated/product-deploy-ani.svg?global=paused" 
+															type="image/svg+xml" 
+															class="icon-info-block__icon animated-icon"
+														></object>
+													</div>
+													<div class="icon-info-block__col-info">
+														<p class="icon-info-block__heading">Deploy</p>
+														<p class="icon-info-block__info">Model deployment automation</p>
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="page-header__nav-list-item page-header__nav-list-item--with-arrow">About</li>
+							<li class="page-header__nav-list-item">Pricing</li>
+						</ul>
+					</div>
+
+					<div class="col-lg-5 page-header__col-account">
+						<a href="#" class="page-header__sign-in">Sign in</a>
+						<a href="#" class="header-button"><span>Sign up for free</span></a>
+					</div>
+
+					<div class="col-sm-8 col-md-9 page-header__col-menu-ham">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.83 14.83">
+							<g id="link-with-arrow">
+							  <path d="M22.83,2H1A1,1,0,0,1,1,0H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
+							  <path d="M22.83,8.42H1a1,1,0,0,1,0-2H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
+							  <path d="M22.83,14.83H1a1,1,0,0,1,0-2H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
+							</g>
+						</svg>						  
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+        <!-- -->
+
+        <section class="pt-160 pb-100">
+			<div class="product-header-curve">
+				<img src="assets/svg/product/header/curve.svg" alt="Graphic of curve for aesthetics">
+			</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="font-size-m7 mb-0">Rosetta</p>
+                        <h1 class="font-size-xl2 font-color-brand-one mb-20">Deploy</h1>
+                        <p class="mb-45">End-to-end automation of your model supply chain</p>
+                        <p class="font-size-l3 font-weight-semi-bold reduced-letter-spacing">Test, release, distribute. 
+							<span class="font-color-brand-one">Continuously</span>
+						</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- -->
+
+		<section class="position-relative">
+			<div class="body-curve">
+				<canvas 
+					data-primary-color="#4d6f88"
+					data-secondary-color="#4d6f88"
+					data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
+					data-top-shape-y-offset-percentage="0.2"
+					data-margin-top-percentage-of-top-shape-height="0.2"
+					data-bottom-shape-svg-url="/assets/svg/curve/curve-e-bottom.svg"
+					data-bottom-shape-y-offset-percentage="1.3"
+					data-margin-bottom-percentage-of-bottom-shape-height="1"
+				></canvas>
+			</div>
+			<div class="container body-curve-content font-color-brand-aux-two pt-100">
+				<div class="row">
+                    <div class="col-md-12">
+                        <p class="font-weight-semi-bold mb-40 font-color-brand-aux-five" data-aos="fade-right">Agile everywhere​</p>
+                    </div>
+					<div class="col-md-12 col-lg-10">
+						<h2 data-aos="fade-up">Continuous model delivery​ <br>across your tech stack</h2>
+						<p class="font-color-brand-aux-two">With model-driven development practices embedded in your software development process, you need to streamline the distribution of model code into the rest of your tech stack.​​</p>
+						<p class="font-color-brand-aux-two">Rosetta Deploy orchestrates the various processes required to test, build, release, distribute and deploy any model to its consumers, keeping your model supply chain flowing continuously.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <!-- -->
+
+		<section class="two-col-panel">
+			<div class="container pt-60 pb-60">
+				<div class="row">
+					<div class="col-md-6 two-col-panel__col-details">
+						<h2 class="two-col-panel__heading" data-aos="fade-up">Deploy models <br><span class="font-color-brand-one">at warp speed</span></h2>
+						<p>Rosetta Deploy allows you to release and deploy models continuously with a fully automated model supply chain. 
+							Test, build, release, distribute and deploy, without no interruption in your flow.</p>
+					</div>
+					<div class="col-md-6 two-col-panel__col-graphic">
+						<p class="two-col-graphic-placeholder scrolls-into-view"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <!-- -->
+
+		<section class="two-col-panel">
+			<div class="body-curve">
+				<canvas 
+					data-primary-color="#bddc5e"
+					data-secondary-color="#e5f1bf"
+					data-top-shape-svg-url="/assets/svg/curve/curve-f-top.svg"
+					data-top-shape-y-offset-percentage="1"
+					data-margin-top-percentage-of-top-shape-height="1.3"
+					data-bottom-shape-svg-url="/assets/svg/curve/curve-d-bottom.svg"
+					data-bottom-shape-y-offset-percentage="0"
+					data-margin-bottom-percentage-of-bottom-shape-height="0"
+				></canvas>
+			</div>
+			<div class="container body-curve-content pb-250 df-pb-t-150">
+				<div class="row two-col-panel--reverse">
+					<div class="col-md-6 two-col-panel__col-details">
+						<h2 class="two-col-panel__heading" data-aos="fade-up">Release <br><span class="font-color-brand-one">fearlessly</span></h2>
+						<p>You're in control: you define your build tests, Rosetta Deploy runs them at every step of the way, from source code to deployment. 
+							Ship business-critical models across your organisation, fearlessly.</p>
+					</div>
+					<div class="col-md-6 two-col-panel__col-graphic">
+						<p class="two-col-graphic-placeholder scrolls-into-view mirror-anim"></p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- -->
+
+		<section class="pt-85 pb-25 background-color-brand-aux-six">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="font-weight-semi-bold mb-20 font-color-brand-aux-three" data-aos="fade-right">The Rosetta Model difference</p>
+					</div>
+				</div>
+				<div class="row mb-50">
+					<div class="col-lg-5 mb-15">
+						<h2 class="font-color-brand-one font-size-l5r" data-aos="fade-right">End-to-end model <br>supply chain automation</h2>
+					</div>
+					<div class="col-lg-6">
+						<p data-aos="fade-left">Unlock the power of your business data, with a complete modelling 
+							solution that transcends enterprise silos.​</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-lg-6 mb-60 df-mb-ml-30 text-align-center" data-aos="fade-up">
+						<p class="grid-graphic-placeholder"></p>
+						<p class="font-size-l2r font-weight-semi-bold mb-15">End to end automation</p>
+						<p>All your build processes​ from <br>testing to releasing and deploying, <br>
+							<span class="font-weight-semi-bold font-color-brand-one">consistently orchestrated</span></p>
+					</div>
+					<div class="col-md-6 col-lg-6 mb-60 df-mb-ml-30 text-align-center" data-aos="fade-up">
+						<p class="grid-graphic-placeholder"></p>
+
+						
+
+						<p class="font-size-l2r font-weight-semi-bold mb-15">Test-driven by design</p>
+						<p>Define, run and distribute​ <br>all your tests within your model to <br>
+							<span class="font-weight-semi-bold font-color-brand-one">scale it's development</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        <!-- -->
+
+		<section class="pt-110 pb-10 text-align-center position-relative background-color-brand-aux-six">
+			<div class="body-curve">
+				<canvas 
+					data-primary-color="#4d6f88"
+					data-secondary-color="#4d6f88"
+					data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
+					data-top-shape-y-offset-percentage="0"
+					data-margin-top-percentage-of-top-shape-height="0"
+					data-bottom-shape-svg-url="/assets/svg/curve/curve-e-bottom-alt-1.svg"
+					data-bottom-shape-y-offset-percentage="0.1"
+					data-margin-bottom-percentage-of-bottom-shape-height="0"
+				></canvas>
+			</div>
+			<div class="container body-curve-content">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="font-weight-semi-bold mb-20 font-color-brand-aux-five" data-aos="fade-up">Ready to roll?</p>
+					</div>
+				</div>
+				<div class="row mb-60">
+					<div class="col-md-12 mb-25">
+						<h2 class="font-color-brand-aux-two font-size-l6r" data-aos="fade-up">Take Rosetta for a spin. 
+							<br class="display-none d-b-m-o"><span class="font-color-brand-aux-five">It's on us.</span>​
+						</h2>
+					</div>
+					<div class="col-md-12 mb-25">
+						<div class="button-card mb-20" data-aos="fade-up">
+							<a href="#" class="button button--theme-a">Sign up for free</a>
+						</div>
+						<div class="button-card mb-20" data-aos="fade-up">
+							<a href="#" class="button button--theme-a">Buy now</a>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<p class="font-size-m2 font-color-brand-aux-two" data-aos="fade-up">Sign-up today and get started on your model development in seconds. 
+                            <br class="d-n-m-o d-n-ml-o">Our free version comes with no time limit and no credit card required. 
+                            <br class="d-n-m-o d-n-i-o">And Rosetta can then grow with your enterprise use.
+                        ​​​</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- -->
+
+		<footer class="page-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<img src="assets/svg/common/logo-w.svg" class="page-footer__logo" alt="Rosetta logo">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<p class="page-footer__list-heading font-color-brand-one"><span>Company</span></p>
+						<ul class="page-footer__nav-list">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">About REGnosys</a></li>
+							<li><a href="#">Governance</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<p class="page-footer__list-heading font-color-brand-one"><span>Platform</span></p>
+						<ul class="page-footer__nav-list">
+							<li><a href="#">Rosetta Platform</a></li>
+							<li><a href="#">Community</a></li>
+							<li><a href="#">Data Security</a></li>
+							<li><a href="#">Documentation</a></li>
+							<li><a href="#">Package Plans</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<p class="page-footer__list-heading font-color-brand-one"><span>Products</span></p>
+						<ul class="page-footer__nav-list">
+							<li><a href="#">Rosetta Editor</a></li>
+							<li><a href="#">Rosetta Translate</a></li>
+							<li><a href="#">Rosetta Dictionary</a></li>
+							<li><a href="#">Rosetta Engine</a></li>
+							<li><a href="#">Rosetta Monitor</a></li>
+							<li><a href="#">Rosetta Build</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<p class="page-footer__contact-heading"><span>Contact us</span></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<ul class="page-footer__terms-list">
+							<li>©Copyright 2021</li>
+							<li><a href="#">REGnosys Ltd</a></li>
+							<li><a href="#">Privacy Policy</a></li>
+							<li><a href="#">Terms</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- -->
+
+		<div class="mini-header-trigger"></div>
+
+		<!-- -->
+
+		<div class="breakpoint-assistant">
+			<ul class="bootstrap-list">
+				<li class="xs"><p>xs</p><span class="current"></span></li>
+				<li class="sm"><p>sm</p><span class="current"></span></li>
+				<li class="md"><p>md</p><span class="current"></span></li>
+				<li class="lg"><p>lg</p><span class="current"></span></li>
+				<li class="xl"><p>xl</p><span class="current"></span></li>
+			</ul>
+			<ul class="screen-list">
+				<li class="mobile"><p>mobile</p><span class="current"></span></li>
+				<li class="mobile-landscape"><p>mobile landscape</p><span class="current"></span></li>
+				<li class="tablet"><p>tablet</p><span class="current"></span></li>
+				<li class="desktop"><p>desktop</p><span class="current"></span></li>
+				<li class="large-desktop"><p>large-desktop</p><span class="current"></span></li>
+			</ul>
+		</div>
+
+		<!-- -->
+
+		<script src="assets/js/bundle.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
+		<script>//AOS.init({duration: 800, once: true});</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,292 @@
+/**
+ * footer-header-bottom-alignment.
+ */
+
+@mixin footer-header-bottom-alignment() {
+
+    /**
+     * Display.
+     */
+
+    display: flex;
+
+    /**
+     * Flex.
+     */
+
+    align-items: flex-end;
+
+    /**
+     * Sizing.
+     */
+
+    height: 35px;
+
+    /**
+     * span.
+     */
+
+    span {
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+        
+    }
+
+}
+
+/**
+ * .page-footer.
+ */
+
+.page-footer {
+
+    /**
+     * 
+     */
+
+    background-color: $brand-three;
+
+    /**
+     * Padding.
+     */
+    
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    /**
+     * &__logo.
+     */
+
+    &__logo {
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+        /**
+         * Margin.
+         */
+
+        margin-top: 10px;
+        margin-bottom: 55px;
+
+        /**
+         * Sizing.
+         */
+
+        width: 200px;
+
+    }
+
+    /**
+     * &__list-heading.
+     */
+
+    &__list-heading {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+        /**
+         * @include.
+         */
+
+        @include footer-header-bottom-alignment();
+
+        /**
+         * Font related.
+         */
+
+        @include font-size-m4();
+        color: $brand-one;
+
+    }
+
+    /**
+     * &__nav-list.
+     */
+     
+    &__nav-list {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 10px;
+
+        /**
+         * li.
+         */
+
+        li {
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 5px;
+
+            /**
+             * a.
+             */
+
+            a {
+
+                /**
+                 * Font related.
+                 */
+
+                @include font-size-m2();
+                color: $brand-aux-two;
+
+                /**
+                 * &:hover.
+                 */
+
+                &:hover {
+
+                    /**
+                     * Font related.
+                     */
+
+                    text-decoration: none;
+                    color: $brand-one;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__contact-heading.
+     */
+
+    &__contact-heading {
+
+        /**
+         * @include.
+         */
+
+        @include footer-header-bottom-alignment();
+
+        /**
+         * Font related.
+         */
+
+        @include font-size-l1();
+        font-weight: 600;
+        color: $brand-one;
+
+    }
+
+    /**
+     * &__terms-list.
+     */
+
+    &__terms-list {
+
+        /**
+         * Margin.
+         */
+
+        margin-top: 40px;
+
+        /**
+         * 
+         */
+
+        li {
+
+            /**
+             * Display.
+             */
+
+            display: inline-block;
+
+            /**
+             * Font related.
+             */
+
+            @include font-size-m1();
+            color: #999999;
+            
+            /**
+             * a.
+             */
+
+            a {
+
+                /**
+                 * Font related.
+                 */
+
+                color: #999999;
+
+                /**
+                 * &::before.
+                 */
+
+                &::before {
+
+                    /**
+                     * Content.
+                     */
+
+                    content: '|';
+
+                    /**
+                     * Display.
+                     */
+
+                    display: inline-block;
+
+                    /**
+                     * Padding.
+                     */
+
+                    padding-left: 2px;
+                    padding-right: 3px;
+
+                    /**
+                     * Font related.
+                     */
+
+                    color: #999999 !important;
+
+                }
+
+                /**
+                 * 
+                 */
+
+                &:hover {
+
+                    /**
+                     * Font related.
+                     */
+
+                    text-decoration: none;
+                    color: $brand-one;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+

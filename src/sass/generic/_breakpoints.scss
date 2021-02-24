@@ -1,0 +1,64 @@
+/**
+ * Bootstrap.
+ *
+ * Extra small   [mobile]           <576px    (0px    -> 575px)
+ * Small         [mobile landscape] ≥576px    (576px  -> 767px)
+ * Medium        [tablet]           ≥768px    (768px  -> 991px)
+ * Large         [desktop]          ≥992px    (992px  -> 1199px)
+ * Extra large   [large-desktop]    ≥1200px   (1200px -> ∞)
+ *
+ * General sizing info.
+ * 
+ * 320px — 480px:       Mobile devices.
+ * 481px — 767px:       Mobile landscape.
+ * 768px — 1024px:      Tablet, Small screens, laptops.
+ * 1025px — 1200px:     Desktops, large screens.
+ * 1201px and more —    Extra large screens, TV.
+ */
+
+/**
+ * bootstrap xs. (mobile).
+ */
+
+$bs-extra-small: max-width 575px;
+$bs-extra-small-only: $bs-extra-small;
+$b-mobile: $bs-extra-small;
+$b-mobile-only: $bs-extra-small-only;
+
+/**
+ * bootstrap sm. (mobile landscape).
+ */
+
+$bs-small: min-width 576px;
+$bs-small-only: 576px 767px;
+$b-mobile-landscape: $bs-small;
+$b-mobile-landscape-only: $bs-small-only;
+$b-df-mobile-landscape: max-width 767px;
+
+/**
+ * bootstrap md. (tablet).
+ */
+
+$bs-medium: min-width 768px;
+$bs-medium-only: 768px 991px;
+$b-tablet: $bs-medium;
+$b-tablet-only: $bs-medium-only;
+$b-df-tablet: max-width 991px;
+
+/**
+ * bootstrap lg. (desktop).
+ */
+
+$bs-large: min-width 992px;
+$bs-large-only: 992px 1199px;
+$b-desktop: $bs-large;
+$b-desktop-only: $bs-large-only;
+
+/**
+ * bootstrap xl. (large desktop).
+ */
+
+$bs-extra-large: min-width 1200px;
+$bs-extra-large-only: $bs-extra-large;
+$b-large-desktop: $bs-extra-large;
+$b-large-desktop-only: $b-large-desktop;

@@ -1,0 +1,55 @@
+/**
+ * .two-col-panel.
+ */
+
+.two-col-panel {
+
+    /**
+     * Display.
+     */
+
+    display: flex;
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     *&--reverse.
+     */
+
+    &--reverse {
+
+        /**
+         * Flex.
+         */
+
+        flex-direction: row-reverse;
+
+    }
+
+    /**
+     * &__heading.
+     */
+
+    &__heading {
+
+        @include font-size-l5r();
+
+        /**
+         * Margin.
+         */
+    
+        margin-bottom: 20px;
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+
+    }
+    
+}

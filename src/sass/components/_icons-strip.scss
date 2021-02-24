@@ -1,0 +1,78 @@
+/**
+ * .icons-strip.
+ */
+
+.icons-strip {
+
+    /**
+     * Background.
+     */
+
+    background-color: $brand-aux-three;
+
+    /**
+     * Margin.
+     */
+
+    margin-top: -1px;
+
+    /**
+     * Padding.
+     */
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    /**
+     * &__icons-list.
+     */
+
+    &__icons-list {
+
+        /**
+         * li.
+         */
+
+        li {
+
+            display: inline-block;
+
+        }
+
+    }
+
+    /**
+     * &__col-text.
+     */
+
+    &__col-text {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+        /**
+         * Flex.
+         */
+
+        align-items: center;
+
+    }
+
+    /**
+     * img.
+     */
+
+    img {
+
+        /**
+         * Sizing.
+         */
+
+        max-width: 100%;
+
+    }
+
+}

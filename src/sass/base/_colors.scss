@@ -1,0 +1,37 @@
+/**
+ * Brand colors.
+ */
+
+$brand-one   : #ea409d;
+$brand-two   : #bddc5e;
+$brand-three : #414141;
+
+/**
+ * Auxiliary colors.
+ */
+
+
+$brand-aux-one   : #ff3399;
+$brand-aux-two   : white;
+$brand-aux-three : #bc1e86;
+$brand-aux-four  : #708922;
+$brand-aux-five  : #48d5f3;
+$brand-aux-six   : #f6f6f6;
+
+/**
+ * Font colors.
+ */
+
+.font-color-brand-one { color: $brand-one; }
+.font-color-brand-two { color: $brand-two; }
+.font-color-brand-three { color: $brand-three; }
+.font-color-brand-aux-two { color: $brand-aux-two; }
+.font-color-brand-aux-three { color: $brand-aux-three; }
+.font-color-brand-aux-four { color: $brand-aux-four; }
+.font-color-brand-aux-five { color: $brand-aux-five; }
+
+/**
+ * 
+ */
+
+.background-color-brand-aux-six { background-color: $brand-aux-six; }

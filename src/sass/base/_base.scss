@@ -1,0 +1,22 @@
+/**
+ * Site-specific breakpoints.
+ */
+
+$breakpoint-header-nav-hidden:  $b-df-tablet;
+$breakpoint-header-nav-visible: $b-desktop;
+$breakpoint-ham-hidden:         $b-desktop;
+$fluid:                         max-width 575px;
+
+/**
+ * body.
+ */
+
+body {
+
+    /**
+     * Overflow.
+     */
+
+    overflow-x: hidden;
+
+}

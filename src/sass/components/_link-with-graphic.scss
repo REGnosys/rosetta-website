@@ -1,0 +1,234 @@
+/**
+ * .link-with-graphic.
+ */
+
+.link-with-graphic {
+
+    /**
+     * Display.
+     */
+
+    display: flex;
+
+    /**
+     * Flex.
+     */
+
+    align-items: center;
+
+    /**
+     * Font related.
+     */
+
+    color: $brand-one;
+    font-weight: 600;
+    font-size: 15px;
+
+    /**
+     * Transition.
+     */
+
+    transition: color 0.12s ease;
+
+    /**
+     * i.
+     */
+
+    i {
+        
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+        /**
+         * Margin.
+         */
+
+        margin-left: 10px;
+
+        /**
+         * Sizing.
+         */
+
+        width: 60px;
+        height: 35px;
+
+        /**
+         * img.
+         */
+
+        img {
+
+            /**
+             * Sizing.
+             */
+
+            width: 100%;
+            height: 100%;
+            
+        }
+
+        /**
+         * path.
+         */
+
+        path {
+
+            /**
+             * SVG.
+             */
+
+            fill: $brand-two;
+
+        }
+
+        /**
+         * rect.
+         */
+
+        rect {
+
+            /**
+             * SVG.
+             */
+
+            fill: $brand-one;
+
+            /**
+             * Transition.
+             */
+
+            transition: transform 0.2s ease;
+
+        }
+
+        /**
+         * polygon.
+         */
+
+        polygon {
+
+            /**
+             * SVG.
+             */
+
+            fill: $brand-one;
+
+            /**
+             * Transition.
+             */
+
+            transition: transform 0.2s ease;
+
+        }
+
+    }
+
+    /**
+     * &:hover.
+     */
+
+    &:hover {
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+        text-decoration: none;
+
+        /**
+         * rect.
+         */
+
+        rect {
+
+            /**
+             * Transform.
+             */
+
+            transform: translateX(6px);
+
+        }
+
+        /**
+         * polygon.
+         */
+
+        polygon {
+
+            /**
+             * Transform.
+             */
+
+            transform: translateX(6px);
+
+        }
+
+    }
+
+    /**
+     * &--palette-a.
+     */
+
+    &--palette-a {
+
+        /**
+         * i.
+         */
+    
+        i {
+         
+            /**
+             * path.
+             */
+
+            path {
+
+                /**
+                 * SVG.
+                 */
+
+                fill: $brand-one;
+            }
+
+            /**
+             * rect.
+             */
+
+            rect {
+
+                /**
+                 * SVG.
+                 */
+
+                fill: $brand-aux-two;
+            }
+
+            /**
+             * polygon.
+             */
+
+            polygon {
+
+                /**
+                 * SVG.
+                 */
+
+                fill: $brand-aux-two;
+
+            }
+            
+        }
+
+    }
+
+}
