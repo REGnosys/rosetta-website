@@ -7,7 +7,6 @@ const sass = require('gulp-sass')
 const bulkSass = require('gulp-sass-bulk-importer')
 const sourcemaps = require('gulp-sourcemaps')
 const autoprefixer = require('gulp-autoprefixer')
-const shell = require('shelljs')
 
 /**
  * Vars.
