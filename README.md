@@ -10,13 +10,13 @@ Basic instructions.
 
 To run a local server on port 3000 using BrowserSync:
 
-`gulp run-browsersync-static`
+`npm run browser-sync-static`
 
 ## Compile SCSS
 
 To compile (and watch for changes of) SCSS:
 
-`gulp`
+`npm run watch-sass`
 
 ## Compile TypeScript
 
