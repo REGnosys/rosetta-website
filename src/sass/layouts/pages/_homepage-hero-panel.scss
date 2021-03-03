@@ -1,0 +1,148 @@
+/**
+ * .homepage-hero-panel.
+ */
+
+.homepage-hero-panel {
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Overflow.
+     */
+
+    overflow: hidden;
+
+    /**
+     * Padding.
+     */
+
+    padding-top: 200px;
+    padding-bottom: 85px;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-desktop-only) { padding-top: 150px }
+    @include breakpoint($b-tablet-only) { padding-top: 150px; }
+    @include breakpoint($b-mobile-landscape-only) { padding-top: 120px; }
+    @include breakpoint($b-mobile) { padding-top: 125px; padding-bottom: 50px; }
+
+    /**
+     * &__heading.
+     */
+
+    &__heading {
+
+        /**
+         * Margin.
+         */
+    
+        margin-bottom: 30px;
+
+        /**
+         * Font related.
+         */
+
+        font-size: 94px;
+        line-height: 96px;
+        font-weight: 600;
+        color: $brand-aux-two;
+        
+        /**
+         * @include.
+         */
+
+        @include breakpoint($b-mobile-landscape-only) { font-size: 60px; line-height: 66px; }
+        @include breakpoint($b-mobile) { font-size: 47px; line-height: 49px; }
+
+    }
+
+    /**
+     * &__subheading.
+     */
+
+    &__subheading {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 90px;
+        @include breakpoint($b-mobile) { margin-bottom: 40px; }
+
+        /**
+         * Font related.
+         */
+
+        font-size: 22px;
+        line-height: 27px;
+        color: $brand-aux-two;
+
+        /**
+         * @include.
+         */
+
+        @include breakpoint($b-mobile) {
+
+            /**
+             * Font related.
+             */
+
+            font-size: 20px;
+            line-height: 25px;
+
+        }
+
+    }
+
+    /**
+     * &__cta.
+     */
+
+    &__cta {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 30px;
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-aux-two;
+        text-transform: uppercase;
+        font-weight: 600;
+
+    }
+
+    /**
+     * &__background-image.
+     */
+
+    &__background-image {
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        /**
+         * Sizing.
+         */
+
+        width: 100%;
+
+    }
+
+
+}

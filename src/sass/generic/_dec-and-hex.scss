@@ -1,0 +1,50 @@
+/**
+ * Hex chars.
+ */
+
+$hex-chars: "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F";
+
+/**
+ * dec-to-hex.
+ */
+
+@function dec-to-hex($d) {
+    $result: "";
+    $rest: $d;
+    @while $rest > 0 {
+        $result: nth($hex-chars, $rest % 16 + 1) + $result;
+        $rest: floor($rest / 16);
+    }
+    @return $result;
+}
+
+/**
+ * pow.
+ */
+
+@function pow($number, $exponent) {
+    $value: 1;
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
+    }
+    @return $value;
+}
+
+/**
+ * hex-to-dec.
+ */
+
+@function hex-to-dec($d) {
+    $result: 0;
+    $number: inspect($d);
+    $power: 0;
+    @for $index from str-length($number) through 1 {
+        $digit: str-slice($number, $index, $index);
+        $value: index($hex-chars, $digit) - 1;
+        $result: $result + ($value * pow(16, $power) );
+        $power: $power + 1;
+    }
+    @return $result;
+}

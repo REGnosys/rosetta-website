@@ -1,0 +1,265 @@
+/**
+ * 
+ */
+
+@import './breakpoints.scss';
+
+/**
+ * .breakpoint-assisant.
+ */
+
+.breakpoint-assistant {
+    
+    /**
+     * Background.
+     */
+
+    background-color: white;
+
+    /**
+     * Position.
+     */
+
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0.5;
+
+    /**
+     * Padding.
+     */
+
+    padding: 7px 7px 7px 7px;
+
+    /**
+     * Box Shadow.
+     */
+
+    -webkit-box-shadow: 5px 5px 24px -4px rgba(0,0,0,0.55); 
+    box-shadow: 5px 5px 24px -4px rgba(0,0,0,0.55);
+
+    /**
+     * Border.
+     */
+
+    border-radius: 5px;
+
+    /**
+     * .current.
+     */
+
+    .current {
+
+        /**
+         * Display.
+         */
+
+        display: none;
+
+        /**
+         * Sizing.
+         */
+
+        width: 8px;
+        height: 8px;
+        
+        /**
+         * Margin.
+         */
+
+        margin-left: 5px;
+
+        /**
+         * Border.
+         */
+
+        border-radius: 8px;
+
+        /**
+         * Background.
+         */
+
+        background-color: #414141;
+
+    }
+
+    /**
+     * .bootstrap-list.
+     */
+
+    .bootstrap-list {
+
+        /**
+         * 
+         */
+
+        display: inline-block;
+
+        /**
+         * p.
+         */
+
+        p {
+
+            /**
+             * Display.
+             */
+
+            display: inline-block;
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 0;
+
+            /**
+             * Font related.
+             */
+
+            color: white; 
+            font-size: 14px;
+
+        }
+
+        /**
+         * 
+         */
+
+        .xs, .sm, .md, .lg, .xl {
+            display: none;   
+            padding: 5px 10px 5px 10px;
+            border-radius: 10px;
+        }
+
+        .xs p {
+            color: #414141;
+        }
+
+        /**
+         * 
+         */
+
+        .xs { background-color: yellow; border: 2px solid yellow; }
+        .sm { background-color: red; border: 2px solid red; }
+        .md { background-color: green; border: 2px solid green; }
+        .lg { background-color: blue; border: 2px solid blue; }
+        .xl { background-color: orange; border: 2px solid orange; }
+    
+        .xs { @include breakpoint($bs-extra-small) { display: inline-block; } }
+        .sm { @include breakpoint($bs-small) { display: inline-block; } }
+        .md { @include breakpoint($bs-medium) { display: inline-block; } }
+        .lg { @include breakpoint($bs-large) { display: inline-block; } }
+        .xl { @include breakpoint($bs-extra-large) { display: inline-block; } }
+
+        .xs .current { @include breakpoint($bs-extra-small-only) { display: inline-block; } }
+        .sm .current { @include breakpoint($bs-small-only) { display: inline-block; } }
+        .md .current { @include breakpoint($bs-medium-only) { display: inline-block; } }
+        .lg .current { @include breakpoint($bs-large-only) { display: inline-block; } }
+        .xl .current { @include breakpoint($bs-extra-large-only) { display: inline-block; } }
+        
+    }
+
+    /**
+     * .screen-list.
+     */
+
+    .screen-list {
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+        /**
+         * > li.
+         */
+
+        > li {
+
+            /**
+             * Display.
+             */
+
+            display: none;
+
+            /**
+             * Border.
+             */
+
+            border: 2px solid #414141;
+            border-radius: 10px;
+
+            /**
+             * Padding.
+             */
+
+            padding: 5px 10px 5px 10px;
+
+            /**
+             * p.
+             */
+
+            p {
+
+                /**
+                 * Display.
+                 */
+
+                display: inline-block;
+
+                /**
+                 * Margin.
+                 */
+
+                margin-bottom: 0;
+
+                /**
+                 * Font related.
+                 */
+
+                font-size: 14px;
+
+            }
+
+            /**
+             * .current.
+             */
+
+            .current {
+
+                /**
+                 * Background.
+                 */
+
+                background-color: #414141;
+
+            }
+
+        }
+
+        /**
+         * 
+         */
+
+        .mobile { @include breakpoint($b-mobile) { display: inline-block !important; } }
+        .mobile-landscape { @include breakpoint($b-mobile-landscape) { display: inline-block !important; } }
+        .tablet { @include breakpoint($b-tablet) { display: inline-block !important; } }     
+        .desktop { @include breakpoint($b-desktop) { display: inline-block !important; } }       
+        .large-desktop { @include breakpoint($b-large-desktop) { display: inline-block !important; } }
+
+        .mobile .current { @include breakpoint($b-mobile-only) { display: inline-block !important; } }
+        .mobile-landscape .current { @include breakpoint($b-mobile-landscape-only) { display: inline-block !important; } }
+        .tablet .current { @include breakpoint($b-tablet-only) { display: inline-block !important; } }
+        .desktop .current { @include breakpoint($b-desktop-only) { display: inline-block !important; } }
+        .large-desktop .current { @include breakpoint($b-large-desktop-only) { display: inline-block !important; } }       
+
+    }
+
+}

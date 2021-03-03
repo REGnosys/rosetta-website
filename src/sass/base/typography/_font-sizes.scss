@@ -1,0 +1,230 @@
+/**
+ * Font sizes.
+ * 
+ * Based off large desktop size.
+ * 
+ * Small.
+ * s1 -> 8px
+ * s2 -> 10px
+ * 
+ * Medium.
+ * m1 -> 12
+ * m2 -> 14
+ * m3 -> 15
+ * m4 -> 16
+ * m5 -> 18
+ * m6 -> 20
+ * m7 -> 22
+ * 
+ * Large.
+ * l1 -> 24
+ * l2 -> 26
+ * l3 -> 30
+ * l4 -> 38
+ * l5 -> 40
+ * l6 -> 46
+ * 
+ * Extra Large.
+ * xl1 -> 60
+ * xl2 -> 66
+ * xl3 -> 70
+ * xl4 -> 85
+ */
+
+/**
+ * medium1.
+ */
+
+@mixin font-size-m1() { 
+    font-size: 12px; 
+    line-height: 15px; 
+}
+.font-size-m1  { @include font-size-m1(); }
+
+/**
+ * medium2.
+ */
+
+@mixin font-size-m2() { 
+    font-size: 14px; 
+    line-height: 19px; 
+}
+.font-size-m2  { @include font-size-m2(); }
+
+/**
+ * medium3.
+ */
+
+@mixin font-size-m3() { 
+    font-size: 15px; 
+    line-height: 19px; 
+}
+.font-size-m3  { @include font-size-m3(); }
+
+/**
+ * medium4.
+ */
+
+@mixin font-size-m4() { 
+    font-size: 16px; 
+    line-height: 21px; 
+}
+@mixin font-size-m4r() { 
+    font-size: 16px;
+    line-height: 21px;
+    @include breakpoint($b-mobile-only) { font-size: 14px; line-height: 21px; }
+}
+.font-size-m4  { @include font-size-m4(); }
+.font-size-m4r { @include font-size-m4r(); }
+
+/**
+ * medium5.
+ */
+
+@mixin font-size-m5() { 
+    font-size: 18px; 
+    line-height: 24px; 
+}
+@mixin font-size-m5r() { 
+    font-size: 18px; 
+    line-height: 24px;
+    @include breakpoint($b-desktop-only)          { font-size: 18px; line-height: 24px; }
+    @include breakpoint($b-tablet-only)           { font-size: 16px; line-height: 21px; }
+    @include breakpoint($b-mobile-landscape-only) { font-size: 16px; line-height: 21px; }
+    @include breakpoint($b-mobile-only)           { font-size: 16px; line-height: 21px; }
+}
+.font-size-m5  { @include font-size-m5(); }
+.font-size-m5r { @include font-size-m5r(); }
+
+/**
+ * medium6.
+ */
+
+@mixin font-size-m6() { 
+    font-size: 20px; 
+    line-height: 26px; 
+}
+.font-size-m6  { @include font-size-m6(); }
+
+/**
+ * medium7.
+ */
+
+@mixin font-size-m7() { 
+    font-size: 22px; 
+    line-height: 28px; 
+}
+.font-size-m7  { @include font-size-m7(); }
+
+/**
+ * large1.
+ */
+
+@mixin font-size-l1() { 
+    font-size: 24px; 
+    line-height: 29px; 
+}
+.font-size-m1  { @include font-size-m1(); }
+
+/**
+ * large2.
+ */
+
+@mixin font-size-l2() { 
+    font-size: 26px; 
+    line-height: 31px;
+}
+@mixin font-size-l2r() { 
+    @include breakpoint($b-large-desktop-only)    { font-size: 26px; }
+    @include breakpoint($b-desktop-only)          { font-size: 24px; }
+    @include breakpoint($b-tablet-only)           { font-size: 21px; }
+    @include breakpoint($b-mobile-landscape-only) { font-size: 26px; }
+    @include breakpoint($b-mobile-only)           { font-size: 23px; }
+}
+.font-size-l2  { @include font-size-l2(); }
+.font-size-l2r { @include font-size-l2r(); }
+
+/**
+ * large3.
+ */
+
+@mixin font-size-l3() { 
+    font-size: 30px;
+    line-height: 36px;
+}
+@mixin font-size-l3r() { 
+    @include breakpoint($b-large-desktop-only)    { font-size: 30px; }
+    @include breakpoint($b-desktop-only)          { font-size: 28px; }
+    @include breakpoint($b-tablet-only)           { font-size: 24px; }
+    @include breakpoint($b-mobile-landscape-only) { font-size: 24px; }
+}
+.font-size-l3  { @include font-size-l3(); }
+.font-size-l3r { @include font-size-l3r(); }
+
+/**
+ * large4.
+ */
+
+@mixin font-size-l4() { 
+    font-size: 38px; 
+    line-height: 44px; 
+}
+.font-size-l4  { @include font-size-l4(); }
+
+/**
+ * large5.
+ */
+
+@mixin font-size-l5() { 
+    font-size: 40px; 
+    line-height: 46px;
+}
+@mixin font-size-l5r() {
+    font-size: 40px;
+    line-height: 46px;
+    @include breakpoint($b-desktop-only)          { font-size: 33px; line-height: 38px; }
+    @include breakpoint($b-tablet-only)           { font-size: 25px; line-height: 30px; }
+    @include breakpoint($b-mobile-landscape-only) { font-size: 36px; line-height: 41px; }
+    @include breakpoint($b-mobile-only)           { font-size: 28px; line-height: 36px; }
+} 
+.font-size-l5  { @include font-size-l5(); }
+.font-size-l5r { @include font-size-l5r(); }
+
+/**
+ * large6.
+ */
+
+@mixin font-size-l6() { 
+    font-size: 46px; 
+    line-height: 52px;
+}
+@mixin font-size-l6r() {
+    font-size: 46px;
+    line-height: 52px;
+    @include breakpoint($b-desktop-only)          { font-size: 33px; line-height: 38px; }
+    @include breakpoint($b-tablet-only)           { font-size: 33px; line-height: 38px; }
+    @include breakpoint($b-mobile-landscape-only) { font-size: 32px; line-height: 38px; }
+    @include breakpoint($b-mobile-only)           { font-size: 32px; line-height: 38px; }
+} 
+.font-size-l6  { @include font-size-l6(); }
+.font-size-l6r { @include font-size-l6r(); }
+
+/**
+ * extra large1.
+ */
+
+@mixin font-size-xl1() { 
+    font-size: 60px; 
+    line-height: 68px; 
+}
+.font-size-xl1  { @include font-size-xl1(); }
+
+/**
+ * extra large2.
+ */
+
+@mixin font-size-xl2() { 
+    font-size: 66px; 
+    line-height: 72px; 
+}
+.font-size-xl2  { @include font-size-xl2(); }

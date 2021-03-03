@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 39.69 39.69">
+  <defs>
+    <clipPath id="clip-path">
+      <rect x="2.67" y="3.45" width="34.35" height="32.79" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect x="2.67" y="3.45" width="34.22" height="6.83" fill="none"/>
+    </clipPath>
+  </defs>
+  <title>product-monitor</title>
+  <g style="isolation: isolate">
+    <g id="link-with-arrow">
+      <g clip-path="url(#clip-path)">
+        <g clip-path="url(#clip-path)">
+          <path d="M2.67,9V24.11H10.8l3.11-7.74a.69.69,0,0,1,1.3.06l3,10.07,2-4.94a.69.69,0,0,1,.64-.44H36.88V9Z" fill="#f22d93"/>
+          <path d="M36.88,22.51H21.27l-2.54,6.36a.69.69,0,0,1-.64.44h0a.69.69,0,0,1-.63-.49l-3-10.08-2.54,6.33a.69.69,0,0,1-.64.43H2.67l.14,8.13a2.61,2.61,0,0,0,2.61,2.61h29A2.61,2.61,0,0,0,37,33.63Z" fill="#f22d93"/>
+          <g style="mix-blend-mode: multiply">
+            <g clip-path="url(#clip-path-3)">
+              <path d="M34.27,3.45h-29A2.61,2.61,0,0,0,2.67,6.06v4.22H36.88V6.06a2.61,2.61,0,0,0-2.61-2.61m-3.88,4a1,1,0,1,1,1-1,1,1,0,0,1-1,1m2.85,0a1,1,0,1,1,1-1,1,1,0,0,1-1,1" fill="#bf1679"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

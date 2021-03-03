@@ -1,0 +1,166 @@
+/**
+ * Local variables.
+ */
+
+$icon-width: 40px;
+$icon-height: 40px;
+
+/**
+ * .two-icon-info-block.
+ */
+
+.two-icon-info-block {
+
+    /**
+     * Display.
+     */
+
+    display: flex;
+
+    /**
+     * Flex.
+     */
+
+    flex-direction: column;
+
+    /**
+     * &__col-info.
+     */
+
+    &__col-info {
+
+        /**
+         * Padding.
+         */
+        
+        padding-left: $icon-width + 10px;
+
+    }
+
+    /**
+     * &__icon.
+     */
+
+    &__icon {
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+        /**
+         * Sizing.
+         */
+
+        width: $icon-width;
+        height: $icon-height;
+
+        /**
+         * Margin.
+         */
+
+        margin-right: 5px;
+
+    }
+
+    /**
+     * &__icon-list.
+     */
+
+    &__icon-list {
+        
+        /**
+         * li.
+         */
+
+        li {
+
+            /**
+             * Display
+             */
+
+            display: inline-block;
+
+        }
+
+    }
+
+    /**
+     * &__heading.
+     */
+
+    &__heading {
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+        /**
+         * Font related.
+         */
+
+        @include font-size-m6();
+        font-weight: 600;
+
+        /**
+         * &::before.
+         */
+
+        &::before {
+
+            /**
+             * Content.
+             */
+
+            content: 'Rosetta';
+
+            /**
+             * Display.
+             */
+
+            display: block;
+
+            /**
+             * Font related.
+             */
+
+            font-size: 12px;
+            line-height: 12px;
+            font-weight: normal;
+
+        }
+
+    }
+
+    /**
+     * &__info.
+     */
+
+    &__info {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+        /**
+         * Font related.
+         */
+
+        font-size: 14px;
+        line-height: 18px;
+
+    }
+
+}

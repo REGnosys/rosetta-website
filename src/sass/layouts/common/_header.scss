@@ -1,0 +1,606 @@
+/**
+ * @mixin.
+ */
+
+@mixin mini() {
+
+    /**
+     * Padding.
+     */
+
+    padding-top: 15px;
+    padding-bottom: 28px;
+
+}
+
+/**
+ * @mixin.
+ */
+
+@mixin reduced-features() {
+
+    /**
+     * Padding.
+     */
+
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+
+}
+
+/**
+ * .page-header.
+ */
+
+.page-header {
+
+    /**
+     * Position.
+     */
+
+    position: fixed;
+    top: 0;
+
+    /**
+     * Z-index.
+     */
+
+    z-index: 100;
+
+    /**
+     * Sizing.
+     */
+
+    width: 100%;
+
+    /**
+     * Background.
+     */
+
+    background-color: rgba(white, 0.95%);
+
+    /**
+     * Padding.
+     */
+
+    padding-top: 25px;
+    padding-bottom: 30px;
+
+    /**
+     * Transition.
+     */
+
+    transition: padding 0.2s ease;   
+
+    /**
+     * &.mini.
+     */
+
+    &.mini {
+
+        /**
+         * @include.
+         */
+
+        @include mini();
+
+    }
+
+    /**
+     * breakpoint.
+     */
+
+    @include breakpoint($breakpoint-header-nav-hidden) {
+
+        /**
+         * @include.
+         */
+
+        @include reduced-features();
+
+    }
+
+}
+
+/**
+ * .page-header__col-logo.
+ */
+
+.page-header__col-logo {
+
+    /**
+     * Display.
+     */
+
+    display: flex;
+
+    /**
+     * a.
+     */
+
+    a {
+        
+        /**
+         * Display.
+         */
+
+        display: block;
+
+        /**
+         * img.
+         */
+
+        img {
+
+            /**
+             * Sizing.
+             */
+
+            width: 100%;
+
+        }
+    }
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($fluid) {
+
+        /**
+         * Sizing.
+         */
+
+        width: 40%;
+
+    }
+
+}
+
+/**
+ * .page-header__col-account.
+ */
+
+.page-header__col-account {
+
+    /**
+     * Display.
+     */
+
+    display: none;
+
+    /**
+     * Flex.
+     */
+
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($breakpoint-header-nav-visible) {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+    }
+
+}
+
+/**
+ * .page-header__sign-in.
+ */
+
+.page-header__sign-in {           
+
+    /**
+     * Display.
+     */
+
+    display: inline-flex;
+
+    /**
+     * Flex.
+     */
+
+    align-items: center;
+
+    /**
+     * @include.
+     */
+
+    @include letter-space();
+
+    /**
+     * Font related.
+     */
+
+    color: $brand-aux-four;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 15px;
+
+    /**
+     * Transition.
+     */
+
+    transition: color 0.12s ease;
+
+    /**
+     * @include.
+     */
+
+    @include mini-arrow($brand-aux-four, right);
+
+    /**
+     * &:hover.
+     */
+
+    &:hover {
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+        text-decoration: none;
+
+        /**
+         * @include.
+         */
+
+        @include mini-arrow($brand-three, right, true);
+
+    }
+
+}
+
+/**
+ * .page-header__col-nav.
+ */
+
+.page-header__col-nav {
+
+    /**
+     * Display.
+     */
+
+    display: none;
+
+    /**
+     * Flex.
+     */
+
+    align-items: flex-end;
+ 
+    /**
+     * @include.
+     */
+
+    @include breakpoint($breakpoint-header-nav-visible) {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+    }
+    
+}
+
+/**
+ * .page-header__nav-list.
+ */
+
+.page-header__nav-list {
+
+    /**
+     * breakpoint.
+     */
+
+    @include breakpoint($b-large-desktop-only) {
+
+        /**
+         * Padding.
+         */
+
+        padding-left: 40px;
+
+    }
+
+}
+
+/**
+ * .page-header__nav-list-item.
+ */
+
+.page-header__nav-list-item {
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Display.
+     */
+
+    display: inline-flex;
+
+    /**
+     * Flex.
+     */
+
+    align-items: center;
+
+    /**
+     * Padding.
+     */
+
+    padding-right: 20px;
+
+    /**
+     * Font related.
+     */
+
+    font-weight: 600;
+    color: $brand-aux-one;
+    text-transform: uppercase;
+    font-size: 15px;
+
+    /**
+     * Transition.
+     */
+
+    transition: color 0.12s ease;
+
+    /**
+     * Cursor.
+     */
+
+    cursor: pointer;
+
+    /**
+     * &--with-arrow.
+     */
+
+    &--with-arrow {
+
+        /**
+         * @include.
+         */
+
+        @include mini-arrow($brand-three);
+
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+         
+            /**
+             * @include.
+             */
+
+            @include mini-arrow($brand-three);
+            
+        }
+
+    }
+
+    /**
+     * &:hover.
+     */
+
+    &:hover {
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+
+        /**
+         * .page-header__subnav-wrapper.
+         */
+
+        .page-header__subnav-wrapper {
+
+            /**
+             * Display.
+             */
+
+            display: block;
+
+        }
+
+        /**
+         *
+         */
+
+        &::before {
+
+            /**
+             * Content.
+             */
+
+            content: '';
+
+            /**
+             * Background.
+             */
+
+            // background-color: rgba(255,20,40, 0.4);
+
+            /**
+             * Position.
+             */                
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /**
+             * Z-index.
+             */
+
+            z-index: 1;
+
+            /**
+             * Sizing.
+             */
+
+            width: 100%;
+            height: 50px;
+
+        }
+
+    }
+
+}               
+
+/**
+ * .page-header__subnav-wrapper.
+ */
+
+.page-header__subnav-wrapper {
+
+    /**
+     * Display.
+     */
+
+    display: none;
+
+    /**
+     * Background.
+     */
+
+    background-color: white;
+
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    top: 45px;
+    left: -100px;
+
+    /**
+     * Sizing.
+     */
+
+    width: 960px;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-desktop-only) {
+
+        /**
+         * Sizing.
+         */
+
+        width: 800px;
+
+    }
+
+    /**
+     * Padding.
+     */
+
+    padding-top: 40px;
+    padding-right: 15px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    
+    /**
+     * Border.
+     */
+
+    border-radius: 15px;
+
+    /**
+     * Box Shadow.
+     */
+
+    -webkit-box-shadow: 5px 5px 24px -4px rgba(0,0,0,0.55); 
+    box-shadow: 5px 5px 24px -4px rgba(0,0,0,0.55);
+
+}
+
+/**
+ * .page-header__col-menu-ham.
+ */
+
+.page-header__col-menu-ham {
+
+    /**
+     * Display.
+     */
+
+    display: flex;
+
+    /**
+     * Flex.
+     */
+
+    justify-content: flex-end;
+
+    /**
+     * Sizing.
+     */
+
+    width: 60%;
+
+    /**
+     * svg.
+     */
+
+    svg {
+
+        /**
+         * Sizing.
+         */
+
+        width: 32px;
+        height: 32px;
+
+    }
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($breakpoint-ham-hidden) {
+
+        /**
+         * Display.
+         */
+
+        display: none;
+
+    }
+
+    // /**
+    //  * @include.
+    //  */
+
+    // @include breakpoint($fluid) {
+
+    //     /**
+    //      * Sizing.
+    //      */
+
+    //     width: 60%;
+
+    // }
+
+}

@@ -1,0 +1,85 @@
+/**
+ * Make sure we include _font-sizes.scss before this file gets compiled.
+ */
+
+@import './font-sizes.scss';
+
+/**
+ * body.
+ */
+
+body {
+
+    /**
+     * Font related.
+     */
+
+    font-family: 'Inter', sans-serif;
+
+}
+
+/**
+ * h1.
+ */
+
+h1 {
+
+    /**
+     * Font related.
+     */
+
+    letter-spacing: -0.5px;
+    font-weight: 600;
+
+}
+
+/**
+ * h2.
+ */
+
+h2 {
+
+    /**
+     * Margin.
+     */
+
+    margin-bottom: 20px;
+
+    /**
+     * Font related.
+     */
+
+    letter-spacing: -0.5px;
+    font-weight: 600;
+    
+}
+
+/**
+ * p.
+ */
+
+p {
+
+    /**
+     * Margin.
+     */
+
+    margin-bottom: 12px;
+
+    /**
+     * Font related.
+     */
+
+    @include font-size-m5r();
+    color: #414141;
+
+}
+
+/**
+ * Helpers.
+ */
+
+.font-weight-semi-bold { font-weight: 600; }
+.font-weight-bold      { font-weight: bold; }
+.text-align-center     { text-align: center; }
+.reduced-letter-spacing { letter-spacing: -0.5px; }

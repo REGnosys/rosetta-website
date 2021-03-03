@@ -1,0 +1,191 @@
+/**
+ * Local colors.
+ */
+
+$background-color:       $brand-two;
+$background-hover-color: $brand-one;
+$text-color:             $brand-three;
+$text-hover-color:       $brand-aux-two;
+
+/**
+ * .header-button.
+ */
+
+.header-button {
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Display.
+     */
+
+    display: block;
+
+    /**
+     * Margin.
+     */
+
+    margin-left: 50px;
+
+    /**
+     * Font related.
+     */
+
+    color: $text-color;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+
+    /**
+     * Transition.
+     */
+
+    transition: color 0.12s ease;
+
+    /**
+     * @include.
+     */
+
+    @include letter-space();
+
+    /**
+     * span.
+     */
+
+    span {
+
+        /**
+         * Display.
+         */
+
+        display: inline-flex;
+
+        /**
+         * Flex.
+         */
+
+        align-items: center;
+
+        /**
+         * Postion.
+         */
+
+        position: relative;
+
+        /**
+         * Z-index.
+         */        
+
+        z-index: 2;
+
+        /**
+         * @include.
+         */
+
+        @include mini-arrow($brand-three, right);
+
+    }
+
+    /**
+     * &:hover.
+     */
+
+    &:hover {
+
+        /**
+         * Font related.
+         */
+
+        text-decoration: none;
+        color: $text-hover-color;
+
+        /**
+         * span.
+         */
+
+        span {
+
+            /**
+             * @include.
+             */
+
+            @include mini-arrow($brand-aux-two, right, true);
+
+        }
+
+        /**
+         * &::after.
+         */
+
+        &::after {
+
+            /**
+             * Background.
+             */
+
+            background-color: $background-hover-color;
+
+        }
+
+    }
+
+    /**
+     * &::after.
+     */
+
+    &::after {
+
+        /**
+         * content.
+         */
+
+        content: '';
+
+        /**
+         * Display.
+         */
+
+        display: block;
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 1;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: -15px;
+        left: -25px;
+        right: -20px;
+        bottom: -15px;
+
+        /**
+         * Background.
+         */
+
+        background-color: $background-color;
+
+        /**
+         * Transition.
+         */
+
+        transition: background-color 0.1s ease;
+
+        /**
+         * Border.
+         */
+
+        border-radius: 20px;
+        
+    }
+
+}

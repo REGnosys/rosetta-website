@@ -1,0 +1,327 @@
+/**
+ * Local variables.
+ */
+
+$icon-width: 40px;
+$icon-height: 40px;
+$large-icon-width: 60px;
+$large-icon-height: 60px;
+$menu-icon-width: 45px;
+$menu-icon-height: 45px;
+
+/**
+ * .icon-info-block.
+ */
+
+.icon-info-block {
+
+    /**
+     * Display.
+     */
+
+    display: flex;
+
+    /**
+     * Flex.
+     */
+
+    flex-direction: row;
+
+    /**
+     * Sizing.
+     */
+
+    height: 100%;
+
+    /**
+     * &--with-link.
+     */
+
+    &--with-link {
+
+        /**
+         * Padding.
+         */
+
+        padding-bottom: 40px;
+
+    }
+
+    /**
+     * &__col-icon.
+     */
+
+    &__col-icon {
+
+        /**
+         * Padding.
+         */
+
+        padding-right: 10px;
+
+    }
+
+    /**
+     * &--large &__col-icon.
+     */
+
+    &--large &__col-icon {
+
+        /**
+         * Padding.
+         */
+
+        padding-right: 20px;
+
+    }
+
+    /**
+     * &__icon.
+     */
+
+    &__icon {
+
+        /**
+         * Sizing.
+         */
+
+        width: $icon-width;
+        height: $icon-height;
+
+    }
+
+    /**
+     * &--menu.
+     */
+
+    &--menu {
+
+        /**
+         * Display.
+         */
+
+        display: inline-flex;
+
+        /**
+         * Sizing.
+         */
+
+        width: 100%;
+
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+
+            /**
+             * Background.
+             */
+
+            background-color: cornflowerblue;
+
+            /**
+             * Font related.
+             */
+
+            text-decoration: none;
+
+        }
+
+    }
+
+    /**
+     * &--menu &__icon.
+     */
+
+    &--menu &__icon {
+
+        /**
+         * Sizing.
+         */
+
+        width: $menu-icon-width;
+        height: $menu-icon-height;
+
+    }
+
+    /**
+     * &--large &__icon.
+     */
+
+    &--large &__icon {
+
+        /**
+         * Sizing.
+         */
+
+        width: $large-icon-width;
+        height: $large-icon-height;
+
+    }
+
+    /**
+     * &__heading.
+     */
+
+    &__heading {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+        /**
+         * Font related.
+         */
+
+        @include font-size-m6();
+        font-weight: 600;
+        text-transform: none;
+
+        /**
+         * &::before.
+         */
+
+        &::before {
+
+            /**
+             * Content.
+             */
+
+            content: 'Rosetta';
+
+            /**
+             * Display.
+             */
+
+            display: block;
+
+            /**
+             * Font related.
+             */
+
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: normal;
+            text-transform: none;
+
+        }
+
+    }
+
+    /**
+     * &--menu &__heading.
+     */
+
+    &--menu &__heading {
+
+        /**
+         * Font related.
+         */
+
+        font-size: 24px;
+
+        /**
+         * &::before.
+         */
+
+        &::before {
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 3px;
+
+        }
+
+    }
+
+    /**
+     * &--large &__heading.
+     */
+
+    &--large &__heading {
+
+        /**
+         * Font related.
+         */
+
+        @include font-size-l3r();
+
+        /**
+         * &::before.
+         */
+
+        &::before {
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 5px;
+            
+            /**
+             * Font related.
+             */
+
+            @include font-size-m4r();
+
+        }
+
+    }
+
+    /**
+     * &__info.
+     */
+
+    &__info {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+        /**
+         * Font related.
+         */
+
+        @include font-size-m2();
+        font-weight: normal;
+        text-transform: none;
+
+    }
+
+    /**
+     * &--large &__info.
+     */
+
+    &--large &__info {
+
+        /**
+         * Font related.
+         */
+
+        @include font-size-m5r();
+
+    }
+
+    /**
+     * .link-with-graphic.
+     */
+
+    .link-with-graphic {
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        bottom: 0;
+
+    }
+
+}

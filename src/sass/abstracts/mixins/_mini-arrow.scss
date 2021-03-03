@@ -1,0 +1,87 @@
+/**
+ * @mixin.
+ */
+
+@mixin mini-arrow($color, $direction: down, $hovering: false) {
+
+    /**
+     * &::after.
+     */
+
+    &::after {
+
+        /**
+         * Content.
+         */
+
+        content: '';
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+        /**
+         * Margin.
+         */
+
+        margin-left: 12px;
+
+        /**
+         * Sizing.
+         */
+
+        width: 15px;
+        height: 10px;
+
+        /**
+         * Transition.
+         */
+
+        transition: transform 0.2s ease;
+
+        /**
+         * @include.
+         */
+
+        @include background-mini-arrow($color, $direction);
+
+        /**
+         * @if.
+         */
+
+        @if $direction == right {
+
+            /**
+             * Sizing.
+             */
+
+            width: 10px;
+            height: 15px;
+
+            /**
+             * Transform.
+             */
+
+            @if $hovering {
+
+                /**
+                 * Transform.
+                 */
+
+                transform: translateX(3px);
+
+            }
+
+            /**
+             * Margin.
+             */
+
+            margin-left: 5px;            
+
+        }
+
+    }
+
+}
