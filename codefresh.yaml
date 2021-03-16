@@ -1,0 +1,87 @@
+version: "1.0"
+
+stages:
+  - "main_clone"
+  - "build"
+  - "push"
+  - "deploy"
+
+steps:
+  main_clone:
+    title: Cloning main repository...
+    type: git-clone
+    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+    revision: '${{CF_REVISION}}'
+
+  build_ui:
+    stage: build
+    title: UI Build
+    image: weboaks/node-karma-protractor-chrome
+    working_directory: "${{main_clone}}"
+    commands:
+      - npm ci
+      - npm run compile-sass
+      - npm run build
+      
+  build_ui_image:
+    stage: build
+    title: "Building Docker image"
+    image_name: "regnosys/rosetta-website"
+    type: "build"
+    working_directory: "${{main_clone}}"
+    dockerfile:
+      content: |
+        FROM nginx:alpine
+        COPY web/ /usr/share/nginx/html
+        RUN ls -la /usr/share/nginx/html
+    tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
+    registry: regnosys-docker-registry
+    disable_push: true
+
+  push_image:
+    stage: 'push'
+    type: push
+    title: Pushing to a registry
+    candidate: ${{build_ui_image}}
+    tag: 'dev'
+    registry: regnosys-docker-registry
+    image_name: "regnosys/rosetta-website"
+
+  push_charts:
+    stage: 'push'
+    title: Lint, build, package and push charts
+    type: helm
+    arguments:
+      helm_version: 3.1.3
+      action: auth
+      commands:
+        - kubectl config get-contexts
+        - kubectl config use-context dev-cluster-1@Development
+        - kubectl config current-context
+        - kubectl version --short; helm version --short
+        - rm -rf helm-build; mkdir helm-build; cd helm-build
+        - helm repo add codefresh cm://h.cfcr.io/regnosysops/default
+        - helm repo update
+        - ROOT="${{CF_VOLUME_PATH}}"/rosetta-website
+        - helm lint "$ROOT"/helm/rosetta-website
+        - helm package "$ROOT"/helm/rosetta-website
+        - helm push rosetta-website-0.0.0-dev.tgz codefresh
+
+  deploy_to_dev:
+    stage: 'push'
+    title: Deploy To Development
+    type: helm
+    arguments:
+      helm_version: 3.1.3
+      action: auth
+      commands:
+        - kubectl config get-contexts
+        - kubectl config use-context dev-cluster-1@Development
+        - kubectl config current-context
+        - kubectl version --short; helm version --short
+        - rm -rf helm-build; mkdir helm-build; cd helm-build
+        - helm repo add codefresh cm://h.cfcr.io/regnosysops/default
+        - helm repo update
+        - >-
+          helm -n rosetta-website upgrade --install rosetta-website codefresh/rosetta-website --version=0.0.0-dev
+          --debug --reset-values
