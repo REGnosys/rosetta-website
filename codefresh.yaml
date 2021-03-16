@@ -85,3 +85,16 @@ steps:
         - >-
           helm -n rosetta-website upgrade --install rosetta-website codefresh/rosetta-website --version=0.0.0-dev
           --debug --reset-values
+
+  dev_restart:
+    stage: 'push'
+    title: "Development Restart"
+    type: freestyle
+    arguments:
+      image: codefresh/kubectl
+      commands:
+        - kubectl config get-contexts
+        - kubectl config use-context idev-cluster-1@Development
+        - kubectl config current-context
+        - kubectl version --short
+        - kubectl -n rosetta-website rollout restart deploy
