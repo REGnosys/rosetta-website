@@ -18,6 +18,7 @@ import { CoreDiagram } from './layouts/pages/governance-core-diagram'
 import { LinkWithGraphics } from './components/link-with-graphics'
 import { BodyCurves } from './components/body-curves'
 import { GraphicHeaders } from './components/graphic-headers'
+import { BasicForms } from './components/basic-forms'
 
 /**
  * Effects.
@@ -47,6 +48,7 @@ export class App {
     private linkWithGraphics : LinkWithGraphics
     private bodyCurves : BodyCurves
     private graphicHeaders : GraphicHeaders
+    private basicForms : BasicForms
 
     /**
      * Effects.
@@ -67,6 +69,7 @@ export class App {
          */
 
         this.header = new Header()
+        this.coreDiagram = new CoreDiagram()
 
         /**
          * Components.
@@ -76,6 +79,8 @@ export class App {
         this.linkWithGraphics = new LinkWithGraphics()
         this.bodyCurves = new BodyCurves()
         this.graphicHeaders = new GraphicHeaders()
+        this.basicForms = new BasicForms()
+
         /**
          * Effects.
          */
@@ -111,6 +116,8 @@ export class App {
             this.linkWithGraphics.start()
             this.bodyCurves.start()
             this.graphicHeaders.start()
+            this.basicForms.start()
+
             /**
              * Start effects.
              */

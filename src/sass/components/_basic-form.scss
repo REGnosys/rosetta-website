@@ -1,0 +1,1013 @@
+/**
+ * .basic-form.
+ */
+
+.basic-form {
+
+    /**
+     * ul.
+     */
+
+    ul {
+
+        /**
+         * li.
+         */
+
+        li {
+
+            margin-bottom: 10px;            
+
+        }
+
+    }
+
+    /**
+     * 
+     */
+
+    &__text-input,
+    &__email-input,
+    &__select,
+    &__textarea-input {
+
+        /**
+         * 
+         */
+
+        @include font-size-m2();
+
+        /**
+         * 
+         */
+
+        &::placeholder {
+
+            /**
+             * @include.
+             */
+
+            @include font-size-m2();
+
+            /**
+             * Font related.
+             */
+
+            color: $brand-three;
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0.5;
+
+        }
+
+        display: block;
+
+        /**
+         * 
+         */
+
+        width: 100%;
+
+        /**
+         * Border.
+         */
+
+        border: 0;
+
+        /**
+         * Padding.
+         */
+
+        padding: 10px 10px 10px 14px;
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+
+    }
+
+
+    /**
+     * &__text-input.
+     */
+
+    &__text-input {
+
+    }
+
+    /**
+     * &__email-input.
+     */
+
+    &__email-input {
+
+        /**
+         * 
+         */
+
+    }
+
+    /**
+     * &__select.
+     */
+
+    &__select {
+
+        /**
+         * Margin.
+         */
+
+        margin-right: 10px;
+
+    }
+
+    /**
+     * &__textarea-input.
+     */
+
+    &__textarea-input {
+
+        /**
+         * 
+         */
+
+    }
+
+    /**
+     * &__submit-button.
+     */
+
+    &__submit-button {
+
+        /**
+         * Border.
+         */
+
+        border: 0;
+
+        /**
+         * Background.
+         */
+
+        background-color: initial;
+
+        /**
+         * Font related.
+         */
+    
+        @include font-size-m5();
+        @include font-weight-semi-bold();
+        color: $brand-one;
+     
+        /**
+         * &:hover.
+         */
+    
+        &:hover {
+
+            /**
+             * Cursor.
+             */
+
+            cursor: pointer;
+
+        }
+
+    }
+
+}
+
+/**
+ * Syling for EasyDropDown select.
+ */
+
+.edd-root,
+.edd-root *,
+.edd-root *::before,
+.edd-root *::after {
+
+    /**
+     * Margin.
+     */
+
+    margin: 0;
+
+    /**
+     * Padding.
+     */
+
+    padding: 0;
+
+    /**
+     * Sizing.
+     */
+
+    box-sizing: border-box;
+
+    /**
+     * 
+     */
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+/**
+ * .edd-root.
+ */
+
+.edd-root {
+
+    /**
+     * Display
+     */
+
+    display: inline-block;
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Sizing.
+     */
+
+    width: 100%;
+
+    /**
+     * User select.
+     */
+
+    user-select: none;   
+
+    /**
+     * Font related.
+     */
+    
+    @include font-size-m2();
+    color: $brand-three;
+
+}
+
+/**
+ * .edd-root-disabled.
+ */
+
+.edd-root-disabled {
+
+    /**
+     * Font related.
+     */
+
+    color: #ccc;
+
+    /**
+     * Cursor.
+     */
+
+    cursor: not-allowed;
+
+}
+
+/**
+ * .edd-head.
+ */
+
+.edd-head {
+    
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Overflow.
+     */
+
+    overflow: hidden;
+
+    /**
+     * Transition.
+     */
+
+    transition: border-color 200ms;
+
+    /**
+     * Background.
+     */
+
+    background-color: #fff;
+
+}
+
+/**
+ * .edd-value.
+ */
+
+.edd-value {
+
+    /**
+     * Sizing.
+     */
+
+    width: 100%;
+
+    /**
+     * Display.
+     */
+
+    display: inline-block;
+
+    /**
+     * 
+     */
+
+    vertical-align: middle;
+
+    /**
+     * Padding.
+     */
+
+    padding: 8px 25px 8px 15px;
+
+}
+
+/**
+ * .edd-arrow.
+ */
+
+.edd-arrow {
+
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    top: calc(50% - 5px);
+    right: 10px;
+
+    /**
+     * Sizing.
+     */
+
+    width: 14px;
+    height: 10px;
+
+    /**
+     * Transition.
+     */
+
+    transition: transform 150ms;
+
+    /**
+     * Pointer events.
+     */
+
+    pointer-events: none;
+
+    /**
+     * Font related.
+     */
+
+    color: $brand-three;
+}
+
+/**
+ * .edd-root-disabled .edd-arrow.
+ */
+
+.edd-root-disabled .edd-arrow {
+
+    /**
+     * Font related.
+     */
+
+    color: #ccc;
+
+}
+
+/**
+ * .edd-arrow::before.
+ */
+
+.edd-arrow::before {
+
+    /**
+     * Content.
+     */
+
+    content: '';
+
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    top: 0;
+    right: 2px;
+
+    /**
+     * Sizing.
+     */
+
+    width: 8px;
+    height: 8px;
+
+    /**
+     * Border.
+     */
+
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+
+    /**
+     * Transform.
+     */
+
+    transform: rotate(45deg);
+    transform-origin: 50% 25%;
+
+}
+
+/**
+ * .edd-root-open .edd-arrow
+ */
+
+.edd-root-open .edd-arrow {
+
+    /**
+     * Transform.
+     */
+
+    transform: rotate(180deg);
+
+}
+
+/**
+ * 
+ */
+
+.edd-value,
+.edd-option,
+.edd-group-label {
+
+    /**
+     * Font related.
+     */
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    /**
+     * Overflow.
+     */
+
+    overflow: hidden;
+
+}
+
+/**
+ * 
+ */
+
+.edd-root:not(.edd-root-disabled) .edd-value,
+.edd-option {
+
+    /**
+     * Cursor.
+     */
+
+    cursor: pointer;
+}
+
+/**
+ * .edd-select.
+ */
+
+.edd-select {
+    
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    top: 0;
+
+    /**
+     * Sizing.
+     */
+
+    width: 100%;
+    left: -100%;
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+    
+}
+
+/**
+ * .edd-root-native .edd-select.
+ */
+
+.edd-root-native .edd-select {
+
+    /**
+     * Position.
+     */
+
+    left: 0;
+    top: 0;
+
+    /**
+     * Sizing.
+     */
+
+    width: 100%;
+    height: 100%;
+
+}
+
+/**
+ * .edd-body.
+ */
+
+.edd-body {
+
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+
+    /**
+     * Pointer events.
+     */
+
+    pointer-events: none;
+
+    /**
+     * Overflow.
+     */
+
+    overflow: hidden;
+
+    /**
+     * Z-index.
+     */
+
+    z-index: 999;
+
+    /**
+     * Background.
+     */
+
+    background: white;
+
+    /**
+     * Shadow.
+     */
+
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+
+    /**
+     * Border.
+     */
+
+    border: 1px solid #eee;
+
+    /**
+     * Border.
+     */
+
+    border-top: 0;
+    border-right: 0;
+
+}
+
+/**
+ * .edd-root-open .edd-body.
+ */
+
+.edd-root-open .edd-body {
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 1;
+
+    /**
+     * Pointer events.
+     */
+
+    pointer-events: all;
+
+    /**
+     * Transform.
+     */
+
+    transform: scale(1);
+
+    /**
+     * Transition.
+     */
+
+    transition: opacity 200ms, transform 100ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/**
+ * .edd-root-open-above .edd-body.
+ */
+
+.edd-root-open-above .edd-body {
+
+    /**
+     * Position.
+     */
+
+    bottom: 100%;
+}
+
+/**
+ * .edd-root-open-below .edd-body.
+ */
+
+.edd-root-open-below .edd-body {
+
+    /**
+     * Position.
+     */
+
+    top: 100%;
+
+}
+
+/**
+ * .edd-items-list.
+ */
+
+.edd-items-list {
+
+    /**
+     * Overflow.
+     */
+
+    overflow: auto;
+
+    /**
+     * Sizing.
+     */
+
+    max-height: 0;
+
+    /**
+     * Transition.
+     */
+
+    transition: max-height 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /**
+     * 
+     */
+
+    -webkit-overflow-scrolling: touch;
+
+}
+
+/**
+ * .edd-items-list::-webkit-scrollbar.
+ */
+
+.edd-items-list::-webkit-scrollbar {
+
+    /**
+     * Sizing.
+     */
+
+    width: 12px;
+
+}
+
+/**
+ * .edd-items-list::-webkit-scrollbar-track.
+ */
+
+.edd-items-list::-webkit-scrollbar-track {
+
+    /**
+     * Background.
+     */
+
+    background: #efefef;
+
+}
+
+/**
+ * .edd-items-list::-webkit-scrollbar-track.
+ */
+
+.edd-items-list::-webkit-scrollbar-thumb {
+
+    /**
+     * Background.
+     */
+
+    background: #ccc;
+
+}
+
+/**
+ * .edd-group-label.
+ */
+
+.edd-group-label {
+
+    /**
+     * Padding.
+     */
+
+    padding: 4px 8px 4px 0;
+
+    /**
+     * Font related.
+     */
+
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+
+}
+
+/**
+ * .edd-group-has-label.
+ */
+
+.edd-group-has-label {
+
+    /**
+     * Padding.
+     */
+
+    padding-left: 22px;
+
+}
+
+/**
+ * .edd-option.
+ */
+
+.edd-option {
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Padding.
+     */
+
+    padding: 4px 8px 4px 22px;
+
+}
+
+/**
+ * .edd-option-selected.
+ */
+
+.edd-option-selected {
+
+    /**
+     * 
+     */
+
+}
+
+/**
+ * .edd-option-selected::before.
+ */
+
+.edd-option-selected::before {
+
+    /**
+     * Content.
+     */
+
+    content: '';
+
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    left: 6px;
+    top: calc(50% - 4px);
+
+    /**
+     * Sizing.
+     */
+
+    width: 8px;
+    height: 4px;
+
+    /**
+     * Border.
+     */
+
+    border-bottom: 2px solid $brand-one;
+    border-left: 2px solid $brand-one;
+
+    /**
+     * Transform.
+     */
+
+    transform: rotate(-45deg);
+
+}
+
+/**
+ * .edd-option-focused:not(.edd-option-disabled).
+ */
+
+.edd-option-focused:not(.edd-option-disabled) {
+
+    /**
+     * Font related.
+     */
+
+    color: $brand-one;
+
+}
+
+/**
+ * 
+ */
+
+.edd-option-disabled,
+.edd-group-disabled .edd-option {
+
+    /**
+     * Cursor.
+     */
+
+    cursor: default;
+
+    /**
+     * Font related.
+     */
+
+    color: #ccc;
+}
+
+/**
+ * 
+ */
+
+.edd-gradient-top,
+.edd-gradient-bottom {
+
+    /**
+     * Content.
+     */
+
+    content: '';
+
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    left: 2px;
+    right: 12px;
+
+    /**
+     * Sizing.
+     */
+
+    height: 32px;
+
+    /**
+     * Background.
+     */
+
+    background-image:
+        linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 40%,
+            rgba(255, 255, 255, 1) 60%,
+            rgba(255, 255, 255, 0) 100%
+        );
+    background-repeat: repeat-x;
+    background-size: 100% 200%;
+
+    /**
+     * Pointe events.
+     */
+
+    pointer-events: none;
+
+    /**
+     * Transition.
+     */
+
+    transition: opacity 100ms;
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+
+}
+
+/**
+ * .edd-gradient-top.
+ */
+
+.edd-gradient-top {
+
+    /**
+     * Background.
+     */
+
+    background-position: bottom;
+
+    /**
+     * Position.
+     */
+
+    top: 0;
+    
+}
+
+/**
+ * .edd-gradient-bottom.
+ */
+
+.edd-gradient-bottom {
+
+    /**
+     * Background.
+     */
+
+    background-position: top;
+
+    /**
+     * Position.
+     */
+
+    bottom: 0;
+
+}
+
+/**
+ * 
+ */
+
+.edd-body-scrollable .edd-gradient-top,
+.edd-body-scrollable .edd-gradient-bottom {
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 1;
+
+}
+
+/**
+ * 
+ */
+
+.edd-body-scrollable.edd-body-at-top .edd-gradient-top,
+.edd-body-scrollable.edd-body-at-bottom .edd-gradient-bottom {
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+
+}
