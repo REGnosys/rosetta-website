@@ -9,6 +9,7 @@ import { Ready } from './utils/ready'
  */
 
 import { Header } from './layouts/common/header'
+import { CoreDiagram } from './layouts/pages/governance-core-diagram'
 
 /**
  * Components.
@@ -16,6 +17,7 @@ import { Header } from './layouts/common/header'
 
 import { LinkWithGraphics } from './components/link-with-graphics'
 import { BodyCurves } from './components/body-curves'
+import { GraphicHeaders } from './components/graphic-headers'
 
 /**
  * Effects.
@@ -36,14 +38,16 @@ export class App {
      */
 
     private header : Header
-    
+    private coreDiagram : CoreDiagram
+
     /**
      * Components.
      */
     
     private linkWithGraphics : LinkWithGraphics
     private bodyCurves : BodyCurves
-    
+    private graphicHeaders : GraphicHeaders
+
     /**
      * Effects.
      */
@@ -71,7 +75,7 @@ export class App {
         
         this.linkWithGraphics = new LinkWithGraphics()
         this.bodyCurves = new BodyCurves()
-        
+        this.graphicHeaders = new GraphicHeaders()
         /**
          * Effects.
          */
@@ -95,13 +99,18 @@ export class App {
         new Ready(() => {
 
             /**
+             * Start layouts.
+             */
+
+            this.coreDiagram.start()
+
+            /**
              * Start components.
              */
 
-            this.header.start()
             this.linkWithGraphics.start()
             this.bodyCurves.start()
-            
+            this.graphicHeaders.start()
             /**
              * Start effects.
              */
