@@ -29,6 +29,7 @@ $i: 0;
     .pb-#{$i} { padding-bottom: #{$i}px; }
     .pt-#{$i} { padding-top: #{$i}px; }
     .pr-#{$i} { padding-right: #{$i}px; }
+    .pl-#{$i} { padding-left: #{$i}px; }
     
     /**
      * Large desktop.
@@ -51,18 +52,29 @@ $i: 0;
     // .pb-t-o-#{$i}  { @include breakpoint($b-tablet-only) { padding-bottom: #{$i}px !important; } }
     // .pt-t-o-#{$i}  { @include breakpoint($b-tablet-only) { padding-top: #{$i}px !important; } }
     // .df-mb-t-#{$i} { @include breakpoint($b-df-tablet) { margin-bottom: #{$i}px; } }
+    .df-mt-t-#{$i} { @include breakpoint($b-df-tablet) { margin-top: #{$i}px !important; } }
     .df-pb-t-#{$i} { @include breakpoint($b-df-tablet) { padding-bottom: #{$i}px !important; } }
     // .mb-t-#{$i}    { @include breakpoint($b-tablet) { margin-bottom: #{$i}px; } }
     // .mb-t-o-#{$i}  { @include breakpoint($b-tablet-only) { margin-bottom: #{$i}px; } }
+    .pl-t-o-#{$i} { @include breakpoint($b-df-tablet) { padding-left: #{$i}px !important; } }
 
     /**
      * Mobile landscape.
      */
 
     // .pb-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-bottom: #{$i}px !important; } }
+    .df-pb-ml-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-bottom: #{$i}px !important; } }
     // .pt-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-top: #{$i}px !important; } }
     .mb-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { margin-bottom: #{$i}px !important; } }
     .df-mb-ml-#{$i} { @include breakpoint($b-df-mobile-landscape) { margin-bottom: #{$i}px !important; } }
+    .df-pl-ml-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-left: #{$i}px !important; } }
+
+    /**
+     * Mobile.
+     */
+
+    .ml-m-o-#{$i} { @include breakpoint($b-mobile-only) { margin-left: #{$i}px !important; } }
+    .mr-m-o-#{$i} { @include breakpoint($b-mobile-only) { margin-right: #{$i}px !important; } }
 
 }
 
@@ -70,7 +82,11 @@ $i: 0;
  * Flex.
  */
 
-.align-items-end { align-items: flex-end; }
+ .align-items-end { align-items: flex-end; }
+.flex-direction-column { flex-direction: column; }
+.display-flex { display: flex; }
+.justify-content-flex-end { justify-content: flex-end; }
+.justify-content-center { justify-content: center; }
 
 /**
  * Display.

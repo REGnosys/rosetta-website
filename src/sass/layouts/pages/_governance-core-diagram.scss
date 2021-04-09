@@ -1,0 +1,497 @@
+/**
+ * core-diagram__list-item--shadow.
+ */
+
+@mixin core-diagram__list-item--shadow() {
+
+    /**
+     * Shadow.
+     */
+
+    box-shadow: 0px 2px 11px 1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 0px 2px 11px 1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 0px 2px 11px 1px rgba(0,0,0,0.24);
+
+}
+
+/**
+ * .core-diagram.
+ */
+
+.core-diagram {
+
+    /**
+     * &__graphic.
+     */ 
+
+    &__graphic {
+
+        /**
+         * #annotation-text-and-lines.
+         */
+
+        #annotation-text-and-lines {
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0;
+
+            /**
+             * Transition.
+             */
+
+            transition: opacity 0.4s ease;
+
+            /**
+             * &.show.
+             */
+
+            &.show {
+
+                /**
+                 * Opacity.
+                 */
+
+                opacity: 1;
+
+            }
+
+        }
+
+        /**
+         * 
+         */
+
+        #outside-knockback,
+        #middle-knockback,
+        #inside-knockback {
+
+            /**
+             * Cursor.
+             */
+
+            cursor: pointer;
+
+            /**
+             * Transition.
+             */
+
+            transition: opacity 0.4s ease;
+
+        }
+
+        /**
+         * #outside-knockback.
+         */
+
+        #outside-knockback {
+
+            /**
+             * &.knocked-back.
+             */
+
+            &.knocked-back {
+
+                /**
+                 * Opacity.
+                 */
+
+                opacity: 1;
+
+            }
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0;
+
+        }
+
+        /**
+         * #middle-knockback.
+         */
+
+        #middle-knockback {
+
+            /**
+             * &.knocked-back.
+             */
+
+            &.knocked-back {
+
+                /**
+                 * Opacity.
+                 */
+
+                opacity: 1;
+
+            }
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0;
+
+        }
+
+        /**
+         * #inside-knockback.
+         */
+
+        #inside-knockback {
+
+            /**
+             * &.knocked-back.
+             */
+
+            &.knocked-back {
+
+                /**
+                 * Opacity.
+                 */
+
+                opacity: 1;
+
+            }
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0;
+
+        }
+
+    }
+
+    /**
+     * &__list.
+     */
+
+    &__list {
+        
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+        /**
+         * Flex.
+         */
+
+        flex-direction: column;
+
+        /**
+         * Margin.
+         */
+
+        margin-right: 80px;
+
+        /**
+         * @include.
+         */
+
+        @include breakpoint($b-df-tablet) {
+
+            /**
+             * Margin.
+             */
+
+            margin-right: 0;
+
+        }
+
+    }
+
+    /**
+     * &__list-item.
+     */
+
+    &__list-item {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 35px;
+
+        /**
+         * Transition.
+         */
+
+        transition: opacity 0.4s ease;
+
+    }
+
+    /**
+     * &__list-item-content.
+     */
+
+    &__list-item-content {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Background.
+         */
+
+        background-color: $brand-aux-two;
+
+        /**
+         * Padding.
+         */
+
+        padding: 15px 20px 15px 40px;
+
+        /**
+         * Border.
+         */
+
+        border-radius: 15px;
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 10;
+
+        /**
+         * Shadow.
+         */
+
+        @include core-diagram__list-item--shadow();
+
+        /**
+         * Cursor.
+         */
+
+        cursor: pointer;
+
+        /**
+         * 
+         */
+
+        transition: background-color 0.2s ease;
+
+        /**
+         * &.active.
+         */
+
+        &.active {
+
+            /**
+             * p.
+             */
+
+            p {
+
+                /**
+                 * Font related.
+                 */
+
+                color: white;
+
+            }
+
+        }
+
+        /**
+         * 
+         */
+
+        &--dsl { &.active { background-color: $brand-one; } }
+        &--projects { &.active { background-color: $brand-two; } }
+        &--products { &.active { background-color: #b4b3bf; } }
+
+    }
+
+    /**
+     * &__list-item-title.
+     */
+
+    &__list-item-title {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 0;
+
+        /**
+         * Font related.
+         */
+
+        font-weight: 600;
+        @include font-size-m7();
+
+        /**
+         * Transition.
+         */
+
+        transition: color 0.2s ease;
+
+    }
+
+    /**
+     * &__list-item-sub-title.
+     */
+
+    &__list-item-sub-title {
+
+        /**
+         * Margin.
+         */
+
+        margin: 0;
+
+        /**
+         * Transition.
+         */
+
+        transition: color 0.2s ease;
+
+    }
+
+    /**
+     * &__list-item-indicator.
+     */
+
+    &__list-item-indicator {
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-50%) translateX(-50%);
+
+        /**
+         * Sizing.
+         */
+
+        width: 28px;
+        height: 28px;
+
+        /**
+         * Border.
+         */
+
+        border-radius: 25px;
+        border: 2px solid white;
+
+        /**
+         * Themes.
+         */
+        
+        &--dsl { background-color: $brand-one; }
+        &--projects { background-color: $brand-two; }
+        &--products { background-color: #b4b3bf; }
+
+    }
+
+    /**
+     * &__list-item-empty.
+     */
+
+    &__list-item-empty {
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /**
+         * Sizing.
+         */
+
+        width: 100%;
+        height: 100%;
+
+        /**
+         * Border.
+         */
+
+        border-radius: 15px;
+
+        /**
+         * Background.
+         */
+
+        background-color: white;
+
+        /**
+         * Shadow.
+         */
+
+        @include core-diagram__list-item--shadow();
+
+        /**
+         * &--first.
+         */
+
+        &--first {
+
+            /**
+             * Sizing.
+             */
+
+            top: -6px;
+            left: 6px;
+
+            /**
+             * Z-index.
+             */
+
+            z-index: 8;
+
+        }
+
+        /**
+         * &--second.
+         */
+
+        &--second {
+
+            /**
+             * Sizing.
+             */
+
+            top: -12px;
+            left: 12px;
+
+            /**
+             * Z-index.
+             */
+
+            z-index: 6;
+
+        }
+
+    }
+
+}

@@ -76,6 +76,35 @@ p {
 }
 
 /**
+ * a.
+ */
+
+a {
+
+    /**
+     * Font related.
+     */
+
+    color: $brand-one;
+
+    /**
+     * &:hover.
+     */
+
+    &:hover {
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+        text-decoration: none;
+
+    }
+
+}
+
+/**
  * Helpers.
  */
 
@@ -83,3 +112,16 @@ p {
 .font-weight-bold      { font-weight: bold; }
 .text-align-center     { text-align: center; }
 .reduced-letter-spacing { letter-spacing: -0.5px; }
+.df-ml-text-align-left {
+    @include breakpoint($b-df-mobile-landscape) {
+        text-align: left;
+    }
+}
+
+/**
+ * 
+ */
+
+@mixin font-weight-semi-bold {
+    font-weight: 600;
+}
