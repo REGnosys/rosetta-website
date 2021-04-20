@@ -85,6 +85,36 @@
     }
 
     /**
+     * &.small.
+     */
+
+    &.small {
+
+        /**
+         * Sizing.
+         */
+
+        width: 270px;
+        height: 270px;
+
+        /**
+         * @include.
+         */
+
+        @include breakpoint($b-tablet-only) {
+
+            /**
+             * Sizing.
+             */
+
+            width: 180px;
+            height: 180px;
+
+        }
+
+    }
+
+    /**
      * @include.
      */
 
@@ -138,8 +168,8 @@
          * Sizing.
          */
 
-        width: 100%;
-        height: 400px;
+        width: 100% !important;
+        height: 400px !important;
         
     }
 

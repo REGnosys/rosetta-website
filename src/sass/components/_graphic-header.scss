@@ -1,0 +1,107 @@
+/**
+ * .graphic-header.
+ */
+
+.graphic-header {
+
+    /**
+     * Position.
+     */
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-df-mobile-landscape) {
+
+        /**
+         * Display.
+         */
+
+        display: none;
+
+    }
+
+    /**
+     * &__curve.
+     */
+
+    &__curve {
+
+        /**
+         * Sizing.
+         */
+
+        width: 60vw;
+
+    }
+
+    /**
+     * &__curve--brand-one.
+     */
+
+    &__curve--brand-one {
+
+        /**
+         * path.
+         */
+
+        path { fill: $brand-one; }
+
+    }
+
+    /**
+     * &--graphic-full-size.
+     */
+
+    &--graphic-full-size {
+
+        /**
+         * .graphic-header__graphic.
+         */
+
+        .graphic-header__graphic {
+
+            /**
+             * Position.
+             */
+
+            top: 60px !important;
+
+            /**
+             * Sizing.
+             */
+
+            width: 90% !important;
+
+        }
+
+    }
+
+    /**
+     * &__graphic.
+     */
+
+    &__graphic {
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 105px;
+        right: 0;
+
+        /**
+         * Sizing.
+         */
+
+        width: 68%;
+
+    }
+
+}

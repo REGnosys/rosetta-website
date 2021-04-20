@@ -1,0 +1,102 @@
+/**
+ * .info-panel.
+ */
+
+.info-panel {
+
+    
+
+    /**
+     * &__inset.
+     */
+
+    &__inset {
+
+        /**
+         * Padding
+         */
+
+        padding-left: 40px;
+        padding-right: 40px;
+
+    }
+
+    /**
+     * &__content.
+     */
+
+    &__content {
+
+        /**
+         * Background.
+         */
+
+        background-color: #f1efef;
+
+        /**
+         * Padding.
+         */
+
+        padding: 35px 50px 35px 50px;
+
+        /**
+         * Border.
+         */
+
+        border-radius: 15px;
+
+        /**
+         * Shadow.
+         */
+
+        box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.33);
+        -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.33);
+        -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.33);
+
+    }
+
+    /**
+     * &__content--tablet-reduced-padding.
+     */
+
+    &__content--tablet-reduced-padding {
+
+        /**
+         * @include.
+         */
+
+        @include breakpoint($b-tablet-only) {
+
+            /**
+             * Padding.
+             */
+
+            padding-left: 35px;
+            padding-right: 35px;
+
+        }
+
+    }
+
+    /**
+     * &__primary-icon.
+     */
+    
+    &__primary-icon {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 10px;
+
+        /**
+         * Sizing.
+         */
+
+        height: 80px;
+
+    }
+
+
+}
