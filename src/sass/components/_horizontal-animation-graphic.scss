@@ -1,0 +1,65 @@
+/**
+ * .horizontal-animation-graphic.
+ */
+
+.horizontal-animation-graphic {
+
+    /**
+     * Display.
+     */
+
+    display: inline-block;
+
+    /**
+     * Transform.
+     */
+
+    transform: translateX(50%) translateY(0%);
+
+    /**
+     * &--mirror-anim.
+     */
+
+    &--mirror-anim {
+
+        /**
+         * Transform.
+         */
+
+        transform: translateX(-50%) translateY(0%);
+
+    }
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+
+    /**
+     * Transition.
+     */
+
+    transition: opacity 1s ease, transform 1s ease;
+
+    /** 
+     * &.entered-view.
+     */
+
+   &.entered-view {
+
+       /**
+        * Opacity.
+        */
+
+       opacity: 1;
+
+       /**
+        * Transform.
+        */
+
+       transform: translateX(-0%) translateY(-0%);
+
+   }
+
+}
