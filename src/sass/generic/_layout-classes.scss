@@ -35,7 +35,7 @@ $i: 0;
      * Large desktop.
      */
 
-    // .pb-ld-o-#{$i} { @include breakpoint($b-large-desktop-only) { padding-bottom: #{$i}px !important; } }
+    .pb-ld-o-#{$i} { @include breakpoint($b-large-desktop-only) { padding-bottom: #{$i}px !important; } }
     // .pt-ld-o-#{$i} { @include breakpoint($b-large-desktop-only) { padding-top: #{$i}px !important; } }
 
     /**
@@ -55,7 +55,7 @@ $i: 0;
     .df-mt-t-#{$i} { @include breakpoint($b-df-tablet) { margin-top: #{$i}px !important; } }
     .df-pb-t-#{$i} { @include breakpoint($b-df-tablet) { padding-bottom: #{$i}px !important; } }
     // .mb-t-#{$i}    { @include breakpoint($b-tablet) { margin-bottom: #{$i}px; } }
-    // .mb-t-o-#{$i}  { @include breakpoint($b-tablet-only) { margin-bottom: #{$i}px; } }
+    // .mb-t-o-#{$i}  { @include breakpoint($b-tablet-only) { margin-bottom: #{$i}px; } }   
     .pl-t-o-#{$i} { @include breakpoint($b-df-tablet) { padding-left: #{$i}px !important; } }
 
     /**
@@ -64,11 +64,12 @@ $i: 0;
 
     // .pb-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-bottom: #{$i}px !important; } }
     .df-pb-ml-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-bottom: #{$i}px !important; } }
+    .df-pt-ml-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-top: #{$i}px !important; } }
     // .pt-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-top: #{$i}px !important; } }
     .mb-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { margin-bottom: #{$i}px !important; } }
-    .df-mb-ml-#{$i} { @include breakpoint($b-df-mobile-landscape) { margin-bottom: #{$i}px !important; } }
+    .df-mb-ml-#{$i} { @include breakpoint($b-df-mobile-landscape) { margin-bottom: #{$i}px !important; } } 
     .df-pl-ml-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-left: #{$i}px !important; } }
-
+    
     /**
      * Mobile.
      */

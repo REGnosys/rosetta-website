@@ -1,0 +1,693 @@
+/**
+ * .header-sub-navigation-arrow.
+ */
+
+.header-sub-navigation-arrow {
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+
+    /**
+     * Position.
+     */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /**
+     * Sizing.
+     */
+
+    width: 24px;
+    height: 12px;
+
+    /**
+     * Z-index.
+     */
+
+    z-index: 10;
+
+    /**
+     * img.
+     */
+
+    img {
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /**
+         * Sizing.
+         */
+
+        width: 100%;
+        height: 100%;
+
+    }
+
+    /**
+     * Pointer.
+     */
+
+    pointer-events: none;
+
+}
+
+/**
+ * .header-sub-navigation-touch-area-bridge.
+ */
+
+.header-sub-navigation-touch-area-bridge {
+
+    /**
+     * Position.
+     */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    /**
+     * Sizing.
+     */
+
+    height: 20px;
+    width: 20px;
+
+    /**
+     * Z-index.
+     */
+
+    z-index: 10;
+
+    /**
+     * Pointer.
+     */
+
+    pointer-events: none;
+
+    /**
+     * &.visible.
+     */
+
+    &.visible {
+
+        /**
+         * Pointer.
+         */
+
+        pointer-events: all;
+
+    }
+
+}
+
+/**
+ * .header-sub-navigation.
+ */
+
+.header-sub-navigation {
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+
+    /**
+     * Position.
+     */
+
+    position: fixed;
+    top: 100px;
+    left: 0px;
+
+    /**
+     * Sizing.
+     */
+
+    min-height: 100px;
+    min-width: 100px;
+
+    /**
+     * Background.
+     */
+
+    background-color: white;
+
+    /**
+     * Border.
+     */
+
+    border-radius: 10px;
+
+    /**
+     * Overflow.
+     */
+
+    overflow: hidden;
+
+    /**
+     * Shadow.
+     */
+
+	box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2); 
+
+    /**
+     * &__products-wrapper.
+     */
+
+    &__products-wrapper {
+
+        /**
+         * Opacity.
+         */
+
+        opacity: 0;
+
+        /**
+         * Sizing.
+         */
+
+        width: 768px;
+                       
+        /**
+         * Padding.
+         */
+
+        padding-top: 30px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        /**
+         * &.hidden.
+         */
+
+        &.hidden {
+
+            /**
+             * Pointer events.
+             */
+
+            pointer-events: none;
+
+        }
+
+    }
+
+    /**
+     * &__platform-row.
+     */
+
+    &__platform-row {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 20px;
+
+        /**
+         * &::after.
+         */
+
+        &::after {
+
+            /**
+             * Content.
+             */
+
+            content: '';
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+
+            /**
+             * Sizing.
+             */
+
+            height: 1px;
+            width: calc(100% - 30px);
+
+            /**
+             * Background.
+             */
+
+            background-color: $brand-three;
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0.2;
+
+        }
+
+    }
+
+    /**
+     * &__platform-col.
+     */
+
+    &__platform-col {
+
+        /**
+         * Sizing.
+         */
+
+        width: 33.3%;
+
+    }
+
+    /**
+     * &__about-wrapper.
+     */
+
+    &__about-wrapper {
+
+        /**
+         * Opacity.
+         */
+
+        opacity: 0;
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+        /**
+         * Sizing.
+         */
+
+        width: 420px;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 25px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-bottom: 10px;
+
+        /**
+         * Overflow.
+         */
+
+        overflow: hidden;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        left: 50%;
+
+        /**
+         * Transform.
+         */
+        
+        transform: translateX(-58%);
+
+        /**
+         * &.hidden.
+         */
+
+        &.hidden {
+
+            /**
+             * Pointer events.
+             */
+
+            pointer-events: none;
+
+        }
+
+    }
+
+    /**
+     * &__about-pages-list.
+     */
+
+    &__about-pages-list {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+        /**
+         * Flex.
+         */
+
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        /**
+         * li.
+         */
+
+        li {
+
+            /**
+             * Flex.
+             */
+
+            flex-basis: 50%;
+
+            /**
+             * Sizing.
+             */
+
+            width: 50%;
+
+            /**
+             * Padding.
+             */
+
+            padding-bottom: 15px;
+
+            /**
+             * a.
+             */
+
+            a {
+
+                /**
+                 * Display.
+                 */
+
+                display: flex;
+
+                /**
+                 * Flex.
+                 */
+
+                align-items: center;
+
+                /**
+                 * Font related.
+                 */
+
+                font-weight: bold;
+                color: $brand-three;
+
+                /**
+                 * &:hover.
+                 */
+
+                &:hover {
+
+                    /**
+                     * 
+                     */
+
+                    color: $brand-one;
+
+                }
+
+                /**
+                 * i.
+                 */
+
+                i {
+
+                    /**
+                     * Margin.
+                     */
+
+                    margin-right: 10px;
+
+                    /**
+                     * img.
+                     */
+
+                    img {
+
+                        /**
+                         * Sizing.
+                         */
+
+                        width: 30px;
+                        height: 30px;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__about-contact-panel.
+     */
+
+    &__about-contact-panel {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 10px;
+        padding-bottom: 5px;
+
+        /**
+         * &::after.
+         */
+
+        &::after {
+
+            /**
+             * Content.
+             */
+
+            content: '';
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+            /**
+             * Tranform.
+             */
+
+            transform: translateX(-50%);
+
+            /**
+             * Sizing.
+             */
+
+            width: 120%;
+            height: 120%;
+
+            /**
+             * Background.
+             */
+
+            background-color: #e7f6f9;
+
+            /**
+             * Z-index.
+             */
+
+            z-index: 1;
+
+        }
+
+    }
+
+    /**
+     * &__about-contact-pages-list.
+     */
+
+    &__about-contact-pages-list {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 2;
+
+        /**
+         * li.
+         */
+
+        li {
+
+            /**
+             * Padding.
+             */
+
+            padding-bottom: 3px;
+            padding-left: 40px;
+
+            /**
+             * &.primary.
+             */
+
+            &.primary {
+
+                /**
+                 * Padding.
+                 */
+
+                padding-bottom: 4px;
+                padding-left: 0;
+
+                /**
+                 * a.
+                 */
+
+                a {
+
+                    /**
+                     * Font related.
+                     */
+
+                    font-weight: bold;
+                    @include font-size-m4();
+
+                    /**
+                     * &:hover.
+                     */
+
+                    &:hover {
+
+                        /**
+                         * Font related.
+                         */
+
+                        color: $brand-one;
+
+                    }
+
+                }
+
+            }
+
+            /**
+             * a.
+             */
+
+            a {
+
+                /**
+                 * Display.
+                 */
+
+                display: flex;
+
+                /**
+                 * Flex.
+                 */
+
+                align-items: center;
+
+                /**
+                 * Font related.
+                 */
+
+                color: $brand-three;
+                @include font-size-m2();
+
+                /**
+                 * &:hover.
+                 */
+
+                &:hover {
+
+                    /**
+                     * Font related.
+                     */
+                    
+                    color: $brand-one;
+
+                }
+
+                /**
+                 * i.
+                 */
+
+                i {
+
+                    /**
+                     * Margin.
+                     */
+
+                    margin-right: 10px;
+
+                    /**
+                     * img.
+                     */
+
+                    img {
+
+                        /**
+                         * Sizing.
+                         */
+
+                        width: 30px;
+                        height: 30px;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

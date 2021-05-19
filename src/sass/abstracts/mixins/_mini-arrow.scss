@@ -2,7 +2,7 @@
  * @mixin.
  */
 
-@mixin mini-arrow($color, $direction: down, $hovering: false) {
+@mixin mini-arrow($color, $direction: down, $hovering: false, $yTranslateOffset: 0) {
 
     /**
      * &::after.
@@ -42,6 +42,12 @@
         transition: transform 0.2s ease;
 
         /**
+         * Transform.
+         */
+
+        transform: translateY($yTranslateOffset + 0px);
+
+        /**
          * @include.
          */
 
@@ -70,7 +76,7 @@
                  * Transform.
                  */
 
-                transform: translateX(3px);
+                transform: translateX(3px) translateY($yTranslateOffset + 0px);
 
             }
 

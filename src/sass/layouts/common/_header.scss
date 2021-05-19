@@ -322,6 +322,12 @@
 
     }
 
+    /**
+     * Display.
+     */
+
+    display: flex;
+
 }
 
 /**
@@ -376,6 +382,20 @@
     cursor: pointer;
 
     /**
+     * &.active.
+     */
+
+    &.active {
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+
+    }
+
+    /**
      * &--with-arrow.
      */
 
@@ -400,6 +420,41 @@
             @include mini-arrow($brand-three);
             
         }
+
+    }
+
+    /**
+     * &::before.
+     */
+
+    &::before {
+
+        /**
+         * Content.
+         */
+
+        content: '';
+
+        /**
+         * Position.
+         */                
+
+        position: absolute;
+        top: -20px;
+        left: 0;
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 1;
+
+        /**
+         * Sizing.
+         */
+
+        width: 100%;
+        height: 40px;
 
     }
 
@@ -429,118 +484,7 @@
 
         }
 
-        /**
-         *
-         */
-
-        &::before {
-
-            /**
-             * Content.
-             */
-
-            content: '';
-
-            /**
-             * Background.
-             */
-
-            // background-color: rgba(255,20,40, 0.4);
-
-            /**
-             * Position.
-             */                
-
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            /**
-             * Z-index.
-             */
-
-            z-index: 1;
-
-            /**
-             * Sizing.
-             */
-
-            width: 100%;
-            height: 50px;
-
-        }
-
     }
-
-}               
-
-/**
- * .page-header__subnav-wrapper.
- */
-
-.page-header__subnav-wrapper {
-
-    /**
-     * Display.
-     */
-
-    display: none;
-
-    /**
-     * Background.
-     */
-
-    background-color: white;
-
-    /**
-     * Position.
-     */
-
-    position: absolute;
-    top: 45px;
-    left: -100px;
-
-    /**
-     * Sizing.
-     */
-
-    width: 960px;
-
-    /**
-     * @include.
-     */
-
-    @include breakpoint($b-desktop-only) {
-
-        /**
-         * Sizing.
-         */
-
-        width: 800px;
-
-    }
-
-    /**
-     * Padding.
-     */
-
-    padding-top: 40px;
-    padding-right: 15px;
-    padding-bottom: 0px;
-    padding-left: 15px;
-    
-    /**
-     * Border.
-     */
-
-    border-radius: 15px;
-
-    /**
-     * Box Shadow.
-     */
-
-    -webkit-box-shadow: 5px 5px 24px -4px rgba(0,0,0,0.55); 
-    box-shadow: 5px 5px 24px -4px rgba(0,0,0,0.55);
 
 }
 
@@ -596,19 +540,5 @@
         display: none;
 
     }
-
-    // /**
-    //  * @include.
-    //  */
-
-    // @include breakpoint($fluid) {
-
-    //     /**
-    //      * Sizing.
-    //      */
-
-    //     width: 60%;
-
-    // }
 
 }

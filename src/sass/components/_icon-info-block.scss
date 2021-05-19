@@ -6,8 +6,8 @@ $icon-width: 40px;
 $icon-height: 40px;
 $large-icon-width: 60px;
 $large-icon-height: 60px;
-$menu-icon-width: 45px;
-$menu-icon-height: 45px;
+$menu-icon-width: 35px;
+$menu-icon-height: 35px;
 
 /**
  * .icon-info-block.
@@ -115,16 +115,52 @@ $menu-icon-height: 45px;
         &:hover {
 
             /**
-             * Background.
+             * .icon-info-block__heading.
              */
 
-            background-color: cornflowerblue;
+            .icon-info-block__heading {
+
+                /**
+                 * Font related.
+                 */
+
+                color: $brand-one;
+
+            }
 
             /**
              * Font related.
              */
 
             text-decoration: none;
+
+            /**
+             * .icon-info-block__heading.
+             */
+
+            .icon-info-block__heading {
+
+                /**
+                 * @include.
+                 */
+
+                @include mini-arrow($brand-one, right, true, 1);
+
+            }
+            
+        }
+
+        /**
+         * .icon-info-block__heading.
+         */
+
+        .icon-info-block__heading {
+
+            /**
+             * @include.
+             */
+
+            @include mini-arrow($brand-one, right, false, 1);
 
         }
 
@@ -218,10 +254,16 @@ $menu-icon-height: 45px;
     &--menu &__heading {
 
         /**
+         * Margin.
+         */
+
+        margin-bottom: 1px;
+
+        /**
          * Font related.
          */
 
-        font-size: 24px;
+        font-size: 20px;
 
         /**
          * &::before.
@@ -233,9 +275,23 @@ $menu-icon-height: 45px;
              * Margin.
              */
 
-            margin-bottom: 3px;
+            margin-bottom: 0px;
 
         }
+
+    }
+
+    /**
+     * &--menu &__info.
+     */
+
+    &--menu &__info {
+
+        /**
+         * Font related.
+         */
+
+        font-size: 12px;
 
     }
 

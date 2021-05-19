@@ -10,6 +10,7 @@ import { Ready } from './utils/ready'
 
 import { Header } from './layouts/common/header'
 import { CoreDiagram } from './layouts/pages/governance-core-diagram'
+import { HeaderSubNavigation } from './layouts/common/header-sub-navigation'
 
 /**
  * Components.
@@ -40,6 +41,7 @@ export class App {
 
     private header : Header
     private coreDiagram : CoreDiagram
+    private headerSubNavigation : HeaderSubNavigation
 
     /**
      * Components.
@@ -70,11 +72,11 @@ export class App {
 
         this.header = new Header()
         this.coreDiagram = new CoreDiagram()
-
+        this.headerSubNavigation = new HeaderSubNavigation()
+        
         /**
          * Components.
          */
-
         
         this.linkWithGraphics = new LinkWithGraphics()
         this.bodyCurves = new BodyCurves()
@@ -108,6 +110,7 @@ export class App {
              */
 
             this.coreDiagram.start()
+            this.headerSubNavigation.start()
 
             /**
              * Start components.
