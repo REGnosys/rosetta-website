@@ -94,7 +94,7 @@ steps:
       image: codefresh/kubectl
       commands:
         - kubectl config get-contexts
-        - kubectl config use-context idev-cluster-1@Development
+        - kubectl config use-context dev-cluster-1@Development
         - kubectl config current-context
         - kubectl version --short
         - kubectl -n rosetta-website rollout restart deploy
