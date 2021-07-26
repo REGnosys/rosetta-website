@@ -1,0 +1,717 @@
+/**
+ * 
+ */
+
+.background-shade-1 { background-color: #f3f3f4; }
+.background-shade-2 { background-color: #f1f8df; }
+.background-shade-3 { background-color: #ddedae; }
+.background-shade-4 { background-color: #c9e27e; }
+.background-shade-5 { background-color: #8ccfa7; }
+.background-shade-6 { background-color: #d2dde7; }
+
+/**
+ * .pricing-blocks.
+ */
+
+.pricing-blocks {
+
+    /**
+     * Margin.
+     */
+
+    margin-top: -50px;
+    margin-bottom: 100px;
+
+    /**
+     * Display.
+     */
+
+    display: none;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-df-tablet) {
+        
+        /**
+         * Display.
+         */
+
+        display: block;
+
+    }
+
+}
+
+/**
+ * .pricing-block.
+ */
+
+.pricing-block {
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * Margin.
+     */
+
+    margin-bottom: 0;
+
+    /*
+     * &__header-level.
+     */
+
+    &__header-level {
+
+        /**
+         * Border.
+         */
+
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+        /**
+         * Padding.
+         */
+
+        padding: 20px 10px 20px 25px;
+
+        /**
+         * &--core.
+         */
+
+        &--core {
+
+            /**
+             * Background.
+             */
+
+            background-color: #bbdb5e;
+
+        }
+
+        /**
+         * &--advanced.
+         */
+
+        &--advanced {
+
+            /**
+             * Background.
+             */
+
+            background-color: #5ca575;
+
+        }
+
+    }
+
+    /**
+     * &__header-package-level.
+     */
+
+    &__header-package-level {
+
+        background-color: white;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+
+    }
+
+    /**
+     * &__header-pricing.
+     */
+
+    &__header-pricing {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 25px;
+        padding-left: 20px;
+        padding-bottom: 50px;
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 50px;
+
+        /**
+         * Background.
+         */
+
+        background-color: #414242;
+
+    }
+
+    /**
+     * &__header-pricing-text.
+     */
+
+    &__header-pricing-text {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+        /**
+         * Flex.
+         */
+
+        align-items: flex-end;
+
+        /**
+         * .price.
+         */
+
+        .price {
+
+            /**
+             * Font related.
+             */
+
+            font-size: 40px;
+            line-height: 36px;
+
+            /**
+             * Margin.
+             */
+            margin-right: 15px;
+
+        }
+
+    }
+
+    /**
+     * &__header-button.
+     */
+
+    &__header-button {
+
+        /**
+         * Display.
+         */
+
+        display: block;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        bottom: 0;
+        left: 10px;
+        right: 10px;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 20px;
+        padding-bottom: 19px;
+
+        /**
+         * Transform.
+         */
+
+        transform: translateY(50%);
+        
+        /**
+         * &::after.
+         */
+
+        &::after {
+            
+            /**
+             * Position.
+             */
+
+            position: absolute;
+            right: 20px;
+
+        }
+
+        /**
+         * &.expanded.
+         */
+
+        &.expanded {
+
+            /**
+             * Background.
+             */
+
+            background-color: #656767;
+
+            /**
+             * @include.
+             */
+
+            &::after {
+
+                /**
+                 * Transform.
+                 */
+
+                transform: translateX(5px) translateY(2px) rotate(90deg);
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__body-wrapper.
+     */
+
+    &__body-wrapper {
+
+        display: none;
+
+    }
+
+    /**
+     * &__body.
+     */
+
+    &__body {
+
+        /**
+         * Display.
+         */
+
+        display: none;
+
+        /**
+         * &.expanded.
+         */
+
+        &.expanded {
+
+            /**
+             * Display.
+             */
+
+            display: block;
+
+        }
+
+    }
+
+    /**
+     * &__body-row-header.
+     */
+
+    &__body-row-header {
+
+        /**
+         * Background.
+         */
+
+        background-color: #414242;
+
+        /**
+         * Padding.
+         */
+
+        padding-left: 25px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        /**
+         * &--expandable.
+         */
+
+        &--expandable {
+
+            /**
+             * Cursor.
+             */
+
+            cursor: pointer;
+
+            /**
+             * &:hover, &.expanded.
+             */
+
+            &:hover, &.expanded {
+
+                /**
+                 * Background.
+                 */
+
+                background-color: #656767;
+
+            }
+
+            /**
+             * p.
+             */
+
+            p {
+
+                /**
+                 * @include.
+                 */
+
+                @include mini-arrow($brand-aux-two, right);
+
+                /**
+                 * &::after.
+                 */
+
+                &::after {
+
+                    /**
+                     * Transform.
+                     */
+                    
+                    transform: translateX(5px) translateY(2px);
+
+                }
+
+            }
+
+            /**
+             * &.expanded.
+             */
+
+            &.expanded {
+
+                /**
+                 * p.
+                 */
+                
+                p {
+
+                    /**
+                     * @include.
+                     */
+
+                    &::after {
+
+                        /**
+                         * Transform.
+                         */
+
+                        transform: translateX(5px) translateY(2px) rotate(90deg);
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__body-row-body.
+     */
+
+    &__body-row-body {
+
+        /**
+         * &.expanded.
+         */
+
+        &.expanded {
+
+            /**
+             * .expanded-content.
+             */
+
+            .expanded-content {
+
+                /**
+                 * Display.
+                 */
+
+                display: block;
+
+            }
+
+            /**
+             * .unexpanded-content.
+             */
+
+            .unexpanded-content {
+
+                /**
+                 * Display.
+                 */
+
+                display: none;
+
+            }
+
+        }
+        
+    }
+
+    /**
+     * &__body-row-body-feature-inset.
+     */
+
+    &__body-row-body-feature-inset {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        /**
+         * .inset-content.
+         */
+
+        .inset-content {
+
+            /**
+             * Position.
+             */
+
+            position: relative;
+            left: 50%;
+
+            /**
+             * Display.
+             */
+
+            display: flex;
+
+            /**
+             * Flex.
+             */
+
+            align-items: flex-start;
+
+            /**
+             * Sizing.
+             */
+
+            width: 325px;
+
+            /**
+             * Transform.
+             */
+            
+            transform: translateX(-45%);
+
+        }
+
+        /**
+         * .title.
+         */
+
+        .title {
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 5px;
+
+        }
+
+        /**
+         * ul.
+         */
+
+        ul {
+
+            /**
+             * li.
+             */
+
+            li {
+
+                /**
+                 * Font related.
+                 */
+
+                @include font-size-m3();
+
+            }
+
+        }
+
+        /**
+         * img.
+         */
+
+        img {
+
+            /**
+             * Sizing.
+             */
+
+            width: 55px;
+
+            /**
+             * Margin.
+             */
+
+            margin-right: 10px;
+
+        }
+
+        /**
+         * .expanded-content.
+         */
+
+        .expanded-content {
+
+            /**
+             * Display.
+             */
+
+            display: none;
+
+        }
+
+    }
+
+    /**
+     * &__body-button.
+     */
+
+    &__body-button {
+
+        /**
+         * Display.
+         */
+
+        display: block;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 20px;
+        padding-bottom: 19px;
+
+        /**
+         * Margin.
+         */
+
+        margin-left: 10px;
+        margin-right: 10px;
+
+        /**
+         * &::after.
+         */
+
+        &::after {
+            
+            /**
+             * Position.
+             */
+
+            position: absolute;
+            right: 20px;
+
+        }
+
+    }
+
+}
+
+/**
+ * .block-divider.
+ */
+
+.block-divider {
+
+
+    /**
+     * Sizing.
+     */
+
+    height: 1px;
+
+    /**
+     * Padding.
+     */
+
+    padding-top: 15px;
+    padding-bottom: 35px;
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * &::after.
+     */
+
+    &::after {
+
+        /**
+         * Content.
+         */
+
+        content: '';
+
+        /**
+         * Display.
+         */
+
+        display: block;
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+        left: 0;
+        right: 0;
+
+        /**
+         * Sizing.
+         */
+
+        height: 1px;
+        width: 100%;
+
+        /**
+         * Background.
+         */
+
+        background-color: $brand-three;
+
+    }
+
+}

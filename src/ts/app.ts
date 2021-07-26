@@ -11,6 +11,8 @@ import { Ready } from './utils/ready'
 import { Header } from './layouts/common/header'
 import { CoreDiagram } from './layouts/pages/governance-core-diagram'
 import { HeaderSubNavigation } from './layouts/common/header-sub-navigation'
+import { PricingTable } from './layouts/pages/pricing-table'
+import { PricingBlocks } from './layouts/pages/pricing-blocks'
 
 /**
  * Components.
@@ -42,6 +44,8 @@ export class App {
     private header : Header
     private coreDiagram : CoreDiagram
     private headerSubNavigation : HeaderSubNavigation
+    private pricingTable : PricingTable
+    private pricingBlocks : PricingBlocks
 
     /**
      * Components.
@@ -73,7 +77,9 @@ export class App {
         this.header = new Header()
         this.coreDiagram = new CoreDiagram()
         this.headerSubNavigation = new HeaderSubNavigation()
-        
+        this.pricingTable = new PricingTable()
+        this.pricingBlocks = new PricingBlocks() 
+
         /**
          * Components.
          */
@@ -111,6 +117,8 @@ export class App {
 
             this.coreDiagram.start()
             this.headerSubNavigation.start()
+            this.pricingTable.start()
+            this.pricingBlocks.start()
 
             /**
              * Start components.
