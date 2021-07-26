@@ -17,6 +17,20 @@
     margin-bottom: 20px;
 
     /**
+     * lottie-player.
+     */
+
+    lottie-player {
+
+        /**
+         * Display.
+         */
+
+        display: inline-block;
+
+    }
+
+    /**
      * &--hero.
      */
 
@@ -127,6 +141,20 @@
          */
 
         transform: translateY(0%) translateX(11%);
+
+    }
+
+    /**
+     * &--center.
+     */
+
+    &--center {
+
+        /**
+         * Background.
+         */
+
+        text-align: center;
 
     }
 
