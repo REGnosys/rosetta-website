@@ -382,6 +382,34 @@
     cursor: pointer;
 
     /**
+     * a.
+     */
+
+    a {
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-aux-one;
+
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+
+            /**
+             * Font related.
+             */
+
+            color: $brand-three;
+
+        }
+
+    }
+
+    /**
      * &.active.
      */
 
@@ -421,40 +449,40 @@
             
         }
 
-    }
-
-    /**
-     * &::before.
-     */
-
-    &::before {
-
         /**
-         * Content.
+         * &::before.
          */
 
-        content: '';
+        &::before {
 
-        /**
-         * Position.
-         */                
+            /**
+             * Content.
+             */
 
-        position: absolute;
-        top: -20px;
-        left: 0;
+            content: '';
 
-        /**
-         * Z-index.
-         */
+            /**
+             * Position.
+             */                
 
-        z-index: 1;
+            position: absolute;
+            top: -20px;
+            left: 0;
 
-        /**
-         * Sizing.
-         */
+            /**
+             * Z-index.
+             */
 
-        width: 100%;
-        height: 40px;
+            z-index: 1;
+
+            /**
+             * Sizing.
+             */
+
+            width: 100%;
+            height: 40px;
+
+        }
 
     }
 
