@@ -8,7 +8,7 @@
      * Border.
      */
 
-    border: 1px solid $brand-one;
+    // border: 1px solid $brand-one;
 
     /**
      * Margin.
@@ -27,6 +27,28 @@
          */
 
         display: inline-block;
+
+    }
+
+    /**
+     * &--small.
+     */
+
+    &--small {
+
+        /**
+         * lottie-player.
+         */
+
+        lottie-player {
+
+            /**
+             * Sizing.
+             */
+
+            width: 200px;
+
+        }
 
     }
 
@@ -120,7 +142,7 @@
          * Transform.
          */
 
-        transform: translateY(-25%) translateX(13%);
+        transform: translateY(-8%) translateX(13%);
 
     }
 
