@@ -26,6 +26,7 @@
     "countup.js": "^2.0.7",
     "easydropdown": "^4.2.0",
     "fabric": "^4.3.1",
+    "medium-zoom": "^1.0.6",
     "scrollama": "^2.2.1",
     "velocity-animate": "^2.0.6"
   },
