@@ -149,7 +149,7 @@ export class App {
 
             this.scrollsIntoView.start()
             this.numberCountUp.start()
-            // this.animatedIcons.start()
+            this.animatedIcons.start()
             this.lottieAniations.start()
             this.mediumZoom.start()
 
