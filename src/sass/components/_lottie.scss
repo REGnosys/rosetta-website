@@ -1,0 +1,162 @@
+/**
+ * .lottie-wrapper.
+ */
+
+.lottie-wrapper {
+
+    /**
+     * Border.
+     */
+
+    border: 1px solid $brand-one;
+
+    /**
+     * Margin.
+     */
+
+    margin-bottom: 20px;
+
+    /**
+     * &--hero.
+     */
+
+    &--hero {
+
+        /**
+         * Border.
+         */
+
+        border: none;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        /**
+         * Sizing.
+         */
+
+        width: 150vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-40%) translateX(10%);
+
+    }
+    
+    /**
+     * &--design.
+     */
+
+    &--design {
+
+        /**
+         * Sizing.
+         */
+
+        width: 65vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-13%) translateX(80%);
+
+    }
+
+    /**
+     * &--ingest.
+     */
+
+    &--ingest {
+
+        /**
+         * Sizing.
+         */
+
+        width: 120vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-15%) translateX(35%);
+
+    }
+
+    /**
+     * &--monitor.
+     */
+
+    &--monitor {
+
+        /**
+         * Sizing.
+         */
+
+        width: 100vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-25%) translateX(13%);
+
+    }
+
+    /**
+     * &--platform.
+     */
+
+    &--platform {
+
+        /**
+         * Sizing.
+         */
+
+        width: 100vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(0%) translateX(11%);
+
+    }
+
+}
+
+/**
+ * .platform-hero.
+ */
+
+.platform-hero {
+
+    /**
+     * Padding.
+     */
+
+    padding-bottom: 22vw;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-tablet-only) {
+
+        /**
+         * Padding.
+         */
+
+        padding-bottom: 10vw !important;
+
+    }
+
+}
+

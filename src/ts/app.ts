@@ -30,6 +30,7 @@ import { BasicForms } from './components/basic-forms'
 import { AnimatedIcons } from './effects/animated-icons'
 import { ScrollsIntoView } from './effects/scolls-into-view'
 import { NumberCountUp  } from './effects/number-count-up'
+import { LottieAnimations } from './effects/lottie-animations'
 
 /**
  * App.
@@ -63,6 +64,7 @@ export class App {
     private animatedIcons : AnimatedIcons
     private scrollsIntoView : ScrollsIntoView
     private numberCountUp : NumberCountUp
+    private lottieAniations : LottieAnimations
 
     /**
      * constructor.
@@ -96,6 +98,7 @@ export class App {
         this.animatedIcons = new AnimatedIcons()
         this.scrollsIntoView = new ScrollsIntoView()
         this.numberCountUp = new NumberCountUp()
+        this.lottieAniations = new LottieAnimations()
 
     }
 
@@ -136,6 +139,7 @@ export class App {
             this.scrollsIntoView.start()
             this.numberCountUp.start()
             // this.animatedIcons.start()
+            this.lottieAniations.start()
 
         })
 
