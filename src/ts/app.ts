@@ -10,6 +10,7 @@ import { Ready } from './utils/ready'
 
 import { Header } from './layouts/common/header'
 import { Footer } from './layouts/common/footer'
+import { MobileNav } from './layouts/common/mobile-nav'
 import { CoreDiagram } from './layouts/pages/governance-core-diagram'
 import { HeaderSubNavigation } from './layouts/common/header-sub-navigation'
 import { PricingTable } from './layouts/pages/pricing-table'
@@ -46,6 +47,7 @@ export class App {
 
     private header : Header
     private footer : Footer
+    private mobileNav : MobileNav
     private coreDiagram : CoreDiagram
     private headerSubNavigation : HeaderSubNavigation
     private pricingTable : PricingTable
@@ -82,6 +84,7 @@ export class App {
 
         this.header = new Header()
         this.footer = new Footer()
+        this.mobileNav = new MobileNav()
         this.coreDiagram = new CoreDiagram()
         this.headerSubNavigation = new HeaderSubNavigation()
         this.pricingTable = new PricingTable()
@@ -125,6 +128,7 @@ export class App {
              */
 
             this.footer.start()
+            this.mobileNav.start()
             this.coreDiagram.start()
             this.headerSubNavigation.start()
             this.pricingTable.start()
