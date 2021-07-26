@@ -94,7 +94,7 @@
          * Margin.
          */
 
-        margin-bottom: 15px;
+        margin-bottom: 5px;
 
         /**
          * @include.
@@ -106,7 +106,7 @@
          * Font related.
          */
 
-        @include font-size-m4();
+        @include font-size-m2();
         color: $brand-one;
 
     }
@@ -159,9 +159,145 @@
                      */
 
                     text-decoration: none;
-                    color: $brand-one;
+                    color: $brand-two;
 
                 }
+
+            }
+
+            /**
+             * &.platform.
+             */
+
+            &.platform {
+
+                /**
+                 * Padding.
+                 */
+
+                padding-top: 15px;
+
+                /**
+                 * a.
+                 */
+
+                a {
+
+                    /**
+                     * Padding.
+                     */
+
+                    padding-top: 10px;
+
+                    /**
+                     * Border.
+                     */
+
+                    border-top: 1px solid $brand-one;
+                    
+                }
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__social-list.
+     */
+
+    &__social-list {
+
+        /**
+         * li.
+         */
+
+        li {
+
+            /**
+             * Display.
+             */
+
+            display: inline-block;
+
+            /**
+             * Margin.
+             */
+
+            margin-right: 30px;
+
+            /**
+             * a.
+             */
+
+            a {
+
+                /**
+                 * &:hover.
+                 */
+
+                &:hover {
+
+                    /**
+                     * svg.
+                     */
+
+                    svg {
+
+                        /**
+                         * path, rect.
+                         */
+
+                        path, rect {
+
+                            /**
+                             * Fill.
+                             */
+
+                            fill: $brand-one;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            /**
+             * i.
+             */
+
+            i {
+
+                /**
+                 * img, svg.
+                 */
+
+                img, svg {
+
+                    /**
+                     * Sizing.
+                     */
+
+                    width: 16px;
+
+                }
+
+            }
+
+            /**
+             * span.
+             */
+
+            span {
+
+                /**
+                 * Display.
+                 */
+
+                display: none;
 
             }
 

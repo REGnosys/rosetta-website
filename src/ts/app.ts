@@ -9,6 +9,7 @@ import { Ready } from './utils/ready'
  */
 
 import { Header } from './layouts/common/header'
+import { Footer } from './layouts/common/footer'
 import { CoreDiagram } from './layouts/pages/governance-core-diagram'
 import { HeaderSubNavigation } from './layouts/common/header-sub-navigation'
 import { PricingTable } from './layouts/pages/pricing-table'
@@ -44,6 +45,7 @@ export class App {
      */
 
     private header : Header
+    private footer : Footer
     private coreDiagram : CoreDiagram
     private headerSubNavigation : HeaderSubNavigation
     private pricingTable : PricingTable
@@ -79,6 +81,7 @@ export class App {
          */
 
         this.header = new Header()
+        this.footer = new Footer()
         this.coreDiagram = new CoreDiagram()
         this.headerSubNavigation = new HeaderSubNavigation()
         this.pricingTable = new PricingTable()
@@ -121,6 +124,7 @@ export class App {
              * Start layouts.
              */
 
+            this.footer.start()
             this.coreDiagram.start()
             this.headerSubNavigation.start()
             this.pricingTable.start()
