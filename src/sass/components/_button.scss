@@ -114,4 +114,30 @@ $text-hover-color:       $brand-aux-two;
 
     }
 
+    /**
+     * 
+     */
+
+    &--theme-b {
+
+        background-color: $brand-aux-one;
+
+        color: white;
+
+        /**
+         * @include.
+         */
+
+        @include mini-arrow(white, right);
+
+        &:hover {
+
+            background-color: $brand-two;
+
+        }
+
+
+
+    }
+
 }

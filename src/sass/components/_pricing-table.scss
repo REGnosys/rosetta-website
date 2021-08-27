@@ -1,0 +1,848 @@
+/**
+ * 
+ */
+
+.background-shade-1 { background-color: #f3f3f4; }
+.background-shade-2 { background-color: #f1f8df; }
+.background-shade-3 { background-color: #ddedae; }
+.background-shade-4 { background-color: #c9e27e; }
+.background-shade-5 { background-color: #8ccfa7; }
+.background-shade-6 { background-color: #d2dde7; }
+
+/**
+ * 
+ */
+
+.padding-left-35pc { padding-left: 35% !important; }
+.pl-7-5 { padding-left: 7.5px; }z
+.pr-7-5 { padding-right: 7.5px; }
+
+/**
+ * .pricing-table.
+ */
+
+.pricing-table {
+
+    /**
+     * Display.
+     */
+
+    display: none;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-desktop) {
+
+        /**
+         * Display.
+         */
+
+        display: block;
+
+    }
+
+    /**
+     * Margin.
+     */
+
+    margin-top: -80px;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint(min-width 1300px) {
+
+        /**
+         * Margin.
+         */
+
+        margin-top: -50px;
+
+    }
+
+    /**
+     * &__header-levels.
+     */
+
+    &__header-levels {
+
+        /**
+         * 
+         */
+
+        .inset {
+
+            /**
+             * Padding.
+             */
+
+            padding-left: 20px;
+            padding-top: 30px;
+            padding-bottom: 20px;
+
+            /**
+             * Border.
+             */
+
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+
+        }
+
+        /**
+         * &--core.
+         */
+
+        &--core {
+
+            /**
+             * .inset.
+             */
+
+            .inset {
+
+                /**
+                 * Background.
+                 */
+
+                background-color: #bbdb5e;
+
+            }
+
+            /**
+             * .color-fill-expansion
+             */
+
+            .color-fill-expansion {
+
+                /**
+                 * Sizng.
+                 */
+
+                background-color: #bbdb5e;
+
+            }
+
+        }
+
+        /**
+         * &--advanced.
+         */
+
+        &--advanced {
+
+            /**
+             * .inset.
+             */
+
+            .inset {
+
+                /**
+                 * Background.
+                 */
+
+                background-color: #5ca575;
+
+            }
+
+            /**
+             * .color-fill-expansion
+             */
+
+            .color-fill-expansion {
+
+                /**
+                 * Sizng.
+                 */
+
+                background-color: #5ca575;
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__header.
+     */
+
+    &__header {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+    }
+    
+    /**
+     * &__header-column.
+     */
+
+    &__header-column {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 30px;
+
+    }
+
+    /**
+     * &__header-column-inset.
+     */
+
+    &__header-column-inset {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Background.
+         */
+
+        background-color: $brand-three;
+
+        /**
+         * Border.
+         */
+
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+        /**
+         * Padding.
+         */
+
+        padding-bottom: 50px;
+
+        /**
+         * Sizing.
+         */
+
+        height: 100%;
+
+    }
+
+    /**
+     * &__header-column-heading.
+     */
+
+    &__header-column-heading {
+
+        /**
+         * Background.
+         */
+
+        background-color: white;
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 0;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+
+        /**
+         * Font related.
+         */
+
+        color: $brand-three;
+
+    }
+
+    /**
+     * &__header-column-price-container.
+     */
+
+    &__header-column-price-container {
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    /**
+     * &__header-column-price.
+     */
+
+    &__header-column-price {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 0;
+
+    }
+
+    /**
+     * &__header-column-price-note.
+     */
+
+    &__header-column-price-note {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 0;
+
+    }
+
+    /**
+     * &__header-column-button.
+     */
+
+    &__header-column-button {
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 20px;
+        padding-bottom: 19px;
+
+        /**
+         * Postion.
+         */
+
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+        left: 15px;
+
+        /**
+         * Transform.
+         */
+
+        transform: translateY(50%);
+
+        /**
+         * Font related.
+         */
+
+        white-space: nowrap;
+        font-size: 14px;
+        letter-spacing: 1px;
+
+        /**
+         * &::after.
+         */
+
+        &::after {
+            
+            /**
+             * Position.
+             */
+
+            position: absolute;
+            right: 22px;
+
+        }
+
+    }
+
+    /**
+     * &__row-header.
+     */
+
+    &__row-header {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+        /**
+         * &--expandable.
+         */
+
+        &--expandable {
+
+            /**
+             * Cursor.
+             */
+
+            cursor: pointer;
+
+            /**
+             * &:hover, &.expanded.
+             */
+
+            &:hover, &.expanded {
+
+                /**
+                 * .inset.
+                 */
+
+                .inset {
+
+                    /**
+                     * Background.
+                     */
+
+                    background-color: #515151;
+
+                }
+
+            }
+
+            /**
+             * p.
+             */
+
+            p {
+
+                /**
+                 * @include.
+                 */
+
+                @include mini-arrow($brand-aux-two, right);
+
+                /**
+                 * &::after.
+                 */
+
+                &::after {
+
+                    transform: translateX(5px) translateY(2px);
+
+                }
+
+            }
+
+            /**
+             * &.expanded.
+             */
+
+            &.expanded {
+
+                /**
+                 * p.
+                 */
+                
+                p {
+
+                    /**
+                     * @include.
+                     */
+
+                    &::after {
+
+                        transform: translateX(5px) translateY(2px) rotate(90deg);
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        /**
+         * .inset.
+         */
+
+        .inset {
+
+            /**
+             * Background.
+             */
+
+            background-color: #414242;
+
+            /**
+             * Border.
+             */
+
+            border-radius: 4px;
+
+            /**
+             * Padding.
+             */
+
+            padding-top: 15px;
+            padding-left: 20px;
+            padding-bottom: 15px;
+
+            /**
+             * p.
+             */
+
+            p {
+
+                /**
+                 * Margin.
+                 */
+
+                margin-bottom: 0;
+
+                /**
+                 * Font related.
+                 */
+
+                @include font-weight-semi-bold();
+                color: #bed857;
+
+            }
+
+        }
+
+
+    }
+
+    /**
+     * &__row-content-wrapper.
+     */
+
+    &__row-content-wrapper {
+
+        /**
+         * &.expanded.
+         */
+
+        &.expanded {
+
+            /**
+             * .expanded-content.
+             */
+
+            .expanded-content {
+
+                /**
+                 * Display.
+                 */
+
+                display: block;
+
+            }
+
+            /**
+             * .unexpanded-content.
+             */
+
+            .unexpanded-content {
+
+                /**
+                 * Display.
+                 */
+
+                display: none;
+
+            }
+
+            /**
+             * .pricing-table__row-content-inset.
+             */
+
+            .pricing-table__row-content-inset {
+                
+                /**
+                 * Padding.
+                 */
+
+                padding-bottom: 3px;
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__row-content.
+     */
+
+    &__row-content {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 15px;
+
+        /**
+         * .inset.
+         */
+
+        .inset {
+
+            /**
+             * Padding.
+             */
+
+            padding-top: 10px;
+            padding-bottom: 10px;
+
+            /**
+             * Font related.
+             */
+
+            text-align: center;
+
+            /**
+             * p.
+             */
+
+            p {
+               
+                /**
+                 * Font related.
+                 */
+
+                @include font-size-m4();
+
+                /**
+                 * Margin.
+                 */
+
+                margin-bottom: 0;
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__row-content-inset.
+     */
+
+    &__row-content-inset {
+
+        /**
+         * Padding.
+         */
+    
+        padding-top: 15px;
+        padding-bottom: 10px;
+
+        /**
+         * Sizing.
+         */
+
+        height: 100%;
+
+        /**
+         * &--two-col-with-icon.
+         */
+
+        &--two-col-with-icon {
+
+            /**
+             * Display.
+             */
+
+            display: flex;
+
+            /**
+             * Flex.
+             */
+
+            flex-direction: row;
+            align-items: flex-start;
+
+            /**
+             * Padding.
+             */
+
+            padding-left: 5px;
+
+            /**
+             * p.
+             */
+        
+            p {
+
+                /**
+                 * Margin.
+                 */
+
+                margin-bottom: 5px;
+
+            }
+
+            /**
+             * img.
+             */
+
+            img {
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 40px;
+
+                /**
+                 * Margin.
+                 */
+
+                margin-right: 8px;
+
+            }
+
+            /**
+             * Font related.
+             */
+
+            text-align: left;
+
+            /**
+             * div.
+             */
+
+            div {
+
+                /**
+                 * 
+                 */
+
+                width: 100%;
+
+                /**
+                 * ul.
+                 */
+
+                ul {
+
+                    /**
+                     * Display.
+                     */
+
+                    display: block;
+
+                    /**
+                     * Margin.
+                     */
+
+                    margin-top: 5px;
+
+                    /**
+                     * Sizing.
+                     */
+
+                    width: 100%;
+
+                    /**
+                     * li.
+                     */
+
+                    li {
+
+                        /**
+                         * Display.
+                         */
+
+                        display: block;
+
+                        /**
+                         * Sizing.
+                         */
+
+                        width: 100%;
+
+                        /**
+                         * Margin.
+                         */
+
+                        margin-bottom: 4px;
+
+                        /**
+                         * Padding.
+                         */
+
+                        padding-top: 4px;
+
+                        /**
+                         * Font related.
+                         */
+
+                        font-size: 13px;
+
+                        /**
+                         * Border.
+                         */
+
+                        border-top: 1px solid $brand-three;
+                        border-style: dotted;
+
+                    }                  
+
+                }
+                
+            }
+
+            /**
+             * .title.
+             */
+
+            .title {
+
+                /**
+                 * Margin.
+                 */
+
+                margin-bottom: 0;
+
+            }
+
+            /**
+             * .subtitle.
+             */
+
+            .subtitle {
+
+                /**
+                 * Font related.
+                 */
+
+                font-size: 14px;
+                line-height: 18px;
+
+            }
+
+            /**
+             * .expanded-content.
+             */
+
+            .expanded-content {
+
+                /**
+                 * Display.
+                 */
+
+                display: none;
+
+            }
+
+        }
+
+    }
+
+}
+
+

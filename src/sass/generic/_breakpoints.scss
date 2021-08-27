@@ -59,6 +59,15 @@ $b-desktop-only: $bs-large-only;
  */
 
 $bs-extra-large: min-width 1200px;
-$bs-extra-large-only: $bs-extra-large;
+$bs-extra-large-only: 1200px 1399px;
 $b-large-desktop: $bs-extra-large;
-$b-large-desktop-only: $b-large-desktop;
+$b-large-desktop-only: $bs-extra-large-only;
+
+/**
+ * bootstrap xxl. (extra large desktop).
+ */
+
+$bs-extra-extra-large: min-width 1400px;
+$bs-extra-extra-large-only: $bs-extra-extra-large;
+$b-extra-large-desktop: $bs-extra-extra-large;
+$b-extra-large-desktop-only: $bs-extra-extra-large-only;

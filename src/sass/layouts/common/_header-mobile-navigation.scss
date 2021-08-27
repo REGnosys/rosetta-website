@@ -1,0 +1,389 @@
+/**
+ * .header-mobile-navigation.
+ */
+
+.header-mobile-navigation {
+
+    /**
+     * Background.
+     */
+
+    background-color: white;
+
+    /**
+     * Display.
+     */
+
+    display: none;
+
+    /**
+     * Position.
+     */
+
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+
+    /**
+     * Z-index.
+     */
+
+    z-index: 100;
+
+    /**
+     * Padding.
+     */
+
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($bs-small) {
+        
+        /**
+         * Padding.
+         */
+
+        padding-top: 10px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+
+    }
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-df-tablet) {
+
+        display: block;
+
+    }
+
+    /**
+     * Border.
+     */
+
+    border-radius: 10px;
+
+    /**
+     * Shadow.
+     */
+
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.21);
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.21);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.21);
+
+    /**
+     * Opacity.
+     */
+
+    opacity: 0;
+
+    /**
+     * Pointer.
+     */
+
+    pointer-events: none;
+
+    /**
+     * Transform.
+     */
+
+    transform: translateY(20px);
+
+    /**
+     * Transition.
+     */
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    /**
+     * &.show.
+     */
+
+    &.show {
+
+        /**
+         * Opacity.
+         */
+
+        opacity: 1;
+
+        /**
+         * Pointer.
+         */
+
+        pointer-events: all;
+
+        /**
+         * Transform.
+         */
+
+        transform: translateY(0);
+
+    }
+
+    /**
+     * &__close.
+     */
+
+    &__close {
+
+        /**
+         * Display.
+         */
+
+        display: block;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 20px;
+        right: 20px;
+
+        /**
+         * Sizing.
+         */
+
+        width: 15px;
+        height: 15px;
+
+        /**
+         * img, svg.
+         */
+
+        img, svg {
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /**
+             * Sizing.
+             */
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+    }
+
+    /**
+     * &__block.
+     */
+
+    &__block {
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 15px;
+        padding-bottom: 0;
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 0;
+
+        /**
+         * Border.
+         */
+
+        border-bottom: 1px solid rgba(#bdbec0, 0.2);
+
+        /**
+         * &:last-child.
+         */
+
+        &:last-child {
+
+            /**
+             * Border.
+             */
+
+            border-bottom: 0;
+
+            /**
+             * Padding.
+             */
+
+            padding-bottom: 0;
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 0;
+
+        }
+
+    }
+
+    /**
+     * &__block-heading.
+     */
+
+    &__block-heading {
+
+        /**
+         * Font related.
+         */
+
+        font-size: 22px;
+        font-weight: 600;
+        color: rgba(#bdbec0, 0.5);
+
+    }
+
+    /**
+     * &__nav-item-list.
+     */
+
+    &__nav-item-list {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+        /**
+         * Flex.
+         */
+
+        flex-wrap: wrap;
+
+    }
+
+    /**
+     * &__nav-item.
+     */
+
+    &__nav-item {
+
+        /**
+         * Flex.
+         */
+
+        flex-basis: 33%;
+
+        /**
+         * @include.
+         */
+        
+        @include breakpoint($b-df-mobile-landscape) {
+            
+            /**
+             * Flex.
+             */
+
+            flex-basis: 50%;
+
+        }
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 10px;
+
+    }
+
+}
+
+/**
+ * .icon-info-block.
+ */
+
+.icon-info-block {
+
+    /**
+     * &--mobile-nav &__heading.
+     */
+
+    &--mobile-nav &__heading {
+
+        /**
+         * @include.
+         */
+        
+        @include breakpoint($b-df-mobile-landscape) {
+            
+            /**
+             * Font related.
+             */
+    
+            font-size: 15px;            
+
+        }
+
+    }    
+
+    /**
+     * &--mobile-nav &__icon.
+     */
+
+    &--mobile-nav &__icon {
+
+        /**
+         * @include.
+         */
+        
+        @include breakpoint($b-df-mobile-landscape) {
+            
+            /**
+             * Sizing.
+             */
+
+            width: $mobile-nav-icon-width;
+            height: $mobile-nav-icon-height;
+
+        }
+
+    }
+
+    /**
+     * &--mobile-nav &__info.
+     */
+
+    &--mobile-nav &__info {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 5px;
+
+        /**
+         * @include.
+         */
+        
+        @include breakpoint($b-df-mobile-landscape) {
+            
+            /**
+             * Display.
+             */
+
+            display: none;
+
+        }
+
+    }
+
+}

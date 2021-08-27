@@ -8,6 +8,8 @@ $large-icon-width: 60px;
 $large-icon-height: 60px;
 $menu-icon-width: 35px;
 $menu-icon-height: 35px;
+$mobile-nav-icon-width: 32px;
+$mobile-nav-icon-height: 32px;
 
 /**
  * .icon-info-block.
@@ -87,6 +89,94 @@ $menu-icon-height: 35px;
 
         width: $icon-width;
         height: $icon-height;
+
+    }
+
+    /**
+     * &--no-arrow.
+     */
+
+    &--no-arrow {
+
+        /**
+         * .icon-info-block__heading.
+         */
+
+        .icon-info-block__heading {
+            
+            /**
+             * &::after.
+             */
+
+            &::after {
+    
+                /**
+                 * Content.
+                 */
+
+                content: none !important;
+    
+            }
+
+        }
+
+    }
+
+    /**
+     * &--no-prefix.
+     */
+
+    &--no-prefix {
+
+        /**
+         * .icon-info-block__heading.
+         */
+
+        .icon-info-block__heading {
+            
+            /**
+             * &::before.
+             */
+
+            &::before {
+    
+                /**
+                 * Content.
+                 */
+
+                content: none !important;
+    
+            }
+
+        }
+
+    }
+
+    /**
+     * &--vertical-align-heading.
+     */
+
+    &--vertical-align-heading {
+
+        /**
+         * .icon-info-block__col-info.
+         */
+
+        .icon-info-block__col-info {
+
+            /**
+             * Display.
+             */
+
+            display: flex;
+
+            /**
+             * Flex.
+             */
+
+            align-items: center;
+
+        }
 
     }
 

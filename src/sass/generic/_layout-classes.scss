@@ -6,6 +6,17 @@ $max: 250;
 $i: 0;
 
 /**
+ * 0. Breakpoint independent.
+ */
+
+.mt-#{$i} { margin-top: #{$i}px; }
+.mb-#{$i} { margin-bottom: #{$i}px; }
+.pb-#{$i} { padding-bottom: #{$i}px; }
+.pt-#{$i} { padding-top: #{$i}px; }
+.pr-#{$i} { padding-right: #{$i}px; }
+.pl-#{$i} { padding-left: #{$i}px; }
+ 
+/**
  * Loop.
  */
 
@@ -30,6 +41,12 @@ $i: 0;
     .pt-#{$i} { padding-top: #{$i}px; }
     .pr-#{$i} { padding-right: #{$i}px; }
     .pl-#{$i} { padding-left: #{$i}px; }
+
+    /**
+     * Extra large desktop.
+     */
+
+    .pb-xld-o-#{$i} { @include breakpoint($b-extra-large-desktop) { padding-bottom: #{$i}px !important; } }
     
     /**
      * Large desktop.
@@ -100,8 +117,10 @@ $i: 0;
 .display-none-mobile-landscape-only, .d-n-ml-o  { @include breakpoint($b-mobile-landscape-only) { display: none; } }
 .display-none-mobile-only, .d-n-m-o             { @include breakpoint($b-mobile-only)           { display: none; } }
 .display-block-large-desktop-only, .d-b-ld-o    { @include breakpoint($b-large-desktop-only)    { display: block; } }
+.display-block-tablet-only, .d-b-t-o            { @include breakpoint($b-tablet-only)           { display: block; } }
 .display-block-mobile-only, .d-b-m-o            { @include breakpoint($b-mobile-only)           { display: block; } }
 .display-block-mobile-landscape-only, .d-b-ml-o { @include breakpoint($b-mobile-landscape-only) { display: block; } }
+.display-inline-block                           { display: inline-block; }
 
 /**
  * Position.

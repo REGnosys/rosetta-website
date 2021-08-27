@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 		<link href="/assets/css/styles.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 						<ul class="page-header__nav-list" data-nav>
 							<li class="page-header__nav-list-item page-header__nav-list-item--with-arrow" data-nav-list-item data-sub-nav-ref="products">Products</li>
 							<li class="page-header__nav-list-item page-header__nav-list-item--with-arrow" data-nav-list-item data-sub-nav-ref="about">About</li>
-							<li class="page-header__nav-list-item">Pricing</li>
+							<li class="page-header__nav-list-item"><a href="pricing.html">Pricing</a></li>
 						</ul>
 						<div class="header-sub-navigation-arrow" data-sub-nav-arrow><img src="assets/svg/common/common-nav-arrow.svg" alt="An arrow pointing upwards"></div>
 						<div class="header-sub-navigation-touch-area-bridge" data-sub-nav-touch-area-bridge></div>
@@ -42,12 +42,12 @@
 								<div class="container">
 									<div class="row header-sub-navigation__platform-row">
 										<div class="header-sub-navigation__platform-col">
-											<a href="#" class="icon-info-block icon-info-block--menu">
+											<a href="platform.html" class="icon-info-block icon-info-block--menu">
 												<div class="icon-info-block__col-icon">
 													<object 
 														data="assets/svg/navigation/nav-platform.svg" 
 														type="image/svg+xml" 
-														class="icon-info-block__icon animated-icon"
+														class="icon-info-block__icon"
 													></object>
 												</div>
 												<div class="icon-info-block__col-info">
@@ -64,7 +64,7 @@
 													<object 
 														data="assets/svg/product/icons-animated/product-design-ani.svg?global=paused" 
 														type="image/svg+xml" 
-														class="icon-info-block__icon animated-icon"
+														class="icon-info-block__icon"
 													></object>
 												</div>
 												<div class="icon-info-block__col-info">
@@ -79,7 +79,7 @@
 													<object 
 														data="assets/svg/product/icons-animated/product-ingest-ani.svg?global=paused" 
 														type="image/svg+xml" 
-														class="icon-info-block__icon animated-icon"
+														class="icon-info-block__icon"
 													></object>
 												</div>
 												<div class="icon-info-block__col-info">
@@ -94,7 +94,7 @@
 													<object 
 														data="assets/svg/product/icons-animated/product-translate-ani.svg?global=paused" 
 														type="image/svg+xml" 
-														class="icon-info-block__icon animated-icon"
+														class="icon-info-block__icon"
 													></object>
 												</div>
 												<div class="icon-info-block__col-info">
@@ -109,7 +109,7 @@
 													<object 
 														data="assets/svg/product/icons-animated/product-engine-ani.svg?global=paused" 
 														type="image/svg+xml" 
-														class="icon-info-block__icon animated-icon"
+														class="icon-info-block__icon"
 													></object>
 												</div>
 												<div class="icon-info-block__col-info">
@@ -124,7 +124,7 @@
 													<object 
 														data="assets/svg/product/icons-animated/product-monitor-ani.svg?global=paused" 
 														type="image/svg+xml" 
-														class="icon-info-block__icon animated-icon"
+														class="icon-info-block__icon"
 													></object>
 												</div>
 												<div class="icon-info-block__col-info">
@@ -139,7 +139,7 @@
 													<object 
 														data="assets/svg/product/icons-animated/product-deploy-ani.svg?global=paused" 
 														type="image/svg+xml" 
-														class="icon-info-block__icon animated-icon"
+														class="icon-info-block__icon"
 													></object>
 												</div>
 												<div class="icon-info-block__col-info">
@@ -179,17 +179,208 @@
 					</div>
 
 					<div class="col-sm-8 col-md-9 page-header__col-menu-ham">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.83 14.83">
-							<g id="link-with-arrow">
-							  <path d="M22.83,2H1A1,1,0,0,1,1,0H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
-							  <path d="M22.83,8.42H1a1,1,0,0,1,0-2H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
-							  <path d="M22.83,14.83H1a1,1,0,0,1,0-2H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
-							</g>
-						</svg>						  
+						<a href="#">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.83 14.83">
+								<g id="link-with-arrow">
+								  <path d="M22.83,2H1A1,1,0,0,1,1,0H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
+								  <path d="M22.83,8.42H1a1,1,0,0,1,0-2H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
+								  <path d="M22.83,14.83H1a1,1,0,0,1,0-2H22.83a1,1,0,0,1,0,2Z" fill="#414141"/>
+								</g>
+							</svg>
+						</a>
 					</div>
 
 				</div>
 			</div>
+
+			<!--  -->
+
+			<div class="header-mobile-navigation">
+				<a href="#" class="header-mobile-navigation__close">
+					<img src="assets/svg/common/mobile-nav-close.svg" alt="Graphic of a cross signifying the ability to close the mobile navigation">
+				</a>
+
+				<div class="header-mobile-navigation__block">
+					<p class="header-mobile-navigation__block-heading">Products</p>
+					<div class="header-mobile-navigation__nav-item-list">
+						<div class="header-mobile-navigation__nav-item">
+							<a href="platform.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow">
+								<div class="icon-info-block__col-icon">
+									<object 
+										data="assets/svg/navigation/nav-platform.svg" 
+										type="image/svg+xml" 
+										class="icon-info-block__icon"
+									></object>
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Platform</p>
+									<p class="icon-info-block__info">Complete modelling platform</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="header-mobile-navigation__block">
+					<div class="header-mobile-navigation__nav-item-list">
+						<div class="header-mobile-navigation__nav-item">
+							<a href="design.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow">
+								<div class="icon-info-block__col-icon">
+									<object 
+										data="assets/svg/product/icons-animated/product-design-ani.svg?global=paused" 
+										type="image/svg+xml" 
+										class="icon-info-block__icon"
+									></object>
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Design</p>
+									<p class="icon-info-block__info">Model development tool</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="ingest-and-translate.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow">
+								<div class="icon-info-block__col-icon">
+									<object 
+										data="assets/svg/product/icons-animated/product-ingest-ani.svg?global=paused" 
+										type="image/svg+xml" 
+										class="icon-info-block__icon"
+									></object>
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Ingest</p>
+									<p class="icon-info-block__info">Universal integration API</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="ingest-and-translate.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow">
+								<div class="icon-info-block__col-icon">
+									<object 
+										data="assets/svg/product/icons-animated/product-translate-ani.svg?global=paused" 
+										type="image/svg+xml" 
+										class="icon-info-block__icon"
+									></object>
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Translate</p>
+									<p class="icon-info-block__info">Data mappings</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="ingest-and-translate.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow">
+								<div class="icon-info-block__col-icon">
+									<object 
+										data="assets/svg/product/icons-animated/product-engine-ani.svg?global=paused" 
+										type="image/svg+xml" 
+										class="icon-info-block__icon"
+									></object>
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Engine</p>
+									<p class="icon-info-block__info">Run-time engine</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="ingest-and-translate.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow">
+								<div class="icon-info-block__col-icon">
+									<object 
+										data="assets/svg/product/icons-animated/product-deploy-ani.svg?global=paused" 
+										type="image/svg+xml" 
+										class="icon-info-block__icon"
+									></object>
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Deploy</p>
+									<p class="icon-info-block__info">Model deployment automation</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="monitor.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow">
+								<div class="icon-info-block__col-icon">
+									<object 
+										data="assets/svg/product/icons-animated/product-monitor-ani.svg?global=paused" 
+										type="image/svg+xml" 
+										class="icon-info-block__icon"
+									></object>
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Monitor</p>
+									<p class="icon-info-block__info">Audit and traceability</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="header-mobile-navigation__block">
+					<p class="header-mobile-navigation__block-heading">About</p>
+					<div class="header-mobile-navigation__nav-item-list">
+						<div class="header-mobile-navigation__nav-item">
+							<a href="our-community.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<div class="icon-info-block__col-icon">
+									<img class="icon-info-block__icon" src="assets/svg/navigation/nav-our-community.svg" alt="">									
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Our Community</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="governance.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<div class="icon-info-block__col-icon">
+									<img class="icon-info-block__icon" src="assets/svg/navigation/nav-governance.svg" alt="">									
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Governance</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="it-security.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<div class="icon-info-block__col-icon">
+									<img class="icon-info-block__icon" src="assets/svg/navigation/nav-it-security.svg" alt="">									
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">IT Security</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="#" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<div class="icon-info-block__col-icon">
+									<img class="icon-info-block__icon" src="assets/svg/navigation/nav-documentation.svg" alt="">									
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Documentation</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="contact.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<div class="icon-info-block__col-icon">
+									<img class="icon-info-block__icon" src="assets/svg/navigation/nav-contact.svg" alt="">									
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Contact</p>
+								</div>
+							</a>
+						</div>
+						<div class="header-mobile-navigation__nav-item">
+							<a href="pricing.html" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<div class="icon-info-block__col-icon">
+									<img class="icon-info-block__icon" src="assets/svg/common/pricing-tags.svg" alt="">									
+								</div>
+								<div class="icon-info-block__col-info">
+									<p class="icon-info-block__heading">Pricing</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div> <!-- .header-mobile-navigation -->
+
 		</header>
 
         <!-- -->
@@ -197,6 +388,15 @@
         <section class="pt-160 pb-100">
 			<div class="product-header-curve">
 				<img src="assets/svg/product/header/curve.svg" alt="Graphic of curve for aesthetics">
+			</div>
+			<div class="lottie-wrapper lottie-wrapper--hero">
+				<lottie-player
+					autoplay
+					loop
+					mode="normal"
+					src="assets/lottie/platform-deploy.json"
+					style="height: auto; width: 100%"
+				></lottie-player>
 			</div>
             <div class="container">
                 <div class="row">
@@ -253,7 +453,9 @@
 							Executable code is automatically generated, compiled, tested and deployed, ready for use.</p>
 					</div>
 					<div class="col-md-6 two-col-panel__col-graphic">
-						<p class="two-col-graphic-placeholder scrolls-into-view"></p>
+						<div class="two-col-panel__graphic-container scrolls-into-view">
+							<img src="assets/images/screenshots/engine/focus-on-working-pipelines-not-code.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -283,7 +485,9 @@
 							for many modern software languages. And if yours isn’t there, go for it – they're all open source.​</p>
 					</div>
 					<div class="col-md-6 two-col-panel__col-graphic">
-						<p class="two-col-graphic-placeholder scrolls-into-view mirror-anim"></p>
+						<div class="two-col-panel__graphic-container scrolls-into-view mirror-anim">
+							<img src="assets/images/screenshots/engine/build-across-technologies.png" alt="">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -301,7 +505,9 @@
 							your data pipelines in real-time.</p>
 					</div>
 					<div class="col-md-6 two-col-panel__col-graphic">
-						<p class="two-col-graphic-placeholder scrolls-into-view"></p>
+						<div class="two-col-panel__graphic-container scrolls-into-view with-shadow">
+							<img src="assets/images/screenshots/engine/become-a-test-driven-champion.gif" alt="" data-zoomable>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -330,20 +536,44 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-lg-4 mb-60 df-mb-ml-30 text-align-center" data-aos="fade-up">
-						<p class="grid-graphic-placeholder"></p>
+						<div class="lottie-wrapper lottie-wrapper--small">
+							<lottie-player
+								autoplay
+								loop
+								mode="normal"
+								src="assets/lottie/instantly-executable.json"
+								style="height: auto;"
+					  		></lottie-player>
+						</div>
 						<p class="font-size-l2r font-weight-semi-bold mb-15">Instantly executable processes​</p>
 						<p>Go beyond diagrams and flowcharts. <br>Build data pipelines that are <br>
 							<span class="font-weight-semi-bold font-color-brand-one">immediately operational</span></p>
 					</div>
 					<div class="col-md-6 col-lg-4 mb-60 df-mb-ml-30 text-align-center" data-aos="fade-up">
-						<p class="grid-graphic-placeholder"></p>
+						<div class="lottie-wrapper lottie-wrapper--small">
+							<lottie-player
+								autoplay
+								loop
+								mode="normal"
+								src="assets/lottie/infinitely-scalable.json"
+								style="height: auto;"
+					  		></lottie-player>
+						</div>
 						<p class="font-size-l2r font-weight-semi-bold mb-15">Infinitely scalable</p>
 						<p>Whether you want to process​ <br>1 transaction or 10 million, the service <br>
 							<span class="font-weight-semi-bold font-color-brand-one">scales to your need​</span>
 						</p>
 					</div>
 					<div class="col-md-6 col-lg-4 mb-60 df-mb-ml-30 text-align-center" data-aos="fade-up">
-						<p class="grid-graphic-placeholder"></p>
+						<div class="lottie-wrapper lottie-wrapper--small">
+							<lottie-player
+								autoplay
+								loop
+								mode="normal"
+								src="assets/lottie/for-all-and-any-technology.json"
+								style="height: auto;"
+					  		></lottie-player>
+						</div>
 						<p class="font-size-l2r font-weight-semi-bold mb-15">For all and any technology</p>
 						<p>With the most comprehensive set of <br class="d-n-t-o">deployment options and languages, <br>
 							<span class="font-weight-semi-bold font-color-brand-one">Rosetta Engine is radically universal</span>
@@ -409,37 +639,41 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3">
-						<p class="page-footer__list-heading font-color-brand-one"><span>Company</span></p>
-						<ul class="page-footer__nav-list">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">About REGnosys</a></li>
-							<li><a href="#">Governance</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
-						<p class="page-footer__list-heading font-color-brand-one"><span>Platform</span></p>
-						<ul class="page-footer__nav-list">
-							<li><a href="#">Rosetta Platform</a></li>
-							<li><a href="#">Community</a></li>
-							<li><a href="#">Data Security</a></li>
-							<li><a href="#">Documentation</a></li>
-							<li><a href="#">Package Plans</a></li>
-						</ul>
-					</div>
-					<div class="col-md-3">
 						<p class="page-footer__list-heading font-color-brand-one"><span>Products</span></p>
 						<ul class="page-footer__nav-list">
-							<li><a href="#">Rosetta Editor</a></li>
-							<li><a href="#">Rosetta Translate</a></li>
-							<li><a href="#">Rosetta Dictionary</a></li>
-							<li><a href="#">Rosetta Engine</a></li>
-							<li><a href="#">Rosetta Monitor</a></li>
-							<li><a href="#">Rosetta Build</a></li>
+							<li><a href="design.html">Design</a></li>
+							<li><a href="ingest-and-translate.html">Ingest</a></li>
+							<li><a href="ingest-and-translate.html">Translate</a></li>
+							<li><a href="engine.html">Engine</a></li>
+							<li><a href="monitor.html">Monitor</a></li>
+							<li><a href="deploy.html">Deploy</a></li>
+							<li class="platform"><a href="platform.html">Platform</a></lli>
 						</ul>
 					</div>
 					<div class="col-md-3">
-						<p class="page-footer__contact-heading"><span>Contact us</span></p>
+						<p class="page-footer__list-heading font-color-brand-one"><span>About</span></p>
+						<ul class="page-footer__nav-list">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="our-community.html">Our Community</a></li>
+							<li><a href="governance.html">Governance</a></li>
+							<li><a href="it-security.html">IT Security</a></li>
+							<li><a href="#">Documentation</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 mb-ml-o-10">
+						<p class="page-footer__list-heading font-color-brand-one"><span>Pricing</span></p>
+						<ul class="page-footer__nav-list">
+							<li><a href="pricing.html">Package Plans</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<p class="page-footer__contact-heading"><span>Stay in touch</span></p>
+						<ul class="page-footer__social-list">
+							<li><a href="#"><i><img src="assets/svg/common/social-linkedin.svg"></i><span>Linked In</span></a></li>
+							<li><a href="#"><i><img src="assets/svg/common/social-twitter.svg"></i><span>Twitter</span></a></li>
+							<li><a href="#"><i><img src="assets/svg/common/social-lines.svg"></i><span>Lines</span></a></li>
+						</ul>
 					</div>
 				</div>
 				<div class="row">
