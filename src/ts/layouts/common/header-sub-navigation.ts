@@ -866,7 +866,13 @@ export class HeaderSubNavigation {
                 this.subNavState = SubNavState.Open
             }
         })
-        
+     
+        /**
+         * `hidden` class used in CSS to disable pointer events.
+         */
+
+        this.subNavigationWrapper.classList.remove('hidden')
+
     }
 
     /**
@@ -913,6 +919,12 @@ export class HeaderSubNavigation {
                 this.subNavState = SubNavState.Closed
             }
         })
+
+        /**
+         * `hidden` class used in CSS to disable pointer events.
+         */
+
+         this.subNavigationWrapper.classList.add('hidden')
 
     }
 

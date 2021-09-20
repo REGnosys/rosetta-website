@@ -5,16 +5,16 @@
 .lottie-wrapper {
 
     /**
-     * Border.
-     */
-
-    // border: 1px solid $brand-one;
-
-    /**
      * Margin.
      */
 
     margin-bottom: 20px;
+
+    /**
+     * Z-index.
+     */
+
+    z-index: 50;
 
     /**
      * lottie-player.
@@ -27,6 +27,110 @@
          */
 
         display: inline-block;
+
+        /**
+         * &.hidden.
+         */
+
+        &.hidden {
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0;
+
+        }
+
+        /**
+         * Transition.
+         */
+
+        transition: opacity 0.3s ease;
+
+    }
+
+    /**
+     * &--center.
+     */
+
+    &--center {
+
+        /**
+         * Font related.
+         */
+
+        text-align: center;
+
+    }
+
+    /**
+     * &--width-90pc lottie-player.
+     */
+
+    &--width-90pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 90%;
+
+    }
+
+    /**
+     * &--width-80pc lottie-player.
+     */
+
+    &--width-80pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 80%;
+
+    }
+
+    /**
+     * &--width-75pc.
+     */
+
+    &--width-75pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 75%;
+
+    }
+
+    /**
+     * &--width-70pc.
+     */
+
+    &--width-70pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 70%;
+
+    }
+
+    /**
+     * &--width-65pc.
+     */
+
+    &--width-65pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 65%;
 
     }
 
@@ -46,7 +150,69 @@
              * Sizing.
              */
 
-            width: 200px;
+            height: 150px !important;
+
+        }
+
+    }
+
+    /**
+     * &--homepage.
+     */
+
+    &--homepage {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 0;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 50%;
+        left: 55%;
+
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-50%);
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 0;
+
+        /**
+         * @include.
+         */
+
+        @include breakpoint($b-df-tablet) {
+
+            /**
+             * Display.
+             */
+
+            display: none;
+
+        }
+
+        /**
+         * lottie-player.
+         */
+
+        lottie-player {
+
+            /**
+             * Sizing.
+             */
+            
+            width: 55vw;
 
         }
 
@@ -102,7 +268,27 @@
          * Transform.
          */
 
-        transform: translateY(-13%) translateX(80%);
+        transform: translateY(-8%) translateX(80%);
+
+    }
+
+    /**
+     * &--deploy.
+     */
+
+    &--deploy {
+
+        /**
+         * Sizing.
+         */
+
+        width: 120vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-46%) translateX(30%);
 
     }
 
@@ -122,7 +308,27 @@
          * Transform.
          */
 
-        transform: translateY(-15%) translateX(35%);
+        transform: translateY(-10%) translateX(32%);
+
+    }
+
+    /**
+     * &--engine.
+     */
+
+    &--engine {
+
+        /**
+         * Sizing.
+         */
+
+        width: 110vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-18%) translateX(17%);
 
     }
 
@@ -142,7 +348,7 @@
          * Transform.
          */
 
-        transform: translateY(-8%) translateX(13%);
+        transform: translateY(-10%) translateX(16%);
 
     }
 
@@ -162,7 +368,7 @@
          * Transform.
          */
 
-        transform: translateY(0%) translateX(11%);
+        transform: translateY(0%) translateX(10%);
 
     }
 
@@ -210,3 +416,16 @@
 
 }
 
+/**
+ * .z-index-above-graphic.
+ */
+
+.z-index-above-graphic {
+
+    /**
+     * Z-index.
+     */
+
+    z-index: 51;
+
+}

@@ -1,8 +1,8 @@
 /**
- * .link-with-graphic.
+ * link-with-graphic.
  */
 
-.link-with-graphic {
+@mixin link-with-graphic() {
 
     /**
      * Display.
@@ -131,49 +131,6 @@
     }
 
     /**
-     * &:hover.
-     */
-
-    &:hover {
-
-        /**
-         * Font related.
-         */
-
-        color: $brand-three;
-        text-decoration: none;
-
-        /**
-         * rect.
-         */
-
-        rect {
-
-            /**
-             * Transform.
-             */
-
-            transform: translateX(6px);
-
-        }
-
-        /**
-         * polygon.
-         */
-
-        polygon {
-
-            /**
-             * Transform.
-             */
-
-            transform: translateX(6px);
-
-        }
-
-    }
-
-    /**
      * &--palette-a.
      */
 
@@ -226,6 +183,77 @@
             }
             
         }
+
+    }
+
+}
+
+/**
+ * link-with-graphic--hover.
+ */
+
+@mixin link-with-graphic--hover() {
+
+    /**
+     * Font related.
+     */
+
+    color: $brand-three;
+    text-decoration: none;
+
+    /**
+     * rect.
+     */
+
+    rect {
+
+        /**
+         * Transform.
+         */
+
+        transform: translateX(6px);
+
+    }
+
+    /**
+     * polygon.
+     */
+
+    polygon {
+
+        /**
+         * Transform.
+         */
+
+        transform: translateX(6px);
+
+    }
+
+}
+
+/**
+ * .link-with-graphic.
+ */
+
+.link-with-graphic {
+
+    /**
+     * @include.
+     */
+
+    @include link-with-graphic();
+
+    /**
+     * &:hover.
+     */
+
+    &:hover {
+
+        /**
+         * @include.
+         */
+
+        @include link-with-graphic--hover();
 
     }
 

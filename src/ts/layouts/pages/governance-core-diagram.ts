@@ -3,6 +3,9 @@
  */
 
 import { SVGInjector } from '@tanem/svg-injector'
+import 'swiper/swiper.min.css'
+import 'swiper/components/pagination/pagination.min.css'
+import Swiper, { Pagination } from 'swiper'
 
 /**
  * CoreDiagram.
@@ -16,6 +19,7 @@ export class CoreDiagram {
 
     private coreDiagram : HTMLElement
     private listItemsContentNodes : NodeListOf<HTMLElement>
+    private siwperInstance : Swiper
 
     /**
      * constructor.
@@ -78,8 +82,40 @@ export class CoreDiagram {
                 }
             })
 
+            /**
+             *
+             */
+
+            this.configureInfoPanels()
+
         }
 
+    }
+
+    /**
+     * configureInfoPanels.
+     */
+
+    configureInfoPanels() {
+
+        /**
+         * 
+         */
+
+        Swiper.use([Pagination]);
+
+        /**
+         * 
+         */         
+
+        this.siwperInstance = new Swiper('.swiper-container', {
+            autoHeight: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        })
+        
     }
 
     /**
@@ -127,6 +163,7 @@ export class CoreDiagram {
 
                     const graphic : HTMLElement = this.coreDiagram.querySelector('.core-diagram__graphic')
                     const ringSelector : string = target.getAttribute('data-ring-selector')
+                    const slideIndex : string   = target.getAttribute('data-slide-index')
 
                     /**
                      * 
@@ -140,6 +177,12 @@ export class CoreDiagram {
                      */
 
                     if (ringSelector.substr(0, 8) == '#outside') this.showOuterRingAnnotations()
+
+                    /**
+                     *
+                     */
+
+                    this.siwperInstance.slideTo(parseInt(slideIndex))
 
                 })
 
@@ -167,6 +210,12 @@ export class CoreDiagram {
                      */
 
                     if (ringSelector.substr(0, 8) == '#outside') this.hideOuterRingAnnotations()
+
+                    /**
+                     *
+                     */
+
+                    this.siwperInstance.slideTo(0)
 
                     /**
                      * 
@@ -225,12 +274,19 @@ export class CoreDiagram {
                 const listItem : HTMLElement = this.coreDiagram.querySelector('[data-ring-selector="#' + id + '"]')
                 listItem.classList.add('active')
                 listItem.parentElement.classList.remove('knocked-back')
+                const slideIndex : string = listItem.getAttribute('data-slide-index')
 
                 /**
                  * Check if the user moved their mouse over the outer ring.
                  */
 
                 if (id.substr(0, 7) == 'outside') this.showOuterRingAnnotations()
+
+                /**
+                 *
+                 */
+
+                this.siwperInstance.slideTo(parseInt(slideIndex))
 
             })
 
@@ -251,7 +307,13 @@ export class CoreDiagram {
                  * Check if the user moved their mouse out of the outer ring.
                  */
 
-                 if (id.substr(0, 7) == 'outside') this.hideOuterRingAnnotations()
+                if (id.substr(0, 7) == 'outside') this.hideOuterRingAnnotations()
+
+                /**
+                 *
+                 */
+
+                this.siwperInstance.slideTo(0)
 
                 /**
                  * 

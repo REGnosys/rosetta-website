@@ -59,7 +59,14 @@
     font-size: 15px; 
     line-height: 19px; 
 }
+@mixin font-size-m3r() { 
+    font-size: 15px; 
+    line-height: 19px; 
+    @include breakpoint($b-mobile-only) { font-size: 14px; line-height: 18px; }
+    @include breakpoint($b-mobile-landscape-only) { font-size: 14px; line-height: 18px; }
+}
 .font-size-m3  { @include font-size-m3(); }
+.font-size-m3r  { @include font-size-m3r(); }
 
 /**
  * medium4.

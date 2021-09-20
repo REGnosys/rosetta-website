@@ -1,4 +1,10 @@
 /**
+ * 
+ */
+
+@import '_link-with-graphic.scss';
+
+/**
  * Local variables.
  */
 
@@ -42,10 +48,48 @@ $mobile-nav-icon-height: 32px;
     &--with-link {
 
         /**
-         * Padding.
+         * .icon-info-block__heading-wrapper.
          */
 
-        padding-bottom: 40px;
+        .icon-info-block__heading-wrapper {
+
+            /**
+             * &:hover.
+             */
+
+            &:hover {
+
+                /**
+                 * p.
+                 */
+
+                p {
+
+                    /**
+                     * Font related.
+                     */
+
+                    color: $brand-one;
+
+                }
+
+                /**
+                 * .link-with-graphic.
+                 */
+
+                .link-with-graphic {
+                    
+                    /**
+                     * @include.
+                     */
+
+                    @include link-with-graphic--hover();
+
+                }
+
+            }
+    
+        }
 
     }
 
@@ -287,6 +331,20 @@ $mobile-nav-icon-height: 32px;
     }
 
     /**
+     * &__heading-wrapper.
+     */
+
+    &__heading-wrapper {
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+    }
+
+    /**
      * &__heading.
      */
 
@@ -452,21 +510,6 @@ $mobile-nav-icon-height: 32px;
          */
 
         @include font-size-m5r();
-
-    }
-
-    /**
-     * .link-with-graphic.
-     */
-
-    .link-with-graphic {
-
-        /**
-         * Position.
-         */
-
-        position: absolute;
-        bottom: 0;
 
     }
 

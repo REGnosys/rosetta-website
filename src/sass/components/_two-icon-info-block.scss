@@ -10,7 +10,7 @@ $icon-height: 40px;
  */
 
 .two-icon-info-block {
-
+    
     /**
      * Display.
      */
@@ -87,23 +87,74 @@ $icon-height: 40px;
     }
 
     /**
-     * &__heading.
+     * &__icon-anchor.
      */
 
-    &__heading {
+    &__icon-anchor {
 
         /**
          * Display.
          */
 
-        display: inline-block;
+        display: flex;
 
+    }
+
+    /**
+     * &__heading-wrapper.
+     */
+
+    &__heading-wrapper {
 
         /**
-         * Margin.
+         * Display.
          */
 
-        margin-bottom: 15px;
+        display: flex;
+
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+
+            /**
+             * .two-icon-info-block__heading.
+             */
+
+            .two-icon-info-block__heading {
+
+                /**
+                 * Font related.
+                 */
+
+                color: $brand-one;
+
+            }
+
+            /**
+             * .link-with-graphic.
+             */
+
+            .link-with-graphic {
+
+                /**
+                 * @include.
+                 */
+
+                @include link-with-graphic--hover();
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &__heading.
+     */
+
+    &__heading {
 
         /**
          * Font related.
@@ -111,6 +162,12 @@ $icon-height: 40px;
 
         @include font-size-m6();
         font-weight: 600;
+
+        /**
+         * Padding.
+         */
+
+        padding-left: 10px;
 
         /**
          * &::before.

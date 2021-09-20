@@ -494,4 +494,115 @@
 
     }
 
+    /**
+     * &__info-panels-wrapper.
+     */
+
+    &__info-panels-wrapper {
+
+        /**
+         * 
+         */
+
+        /**
+         * Background.
+         */
+
+        background-color: #f1efef;
+
+        /**
+         * Padding.
+         */
+
+        padding: 35px 50px 35px 50px;
+
+        /**
+         * Border.
+         */
+
+        border-radius: 15px;
+
+        /**
+         * Shadow.
+         */
+
+        box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.33);
+        -webkit-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.33);
+        -moz-box-shadow: 0px 0px 20px 2px rgba(0,0,0,0.33);
+
+    }
+
+    /**
+     * &__info-panels-content.
+     */
+
+    &__info-panels-content {
+
+    }
+
+    /**
+     * &__info-panel.
+     */
+
+    &__info-panel {
+
+        /**
+         * Padding.
+         */
+
+        padding: 25px 40px 50px 40px;
+
+    }
+
+    /**
+     * &__info-panel-heading.
+     */
+
+    &__info-panel-heading {
+
+    }
+
+    /**
+     * .swiper-pagination.
+     */
+
+    .swiper-pagination {
+
+        /**
+         * Position.
+         */
+
+        bottom: 25px !important;
+
+        /**
+         * .swiper-pagination-bullet.
+         */
+
+        .swiper-pagination-bullet {
+
+            /**
+             * Sizing.
+             */
+
+            height: 10px;
+            width: 10px;
+
+            /**
+             * &.swiper-pagination-bullet-active.
+             */
+
+            &.swiper-pagination-bullet-active {
+
+                /**
+                 * Background.
+                 */
+
+                background-color: $brand-one;
+
+            }
+
+        }
+
+    }
+
 }

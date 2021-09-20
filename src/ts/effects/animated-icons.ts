@@ -48,6 +48,16 @@ export class AnimatedIcons {
     registerAnimatedIcon(obj : KeyShapeHTMLObjectElement) {
 
         /**
+         * Return early if this icon has already been added to the list.
+         * This could happen when a 'load' triggers this function, or
+         * a timeout triggers it.
+         */
+
+        if (this.icons.indexOf(obj) != -1) {
+            return
+        }
+
+        /**
          * Store obj.
          */
 
@@ -100,6 +110,29 @@ export class AnimatedIcons {
 
         })
 
+        /**
+         * Create a timeout to start the animation process
+         * for an animated icon.
+         */
+
+        setTimeout(() => {
+
+            /**
+             * Create interval to play animation at.
+             */
+
+            setInterval(() => {
+                obj.playAnimation()
+            }, 1000 * this.getRandomNumberBetweenInclusive(4, 6))
+
+            /**
+             * Play the animation now.
+             */
+
+            obj.playAnimation()
+
+        }, 750 * this.getRandomNumberBetweenInclusive(0, 10))
+
     }
 
     /**
@@ -134,19 +167,38 @@ export class AnimatedIcons {
                 self.registerAnimatedIcon(this)
             })
 
+            /**
+             * There appears to be occurances where the 'load' event
+             * listener does not get called, therefore we have 
+             * a fallback timeout.
+             */
+
+            setTimeout(() => {
+                self.registerAnimatedIcon(node as KeyShapeHTMLObjectElement)
+            }, 1000)
+
         })
+
+    }
+
+    /**
+     * getRandomNumberBetweenInclusive.
+     */
+
+    getRandomNumberBetweenInclusive(min : number, max : number) {
 
         /**
          * 
          */
 
-        setInterval(() => {
+        min = Math.ceil(min)
+        max = Math.floor(max)
 
-            this.icons.forEach(i => {
-                i.playAnimation()
-            })
+        /**
+         * 
+         */
 
-        }, 3000)
+        return Math.floor(Math.random() * (max - min + 1) + min)
 
     }
 
