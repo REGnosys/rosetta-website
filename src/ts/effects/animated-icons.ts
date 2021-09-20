@@ -100,6 +100,28 @@ export class AnimatedIcons {
 
         })
 
+        /**
+         * 
+         */
+
+        setTimeout(() => {
+
+            /**
+             * 
+             */
+
+            setInterval(() => {
+                obj.playAnimation()
+            }, 1000 * this.getRandomNumberBetweenInclusive(4, 6))
+
+            /**
+             * 
+             */
+
+            obj.playAnimation()
+
+        }, 750 * this.getRandomNumberBetweenInclusive(0, 10))
+
     }
 
     /**
@@ -136,17 +158,26 @@ export class AnimatedIcons {
 
         })
 
+    }
+
+    /**
+     * getRandomNumberBetweenInclusive.
+     */
+
+    getRandomNumberBetweenInclusive(min : number, max : number) {
+
         /**
          * 
          */
 
-        setInterval(() => {
+        min = Math.ceil(min)
+        max = Math.floor(max)
 
-            this.icons.forEach(i => {
-                i.playAnimation()
-            })
+        /**
+         * 
+         */
 
-        }, 3000)
+        return Math.floor(Math.random() * (max - min + 1) + min)
 
     }
 
