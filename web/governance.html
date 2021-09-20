@@ -470,14 +470,22 @@
 						<p data-aos="fade-left">The Rosetta Platform comprises three <br class="d-n-t-o">types of components:​</p>
 						<ul class="core-diagram__list df-mt-t-30 mt-90 ml-m-o-20 mr-m-o-20">
 							<li class="core-diagram__list-item">
-								<div class="core-diagram__list-item-content core-diagram__list-item-content--dsl" data-ring-selector="#inside-knockback">
+								<div 
+									class="core-diagram__list-item-content core-diagram__list-item-content--dsl" 
+									data-ring-selector="#inside-knockback"
+									data-slide-index="0"
+								>
 									<p class="core-diagram__list-item-title">Rosetta DSL</p>
 									<p class="core-diagram__list-item-sub-title">Open source components</p>
 									<span class="core-diagram__list-item-indicator core-diagram__list-item-indicator--dsl"></span>
 								</div>
 							</li>
 							<li class="core-diagram__list-item">
-								<div class="core-diagram__list-item-content core-diagram__list-item-content--projects" data-ring-selector="#middle-knockback">
+								<div 
+									class="core-diagram__list-item-content core-diagram__list-item-content--projects" 
+									data-ring-selector="#middle-knockback"
+									data-slide-index="1"
+								>
 									<p class="core-diagram__list-item-title">Projects</p>
 									<p class="core-diagram__list-item-sub-title">Model components</p>
 									<span class="core-diagram__list-item-indicator core-diagram__list-item-indicator--projects"></span>
@@ -486,7 +494,11 @@
 								<div class="core-diagram__list-item-empty core-diagram__list-item-empty--second"></div>
 							</li>
 							<li class="core-diagram__list-item">
-								<div class="core-diagram__list-item-content core-diagram__list-item-content--products" data-ring-selector="#outside-knockback">
+								<div 
+									class="core-diagram__list-item-content core-diagram__list-item-content--products" 
+									data-ring-selector="#outside-knockback"
+									data-slide-index="2"
+								>
 									<p class="core-diagram__list-item-title">Rosetta Products</p>
 									<p class="core-diagram__list-item-sub-title">Application components</p>
 									<span class="core-diagram__list-item-indicator core-diagram__list-item-indicator--products"></span>
@@ -502,66 +514,30 @@
 						>
 					</div>
 				</div>
-			</div>
-		</section>
-
-		<!-- -->
-
-		<section class="position-relative">
-			<div class="body-curve">
-				<canvas 
-					data-primary-color="#d7f0f3"
-					data-secondary-color="#d7f0f3"
-					data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
-					data-top-shape-y-offset-percentage="0"
-					data-margin-top-percentage-of-top-shape-height="0"
-					data-bottom-shape-svg-url="/assets/svg/curve/curve-d-bottom.svg"
-					data-bottom-shape-y-offset-percentage="0"
-					data-margin-bottom-percentage-of-bottom-shape-height="0"
-				></canvas>
-			</div>
-			<div class="container body-curve-content pt-150 pb-200 df-pb-t-150">
-				<div class="row">
-					<div class="col-md-5 mb-40">
-						<p class="font-size-l1 font-weight-semi-bold mb-20">Who owns what?</p>						
-						<p class="font-size-m2">The Rosetta DSL and Rosetta Products components are owned and developed by REGnosys.</p>
-						<p class="font-size-m2">The Rosetta Products are connected to a source-control repository where model components are organised into Projects. Some projects are openly available on the platform. Users can create and develop new projects, choose how they share them, or view and contribute to existing ones if they have permission.</p>
-						<p class="font-size-m2">Users own the content that they create.</p>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							See project repository
-							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
-						</a>
-					</div>
-					<div class="col-md-5 offset-md-2 mb-40">
-						<p class="font-size-l1 font-weight-semi-bold mb-20">How to contribute?</p>
-						<p class="font-size-m2">Openly available projects are published under license terms and a governance framework that reflect how their owners wish to control their distribution and contribution.</p>
-						<p class="font-size-m2">The Rosetta DSL itself is an open source project. REGnosys welcomes outside contributions that help keep it technology- and platform-agnostic. Code generators in several programming languages have already been contributed by the user community.</p>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							See how code generation works
-							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- -->
-
-		<section class="info-panel" style="margin-top: -120px">
-			<div class="container">
-				<div class="row info-panel__inset">
-					<div class="col-md-12 info-panel__content">
-						<p class="font-size-l1 font-weight-semi-bold mb-20">For the open source fanatics</p>
-						<p class="font-size-m2">The Rosetta DSL has been purposefully designed for techno-neutrality.​​</p>
-						<p class="font-size-m2">It is based on the open source and widely adopted Eclipse Modelling Framework (EMF), that uses "Ecore" 
-							as meta-model. This ensures that any model can be represented as an Ecore. Ecore is the de facto reference 
-							implementation of the Meta Object Facility from the Object Management Group (OMG).​​</p>
-						<p class="font-size-m2">Plainly, it means that a model developed using Rosetta is expressed into a format that is independent 
-							of the Rosetta DSL itself, openly available, widely used and supported by standard-setting bodies.</p>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							Read about EMF and Ecore
-							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
-						</a>
+				<div class="row mt-50">
+					<div class="col-md-12">
+						<div class="core-diagram__info-panels-wrapper swiper-container">
+							<div class="core-diagram__info-panels-content swiper-wrapper">
+								<div class="core-diagram__info-panel swiper-slide">
+									<p class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold">Rosetta DSL</p>
+									<p class="font-size-m2">The Rosetta DSL is an open-source project initially developed by REGnosys.</p>
+									<p class="font-size-m2">REGnosys welcomes outside contributions that help keep it technology- and platform-agnostic. Code generators in several 
+										programming languages have already been contributed by the user community.</p>
+								</div>
+								<div class="core-diagram__info-panel swiper-slide">
+									<p class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold">Projects</p>
+									<p class="font-size-m2">Model components are organised into "projects" in a source-control repository.</p>
+									<p class="font-size-m2">Some projects are openly available on the platform, under license terms and a governance 
+										framework that reflect how their owners wish to control their distribution and contribution. Users 
+										can create new projects, choose how they share them, and contribute to existing ones if they have permission.</p>
+								</div>
+								<div class="core-diagram__info-panel swiper-slide">
+									<p class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold">Rosetta Products</p>
+									<p class="font-size-m2">The Rosetta Products are connected to the source-control repository holding all the model components.</p>
+									<p class="font-size-m2">The Rosetta Products provide a complete model development kit allowing users to view or edit existing projects, create new ones, or use the models to develop new applications and services.</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
