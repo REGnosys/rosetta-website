@@ -1,0 +1,349 @@
+/**
+ * platform-diagram-wrapper.
+ */
+
+.platform-diagram-wrapper {
+
+    /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
+     * ul.
+     */
+
+    ul {
+
+        /**
+         * li.
+         */
+
+        li {
+
+            /**
+             * Display.
+             */
+
+            display: block;
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+
+            /**
+             * a.
+             */
+
+            a {
+
+                /**
+                 * Display.
+                 */
+
+                display: flex;
+
+                /**
+                 * Flex.
+                 */
+
+                align-items: center;
+
+                /**
+                 * Font related.
+                 */
+
+                font-size: 22px;
+                font-weight: bold;
+                color: $brand-three;
+
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($bs-medium-only) {
+
+                    /**
+                     * Font related.
+                     */
+
+                    font-size: 14px;
+                    
+                }
+
+                /**
+                 * &:hover.
+                 */
+
+                &:hover {
+
+                    /**
+                     * Opacity.
+                     */
+
+                    opacity: 0.5;
+
+                    /**
+                     * @include.
+                     */
+
+                    @include mini-arrow($brand-three, right, true);
+
+                }
+
+                /**
+                 * @include.
+                 */
+
+                @include mini-arrow($brand-one, right);
+
+            }
+
+        }
+
+    }
+
+    /**
+     * &--lanscape.
+     */
+
+    &--landscape { 
+
+        /**
+         * .design.
+         */
+
+        .design {
+
+            /**
+             * Position.
+             */
+
+            top: 6.5%;
+            left: 14.5%;
+
+        }
+
+        /**
+         * .translate.
+         */
+
+        .translate {
+
+            /**
+             * Position.
+             */
+
+            top: 6.5%;
+            left: 46.5%;        
+
+        }
+
+        /**
+         * .deploy.
+         */
+
+        .deploy {
+
+            /**
+             * Position.
+             */
+
+            top: 6.5%;
+            left: 82.5%;        
+
+        }
+
+        /**
+         * .ingest.
+         */
+
+        .ingest {
+
+            /**
+             * Position.
+             */
+
+            top: 63.5%;
+            left: 14.5%;
+
+        }
+
+        /**
+         * .engine.
+         */
+
+        .engine {
+
+            /**
+             * Position.
+             */
+
+            top: 63.5%;
+            left: 48%;
+
+        }
+
+        /**
+         * .monitor.
+         */
+
+        .monitor {
+
+            /**
+             * Position.
+             */
+
+            top: 63.5%;
+            left: 82%;
+
+        }
+
+    }
+
+    /**
+     * &--portrait.
+     */
+
+    &--portrait {
+
+        /**
+         * ul.
+         */
+
+        ul {
+
+            /**
+             * li.
+             */
+
+            li {
+
+                /**
+                 * a.
+                 */
+
+                a {
+
+                    /**
+                     * Font related.
+                     */
+
+                    font-size: 20px;
+
+                    /**
+                     * @include.
+                     */
+
+                    @include breakpoint($bs-extra-small-only) {
+
+                        /**
+                         * Font related.
+                         */
+
+                        font-size: 15px;
+                        
+                    }                    
+
+                }                
+
+            }
+            
+        }
+
+        /**
+         * .design.
+         */
+
+        .design {
+
+            /**
+             * Position.
+             */
+
+            top: 9%;
+            left: 19%;
+
+        }
+
+        /**
+         * .translate.
+         */
+
+        .translate {
+
+            /**
+             * Position.
+             */
+
+            top: 21%;
+            left: 20.5%;
+
+        }
+
+        /**
+         * .deploy.
+         */
+
+        .deploy {
+
+            /**
+             * Position.
+             */
+
+            top: 32.5%;
+            left: 20.5%;
+
+        }
+
+        /**
+         * .ingest.
+         */
+
+        .ingest {
+
+            /**
+             * Position.
+             */
+
+            top: 65%;
+            left: 16.5%;
+
+        }
+
+        /**
+         * .engine.
+         */
+
+        .engine {
+
+            /**
+             * Position.
+             */
+
+            top: 76.5%;
+            left: 20.5%;
+
+        }
+
+        /**
+         * .monitor.
+         */
+
+        .monitor {
+
+            /**
+             * Position.
+             */
+
+            top: 88.5%;
+            left: 18.5%;
+
+        }
+
+    }
+
+}
