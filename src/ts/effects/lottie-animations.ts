@@ -78,7 +78,7 @@ export class LottieAnimations {
 
                     player.classList.remove('hidden')
                     
-                }, 50)
+                }, 25)
 
             })
 

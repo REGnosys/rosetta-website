@@ -137,6 +137,68 @@
     }
 
     /**
+     * &--homepage.
+     */
+
+    &--homepage {
+
+        /**
+         * Margin.
+         */
+
+        margin-bottom: 0;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 50%;
+        left: 55%;
+
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-50%);
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 0;
+
+        /**
+         * @include.
+         */
+
+        @include breakpoint($b-df-tablet) {
+
+            /**
+             * Display.
+             */
+
+            display: none;
+
+        }
+
+        /**
+         * lottie-player.
+         */
+
+        lottie-player {
+
+            /**
+             * Sizing.
+             */
+            
+            width: 55vw;
+
+        }
+
+    }
+
+    /**
      * &--hero.
      */
 

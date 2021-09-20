@@ -144,5 +144,24 @@
 
     }
 
+    /**
+     * &__row.
+     */
+
+    &__row {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 1;
+
+    }
 
 }
