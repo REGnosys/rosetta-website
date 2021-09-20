@@ -546,7 +546,11 @@
 
     &__info-panel {
 
-        padding: 25px 40px 25px 40px;
+        /**
+         * Padding.
+         */
+
+        padding: 25px 40px 50px 40px;
 
     }
 
@@ -556,7 +560,48 @@
 
     &__info-panel-heading {
 
+    }
 
+    /**
+     * .swiper-pagination.
+     */
+
+    .swiper-pagination {
+
+        /**
+         * Position.
+         */
+
+        bottom: 25px !important;
+
+        /**
+         * .swiper-pagination-bullet.
+         */
+
+        .swiper-pagination-bullet {
+
+            /**
+             * Sizing.
+             */
+
+            height: 10px;
+            width: 10px;
+
+            /**
+             * &.swiper-pagination-bullet-active.
+             */
+
+            &.swiper-pagination-bullet-active {
+
+                /**
+                 * Background.
+                 */
+
+                background-color: $brand-one;
+
+            }
+
+        }
 
     }
 

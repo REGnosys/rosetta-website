@@ -4,7 +4,8 @@
 
 import { SVGInjector } from '@tanem/svg-injector'
 import 'swiper/swiper.min.css'
-import Swiper from 'swiper'
+import 'swiper/components/pagination/pagination.min.css'
+import Swiper, { Pagination } from 'swiper'
 
 /**
  * CoreDiagram.
@@ -99,12 +100,22 @@ export class CoreDiagram {
 
         /**
          * 
+         */
+
+        Swiper.use([Pagination]);
+
+        /**
+         * 
          */         
 
         this.siwperInstance = new Swiper('.swiper-container', {
-            autoHeight: true
+            autoHeight: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
         })
-
+        
     }
 
     /**
