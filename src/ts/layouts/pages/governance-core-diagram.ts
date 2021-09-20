@@ -201,6 +201,12 @@ export class CoreDiagram {
                     if (ringSelector.substr(0, 8) == '#outside') this.hideOuterRingAnnotations()
 
                     /**
+                     *
+                     */
+
+                    this.siwperInstance.slideTo(0)
+
+                    /**
                      * 
                      */
 
@@ -290,7 +296,13 @@ export class CoreDiagram {
                  * Check if the user moved their mouse out of the outer ring.
                  */
 
-                 if (id.substr(0, 7) == 'outside') this.hideOuterRingAnnotations()
+                if (id.substr(0, 7) == 'outside') this.hideOuterRingAnnotations()
+
+                /**
+                 *
+                 */
+
+                this.siwperInstance.slideTo(0)
 
                 /**
                  * 
