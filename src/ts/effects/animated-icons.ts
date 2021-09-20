@@ -48,6 +48,16 @@ export class AnimatedIcons {
     registerAnimatedIcon(obj : KeyShapeHTMLObjectElement) {
 
         /**
+         * Return early if this icon has already been added to the list.
+         * This could happen when a 'load' triggers this function, or
+         * a timeout triggers it.
+         */
+
+        if (this.icons.indexOf(obj) != -1) {
+            return
+        }
+
+        /**
          * Store obj.
          */
 
@@ -101,13 +111,14 @@ export class AnimatedIcons {
         })
 
         /**
-         * 
+         * Create a timeout to start the animation process
+         * for an animated icon.
          */
 
         setTimeout(() => {
 
             /**
-             * 
+             * Create interval to play animation at.
              */
 
             setInterval(() => {
@@ -115,7 +126,7 @@ export class AnimatedIcons {
             }, 1000 * this.getRandomNumberBetweenInclusive(4, 6))
 
             /**
-             * 
+             * Play the animation now.
              */
 
             obj.playAnimation()
@@ -155,6 +166,16 @@ export class AnimatedIcons {
             node.addEventListener('load', function() {
                 self.registerAnimatedIcon(this)
             })
+
+            /**
+             * There appears to be occurances where the 'load' event
+             * listener does not get called, therefore we have 
+             * a fallback timeout.
+             */
+
+            setTimeout(() => {
+                self.registerAnimatedIcon(node as KeyShapeHTMLObjectElement)
+            }, 1000)
 
         })
 
