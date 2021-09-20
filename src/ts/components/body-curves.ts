@@ -72,7 +72,7 @@ export class BodyCurves {
         window.addEventListener('resize', () => {
             this.curves.forEach(c => c.onWindowResized())
         })
-
+        
     }
 
 }
@@ -231,6 +231,15 @@ class Curve {
          */
 
         this.refresh()
+
+        /**
+         * Forces a delayed refresh incase elements 
+         * on the page haven't fully loaded.
+         */
+
+        setTimeout(() => {
+            this.refresh()
+        }, 500)
 
     }
 
