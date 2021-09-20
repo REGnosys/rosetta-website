@@ -11,6 +11,12 @@
     margin-bottom: 20px;
 
     /**
+     * Z-index.
+     */
+
+    z-index: 50;
+
+    /**
      * lottie-player.
      */
 
@@ -349,12 +355,6 @@
          */
 
         transform: translateY(0%) translateX(10%);
-
-        /**
-         * Z-index.
-         */
-
-        z-index: 50;
 
     }
 
