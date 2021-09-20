@@ -5,12 +5,6 @@
 .lottie-wrapper {
 
     /**
-     * Border.
-     */
-
-    // border: 1px solid $brand-one;
-
-    /**
      * Margin.
      */
 
@@ -27,6 +21,96 @@
          */
 
         display: inline-block;
+
+        /**
+         * &.hidden.
+         */
+
+        &.hidden {
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 0;
+
+        }
+
+        /**
+         * Transition.
+         */
+
+        transition: opacity 0.3s ease;
+
+    }
+
+    /**
+     * &--center.
+     */
+
+    &--center {
+
+        /**
+         * Font related.
+         */
+
+        text-align: center;
+
+    }
+
+    /**
+     * &--width-90pc lottie-player.
+     */
+
+    &--width-90pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 90%;
+
+    }
+
+    /**
+     * &--width-80pc lottie-player.
+     */
+
+    &--width-80pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 80%;
+
+    }
+
+    /**
+     * &--width-75pc.
+     */
+
+    &--width-75pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 75%;
+
+    }
+
+    /**
+     * &--width-70pc.
+     */
+
+    &--width-70pc lottie-player {
+
+        /**
+         * Sizing.
+         */
+
+        width: 70%;
 
     }
 
@@ -46,7 +130,7 @@
              * Sizing.
              */
 
-            width: 200px;
+            height: 150px !important;
 
         }
 
@@ -102,7 +186,27 @@
          * Transform.
          */
 
-        transform: translateY(-13%) translateX(80%);
+        transform: translateY(8%) translateX(85%);
+
+    }
+
+    /**
+     * &--deploy.
+     */
+
+    &--deploy {
+
+        /**
+         * Sizing.
+         */
+
+        width: 120vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-38%) translateX(30%);
 
     }
 
@@ -122,7 +226,27 @@
          * Transform.
          */
 
-        transform: translateY(-15%) translateX(35%);
+        transform: translateY(-5%) translateX(35%);
+
+    }
+
+    /**
+     * &--engine.
+     */
+
+    &--engine {
+
+        /**
+         * Sizing.
+         */
+
+        width: 100vw;
+        
+        /**
+         * Transform.
+         */
+
+        transform: translateY(-2%) translateX(20%);
 
     }
 
@@ -142,7 +266,7 @@
          * Transform.
          */
 
-        transform: translateY(-8%) translateX(13%);
+        transform: translateY(0%) translateX(13%);
 
     }
 
@@ -162,7 +286,7 @@
          * Transform.
          */
 
-        transform: translateY(0%) translateX(11%);
+        transform: translateY(0%) translateX(10%);
 
     }
 
