@@ -26,19 +26,19 @@ export class MobileNav {
          * 
          */
         
-        let mobileNav : HTMLElement = document.querySelector('.header-mobile-navigation')
+        let mobileNavWrapper : HTMLElement = document.querySelector('.header-mobile-navigation-wrapper')
 
         /**
          * 
          */
 
-        if (!mobileNav) return
+        if (!mobileNavWrapper) return
 
         /**
          * 
          */
 
-        let mobileNavClose : HTMLElement = mobileNav.querySelector('.header-mobile-navigation__close')
+        let mobileNavClose : HTMLElement = mobileNavWrapper.querySelector('.header-mobile-navigation-wrapper__close')
         let ham : HTMLElement = document.querySelector('.page-header__col-menu-ham a')
 
         /**
@@ -51,7 +51,7 @@ export class MobileNav {
              * 
              */
 
-            mobileNav.classList.add('show')
+            mobileNavWrapper.classList.add('show')
 
         })
 
@@ -65,7 +65,7 @@ export class MobileNav {
              * 
              */
 
-            mobileNav.classList.remove('show')
+            mobileNavWrapper.classList.remove('show')
 
         })
 

@@ -1,14 +1,14 @@
 /**
- * .header-mobile-navigation.
+ * .header-mobile-navigation-wrapper.
  */
 
-.header-mobile-navigation {
-
+.header-mobile-navigation-wrapper {
+    
     /**
-     * Background.
+     * Overflow.
      */
 
-    background-color: white;
+    overflow: hidden;
 
     /**
      * Display.
@@ -32,41 +32,6 @@
     z-index: 100;
 
     /**
-     * Padding.
-     */
-
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-
-    /**
-     * @include.
-     */
-
-    @include breakpoint($bs-small) {
-        
-        /**
-         * Padding.
-         */
-
-        padding-top: 10px;
-        padding-bottom: 15px;
-        padding-left: 25px;
-        padding-right: 25px;
-
-    }
-
-    /**
-     * @include.
-     */
-
-    @include breakpoint($b-df-tablet) {
-
-        display: block;
-
-    }
-
-    /**
      * Border.
      */
 
@@ -79,6 +44,61 @@
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.21);
     -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.21);
     -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.21);
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($b-df-tablet) {
+
+        /**
+         * Display.
+         */
+
+        display: block;
+
+    }
+
+    /**
+     * Hide scrollbar for Chrome, Safari and Opera.
+     */
+
+    &::-webkit-scrollbar {
+
+        /**
+         * Display.
+         */
+
+        display: none;
+        
+    }
+
+    /**
+     * Scroll.
+     */
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint(max-height 600px) {
+
+        /**
+         * Sizing.
+         */
+
+        max-height: 96vh !important;
+
+        /**
+         * Overflow.
+         */
+
+        overflow-y: scroll;
+        
+    }
 
     /**
      * Opacity.
@@ -182,6 +202,51 @@
 
     }
 
+}
+
+/**
+ * .header-mobile-navigation.
+ */
+
+.header-mobile-navigation {
+
+    /**
+     * Background.
+     */
+
+    background-color: white;
+
+    /**
+     * Padding.
+     */
+
+    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    /**
+     * @include.
+     */
+
+    @include breakpoint($bs-small) {
+        
+        /**
+         * Padding.
+         */
+
+        padding-top: 10px;
+        padding-bottom: 0;
+        padding-left: 25px;
+        padding-right: 25px;
+
+    }
+
+    /**
+     * Overflow.
+     */
+
+    overflow: hidden;
+
     /**
      * &__block.
      */
@@ -272,10 +337,104 @@
     }
 
     /**
+     * &__nav-item-list--contact.
+     */
+
+    &__nav-item-list--contact {
+
+        /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
+         * Margin.
+         */
+
+        margin-top: 5px;
+
+        /**
+         * Padding.
+         */
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        /**
+         * &::after.
+         */
+
+        &::after {
+
+            /**
+             * Content.
+             */
+
+            content: '';
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+            top: 0;
+            left: 50%;
+
+            /**
+             * Tranform.
+             */
+
+            transform: translateX(-50%);
+
+            /**
+             * Sizing.
+             */
+
+            width: 120%;
+            height: 120%;
+
+            /**
+             * Background.
+             */
+
+            background-color: #e7f6f9;
+
+            /**
+             * Z-index.
+             */
+
+            z-index: 1;
+
+        }
+
+        /**
+         * .header-mobile-navigation__nav-item.
+         */
+
+        .header-mobile-navigation__nav-item {
+
+            /**
+             * Margin.
+             */
+
+            margin-bottom: 0;
+
+        }
+
+    }
+
+    /**
      * &__nav-item.
      */
 
     &__nav-item {
+
+        /**
+         * Z-index.
+         */
+
+        z-index: 2;
 
         /**
          * Flex.
@@ -302,6 +461,75 @@
          */
 
         margin-bottom: 10px;
+
+        /**
+         * &--full-width.
+         */
+
+        &--full-width {
+
+            /**
+             * Flex.
+             */
+
+            flex-basis: 100% !important;
+
+        }
+
+    }
+
+    /**
+     * &__contact-nav-list.
+     */
+
+    &__contact-nav-list {
+
+        /**
+         * Padding.
+         */
+
+        padding-left: 45px;
+
+    }
+
+    /**
+     * &__contact-nav-list-item.
+     */
+
+    &__contact-nav-list-item {
+
+        /**
+         * Display.
+         */
+
+        display: block;
+        
+        /**
+         * Font related.
+         */
+        
+        @include font-size-m3r();
+        color: $brand-three;
+
+        /**
+         * Margin.
+         */
+        
+        margin-bottom: 2px;
+
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+
+            /**
+             * Font related.
+             */
+
+            color: $brand-one;
+
+        }
 
     }
 
