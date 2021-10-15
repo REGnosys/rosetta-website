@@ -334,6 +334,28 @@ $mobile-nav-icon-height: 32px;
 
         display: flex;
 
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+
+            /**
+             * .icon-info-block__heading.
+             */
+
+            .icon-info-block__heading {
+
+                /**
+                 * Font related.
+                 */
+
+                color: $brand-one;
+
+            }
+
+        }
+
     }
 
     /**
