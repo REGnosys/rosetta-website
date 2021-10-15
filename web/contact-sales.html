@@ -449,8 +449,10 @@
 
 					<div class="col-md-6 info-panel df-pb-ml-50">
 						<div class="info-panel__content info-panel__content--tablet-reduced-padding">
-							<p class="font-size-l1 font-weight-semi-bold mb-20">How can we help?</p>
-							<form class="basic-form">
+							<form class="basic-form contact-form">
+								
+								<p class="font-size-l1 font-weight-semi-bold mb-20">How can we help?</p>
+
 								<ul>
 									<li><input class="basic-form__text-input" type="text" id="firstname" placeholder="First name*" required></li>
 									<li><input class="basic-form__text-input" type="text" id="surname" placeholder="Surname*" required></li>
@@ -468,6 +470,16 @@
 									<li><textarea class="basic-form__textarea-input" rows="5" id="message" placeholder="Tell us more about your query"></textarea></li>
 									<li class="pt-20"><button class="basic-form__submit-button link-with-graphic" type="submit">Send to sales team <i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i></button></li>
 								</ul>
+
+								<div class="response-container">
+									<div class="success-message">
+										<p class="font-size-m2 font-weight-semi-bold">Thank you, your enquiry was sent successfully.</p>
+									</div>
+									<div class="fail-message">
+										<p class="font-size-m2 font-weight-semi-bold">Sorry, there was a problem submitting your enquiry.</p>
+									</div>
+								</div>
+
 							</form>
 						</div>
 					</div>
