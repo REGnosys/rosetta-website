@@ -46,7 +46,7 @@ export class ContactForm {
          * 
          */
 
-        if (contactForm.length) {
+        if (contactForm) {
 
             /**
              * 
