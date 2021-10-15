@@ -113,9 +113,216 @@ export class CoreDiagram {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
+            },
+            on: {
+
+                /**
+                 * init.
+                 */
+
+                afterInit: () => {
+
+                    /**
+                     * 
+                     */
+
+                    let paginationItems : NodeListOf<HTMLElement> = document.querySelectorAll('.swiper-pagination-bullet')
+
+                    /**
+                     * 
+                     */
+
+                    let itemIndex : number = 0
+
+                    /**
+                     * 
+                     */
+
+                    paginationItems.forEach((item) => {
+
+                        /**
+                         * 
+                         */
+
+                        item.setAttribute('item-index', itemIndex.toString())
+                        itemIndex++
+
+                        /**
+                         * 
+                         */
+
+                        item.addEventListener('click', () => {
+                            
+                            /**
+                             * 
+                             */
+
+                            let index : number = parseInt(item.getAttribute('item-index'))
+
+                            /** 
+                             * 
+                             */
+
+                            if (index == 0) {
+                                
+                                /**
+                                 * 
+                                 */
+
+                                this.fullColorAllRings()
+                                this.fullColorAllListItems()
+
+                            } else {
+
+                                /**
+                                 * 
+                                 */
+
+                                let listItem : HTMLElement = this.listItemsContentNodes[index - 1]
+
+                                /**
+                                 * 
+                                 */
+
+                                this.highlightListItem(listItem)
+                                this.highlightRingCorrespondingToListItem(listItem)
+
+                            }
+
+                        })
+
+                    })
+
+                }
             }
         })
-        
+
+    }
+
+    /**
+     * goToDefaultState.
+     */
+
+    goToDefaultState() {
+
+        /**
+         * 
+         */
+
+        this.getRingOverlayElements().forEach(el => {
+            el.classList.remove('active')
+        })
+
+        /**
+         * 
+         */
+
+        this.hideOuterRingAnnotations()
+
+        /**
+         *
+         */
+
+        this.siwperInstance.slideTo(0)
+
+        /**
+         * 
+         */
+
+        this.fullColorAllRings()
+        this.fullColorAllListItems()
+
+    }
+
+    /**
+     * highlightRingCorrespondingToListItem.
+     */
+
+    highlightRingCorrespondingToListItem(listItem : HTMLElement) {
+
+        /**
+         * 
+         */
+
+        const targetRingSelector = listItem.getAttribute('data-ring-selector')
+
+        /**
+         * 
+         */
+
+        this.getRingOverlayElements().forEach(el => {
+            if (('#' + el.getAttribute('id')) == targetRingSelector) {
+                this.highlightRing(el)
+            }
+        })
+
+    }
+
+    /**
+     * highlightRing.
+     */
+
+    highlightRing(ring : HTMLElement) {
+
+        /**
+         * 
+         */
+
+        this.knockBackAllRings()
+
+        /**
+         * 
+         */
+
+        ring.classList.remove('knocked-back')
+
+        /**
+         * 
+         */
+
+        const id : string = ring.id           
+
+        /**
+         * Check if the user moved their mouse over the outer ring.
+         */
+
+        if (id.substr(0, 7) == 'outside') this.showOuterRingAnnotations()
+
+    }
+
+    /**
+     * highlightListItem.
+     */
+
+    highlightListItem(target : HTMLElement) {
+
+        /**
+         * 
+         */
+
+        this.knockBackAllListItems()
+
+        /**
+         * 
+         */
+
+        target.parentElement.classList.remove('knocked-back')
+        target.classList.add('active')
+
+        /**
+         * 
+         */
+
+        const graphic : HTMLElement = this.coreDiagram.querySelector('.core-diagram__graphic')
+        const ringSelector : string = target.getAttribute('data-ring-selector')
+
+        /**
+         * 
+         */
+
+        const ring : any = graphic.querySelector(ringSelector)
+        ring.classList.remove('knocked-back')
+
     }
 
     /**
@@ -137,7 +344,7 @@ export class CoreDiagram {
             this.listItemsContentNodes.forEach(el => {
 
                 /**
-                 * 
+                 * mouseenter.
                  */
 
                 el.addEventListener('mouseenter', (event) => {
@@ -145,49 +352,27 @@ export class CoreDiagram {
                     /**
                      * 
                      */
-
-                    this.knockBackAllRings()
-                    this.knockBackAllListItems()
-
-                    /**
-                     * 
-                     */
                     
-                    const target : HTMLElement =  event.target as HTMLElement
-                    target.parentElement.classList.remove('knocked-back')
-                    target.classList.add('active')
+                    const target : HTMLElement = event.target as HTMLElement
+                    this.highlightListItem(target)
 
                     /**
                      * 
                      */
 
-                    const graphic : HTMLElement = this.coreDiagram.querySelector('.core-diagram__graphic')
-                    const ringSelector : string = target.getAttribute('data-ring-selector')
-                    const slideIndex : string   = target.getAttribute('data-slide-index')
+                    this.highlightRingCorrespondingToListItem(target)
 
                     /**
                      * 
                      */
 
-                    const ring : any = graphic.querySelector(ringSelector)
-                    ring.classList.remove('knocked-back')
-                    
-                    /**
-                     * 
-                     */
-
-                    if (ringSelector.substr(0, 8) == '#outside') this.showOuterRingAnnotations()
-
-                    /**
-                     *
-                     */
-
+                    const slideIndex : string = target.getAttribute('data-slide-index')
                     this.siwperInstance.slideTo(parseInt(slideIndex))
 
                 })
 
                 /**
-                 * 
+                 * mouseleave.
                  */
 
                 el.addEventListener('mouseleave', (event) => {
@@ -196,33 +381,7 @@ export class CoreDiagram {
                      * 
                      */
 
-                    const target : HTMLElement =  event.target as HTMLElement
-                    target.classList.remove('active')
-
-                    /**
-                     * 
-                     */
-
-                    const ringSelector : string = target.getAttribute('data-ring-selector')
-
-                    /**
-                     * 
-                     */
-
-                    if (ringSelector.substr(0, 8) == '#outside') this.hideOuterRingAnnotations()
-
-                    /**
-                     *
-                     */
-
-                    this.siwperInstance.slideTo(0)
-
-                    /**
-                     * 
-                     */
-
-                    this.fullColorAllRings()
-                    this.fullColorAllListItems()
+                    this.goToDefaultState()
 
                 })
 
@@ -231,8 +390,6 @@ export class CoreDiagram {
         }
 
     }
-
-
 
     /**
      * applyEventListenersToRing.
@@ -264,28 +421,21 @@ export class CoreDiagram {
                  */
 
                 const ring : any = event.target
-                ring.classList.remove('knocked-back')
+                const id : string = ring.id
+                this.highlightRing(ring)
 
                 /**
                  * 
                  */
 
-                const id : string = ring.id
-                const listItem : HTMLElement = this.coreDiagram.querySelector('[data-ring-selector="#' + id + '"]')
-                listItem.classList.add('active')
-                listItem.parentElement.classList.remove('knocked-back')
+                const listItem : HTMLElement = this.coreDiagram.querySelector('[data-ring-selector="#' + id + '"]')       
+                this.highlightListItem(listItem)
+                
+                /**
+                 * 
+                 */
+
                 const slideIndex : string = listItem.getAttribute('data-slide-index')
-
-                /**
-                 * Check if the user moved their mouse over the outer ring.
-                 */
-
-                if (id.substr(0, 7) == 'outside') this.showOuterRingAnnotations()
-
-                /**
-                 *
-                 */
-
                 this.siwperInstance.slideTo(parseInt(slideIndex))
 
             })
@@ -300,27 +450,7 @@ export class CoreDiagram {
                  * 
                  */
 
-                const ring : any = event.target
-                const id : string = ring.id
-
-                /**
-                 * Check if the user moved their mouse out of the outer ring.
-                 */
-
-                if (id.substr(0, 7) == 'outside') this.hideOuterRingAnnotations()
-
-                /**
-                 *
-                 */
-
-                this.siwperInstance.slideTo(0)
-
-                /**
-                 * 
-                 */
-
-                this.fullColorAllRings()
-                this.fullColorAllListItems()
+                this.goToDefaultState()
 
             })
 
