@@ -24,6 +24,7 @@ import { LinkWithGraphics } from './components/link-with-graphics'
 import { BodyCurves } from './components/body-curves'
 import { GraphicHeaders } from './components/graphic-headers'
 import { BasicForms } from './components/basic-forms'
+import { ContactForm } from './components/contact-form'
 
 /**
  * Effects.
@@ -62,6 +63,7 @@ export class App {
     private bodyCurves : BodyCurves
     private graphicHeaders : GraphicHeaders
     private basicForms : BasicForms
+    private contactForm : ContactForm
 
     /**
      * Effects.
@@ -100,6 +102,7 @@ export class App {
         this.bodyCurves = new BodyCurves()
         this.graphicHeaders = new GraphicHeaders()
         this.basicForms = new BasicForms()
+        this.contactForm = new ContactForm()
 
         /**
          * Effects.
@@ -145,6 +148,7 @@ export class App {
             this.bodyCurves.start()
             this.graphicHeaders.start()
             this.basicForms.start()
+            this.contactForm.start()
 
             /**
              * Start effects.
