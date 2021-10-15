@@ -395,6 +395,12 @@
 .platform-hero {
 
     /**
+     * Overflow.
+     */
+
+    overflow: hidden;
+
+    /**
      * Padding.
      */
 
@@ -427,5 +433,19 @@
      */
 
     z-index: 51;
+
+}
+
+/**
+ * .lottie-header.
+ */
+
+.lottie-header {
+
+    /**
+     * Overflow.
+     */
+
+    overflow-x: hidden;
 
 }
