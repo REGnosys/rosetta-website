@@ -2,7 +2,8 @@
  * 
  */
 
-import mediumZoom from 'medium-zoom'
+import 'zoom-vanilla.js/dist/zoom.css'
+import 'zoom-vanilla.js/dist/zoom-vanilla.min.js'
 
 /**
  * MediumZoom.
@@ -25,10 +26,8 @@ export class MediumZoom {
     start(): void {
 
         /**
-         * 
+         * All we're doing here is importing the zoom-vanilla files (above).
          */
-
-        const zoom = mediumZoom('[data-zoomable]')
 
     }
 
