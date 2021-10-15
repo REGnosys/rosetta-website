@@ -34,6 +34,7 @@ import { ScrollsIntoView } from './effects/scolls-into-view'
 import { NumberCountUp  } from './effects/number-count-up'
 import { LottieAnimations } from './effects/lottie-animations'
 import { MediumZoom } from './effects/medium-zoom'
+import { UrlHash } from './effects/url-hash'
 
 /**
  * App.
@@ -71,6 +72,7 @@ export class App {
     private numberCountUp : NumberCountUp
     private lottieAniations : LottieAnimations
     private mediumZoom : MediumZoom
+    private urlHash : UrlHash
 
     /**
      * constructor.
@@ -108,6 +110,7 @@ export class App {
         this.numberCountUp = new NumberCountUp()
         this.lottieAniations = new LottieAnimations()
         this.mediumZoom = new MediumZoom()
+        this.urlHash = new UrlHash()
 
     }
 
@@ -115,7 +118,7 @@ export class App {
      * start.
      */
 
-    start(): void {
+    start(): void {       
 
         /**
          * When document is ready.
@@ -152,6 +155,7 @@ export class App {
             this.animatedIcons.start()
             this.lottieAniations.start()
             this.mediumZoom.start()
+            this.urlHash.start()
 
         })
 
