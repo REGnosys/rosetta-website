@@ -28,7 +28,7 @@ export class MediumZoom {
          * 
          */
 
-        mediumZoom('[data-zoomable]')
+        const zoom = mediumZoom('[data-zoomable]')
 
     }
 
