@@ -26,10 +26,10 @@
     "easydropdown": "^4.2.0",
     "fabric": "^4.3.1",
     "lottie-web": "^5.7.12",
-    "medium-zoom": "^1.0.6",
     "scrollama": "^2.2.1",
     "velocity-animate": "^2.0.6",
-    "swiper": "^6.5.7"
+    "swiper": "^6.5.7",
+    "zoom-vanilla.js": "^2.0.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
