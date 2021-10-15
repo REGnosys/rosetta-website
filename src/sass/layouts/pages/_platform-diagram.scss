@@ -202,6 +202,182 @@
 
         }
 
+        /**
+         * .animated-icon.
+         */
+        
+        .animated-icon {
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+
+            /**
+             * Sizing.
+             */
+
+            width: 60px;
+
+            /**
+             * &.design-icon.
+             */
+
+            &.design-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 3%;
+                left: 8.5%;
+                
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 4%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 4%; width: 30px; }
+
+            }
+
+            /**
+             * &.translate-icon.
+             */
+
+            &.translate-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 3%;
+                left: 40%;
+
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 4%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 4%; width: 30px; }
+                
+            }
+
+            /**
+             * &.deploy-icon.
+             */
+
+            &.deploy-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 3%;
+                left: 76.5%;
+                
+                /**
+                 * Sizing.
+                 */
+
+                width: 52px;
+
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 4%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 4%; width: 30px; }
+
+            }
+
+            /**
+             * &.ingest-icon.
+             */
+
+            &.ingest-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 61%;
+                left: 9%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 50px;
+            
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { left: 10%; top: 62%; width: 35px; }
+                @include breakpoint($b-tablet-only) { top: 61%; width: 30px; }
+                
+            }
+
+            /**
+             * &.engine-icon.
+             */
+
+            &.engine-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 61%;
+                left: 42%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 52px;
+                
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 60%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 61%; width: 30px; }
+
+            }
+
+            /**
+             * &.monitor-icon.
+             */
+
+            &.monitor-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 61%;
+                left: 76.5%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 48px;
+                
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { left: 77%; top: 62%; width: 35px; }
+                @include breakpoint($b-tablet-only) { top: 61%; width: 30px; }
+
+            }
+
+        }
+
     }
 
     /**
@@ -246,7 +422,7 @@
 
                         font-size: 15px;
                         
-                    }                    
+                    }
 
                 }                
 
@@ -280,7 +456,7 @@
              */
 
             top: 21%;
-            left: 20.5%;
+            left: 19.5%;
 
         }
 
@@ -294,8 +470,8 @@
              * Position.
              */
 
-            top: 32.5%;
-            left: 20.5%;
+            top: 33%;
+            left: 19.5%;
 
         }
 
@@ -309,7 +485,7 @@
              * Position.
              */
 
-            top: 65%;
+            top: 64.5%;
             left: 16.5%;
 
         }
@@ -344,6 +520,136 @@
 
         }
 
+        /**
+         * .animated-icon.
+         */
+        
+        .animated-icon {
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+
+            /**
+             * Sizing.
+             */
+
+            width: 40px;
+
+            /**
+             * &.design-icon.
+             */
+
+            &.design-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 8%;
+                left: 8%;
+                
+            }
+
+            /**
+             * &.translate-icon.
+             */
+
+            &.translate-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 20%;
+                left: 8%;
+                
+            }
+
+            /**
+             * &.deploy-icon.
+             */
+
+            &.deploy-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 32%;
+                left: 8%;
+                
+            }
+
+            /**
+             * &.ingest-icon.
+             */
+
+            &.ingest-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 64%;
+                left: 7%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 35px;
+               
+            }
+
+            /**
+             * &.engine-icon.
+             */
+
+            &.engine-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 75%;
+                left: 7%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 50px;
+
+            }
+
+            /**
+             * &.monitor-icon.
+             */
+
+            &.monitor-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 87.5%;
+                left: 7.5%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 40px;
+                
+            }
+
+        }
+
     }
+
+
 
 }
