@@ -7,6 +7,15 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta charset="utf-8">
 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 273945739);
+		</script>
+
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -157,7 +166,7 @@
 									<li><a href="our-community.html"><i><img src="assets/svg/navigation/nav-our-community.svg" alt="Graphic representing people"></i>Our Community</a></li>
 									<li><a href="governance.html"><i><img src="assets/svg/navigation/nav-governance.svg" alt=""></i>Governance</a></li>
 									<li><a href="it-security.html"><i><img src="assets/svg/navigation/nav-it-security.svg" alt="Graphic of a padlock"></i>IT Security</a></li>
-									<li><a href="#"><i><img src="assets/svg/navigation/nav-documentation.svg" alt="Graphic of a book"></i>Documentation</a></li>
+									<li><a href="https://docs.rosetta-technology.io/core/" target="_blank"><i><img src="assets/svg/navigation/nav-documentation.svg" alt="Graphic of a book"></i>Documentation</a></li>
 								</ul>
 								<div class="header-sub-navigation__about-contact-panel">
 									<ul class="header-sub-navigation__about-contact-pages-list">
@@ -174,8 +183,8 @@
 					</div>
 
 					<div class="col-lg-5 page-header__col-account">
-						<a href="#" class="page-header__sign-in">Sign in</a>
-						<a href="#" class="header-button"><span>Sign up for free</span></a>
+						<a href="https://ui.rosetta-technology.io/#/login" class="page-header__sign-in">Sign in</a>
+						<a href="https://ui.rosetta-technology.io/#/register" class="header-button"><span>Sign up for free</span></a>
 					</div>
 
 					<div class="col-sm-8 col-md-9 page-header__col-menu-ham">
@@ -350,7 +359,7 @@
 								</a>
 							</div>
 							<div class="header-mobile-navigation__nav-item">
-								<a href="#" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<a href="https://docs.rosetta-technology.io/core/" target="_blank" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
 									<div class="icon-info-block__col-icon">
 										<img class="icon-info-block__icon" src="assets/svg/navigation/nav-documentation.svg" alt="">									
 									</div>
@@ -440,8 +449,10 @@
 
 					<div class="col-md-6 info-panel df-pb-ml-50">
 						<div class="info-panel__content info-panel__content--tablet-reduced-padding">
-							<p class="font-size-l1 font-weight-semi-bold mb-20">How can we help?</p>
-							<form class="basic-form">
+							<form class="basic-form contact-form">
+								
+								<p class="font-size-l1 font-weight-semi-bold mb-20">How can we help?</p>
+
 								<ul>
 									<li><input class="basic-form__text-input" type="text" id="firstname" placeholder="First name*" required></li>
 									<li><input class="basic-form__text-input" type="text" id="surname" placeholder="Surname*" required></li>
@@ -459,6 +470,16 @@
 									<li><textarea class="basic-form__textarea-input" rows="5" id="message" placeholder="Tell us more about your query"></textarea></li>
 									<li class="pt-20"><button class="basic-form__submit-button link-with-graphic" type="submit">Send to sales team <i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i></button></li>
 								</ul>
+
+								<div class="response-container">
+									<div class="success-message">
+										<p class="font-size-m2 font-weight-semi-bold">Thank you, your enquiry was sent successfully.</p>
+									</div>
+									<div class="fail-message">
+										<p class="font-size-m2 font-weight-semi-bold">Sorry, there was a problem submitting your enquiry.</p>
+									</div>
+								</div>
+
 							</form>
 						</div>
 					</div>
@@ -477,12 +498,12 @@
 				<div class="row mb-60 text-align-center df-ml-text-align-left">
 					<div class="col-md-6 offset-lg-2 col-lg-4 df-pb-ml-20">
 						<p class="font-size-l1 font-weight-semi-bold">Need a new feature?</p>
-						<p class="font-size-m2">We're <span class="font-weight-semi-bold font-color-brand-one">tracking</span> all requests from our community and you can also <span class="font-weight-semi-bold font-color-brand-one">submit yours​​</span></p>
+						<p class="font-size-m2">We're <a href="https://airtable.com/shrFPVYrrJ0QjlCX2" class="font-weight-semi-bold" target="_blank">tracking</a> all requests from our community and you can also <a href="https://airtable.com/shrJM6FWeBbL4KrqO" class="font-weight-semi-bold">submit yours​​</a></p>
 					</div>
 					<div class="col-md-6 col-lg-4">
 						<p class="font-size-l1 font-weight-semi-bold">Technical support</p>
 						<p class="font-size-m2">Our support team is here to help! <br>
-							If you have technical issues, <span class="font-weight-semi-bold font-color-brand-one">contact support</span></p>
+							If you have technical issues, <a href="contact-support.html" class="font-weight-semi-bold">contact support</a></p>
 					</div>
 				</div>
 			</div>
@@ -517,7 +538,7 @@
 							<li><a href="our-community.html">Our Community</a></li>
 							<li><a href="governance.html">Governance</a></li>
 							<li><a href="it-security.html">IT Security</a></li>
-							<li><a href="#">Documentation</a></li>
+							<li><a href="https://docs.rosetta-technology.io/core/" target="_blank">Documentation</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
@@ -530,9 +551,9 @@
 					<div class="col-md-3">
 						<p class="page-footer__contact-heading"><span>Stay in touch</span></p>
 						<ul class="page-footer__social-list">
-							<li><a href="#"><i><img src="assets/svg/common/social-linkedin.svg"></i><span>Linked In</span></a></li>
-							<li><a href="#"><i><img src="assets/svg/common/social-twitter.svg"></i><span>Twitter</span></a></li>
-							<li><a href="#"><i><img src="assets/svg/common/social-lines.svg"></i><span>Lines</span></a></li>
+							<li><a href="https://www.linkedin.com/company/regnosys" target="_blank"><i><img src="assets/svg/common/social-linkedin.svg"></i><span>Linked In</span></a></li>
+							<li><a href="https://twitter.com/regnosys" target="_blank"><i><img src="assets/svg/common/social-twitter.svg"></i><span>Twitter</span></a></li>
+							<li><a href="contact.html"><i><img src="assets/svg/common/social-lines.svg"></i><span>Lines</span></a></li>
 						</ul>
 					</div>
 				</div>

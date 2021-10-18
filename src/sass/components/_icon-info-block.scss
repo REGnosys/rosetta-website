@@ -42,58 +42,6 @@ $mobile-nav-icon-height: 32px;
     height: 100%;
 
     /**
-     * &--with-link.
-     */
-
-    &--with-link {
-
-        /**
-         * .icon-info-block__heading-wrapper.
-         */
-
-        .icon-info-block__heading-wrapper {
-
-            /**
-             * &:hover.
-             */
-
-            &:hover {
-
-                /**
-                 * p.
-                 */
-
-                p {
-
-                    /**
-                     * Font related.
-                     */
-
-                    color: $brand-one;
-
-                }
-
-                /**
-                 * .link-with-graphic.
-                 */
-
-                .link-with-graphic {
-                    
-                    /**
-                     * @include.
-                     */
-
-                    @include link-with-graphic--hover();
-
-                }
-
-            }
-    
-        }
-
-    }
-
-    /**
      * &__col-icon.
      */
 
@@ -225,10 +173,10 @@ $mobile-nav-icon-height: 32px;
     }
 
     /**
-     * &--menu.
+     * &--menu, &--large .icon-info-block__heading-wrapper.
      */
 
-    &--menu {
+    &--menu, &--large .icon-info-block__heading-wrapper {
 
         /**
          * Display.
@@ -301,6 +249,50 @@ $mobile-nav-icon-height: 32px;
     }
 
     /**
+     * &--large .icon-info-block__heading-wrapper.
+     */
+
+    &--large .icon-info-block__heading-wrapper {
+
+        /**
+         * .icon-info-block__heading.
+         */
+
+        .icon-info-block__heading {
+
+            /**
+             * @include.
+             */
+
+            @include mini-arrow($brand-one, right, false, -1);
+
+        }
+
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+
+            /**
+             * .icon-info-block__heading.
+             */
+
+            .icon-info-block__heading {
+
+                /**
+                 * @include.
+                 */
+
+                @include mini-arrow($brand-one, right, true, -1);
+
+            }
+            
+        }
+
+    }
+
+    /**
      * &--menu &__icon.
      */
 
@@ -341,6 +333,28 @@ $mobile-nav-icon-height: 32px;
          */
 
         display: flex;
+
+        /**
+         * &:hover.
+         */
+
+        &:hover {
+
+            /**
+             * .icon-info-block__heading.
+             */
+
+            .icon-info-block__heading {
+
+                /**
+                 * Font related.
+                 */
+
+                color: $brand-one;
+
+            }
+
+        }
 
     }
 
@@ -450,6 +464,12 @@ $mobile-nav-icon-height: 32px;
     &--large &__heading {
 
         /**
+         * Position.
+         */
+
+        position: relative;
+
+        /**
          * Font related.
          */
 
@@ -465,13 +485,13 @@ $mobile-nav-icon-height: 32px;
              * Margin.
              */
 
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             
             /**
              * Font related.
              */
 
-            @include font-size-m4r();
+            @include font-size-m2();
 
         }
 

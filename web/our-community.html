@@ -7,6 +7,15 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta charset="utf-8">
 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 273945739);
+		</script>
+
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -157,7 +166,7 @@
 									<li><a href="our-community.html"><i><img src="assets/svg/navigation/nav-our-community.svg" alt="Graphic representing people"></i>Our Community</a></li>
 									<li><a href="governance.html"><i><img src="assets/svg/navigation/nav-governance.svg" alt=""></i>Governance</a></li>
 									<li><a href="it-security.html"><i><img src="assets/svg/navigation/nav-it-security.svg" alt="Graphic of a padlock"></i>IT Security</a></li>
-									<li><a href="#"><i><img src="assets/svg/navigation/nav-documentation.svg" alt="Graphic of a book"></i>Documentation</a></li>
+									<li><a href="https://docs.rosetta-technology.io/core/" target="_blank"><i><img src="assets/svg/navigation/nav-documentation.svg" alt="Graphic of a book"></i>Documentation</a></li>
 								</ul>
 								<div class="header-sub-navigation__about-contact-panel">
 									<ul class="header-sub-navigation__about-contact-pages-list">
@@ -174,8 +183,8 @@
 					</div>
 
 					<div class="col-lg-5 page-header__col-account">
-						<a href="#" class="page-header__sign-in">Sign in</a>
-						<a href="#" class="header-button"><span>Sign up for free</span></a>
+						<a href="https://ui.rosetta-technology.io/#/login" class="page-header__sign-in">Sign in</a>
+						<a href="https://ui.rosetta-technology.io/#/register" class="header-button"><span>Sign up for free</span></a>
 					</div>
 
 					<div class="col-sm-8 col-md-9 page-header__col-menu-ham">
@@ -350,7 +359,7 @@
 								</a>
 							</div>
 							<div class="header-mobile-navigation__nav-item">
-								<a href="#" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
+								<a href="https://docs.rosetta-technology.io/core/" target="_blank" class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading">
 									<div class="icon-info-block__col-icon">
 										<img class="icon-info-block__icon" src="assets/svg/navigation/nav-documentation.svg" alt="">									
 									</div>
@@ -520,12 +529,29 @@
 						<p class="font-size-m2">Standardisation is the cornerstone of the digitisation of financial markets. 
 							Global trade associations and standard-setting organisations use Rosetta to 
 							build a "Common Domain Model" (CDM) and deliver a digital future for their market.​</p>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							Derivatives (ISDA)​
+
+						<a 
+							href="https://www.isda.org/2019/10/14/isda-common-domain-model/" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
+							target="_blank"
+						>
+							Derivatives (ISDA)
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							Securities Financing (ISLA, ICMA)
+						<a 
+							href="https://www.islaemea.org/regulation-and-policy/digital-fintech/common-domain-model-cdm/" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
+							target="_blank"
+						>
+							Securities Financing (ISLA)
+							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
+						</a>
+						<a 
+							href="https://www.icmagroup.org/News/news-in-brief/common-domain-model-cdm-for-repo-and-bonds/" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold"
+							target="_blank"
+						>
+							Bond and Repo (ICMA)
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 					</div>
@@ -534,12 +560,20 @@
 						<p class="font-size-m2">New technology, from cloud to distributed ledger to machine learning, are 
 							re-defining how financial markets operate. Technology providers, large and small, 
 							leverage Rosetta's executable code distribution to accelerate their time-to-market.</p>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							Java, DAML, C#, TypeScript, Scala, Go​
+						<a 
+							href="https://axoni.com/press/axoni-and-regnosys-announce-scala-implementation-of-isda-common-domain-model/" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
+							target="_blank"
+						>
+							Axoni (Ethereum)
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							Corda, Ethereum
+						<a 
+							href="https://mondovisione.com/media-and-resources/news/fragmos-chain-collaborates-with-isda-and-regnosys-to-deliver-kotlin-code-generat/" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold"
+							target="_blank"
+						>
+						Fragmos (Corda)
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 					</div>
@@ -547,8 +581,20 @@
 						<p class="font-size-l1 font-weight-semi-bold">How financial institutions use Rosetta</p>
 						<p class="font-size-m2">Whether for clearing, trade lifecycle management, collateral management or reporting, 
 							Rosetta helps financial institutions re-engineer their post-trade business processes.</p>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							Use cases
+						<a 
+							href="https://www.ey.com/en_gl/banking-capital-markets/how-financial-services-can-accelerate-the-adoption-of-the-isda-common-domain-model" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
+							target="_blank"
+						>
+							Post-trade processing
+							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
+						</a>
+						<a 
+							href="https://jwg-it.eu/working-group/global-derivatives-digital-regulatory-reporting-programme/" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold"
+							target="_blank"
+						>
+							Regulatory reporting
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 					</div>
@@ -557,8 +603,12 @@
 						<p class="font-size-m2">Rosetta is at the forefront of the digitisation of the financial regulatory framework, 
 							helping regulators around the globe transform their data collection process through 
 							"machine-executable regulation" or "rules-as-code".</p>
-						<a href="#" class="link-with-graphic font-size-m5 font-weight-semi-bold">
-							Use cases / jurisdictions
+						<a 
+							href="https://www.bis.org/press/p201006.htm" 
+							class="link-with-graphic font-size-m5 font-weight-semi-bold"
+							target="_blank"
+						>
+							Machine-executable regulation
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 					</div>
@@ -595,10 +645,10 @@
 					</div>
 					<div class="col-md-12 mb-25">
 						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="#" class="button">Sign up for free</a>
+							<a href="https://ui.rosetta-technology.io/#/register" class="button">Sign up for free</a>
 						</div>
 						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="#" class="button">Buy now</a>
+							<a href="pricing.html" class="button">Buy now</a>
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -640,7 +690,7 @@
 							<li><a href="our-community.html">Our Community</a></li>
 							<li><a href="governance.html">Governance</a></li>
 							<li><a href="it-security.html">IT Security</a></li>
-							<li><a href="#">Documentation</a></li>
+							<li><a href="https://docs.rosetta-technology.io/core/" target="_blank">Documentation</a></li>
 							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
@@ -653,9 +703,9 @@
 					<div class="col-md-3">
 						<p class="page-footer__contact-heading"><span>Stay in touch</span></p>
 						<ul class="page-footer__social-list">
-							<li><a href="#"><i><img src="assets/svg/common/social-linkedin.svg"></i><span>Linked In</span></a></li>
-							<li><a href="#"><i><img src="assets/svg/common/social-twitter.svg"></i><span>Twitter</span></a></li>
-							<li><a href="#"><i><img src="assets/svg/common/social-lines.svg"></i><span>Lines</span></a></li>
+							<li><a href="https://www.linkedin.com/company/regnosys" target="_blank"><i><img src="assets/svg/common/social-linkedin.svg"></i><span>Linked In</span></a></li>
+							<li><a href="https://twitter.com/regnosys" target="_blank"><i><img src="assets/svg/common/social-twitter.svg"></i><span>Twitter</span></a></li>
+							<li><a href="contact.html"><i><img src="assets/svg/common/social-lines.svg"></i><span>Lines</span></a></li>
 						</ul>
 					</div>
 				</div>

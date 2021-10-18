@@ -5,6 +5,12 @@
 .basic-form {
 
     /**
+     * Position.
+     */
+
+    position: relative;
+
+    /**
      * ul.
      */
 
@@ -91,6 +97,152 @@
 
     }
 
+    /**
+     * .response-container.
+     */
+
+    .response-container {
+
+        /**
+         * Background.
+         */
+
+        background-color: #f1efef;
+
+        /**
+         * Display.
+         */
+
+        display: flex;
+
+        /**
+         * Flex.
+         */
+
+        justify-content: center;
+        align-items: center;
+
+        /**
+         * Position.
+         */
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        /**
+         * Opacity.
+         */
+
+        opacity: 0;
+
+        /**
+         * Pointer.
+         */
+
+        pointer-events: none;
+
+        /**
+         * &.show.
+         */
+
+        &.show {
+
+            /**
+             * Opacity.
+             */
+
+            opacity: 1;
+
+            /**
+             * Pointer.
+             */
+
+            pointer-events: all;
+
+        }
+
+        /**
+         * &.success.
+         */
+
+        &.success {
+
+            /**
+             * .success-message.
+             */
+
+            .success-message {
+
+                /**
+                 * Display.
+                 */
+
+                display: block;
+
+            }
+
+        }
+
+        /**
+         * .fail.
+         */
+
+        &.fail {
+
+            /**
+             * .fail-message.
+             */
+
+            .fail-message {
+
+                /**
+                 * Display.
+                 */
+
+                display: block;
+
+            }
+
+        }
+
+        /**
+         * Transition.
+         */
+
+        transition: opacity 0.2s linear;
+
+        /**
+         * .success-message.
+         */
+
+        .success-message { 
+
+            /**
+             * Display.
+             */
+
+            display: none;
+
+        }
+
+        /**
+         * .fail-message.
+         */
+
+        .fail-message {
+
+            /**
+             * Display.
+             */
+
+            display: none;
+
+        }
+
+    }
 
     /**
      * &__text-input.

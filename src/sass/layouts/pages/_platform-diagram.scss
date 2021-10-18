@@ -23,12 +23,6 @@
         li {
 
             /**
-             * Display.
-             */
-
-            display: block;
-
-            /**
              * Position.
              */
 
@@ -50,7 +44,7 @@
                  * Flex.
                  */
 
-                align-items: center;
+                flex-direction: column;
 
                 /**
                  * Font related.
@@ -75,30 +69,87 @@
                 }
 
                 /**
+                 * span.
+                 */
+
+                span {
+
+                    /**
+                     * Display.
+                     */
+
+                    display: flex;
+
+                    /**
+                     * Flex.
+                     */
+
+                    align-items: center;
+
+                    /**
+                     * @include.
+                     */
+
+                    @include mini-arrow($brand-one, right, false, 0);
+
+                }
+
+                /**
+                 * &::before.
+                 */
+
+                &::before {
+
+                    /**
+                     * Content.
+                     */
+
+                    content: 'Rosetta';
+
+                    /**
+                     * Display.
+                     */
+
+                    display: block;
+
+                    /**
+                     * Font related.
+                     */
+
+                    font-size: 12px;
+                    line-height: 16px;
+                    font-weight: normal;
+                    text-transform: none;
+
+                }
+
+                /**
                  * &:hover.
                  */
 
                 &:hover {
 
                     /**
-                     * Opacity.
+                     * Font related.
                      */
 
-                    opacity: 0.5;
+                    color: $brand-one;
 
                     /**
-                     * @include.
+                     * span.
                      */
 
-                    @include mini-arrow($brand-three, right, true);
+                    span {
+
+                        /**
+                         * @include.
+                         */
+
+                        @include mini-arrow($brand-one, right, true, 0);
+
+                    }
 
                 }
-
-                /**
-                 * @include.
-                 */
-
-                @include mini-arrow($brand-one, right);
 
             }
 
@@ -122,8 +173,8 @@
              * Position.
              */
 
-            top: 6.5%;
-            left: 14.5%;
+            top: 4.5%;
+            left: 15%;
 
         }
 
@@ -137,7 +188,7 @@
              * Position.
              */
 
-            top: 6.5%;
+            top: 4.5%;
             left: 46.5%;        
 
         }
@@ -152,7 +203,7 @@
              * Position.
              */
 
-            top: 6.5%;
+            top: 4.5%;
             left: 82.5%;        
 
         }
@@ -167,7 +218,7 @@
              * Position.
              */
 
-            top: 63.5%;
+            top: 61.25%;
             left: 14.5%;
 
         }
@@ -182,7 +233,7 @@
              * Position.
              */
 
-            top: 63.5%;
+            top: 61.25%;
             left: 48%;
 
         }
@@ -197,8 +248,184 @@
              * Position.
              */
 
-            top: 63.5%;
+            top: 61.25%;
             left: 82%;
+
+        }
+
+        /**
+         * .animated-icon.
+         */
+        
+        .animated-icon {
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+
+            /**
+             * Sizing.
+             */
+
+            width: 60px;
+
+            /**
+             * &.design-icon.
+             */
+
+            &.design-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 3%;
+                left: 8.5%;
+                
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 4%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 4%; width: 30px; }
+
+            }
+
+            /**
+             * &.translate-icon.
+             */
+
+            &.translate-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 3%;
+                left: 40%;
+
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 4%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 4%; width: 30px; }
+                
+            }
+
+            /**
+             * &.deploy-icon.
+             */
+
+            &.deploy-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 3%;
+                left: 76.5%;
+                
+                /**
+                 * Sizing.
+                 */
+
+                width: 52px;
+
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 4%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 4%; width: 30px; }
+
+            }
+
+            /**
+             * &.ingest-icon.
+             */
+
+            &.ingest-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 60%;
+                left: 9%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 50px;
+            
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { left: 10%; top: 62%; width: 35px; }
+                @include breakpoint($b-tablet-only) { top: 61%; width: 30px; }
+                
+            }
+
+            /**
+             * &.engine-icon.
+             */
+
+            &.engine-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 60%;
+                left: 42%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 52px;
+                
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { top: 60%; width: 45px; }
+                @include breakpoint($b-tablet-only) { top: 61%; width: 30px; }
+
+            }
+
+            /**
+             * &.monitor-icon.
+             */
+
+            &.monitor-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 60%;
+                left: 76.5%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 48px;
+                
+                /**
+                 * @include.
+                 */
+
+                @include breakpoint($b-desktop-only) { left: 77%; top: 62%; width: 35px; }
+                @include breakpoint($b-tablet-only) { top: 61%; width: 30px; }
+
+            }
 
         }
 
@@ -246,7 +473,7 @@
 
                         font-size: 15px;
                         
-                    }                    
+                    }
 
                 }                
 
@@ -264,7 +491,7 @@
              * Position.
              */
 
-            top: 9%;
+            top: 8.25%;
             left: 19%;
 
         }
@@ -279,8 +506,8 @@
              * Position.
              */
 
-            top: 21%;
-            left: 20.5%;
+            top: 20.25%;
+            left: 19.5%;
 
         }
 
@@ -294,8 +521,8 @@
              * Position.
              */
 
-            top: 32.5%;
-            left: 20.5%;
+            top: 32.25%;
+            left: 19.5%;
 
         }
 
@@ -309,7 +536,7 @@
              * Position.
              */
 
-            top: 65%;
+            top: 64%;
             left: 16.5%;
 
         }
@@ -324,8 +551,8 @@
              * Position.
              */
 
-            top: 76.5%;
-            left: 20.5%;
+            top: 75.85%;
+            left: 20.25%;
 
         }
 
@@ -339,11 +566,141 @@
              * Position.
              */
 
-            top: 88.5%;
+            top: 87.85%;
             left: 18.5%;
 
         }
 
+        /**
+         * .animated-icon.
+         */
+        
+        .animated-icon {
+
+            /**
+             * Position.
+             */
+
+            position: absolute;
+
+            /**
+             * Sizing.
+             */
+
+            width: 40px;
+
+            /**
+             * &.design-icon.
+             */
+
+            &.design-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 8%;
+                left: 8%;
+                
+            }
+
+            /**
+             * &.translate-icon.
+             */
+
+            &.translate-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 20%;
+                left: 8%;
+                
+            }
+
+            /**
+             * &.deploy-icon.
+             */
+
+            &.deploy-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 32%;
+                left: 8%;
+                
+            }
+
+            /**
+             * &.ingest-icon.
+             */
+
+            &.ingest-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 64%;
+                left: 7%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 35px;
+               
+            }
+
+            /**
+             * &.engine-icon.
+             */
+
+            &.engine-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 75%;
+                left: 7%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 50px;
+
+            }
+
+            /**
+             * &.monitor-icon.
+             */
+
+            &.monitor-icon {
+
+                /**
+                 * Position.
+                 */
+
+                top: 87.5%;
+                left: 7.5%;
+
+                /**
+                 * Sizing.
+                 */
+
+                width: 40px;
+                
+            }
+
+        }
+
     }
+
+
 
 }

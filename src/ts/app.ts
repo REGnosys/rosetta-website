@@ -24,6 +24,7 @@ import { LinkWithGraphics } from './components/link-with-graphics'
 import { BodyCurves } from './components/body-curves'
 import { GraphicHeaders } from './components/graphic-headers'
 import { BasicForms } from './components/basic-forms'
+import { ContactForm } from './components/contact-form'
 
 /**
  * Effects.
@@ -34,6 +35,7 @@ import { ScrollsIntoView } from './effects/scolls-into-view'
 import { NumberCountUp  } from './effects/number-count-up'
 import { LottieAnimations } from './effects/lottie-animations'
 import { MediumZoom } from './effects/medium-zoom'
+import { UrlHash } from './effects/url-hash'
 
 /**
  * App.
@@ -61,6 +63,7 @@ export class App {
     private bodyCurves : BodyCurves
     private graphicHeaders : GraphicHeaders
     private basicForms : BasicForms
+    private contactForm : ContactForm
 
     /**
      * Effects.
@@ -71,6 +74,7 @@ export class App {
     private numberCountUp : NumberCountUp
     private lottieAniations : LottieAnimations
     private mediumZoom : MediumZoom
+    private urlHash : UrlHash
 
     /**
      * constructor.
@@ -98,6 +102,7 @@ export class App {
         this.bodyCurves = new BodyCurves()
         this.graphicHeaders = new GraphicHeaders()
         this.basicForms = new BasicForms()
+        this.contactForm = new ContactForm()
 
         /**
          * Effects.
@@ -108,6 +113,7 @@ export class App {
         this.numberCountUp = new NumberCountUp()
         this.lottieAniations = new LottieAnimations()
         this.mediumZoom = new MediumZoom()
+        this.urlHash = new UrlHash()
 
     }
 
@@ -115,7 +121,7 @@ export class App {
      * start.
      */
 
-    start(): void {
+    start(): void {       
 
         /**
          * When document is ready.
@@ -142,6 +148,7 @@ export class App {
             this.bodyCurves.start()
             this.graphicHeaders.start()
             this.basicForms.start()
+            this.contactForm.start()
 
             /**
              * Start effects.
@@ -152,6 +159,7 @@ export class App {
             this.animatedIcons.start()
             this.lottieAniations.start()
             this.mediumZoom.start()
+            this.urlHash.start()
 
         })
 
