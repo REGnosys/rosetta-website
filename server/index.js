@@ -7,9 +7,7 @@ const hbs = require("hbs");
 const app = express();
 let PORT = 8080;
 
-const config = {
-  prod: false,
-};
+const config = require("./config.js");
 
 const pages = [
   "index",
@@ -42,11 +40,10 @@ hbs.registerPartials(partialPath);
 app.set("view engine", "hbs");
 app.set("views", viewPath);
 
-// base url for homepage
-app.get("/", (req, res) => res.render("index.hbs", { config }));
+app.get("/", (req, res) => res.render("index.hbs", config));
 pages.forEach((page) =>
-  app.get("/" + page + ".html", (req, res) =>
-    res.render(page + ".hbs", { config })
+  app.get(new RegExp("/" + page + "(.html)?", "i"), (req, res) =>
+    res.render(page + ".hbs", config)
   )
 );
 

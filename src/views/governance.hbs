@@ -52,7 +52,7 @@
 				<div class="row pb-40">
 					<div class="col-md-12">
 						<h2 class="two-col-panel__heading" data-aos="fade-up"><span class="font-color-brand-aux-three">A bit of history...</span></h2>
-						<p>The Rosetta Platform is developed by Financial Technology firm <a href="https://www.regnosys.com/" target="_blank">REGnosys</a>, 
+						<p>The Rosetta Platform is developed by Financial Technology firm <a href="{{ config.externalLinks.regnosys }}" target="_blank">REGnosys</a>, 
 							with an initial focus on the financial markets' industry.</p>
 					</div>
 				</div>
@@ -61,7 +61,7 @@
 						<p class="font-size-m2">The platform brings radical operational efficiency through standardisation, by enabling market participants 
 						to define processing standards in digital form (i.e. as "models") and to share them.</p>
 						<a 
-							href="https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353" 
+							href="{{ config.externalLinks.domainModel }}" 
 							class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
 							target="_blank"
 						>
@@ -73,7 +73,7 @@
 						<p class="font-size-m2">The Rosetta Platform is based on a Domain Specific Language called the Rosetta DSL, that is simple and 
 							intuitive to use in a wide range of modelling applications.</p>
 						<a 
-							href="https://docs.rosetta-technology.io/dsl/index.html" 
+							href="{{ config.externalLinks.documentation }}" 
 							class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
 							target="_blank"
 						>
@@ -85,7 +85,7 @@
 						<p class="font-size-m2">The Rosetta DSL was released in open source in 2019, together with a first live model of the financial 
 							markets' transaction lifecycle applied to derivatives: the ISDA Common Domain Model.</p>
 						<a 
-							href="https://www.isda.org/2018/11/22/isda-cdm-factsheet/" 
+							href="{{ config.externalLinks.cdmDocs }}" 
 							class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
 							target="_blank"
 						>
@@ -165,7 +165,7 @@
 									<p class="font-size-m2">Plainly, it means that a model developed using Rosetta is expressed into a format that is independent 
 										of the Rosetta DSL itself, openly available, widely used and supported by standard-setting bodies.</p>
 									<a 
-										href="https://www.eclipse.org/modeling/emf/" 
+										href="{{ config.externalLinks.eclipse }}" 
 										class="link-with-graphic font-size-m5 font-weight-semi-bold"
 										target="_blank"
 									>
@@ -228,7 +228,7 @@
 					</div>
 					<div class="col-md-12 mb-25">
 						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="https://ui.rosetta-technology.io/#/register" class="button button--theme-a">Sign up for free</a>
+							<a href="{{ config.externalLinks.signUp }}" class="button button--theme-a">Sign up for free</a>
 						</div>
 						<div class="button-card mb-20" data-aos="fade-up">
 							<a href="pricing.html" class="button button--theme-a">Buy now</a>
@@ -258,9 +258,7 @@
 
 		<!-- -->
 
-		<script src="assets/js/bundle.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
-		<script>//AOS.init({duration: 800, once: true});</script>
+		{{> scripts}}
 
 	</body>
 

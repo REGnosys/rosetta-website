@@ -70,7 +70,7 @@
 								<p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">Free</p>
 								<p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">For open source contribution</p>
 							</div>
-							<a href="https://ui.rosetta-technology.io/#/register" class="button button--theme-b pricing-table__header-column-button">Sign up today</a>
+							<a href="{{ config.externalLinks.signUp }}" class="button button--theme-b pricing-table__header-column-button">Sign up today</a>
 						</div>
 					</div>
 					<div class="col-md-3 pricing-table__header-column pl-7-5 pr-7-5">
@@ -515,7 +515,7 @@
 						</div>
 					</div>
 					<div class="pricing-block__body-row pb-20">
-						<a href="https://ui.rosetta-technology.io/#/register" target="_blank" class="button button--theme-b pricing-block__body-button">Sign up today</a>
+						<a href="{{ config.externalLinks.signUp }}" target="_blank" class="button button--theme-b pricing-block__body-button">Sign up today</a>
 					</div>
 				</div>
 			</div>
@@ -538,7 +538,7 @@
 							<p class="note mb-0 font-color-brand-aux-two font-size-m4">Unlimited users</p>
 						</div>
 						<div class="pricing-block__header-pricing-button">
-							<a href="https://ui.rosetta-technology.io/#/register" target="_blank" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
+							<a href="{{ config.externalLinks.signUp }}" target="_blank" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
 						</div>
 					</div>
 				</div>
@@ -644,7 +644,7 @@
 						</div>
 					</div>
 					<div class="pricing-block__body-row pb-20">
-						<a href="https://ui.rosetta-technology.io/#/register" class="button button--theme-b pricing-block__body-button">Sign up today</a>
+						<a href="{{ config.externalLinks.signUp }}" class="button button--theme-b pricing-block__body-button">Sign up today</a>
 					</div>
 				</div>
 			</div>
@@ -988,7 +988,7 @@
 					</div>
 					<div class="col-md-12 mb-25">
 						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="https://ui.rosetta-technology.io/#/register" class="button">Sign up for free</a>
+							<a href="{{ config.externalLinks.signUp }}" class="button">Sign up for free</a>
 						</div>
 					</div>
 					<div class="col-md-12">
@@ -1015,9 +1015,7 @@
 
 		<!-- -->
 
-		<script src="assets/js/bundle.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
-		<script>//AOS.init({duration: 800, once: true});</script>
+		{{> scripts}}
 
 	</body>
 

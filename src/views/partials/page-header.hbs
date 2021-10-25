@@ -193,7 +193,7 @@
                       alt="Graphic of a padlock"
                     /></i>IT Security</a></li>
               <li><a
-                  href="https://docs.rosetta-technology.io/core/"
+                  href="{{config.externalLinks.coreDocumentation}}"
                   target="_blank"
                 ><i><img
                       src="assets/svg/navigation/nav-documentation.svg"
@@ -208,8 +208,10 @@
                       /></i>Contact</a></li>
                 <li><a href="contact-sales.html">Contact our sales team</a></li>
                 <li><a href="contact-support.html">Get support</a></li>
-                <li><a href="https://www.regnosys.com/" target="_blank">Visit
-                    REGnosys.com</a></li>
+                <li><a
+                    href="{{config.externalLinks.regnosys}}"
+                    target="_blank"
+                  >Visit REGnosys.com</a></li>
               </ul>
             </div>
           </div>
@@ -222,13 +224,11 @@
 
       <div class="col-lg-5 page-header__col-account">
         <a
-          href="https://ui.rosetta-technology.io/#/login"
+          href="{{config.externalLinks.signIn}}"
           class="page-header__sign-in"
         >Sign in</a>
-        <a
-          href="https://ui.rosetta-technology.io/#/register"
-          class="header-button"
-        ><span>Sign up for free</span></a>
+        <a href="{{config.externalLinks.signUp}}" class="header-button"><span
+          >Sign up for free</span></a>
       </div>
 
       <div class="col-sm-8 col-md-9 page-header__col-menu-ham">
@@ -458,7 +458,7 @@
           </div>
           <div class="header-mobile-navigation__nav-item">
             <a
-              href="https://docs.rosetta-technology.io/core/"
+              href="{{config.externalLinks.coreDocumentation}}"
               target="_blank"
               class="icon-info-block icon-info-block--menu icon-info-block--mobile-nav icon-info-block--no-arrow icon-info-block--no-prefix icon-info-block--vertical-align-heading"
             >
@@ -527,7 +527,7 @@
                   class="header-mobile-navigation__contact-nav-list-item"
                 >Get support</a></li>
               <li><a
-                  href="https://www.regnosys.com/"
+                  href="{{config.externalLinks.regnosys}}"
                   target="_blank"
                   class="header-mobile-navigation__contact-nav-list-item"
                 >Visit REGnosys.com</a></li>

@@ -136,7 +136,7 @@
 							build a "Common Domain Model" (CDM) and deliver a digital future for their market.​</p>
 
 						<a 
-							href="https://www.isda.org/2019/10/14/isda-common-domain-model/" 
+							href="{{ config.externalLinks.isda }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
 							target="_blank"
 						>
@@ -144,7 +144,7 @@
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 						<a 
-							href="https://www.islaemea.org/regulation-and-policy/digital-fintech/common-domain-model-cdm/" 
+							href="{{ config.externalLinks.isla }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
 							target="_blank"
 						>
@@ -152,7 +152,7 @@
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 						<a 
-							href="https://www.icmagroup.org/News/news-in-brief/common-domain-model-cdm-for-repo-and-bonds/" 
+							href="{{ config.externalLinks.icma }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold"
 							target="_blank"
 						>
@@ -166,7 +166,7 @@
 							re-defining how financial markets operate. Technology providers, large and small, 
 							leverage Rosetta's executable code distribution to accelerate their time-to-market.</p>
 						<a 
-							href="https://axoni.com/press/axoni-and-regnosys-announce-scala-implementation-of-isda-common-domain-model/" 
+							href="{{ config.externalLinks.ethereum }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
 							target="_blank"
 						>
@@ -174,7 +174,7 @@
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 						<a 
-							href="https://mondovisione.com/media-and-resources/news/fragmos-chain-collaborates-with-isda-and-regnosys-to-deliver-kotlin-code-generat/" 
+							href="{{ config.externalLinks.corda }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold"
 							target="_blank"
 						>
@@ -187,7 +187,7 @@
 						<p class="font-size-m2">Whether for clearing, trade lifecycle management, collateral management or reporting, 
 							Rosetta helps financial institutions re-engineer their post-trade business processes.</p>
 						<a 
-							href="https://www.ey.com/en_gl/banking-capital-markets/how-financial-services-can-accelerate-the-adoption-of-the-isda-common-domain-model" 
+							href="{{ config.externalLinks.postTrade }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold mb-10"
 							target="_blank"
 						>
@@ -195,7 +195,7 @@
 							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
 						</a>
 						<a 
-							href="https://jwg-it.eu/working-group/global-derivatives-digital-regulatory-reporting-programme/" 
+							href="{{ config.externalLinks.regulatoryReporting }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold"
 							target="_blank"
 						>
@@ -209,7 +209,7 @@
 							helping regulators around the globe transform their data collection process through 
 							"machine-executable regulation" or "rules-as-code".</p>
 						<a 
-							href="https://www.bis.org/press/p201006.htm" 
+							href="{{ config.externalLinks.machineExecutable }}" 
 							class="link-with-graphic font-size-m5 font-weight-semi-bold"
 							target="_blank"
 						>
@@ -250,7 +250,7 @@
 					</div>
 					<div class="col-md-12 mb-25">
 						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="https://ui.rosetta-technology.io/#/register" class="button">Sign up for free</a>
+							<a href="{{ config.externalLinks.signUp }}" class="button">Sign up for free</a>
 						</div>
 						<div class="button-card mb-20" data-aos="fade-up">
 							<a href="pricing.html" class="button">Buy now</a>
@@ -280,9 +280,7 @@
 
 		<!-- -->
 
-		<script src="assets/js/bundle.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
-		<script>//AOS.init({duration: 800, once: true});</script>
+		{{> scripts}}
 
 	</body>
 

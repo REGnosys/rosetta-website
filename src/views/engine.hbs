@@ -238,7 +238,7 @@
 					</div>
 					<div class="col-md-12 mb-25">
 						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="https://ui.rosetta-technology.io/#/register" class="button button--theme-a">Sign up for free</a>
+							<a href="{{ config.externalLinks.signUp }}" class="button button--theme-a">Sign up for free</a>
 						</div>
 						<div class="button-card mb-20" data-aos="fade-up">
 							<a href="pricing.html" class="button button--theme-a">Buy now</a>
@@ -268,9 +268,7 @@
 
 		<!-- -->
 
-		<script src="assets/js/bundle.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
-		<script>//AOS.init({duration: 800, once: true});</script>
+		{{> scripts}}
 
 	</body>
 
