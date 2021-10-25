@@ -21,10 +21,10 @@ const pages = [
   "engine",
   "design",
   "deploy",
-  "contact",
   "contact-support",
-  "contact-sales",
   "contact-sales-thankyou",
+  "contact-sales",
+  "contact",
 ];
 
 // servers any appropriate static files(i.e. css, js, etc)
@@ -42,7 +42,7 @@ app.set("views", viewPath);
 
 app.get("/", (req, res) => res.render("index.hbs", config));
 pages.forEach((page) =>
-  app.get(new RegExp("/" + page + "(.html)?", "i"), (req, res) =>
+  app.get(new RegExp(`/(${page}$|${page}.html$)`, "i"), (req, res) =>
     res.render(page + ".hbs", config)
   )
 );
