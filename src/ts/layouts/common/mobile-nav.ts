@@ -45,7 +45,7 @@ export class MobileNav {
          * 
          */
 
-        ham.addEventListener('click', () => {
+        ham.addEventListener('click', (e) => {
 
             /**
              * 
@@ -53,19 +53,31 @@ export class MobileNav {
 
             mobileNavWrapper.classList.add('show')
 
+            /**
+             * 
+             */
+
+            e.preventDefault()
+
         })
 
         /**
          * 
          */
 
-        mobileNavClose.addEventListener('click', () => {
+        mobileNavClose.addEventListener('click', (e) => {
 
             /**
              * 
              */
 
             mobileNavWrapper.classList.remove('show')
+
+            /**
+             * 
+             */
+
+            e.preventDefault()
 
         })
 
