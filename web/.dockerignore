@@ -1,0 +1,12 @@
+.vscode
+.git
+.DS_Store
+
+npm-debug.log
+codefresh.yaml
+
+build
+node_modules
+helm
+web/assets/css
+web/assets/js

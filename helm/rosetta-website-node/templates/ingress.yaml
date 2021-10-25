@@ -1,8 +1,6 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "rosetta-website.fullname" . -}}
-{{- $releaseName := .Release.Name -}}
+{{- $fullName := include "rosetta-website-node.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
-{{- $hostname := include "rosetta-website.hostname" . -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
 {{- else -}}
@@ -12,7 +10,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "rosetta-website.labels" . | nindent 4 }}
+    {{- include "rosetta-website-node.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -23,18 +21,18 @@ spec:
     {{- range .Values.ingress.tls }}
     - hosts:
         {{- range .hosts }}
-        - {{ $hostname | quote }}
+        - {{ . | quote }}
         {{- end }}
-      secretName:   {{ $releaseName }}-{{ .secretName }}
+      secretName: {{ .secretName }}
     {{- end }}
   {{- end }}
   rules:
     {{- range .Values.ingress.hosts }}
-    - host: {{ $hostname | quote }}
+    - host: {{ .host | quote }}
       http:
         paths:
           {{- range .paths }}
-          - path: {{ . }}
+          - path: {{ .path }}
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}

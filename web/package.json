@@ -4,18 +4,18 @@
   "description": "Rosetta website.",
   "main": "index.html",
   "scripts": {
-    "start": "cd server && node index.js",
     "dev": "cd server && nodemon index.js",
     "build": "webpack",
-    "gulp": "gulp",
     "compile-sass": "gulp compileSass",
-    "watch-sass": "gulp watchSass",
-    "browser-sync-static": "browser-sync start --server --serveStatic ./web/ --files './web/assets/css/*.css'"
+    "watch-sass": "gulp watchSass"
   },
   "keywords": [
     "project",
     "new"
   ],
+  "engines": {
+    "node": ">=14.0.0 <16.0.0"
+  },
   "author": "Mike BTG <mike@breakthegrid.co.uk>",
   "license": "MIT",
   "dependencies": {
@@ -27,6 +27,7 @@
     "fabric": "^4.6.0",
     "hbs": "^4.1.2",
     "lottie-web": "^5.7.14",
+    "pm2": "^5.1.2",
     "scrollama": "^2.2.3",
     "swiper": "^6.5.7",
     "velocity-animate": "^2.0.6",

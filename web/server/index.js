@@ -5,7 +5,7 @@ const path = require("path");
 const hbs = require("hbs");
 
 const app = express();
-let PORT = 8080;
+let PORT = 5000;
 
 const config = require("./config.js");
 
@@ -28,7 +28,7 @@ const pages = [
 ];
 
 // servers any appropriate static files(i.e. css, js, etc)
-const publicPath = path.join(__dirname, "../web/assets");
+const publicPath = path.join(__dirname, "../assets");
 app.use("/assets", express.static(publicPath));
 
 // setups hbs view path, where express will look for files

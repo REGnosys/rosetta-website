@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "rosetta-website.fullname" . }}
+  name: {{ include "rosetta-website-node.fullname" . }}
   labels:
-    {{- include "rosetta-website.labels" . | nindent 4 }}
+    {{- include "rosetta-website-node.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "rosetta-website.selectorLabels" . | nindent 6 }}
+      {{- include "rosetta-website-node.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,11 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "rosetta-website.selectorLabels" . | nindent 8 }}
+        {{- include "rosetta-website-node.selectorLabels" . | nindent 8 }}
     spec:
+      {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
-        - name: {{ include "rosetta-website.imagePullSecret" . }}
-      serviceAccountName: {{ include "rosetta-website.serviceAccountName" . }}
+        - name: {{ include "rosetta-website-node.imagePullSecret" . }}
+      {{- end }}
+      serviceAccountName: {{ include "rosetta-website-node.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
