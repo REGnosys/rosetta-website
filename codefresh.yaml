@@ -63,8 +63,8 @@ steps:
     title: Build Image
     image_name: regnosys/rosetta-website/node
     type: build
-    working_directory: ./dist
-    dockerfile: ./web/Dockerfile
+    working_directory: ./web
+    dockerfile: Dockerfile
     tag: "${{RELEASE_NAME}}"
     registry: regnosys-docker-registry
     disable_push: true
