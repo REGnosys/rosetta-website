@@ -51,7 +51,7 @@ ingress:
   hosts:
     - host: ""
       paths:
-        - "/"
+        - path: "/"
 
   tls:
     - hosts:
@@ -89,5 +89,5 @@ global:
   hostSuffix: "rosetta-technology.io"
   hostnameOverride: ""
   node:
-    name: rosetta-core
+    name: rosetta-website-node
     port: 5000

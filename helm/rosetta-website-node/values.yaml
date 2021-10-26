@@ -86,3 +86,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+global:
+  cluster: dev

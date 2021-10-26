@@ -64,3 +64,15 @@ Create the name of the service account to use
 {{- define "rosetta-website-nginx.imagePullSecret" -}}
 {{- printf "%s-%s-repo" (include "rosetta-website-nginx.fullname" . ) .Values.global.cluster }}
 {{- end }}
+
+{{- define "rosetta-website-nginx.hostPrefix" -}}
+{{- if .Values.global.hostnameOverride }}
+{{- printf "%s" .Values.global.hostnameOverride }}
+{{- else }}
+{{- printf "%s.%s" .Release.Namespace .Values.global.cluster }}
+{{- end }}
+{{- end }}
+
+{{- define "rosetta-website-nginx.hostname" -}}
+{{- printf "%s.%s" (include "rosetta-website-nginx.hostPrefix" . ) .Values.global.hostSuffix }}
+{{- end }}

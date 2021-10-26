@@ -22,7 +22,7 @@ spec:
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
+        - name: {{ include "rosetta-website-nginx.imagePullSecret" . }}
       {{- end }}
       serviceAccountName: {{ include "rosetta-website-nginx.serviceAccountName" . }}
       securityContext:
@@ -63,7 +63,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-       volumes:
-        - name: {{ include "rosetta-website-nginx.fullname" . }}
-          configMap:
-            name: {{ include "rosetta-website-nginx.fullname" . }}
+      volumes:
+      - name: {{ include "rosetta-website-nginx.fullname" . }}
+        configMap:
+          name: {{ include "rosetta-website-nginx.fullname" . }}
