@@ -7,15 +7,25 @@
   <meta name="format-detection" content="telephone=no" />
   <meta charset="utf-8" />
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id={{config.gtm}}"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || []; function
-    gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '{{config.ga}}');
-  </script>
+  {{#if config.recaptcha_key}}
+    <script
+      src="https://www.google.com/recaptcha/api.js?render={{config.recaptcha_key}}"
+    ></script>
+  {{/if}}
+  {{#if config.gtm}}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id={{config.gtm}}"
+    ></script>
+  {{/if}}
+  {{#if config.ga}}
+    <script>
+      window.dataLayer = window.dataLayer || []; function
+      gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config',
+      '{{config.ga}}');
+    </script>
+  {{/if}}
 
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link

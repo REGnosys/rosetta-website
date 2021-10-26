@@ -21,6 +21,7 @@
   "dependencies": {
     "@tanem/svg-injector": "^8.2.5",
     "animejs": "^3.2.1",
+    "country-data-list": "^1.2.1",
     "countup.js": "^2.0.8",
     "easydropdown": "^4.2.0",
     "express": "^4.17.1",
