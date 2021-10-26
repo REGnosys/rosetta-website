@@ -31,8 +31,8 @@ steps:
       - cf_export NAMESPACE=${{NAMESPACE}}
       - cf_export HOST=${{HOST}}
       - cf_export ENV=${{ENV}}
-      - cf_export GOOGLE_ANALYTICS=""
-      - cf_export GOOGLE_TAG_MANAGER=""
+      - cf_export GOOGLE_ANALYTICS=${{GOOGLE_ANALYTICS}}
+      - cf_export GOOGLE_TAG_MANAGER=${{GOOGLE_TAG_MANAGER}}
 
   dev_release_name:
     stage: initialise
@@ -53,8 +53,6 @@ steps:
     commands:
       - cf_export RELEASE_NAME="${{TAG_NAME}}"
       - cf_export CHART_RELEASE_NAME=$(echo "${{TAG_NAME}}" | awk -F. '{if ($4 == "") print $0; else  print $1"."$2"."$3"-"$4;}')
-      - cf_export GOOGLE_ANALYTICS="--set rosetta-website-node.google.analytics=${{GOOGLE_ANALYTICS}}"
-      - cf_export GOOGLE_TAG_MANAGER="--set rosetta-website-node.google.tagManager=${{GOOGLE_TAG_MANAGER}}"
     when:
       condition:
         all:
@@ -151,9 +149,11 @@ steps:
         - helm repo update
         - >-
           helm -n ${{NAMESPACE}} upgrade --install regnosys codefresh/rosetta-website --version="${{CHART_RELEASE_NAME}}"
-          --set global.cluster=${{CHART_CLUSTER}}
+          --set global.cluster=${{CLUSTER_CONTEXT}}
           --set global.env=${{ENV}}
           --set global.hostnameOverride=${{HOST}}
+          --set rosetta-website-node.google.analytics=${{GOOGLE_ANALYTICS}}
+          --set rosetta-website-node.google.tagManager=${{GOOGLE_TAG_MANAGER}}
           --debug --reset-values
 
   restart:
