@@ -155,8 +155,6 @@ steps:
           --set global.env=${{ENV}}
           --set global.hostnameOverride=${{HOST}}
           --debug --reset-values
-          ${{GOOGLE_ANALYTICS}}
-          ${{GOOGLE_TAG_MANAGER}}
 
   restart:
     stage: release
