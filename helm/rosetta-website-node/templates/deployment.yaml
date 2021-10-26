@@ -45,6 +45,11 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          envFrom:
+            - secretRef:
+                name: {{ include "rosetta-website-node.fullname" . }}-{{ .Values.global.cluster }}-{{ .Values.global.env }}-rosetta-website
+            - configMapRef:
+                name: {{ include "rosetta-website-node.fullname" . }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

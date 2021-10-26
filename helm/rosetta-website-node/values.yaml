@@ -87,5 +87,10 @@ tolerations: []
 
 affinity: {}
 
+google:
+  analytics: ""
+  tagManager: ""
+
 global:
   cluster: dev
+  env: dev

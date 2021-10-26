@@ -13,4 +13,4 @@ RUN npm run compile-sass && \
     npm run build
 
 EXPOSE 5000
-CMD ["pm2-runtime", "server/index.js"]
+CMD ["pm2-runtime", "ecosystem.config.js", "--env production"]

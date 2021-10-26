@@ -5,7 +5,7 @@ const path = require("path");
 const hbs = require("hbs");
 
 const app = express();
-let PORT = 5000;
+let PORT = process.env.PORT || 5000;
 
 const config = require("./config.js");
 

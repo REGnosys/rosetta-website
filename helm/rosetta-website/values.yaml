@@ -88,3 +88,4 @@ affinity: {}
 
 global:
   cluster: dev
+  env: dev

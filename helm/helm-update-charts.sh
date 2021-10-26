@@ -37,8 +37,8 @@ sealRepoSecret() {
 
   declare -a charts
 
-  charts=( rosetta-website rosetta-website-nginx rosetta-website-node )
-  directories=( helm helm helm )
+  charts=( rosetta-website-node )
+  directories=( helm )
 
   CHART_COUNT=$(( ${#charts[@]} - 1))
   for i in $(seq 0 "$CHART_COUNT");
@@ -52,6 +52,28 @@ sealRepoSecret() {
     kubeseal <"$SCRIPTS"/helm/secrets/secret-repo.yaml --controller-name=sealed-secrets --scope cluster-wide -o yaml --name "{{ include \"${CHART}.fullname\" . }}-$CLUSTER-repo" --context "$PROJECT" >> "$FILE"
     echo "{{- end }}" >> "$FILE"
   done
+}
+
+sealWebsiteSecret() {
+  WEBSITE=$1
+  SCRIPTS=$2
+  CLUSTER=$3
+  PROJECT=$4
+
+  declare -a envs
+
+  envs=( dev prod )
+
+  for j in "${envs[@]}"
+    do
+      ENV=$j
+      echo "env: $ENV"
+      FILE="$WEBSITE"/helm/rosetta-website-node/templates/sealed-secret-"$CLUSTER"-"$ENV"-rosetta-website.yaml
+      echo "{{- if (and (eq \"$CLUSTER\" .Values.global.cluster) (eq \"$ENV\" .Values.global.env)) }}" > "$FILE"
+      kubeseal <"$SCRIPTS"/helm/secrets/secret-"$ENV"-rosetta-website.yaml --controller-name=sealed-secrets --scope cluster-wide -o yaml --name "{{ include \"rosetta-website-node.fullname\" . }}-$CLUSTER-$ENV-rosetta-website" --context "$PROJECT" >> "$FILE"
+      echo "{{- end }}" >> "$FILE"
+    done
+
 }
 
 sealSecrets() {
@@ -74,6 +96,7 @@ sealSecrets() {
     echo "cluster: $CLUSTER, project: $PROJECT"
 
     sealRepoSecret "$WEBSITE" "$SCRIPTS" "$CLUSTER" "$PROJECT"
+    sealWebsiteSecret "$WEBSITE" "$SCRIPTS" "$CLUSTER" "$PROJECT"
   done
 }
 

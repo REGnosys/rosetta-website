@@ -86,6 +86,7 @@ affinity: {}
 
 global:
   cluster: dev
+  env: dev
   hostSuffix: "rosetta-technology.io"
   hostnameOverride: ""
   node:
