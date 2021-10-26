@@ -53,6 +53,10 @@ steps:
     commands:
       - cf_export RELEASE_NAME="${{TAG_NAME}}"
       - cf_export CHART_RELEASE_NAME=$(echo "${{TAG_NAME}}" | awk -F. '{if ($4 == "") print $0; else  print $1"."$2"."$3"-"$4;}')
+    when:
+      condition:
+        all:
+          tag_repo: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == false'
 
   build_image:
     stage: build
