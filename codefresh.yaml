@@ -1,100 +1,166 @@
 version: "1.0"
+build_version: "v2"
 
 stages:
-  - "main_clone"
-  - "build"
-  - "push"
-  - "deploy"
+  - initialise
+  - build
+  - charts
+  - release
 
 steps:
   main_clone:
-    title: Cloning main repository...
+    stage: initialise
+    title: Clone Main Repository
     type: git-clone
-    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
-    revision: '${{CF_REVISION}}'
+    repo: "${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}"
+    revision: "${{CF_REVISION}}"
 
-  build_ui:
-    stage: build
-    title: UI Build
-    image: weboaks/node-karma-protractor-chrome
-    working_directory: "${{main_clone}}"
+  scripts_clone:
+    stage: initialise
+    title: Clone Scripts Repository
+    type: git-clone
+    repo: "${{CF_REPO_OWNER}}/scripts"
+    revision: "master"
+
+  variables:
+    stage: initialise
+    title: Set Shared Variables
+    image: alpine/git
     commands:
-      - npm ci
-      - npm run compile-sass
-      - npm run build
-      
-  build_ui_image:
+      - cf_export CLUSTER_CONTEXT="${{CLUSTER_CONTEXT}}"
+      - cf_export NAMESPACE=${{NAMESPACE}}
+      - cf_export HOST=${{HOST}}
+      - cf_export ENV=${{ENV}}
+      - cf_export GOOGLE_ANALYTICS=${{GOOGLE_ANALYTICS}}
+      - cf_export GOOGLE_TAG_MANAGER=${{GOOGLE_TAG_MANAGER}}
+
+  dev_release_name:
+    stage: initialise
+    title: Set Dev Variables
+    image: alpine/git
+    commands:
+      - cf_export RELEASE_NAME="${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}"
+      - cf_export CHART_RELEASE_NAME=$(echo "${{GLOBAL_RELEASE_VERSION}}.${{CF_BRANCH_TAG_NORMALIZED}}" | awk -F. '{print $1"."$2"."$3"-"$4}')
+    when:
+      condition:
+        all:
+          tag_repo_false: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == true'
+
+  tag_release_name:
+    stage: initialise
+    title: Set Release Variables
+    image: alpine/git
+    commands:
+      - cf_export RELEASE_NAME="${{TAG_NAME}}"
+      - cf_export CHART_RELEASE_NAME=$(echo "${{TAG_NAME}}" | awk -F. '{if ($4 == "") print $0; else  print $1"."$2"."$3"-"$4;}')
+
+  build_image:
     stage: build
-    title: "Building Docker image"
-    image_name: "regnosys/rosetta-website"
-    type: "build"
-    working_directory: "${{main_clone}}"
-    dockerfile:
-      content: |
-        FROM nginx:alpine
-        COPY web/ /usr/share/nginx/html
-        RUN ls -la /usr/share/nginx/html
-    tag: "${{CF_BRANCH_TAG_NORMALIZED}}"
+    title: Build Image
+    image_name: regnosys/rosetta-website/node
+    type: build
+    working_directory: ./dist
+    dockerfile: ./web/Dockerfile
+    tag: "${{RELEASE_NAME}}"
     registry: regnosys-docker-registry
     disable_push: true
 
-  push_image:
-    stage: 'push'
+  push_branch_image:
+    stage: build
+    title: Push Master/Branch Image
+    candidate: "${{build_image}}"
+    tag: "${{RELEASE_NAME}}"
     type: push
-    title: Pushing to a registry
-    candidate: ${{build_ui_image}}
-    tag: 'dev'
     registry: regnosys-docker-registry
-    image_name: "regnosys/rosetta-website"
+    when:
+      condition:
+        all:
+          shouldPush: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == true || "${{CF_BRANCH}}" == "master"'
+
+  push_latest_image:
+    stage: build
+    title: Push Latest Image
+    candidate: "${{build_image}}"
+    type: push
+    registry: regnosys-docker-registry
+    when:
+      condition:
+        all:
+          shouldPush: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == false'
+
+  prepare_charts:
+    stage: charts
+    title: Prepare Charts
+    type: freestyle
+    image: regnosys-docker-registry.jfrog.io/regnosys/kubeseal:1.0.0
+    shell: bash
+    commands:
+      - ./helm/helm-update-charts.sh "${{CF_VOLUME_PATH}}" "${{RELEASE_NAME}}" "${{CHART_RELEASE_NAME}}"
 
   push_charts:
-    stage: 'push'
-    title: Lint, build, package and push charts
+    stage: charts
+    title: Publish Charts
     type: helm
     arguments:
-      helm_version: 3.1.3
+      helm_version: 3.5.2
       action: auth
       commands:
         - kubectl config get-contexts
-        - kubectl config use-context dev-cluster-1@Development
+        - kubectl config use-context "${{CLUSTER_CONTEXT}}"
         - kubectl config current-context
         - kubectl version --short; helm version --short
         - rm -rf helm-build; mkdir helm-build; cd helm-build
         - helm repo add codefresh cm://h.cfcr.io/regnosysops/default
         - helm repo update
-        - ROOT="${{CF_VOLUME_PATH}}"/rosetta-website
-        - helm lint "$ROOT"/helm/rosetta-website
-        - helm package "$ROOT"/helm/rosetta-website
-        - helm push rosetta-website-0.0.0-dev.tgz codefresh
 
-  deploy_to_dev:
-    stage: 'push'
-    title: Deploy To Development
+        - ROOT="${{CF_VOLUME_PATH}}"/rosetta-website
+
+        - helm lint "$ROOT"/helm/rosetta-website-node
+        - helm package "$ROOT"/helm/rosetta-website-node
+        - helm push rosetta-website-node-"${{CHART_RELEASE_NAME}}".tgz codefresh
+
+        - helm lint "$ROOT"/helm/rosetta-website-nginx
+        - helm package "$ROOT"/helm/rosetta-website-nginx
+        - helm push rosetta-website-nginx-"${{CHART_RELEASE_NAME}}".tgz codefresh
+
+        - helm lint "$ROOT"/helm/rosetta-website
+        - helm dependency update "$ROOT"/helm/rosetta-website
+        - helm package "$ROOT"/helm/rosetta-website
+        - helm push rosetta-website-"${{CHART_RELEASE_NAME}}".tgz codefresh
+
+  deploy:
+    stage: release
+    title: Deploy
     type: helm
     arguments:
-      helm_version: 3.1.3
+      helm_version: 3.5.2
       action: auth
       commands:
         - kubectl config get-contexts
-        - kubectl config use-context dev-cluster-1@Development
+        - kubectl config use-context "${{CLUSTER_CONTEXT}}"
         - kubectl config current-context
         - kubectl version --short; helm version --short
         - rm -rf helm-build; mkdir helm-build; cd helm-build
         - helm repo add codefresh cm://h.cfcr.io/regnosysops/default
         - helm repo update
         - >-
-          helm -n rosetta-website upgrade --install rosetta-website codefresh/rosetta-website --version=0.0.0-dev
+          helm -n ${{NAMESPACE}} upgrade --install regnosys codefresh/rosetta-website --version="${{CHART_RELEASE_NAME}}"
+          --set global.cluster=${{CHART_CLUSTER}}
+          --set global.env=${{ENV}}
+          --set global.hostnameOverride=${{HOST}}
+          --set rosetta-website-node.google.analytics=${{GOOGLE_ANALYTICS}}
+          --set rosetta-website-node.google.tagManager=${{GOOGLE_TAG_MANAGER}}
           --debug --reset-values
 
-  dev_restart:
-    stage: 'push'
-    title: "Development Restart"
+  restart:
+    stage: release
+    title: Restart
     type: freestyle
     arguments:
       image: codefresh/kubectl
       commands:
         - kubectl config get-contexts
-        - kubectl config use-context dev-cluster-1@Development
+        - kubectl config use-context "${{CLUSTER_CONTEXT}}"
         - kubectl config current-context
         - kubectl version --short
-        - kubectl -n rosetta-website rollout restart deploy
+        - kubectl -n ${{NAMESPACE}} rollout restart deploy
