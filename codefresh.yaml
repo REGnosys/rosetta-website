@@ -80,7 +80,7 @@ steps:
     when:
       condition:
         all:
-          shouldPush: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == true || "${{CF_BRANCH}}" == "dynamic-templates"'
+          shouldPush: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == true || "${{CF_BRANCH}}" == "master"'
 
   push_latest_image:
     stage: build
