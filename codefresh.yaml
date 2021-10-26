@@ -28,6 +28,7 @@ steps:
     image: alpine/git
     commands:
       - cf_export CLUSTER_CONTEXT="${{CLUSTER_CONTEXT}}"
+      - cf_export CHART_CLUSTER=${{CHART_CLUSTER}}
       - cf_export NAMESPACE=${{NAMESPACE}}
       - cf_export HOST=${{HOST}}
       - cf_export ENV=${{ENV}}
@@ -149,7 +150,7 @@ steps:
         - helm repo update
         - >-
           helm -n ${{NAMESPACE}} upgrade --install regnosys codefresh/rosetta-website --version="${{CHART_RELEASE_NAME}}"
-          --set global.cluster=${{CLUSTER_CONTEXT}}
+          --set global.cluster=${{CHART_CLUSTER}}
           --set global.env=${{ENV}}
           --set global.hostnameOverride=${{HOST}}
           --set rosetta-website-node.google.analytics=${{GOOGLE_ANALYTICS}}
