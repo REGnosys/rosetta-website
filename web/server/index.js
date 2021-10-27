@@ -17,7 +17,7 @@ const pages = [
   "index",
   "pricing",
   "platform",
-  "our-community",
+  "community",
   "monitor",
   "it-security",
   "ingest-and-translate",
