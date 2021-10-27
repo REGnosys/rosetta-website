@@ -1,6 +1,3 @@
 .DS_Store
 ._DS_Store
-node_modules
-*.map
-/web/assets/css/styles.css
-/web/assets/js/bundle.js
+*.tgz

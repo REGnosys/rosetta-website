@@ -1,0 +1,66 @@
+{
+  "name": "Rosetta",
+  "version": "1.0.0",
+  "description": "Rosetta website.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "cd server && nodemon index.js",
+    "build": "webpack",
+    "compile-sass": "gulp compileSass",
+    "watch-sass": "gulp watchSass"
+  },
+  "keywords": [
+    "project",
+    "new"
+  ],
+  "engines": {
+    "node": ">=14.0.0 <16.0.0"
+  },
+  "author": "Mike BTG <mike@breakthegrid.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "@tanem/svg-injector": "^8.2.5",
+    "animejs": "^3.2.1",
+    "breakpoint-sass": "^2.7.1",
+    "country-data-list": "^1.2.1",
+    "countup.js": "^2.0.8",
+    "easydropdown": "^4.2.0",
+    "express": "^4.17.1",
+    "fabric": "^4.6.0",
+    "hbs": "^4.1.2",
+    "lottie-web": "^5.7.14",
+    "pm2": "^5.1.2",
+    "scrollama": "^2.2.3",
+    "swiper": "^6.5.7",
+    "velocity-animate": "^2.0.6",
+    "zoom-vanilla.js": "^2.0.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@types/animejs": "^3.1.4",
+    "@types/fabric": "^4.5.3",
+    "@types/lodash": "^4.14.176",
+    "@types/waypoints": "^4.0.4",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.5",
+    "css-loader": "^5.1.1",
+    "event-stream": "^4.0.1",
+    "find-process": "^1.4.5",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-sass": "^4.1.1",
+    "gulp-sass-bulk-importer": "^3.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "lodash": "^4.17.21",
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.14",
+    "postcss": "^8.3.11",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.3.0",
+    "typescript": "^4.4.4",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
