@@ -105,9 +105,9 @@
                   <li>
                     <select class="basic-form__select" id="country">
                       <option value="" selected disabled>Select country</option>
-                      <option value="country-1">Country 1</option>
-                      <option value="country-2">Country 2</option>
-                      <option value="country-3">Country 3</option>
+                      {{#each countryList}}
+											<option value="{{alpha2}}">{{name}}</option>
+											{{/each}}
                     </select>
                   </li>
                   <li><textarea
