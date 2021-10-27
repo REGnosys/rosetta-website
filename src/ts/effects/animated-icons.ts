@@ -68,6 +68,19 @@ export class AnimatedIcons {
          */
 
         const contentDocument : KeyShapeDocumentContent = obj.contentDocument as KeyShapeDocumentContent
+        
+        /**
+         * Sometimes it's possible that a graphic hasn't loaded, so we must
+         * return early.
+         */
+
+        if (contentDocument == null)
+            return
+
+        /**
+         * 
+         */
+
         contentDocument.parentObject = obj
 
         /**

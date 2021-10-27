@@ -31,6 +31,19 @@ export class ScrollsIntoView {
         const scroller = scrollama()
 
         /**
+         * Find all elements with the class.
+         */
+
+        const nodeList : NodeList = document.querySelectorAll('.scrolls-into-view')
+
+        /**
+         * 
+         */
+
+        if (nodeList.length == 0)
+            return
+
+        /**
          *
          */
 
@@ -41,8 +54,6 @@ export class ScrollsIntoView {
             })
             .onStepEnter(response => {
 
-                // { element, index, direction }
-
                 /**
                  *
                  */
@@ -52,7 +63,9 @@ export class ScrollsIntoView {
             })
             .onStepExit(response => {
 
-                // { element, index, direction }
+                /**
+                 * 
+                 */
 
             })
         

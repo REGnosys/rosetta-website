@@ -142,9 +142,10 @@
     line-height: 31px;
 }
 @mixin font-size-l2r() { 
+    @include font-size-l2();
     @include breakpoint($b-large-desktop-only)    { font-size: 26px; }
-    @include breakpoint($b-desktop-only)          { font-size: 24px; }
-    @include breakpoint($b-tablet-only)           { font-size: 21px; }
+    @include breakpoint($b-desktop-only)          { font-size: 23px; }
+    @include breakpoint($b-tablet-only)           { font-size: 20px; }
     @include breakpoint($b-mobile-landscape-only) { font-size: 26px; }
     @include breakpoint($b-mobile-only)           { font-size: 23px; }
 }

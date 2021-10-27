@@ -354,6 +354,12 @@ $mobile-nav-icon-height: 32px;
 
             }
 
+            /**
+             * @include.
+             */
+
+            @include link-with-graphic--hover();
+
         }
 
     }

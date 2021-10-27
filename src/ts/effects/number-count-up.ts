@@ -42,14 +42,22 @@ export class NumberCountUp {
          * Configure the elements on the page.
          */
 
-        this.configureElementsOnPage()
+        let result : boolean = this.configureElementsOnPage()
 
         /**
-         * Configure scrollama to catch the elements
-         * when they appear on the page.
+         * 
          */
 
-        this.configureScrollama()
+        if (result) {
+
+            /**
+             * Configure scrollama to catch the elements
+             * when they appear on the page.
+             */
+
+            this.configureScrollama()
+
+        }
 
     }
 
@@ -86,7 +94,7 @@ export class NumberCountUp {
      * configureElementsOnPage.
      */
 
-    configureElementsOnPage() {
+    configureElementsOnPage() : boolean {
 
         /**
          * Find all elements with the class.
@@ -131,7 +139,19 @@ export class NumberCountUp {
 
             })
 
+            /**
+             * 
+             */
+
+            return true
+
         }
+
+        /**
+         * 
+         */
+
+        return false
 
     }
 
