@@ -1,361 +1,462 @@
-<!DOCTYPE html>
 <html lang="en">
 
-	{{> header title="Platform - Rosetta"}}
+  {{> header title="Platform - Rosetta"}}
 
-	<body>
-		
-		<!-- -->
+  <body>
 
-		{{> page_header}}
+    <!-- -->
 
-        <!-- pb-200 mb-200 -->
+    {{> page_header}}
 
-        <section class="platform-hero pt-160" style="padding-bottom: 20vw">
+    <!-- pb-200 mb-200 -->
 
-			<div class="graphic-header">
-				<img 
-					class="graphic-header__curve graphic-header__curve--brand-one" 
-					src="assets/svg/common/header-curve.svg" 
-					alt="Graphic of curve for aesthetics"
-					style="margin-top: -150px"
-				>
-			</div>
+    <section class="platform-hero pt-160" style="padding-bottom: 20vw">
 
-			<div class="lottie-wrapper lottie-wrapper--hero lottie-wrapper--platform">
-				<lottie-player
-					autoplay
-					loop
-					mode="normal"
-					src="assets/lottie/main-animation.json"
-					style="height: auto; width: 100%"
-				  ></lottie-player>
-			</div>
+      <div class="graphic-header">
+        <img
+          class="graphic-header__curve graphic-header__curve--brand-one"
+          src="assets/svg/common/header-curve.svg"
+          alt="Graphic of curve for aesthetics"
+          style="margin-top: -150px"
+        />
+      </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="font-size-m7 mb-0">The Rosetta</p>
-                        <h1 class="font-size-xl2 font-color-brand-one mb-20">Platform</h1>
-                        <p>Complete data pipeline modelling platform​</p>
-						<h2 class="font-weight-semi-bold pt-30">
-							Transparency <span class="font-color-brand-one">as a service.</span>
-						</h2>
-                    </div>
-                </div>
+      <div class="lottie-wrapper lottie-wrapper--hero lottie-wrapper--platform">
+        <lottie-player
+          autoplay
+          loop
+          mode="normal"
+          src="assets/lottie/main-animation.json"
+          style="height: auto; width: 100%"
+        ></lottie-player>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="font-size-m7 mb-0">The Rosetta</p>
+            <h1 class="font-size-xl2 font-color-brand-one mb-20">Platform</h1>
+            <p>Complete data pipeline modelling platform​</p>
+            <h2 class="font-weight-semi-bold pt-30">
+              Transparency
+              <span class="font-color-brand-one">as a service.</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -->
+
+    <section class="two-col-panel">
+      <div class="body-curve">
+        <canvas
+          data-primary-color="#edeaea"
+          data-secondary-color="#edeaea"
+          data-top-shape-svg-url="/assets/svg/curve/curve-h-top.svg"
+          data-top-shape-y-offset-percentage="0"
+          data-margin-top-percentage-of-top-shape-height="0"
+          data-bottom-shape-svg-url="/assets/svg/curve/curve-g-bottom.svg"
+          data-bottom-shape-y-offset-percentage="0"
+          data-margin-bottom-percentage-of-bottom-shape-height="0"
+        ></canvas>
+      </div>
+      <div class="container body-curve-content pt-150 pb-250 df-pb-t-150">
+        <div class="row">
+          <div class="col-md-12">
+            <p
+              class="font-weight-semi-bold mb-20 font-color-brand-aux-five"
+              data-aos="fade-right"
+            >Complete modelling platform</p>
+          </div>
+        </div>
+        <div class="row df-mb-ml-20 mb-50">
+          <div class="col-lg-5 mb-15">
+            <h2
+              class="font-color-brand-aux-seven font-size-l5r"
+              data-aos="fade-right"
+            >For your data pipelines' entire lifecycle</h2>
+          </div>
+          <div class="col-lg-6">
+            <p data-aos="fade-left">The Rosetta Platform lets you manage the
+              entire development lifecycle of your data pipelines, from design
+              to deployment and monitoring. ​</p>
+          </div>
+        </div>
+        <div class="row df-mb-ml-50 mb-120">
+          <div class="col-lg-12 pb-xld-o-100">
+            <div
+              class="d-n-m-o d-n-ml-o platform-diagram-wrapper platform-diagram-wrapper--landscape"
+            >
+              <object
+                data="assets/svg/product/icons-animated/product-design-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon design-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-translate-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon translate-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-deploy-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon deploy-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-ingest-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon ingest-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-engine-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon engine-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-monitor-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon monitor-icon"
+              ></object>
+              <ul>
+                <li class="design"><a href="design.html"><span
+                    >Design</span></a></li>
+                <li class="translate"><a href="ingest-and-translate.html"><span
+                    >Translate</span></a></li>
+                <li class="deploy"><a href="deploy.html"><span
+                    >Deploy</span></a></li>
+                <li class="ingest"><a href="ingest-and-translate.html"><span
+                    >Ingest</span></a></li>
+                <li class="engine"><a href="engine.html"><span
+                    >Engine</span></a></li>
+                <li class="monitor"><a href="monitor.html"><span
+                    >Monitor</span></a></li>
+              </ul>
+              <img
+                src="/assets/svg/platform/platform-flowchart.svg"
+                alt="Flow chart of the Rosetta Platform."
+              />
             </div>
-        </section>
+            <div
+              class="display-none d-b-m-o d-b-ml-o platform-diagram-wrapper platform-diagram-wrapper--portrait"
+            >
+              <object
+                data="assets/svg/product/icons-animated/product-design-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon design-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-translate-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon translate-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-deploy-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon deploy-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-ingest-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon ingest-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-engine-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon engine-icon"
+              ></object>
+              <object
+                data="assets/svg/product/icons-animated/product-monitor-ani.svg?global=paused"
+                type="image/svg+xml"
+                class="platform-diagram-wrapper--animated-icon animated-icon monitor-icon"
+              ></object>
+              <ul>
+                <li class="design"><a href="design.html"><span
+                    >Design</span></a></li>
+                <li class="translate"><a href="ingest-and-translate.html"><span
+                    >Translate</span></a></li>
+                <li class="deploy"><a href="deploy.html"><span
+                    >Deploy</span></a></li>
+                <li class="ingest"><a href="ingest-and-translate.html"><span
+                    >Ingest</span></a></li>
+                <li class="engine"><a href="engine.html"><span
+                    >Engine</span></a></li>
+                <li class="monitor"><a href="monitor.html"><span
+                    >Monitor</span></a></li>
+              </ul>
+              <img
+                src="/assets/svg/platform/platform-flowchart-mobile.svg"
+                alt="Flow chart of the Rosetta Platform."
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- -->
+    <!-- -->
 
-		<section class="two-col-panel">
-			<div class="body-curve">
-				<canvas 
-					data-primary-color="#edeaea"
-					data-secondary-color="#edeaea"
-					data-top-shape-svg-url="/assets/svg/curve/curve-h-top.svg"
-					data-top-shape-y-offset-percentage="0"
-					data-margin-top-percentage-of-top-shape-height="0"
-					data-bottom-shape-svg-url="/assets/svg/curve/curve-g-bottom.svg"
-					data-bottom-shape-y-offset-percentage="0"
-					data-margin-bottom-percentage-of-bottom-shape-height="0"
-				></canvas>
-			</div>
-			<div class="container body-curve-content pt-150 pb-250 df-pb-t-150">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="font-weight-semi-bold mb-20 font-color-brand-aux-five" data-aos="fade-right">Complete modelling platform</p>
-					</div>
-				</div>
-				<div class="row df-mb-ml-20 mb-50">
-					<div class="col-lg-5 mb-15">
-						<h2 class="font-color-brand-aux-seven font-size-l5r" data-aos="fade-right">For your data pipelines' entire lifecycle</h2>
-					</div>
-					<div class="col-lg-6">
-						<p data-aos="fade-left">The Rosetta Platform lets you manage the entire development lifecycle of your 
-							data pipelines, from design to deployment and monitoring.
-						​</p>
-					</div>
-				</div>
-				<div class="row df-mb-ml-50 mb-120">
-					<div class="col-lg-12 pb-xld-o-100">
-						<div class="d-n-m-o d-n-ml-o platform-diagram-wrapper platform-diagram-wrapper--landscape">
-							<object 
-								data="assets/svg/product/icons-animated/product-design-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon design-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-translate-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon translate-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-deploy-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon deploy-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-ingest-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon ingest-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-engine-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon engine-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-monitor-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon monitor-icon"
-							></object>
-							<ul>
-								<li class="design"><a href="design"><span>Design</span></a></li>
-								<li class="translate"><a href="ingest-and-translate"><span>Translate</span></a></li>
-								<li class="deploy"><a href="deploy"><span>Deploy</span></a></li>
-								<li class="ingest"><a href="ingest-and-translate"><span>Ingest</span></a></li>
-								<li class="engine"><a href="engine"><span>Engine</span></a></li>
-								<li class="monitor"><a href="monitor"><span>Monitor</span></a></li>
-							</ul>
-							<img src="/assets/svg/platform/platform-flowchart.svg" alt="Flow chart of the Rosetta Platform.">
-						</div>
-						<div class="display-none d-b-m-o d-b-ml-o platform-diagram-wrapper platform-diagram-wrapper--portrait">
-							<object 
-								data="assets/svg/product/icons-animated/product-design-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon design-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-translate-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon translate-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-deploy-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon deploy-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-ingest-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon ingest-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-engine-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon engine-icon"
-							></object>
-							<object 
-								data="assets/svg/product/icons-animated/product-monitor-ani.svg?global=paused" 
-								type="image/svg+xml" 
-								class="platform-diagram-wrapper--animated-icon animated-icon monitor-icon"
-							></object>
-							<ul>
-								<li class="design"><a href="design"><span>Design</span></a></li>
-								<li class="translate"><a href="ingest-and-translate"><span>Translate</span></a></li>
-								<li class="deploy"><a href="deploy"><span>Deploy</span></a></li>
-								<li class="ingest"><a href="ingest-and-translate"><span>Ingest</span></a></li>
-								<li class="engine"><a href="engine"><span>Engine</span></a></li>
-								<li class="monitor"><a href="monitor"><span>Monitor</span></a></li>
-							</ul>
-							<img src="/assets/svg/platform/platform-flowchart-mobile.svg" alt="Flow chart of the Rosetta Platform.">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="two-col-panel">
+      <div class="body-curve">
+        <canvas
+          data-primary-color="#517088"
+          data-secondary-color="#517088"
+          data-top-shape-svg-url="/assets/svg/curve/curve-i-top.svg"
+          data-top-shape-y-offset-percentage="0.2"
+          data-margin-top-percentage-of-top-shape-height="-0.7"
+          data-bottom-shape-svg-url="/assets/svg/curve/curve-c-bottom.svg"
+          data-bottom-shape-y-offset-percentage="0"
+          data-margin-bottom-percentage-of-bottom-shape-height="0"
+        ></canvas>
+      </div>
+      <div class="container body-curve-content pt-150 pb-50 df-pb-t-100">
+        <div class="row">
+          <div class="col-md-12">
+            <p
+              class="font-weight-semi-bold mb-20 font-color-brand-aux-five"
+              data-aos="fade-right"
+            >The Rosetta Platform difference</p>
+          </div>
+        </div>
+        <div class="row mb-20">
+          <div class="col-lg-5 mb-15">
+            <h2
+              class="font-color-brand-aux-two font-size-l5r"
+              data-aos="fade-right"
+            >Leveraging the power of the Rosetta DSL
+            </h2>
+          </div>
+          <div class="col-lg-6 pb-ld-o-100 pb-xld-o-80">
+            <p class="font-color-brand-aux-two" data-aos="fade-left">The Rosetta
+              DSL is an open-source, Domain Specific Language that abstracts
+              away all the technical implementation noise of your data
+              pipelines, so you can focus on modelling your business logic. ​</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- -->
+    <!-- -->
 
-		<section class="two-col-panel">
-			<div class="body-curve">
-				<canvas 
-					data-primary-color="#517088"
-					data-secondary-color="#517088"
-					data-top-shape-svg-url="/assets/svg/curve/curve-i-top.svg"
-					data-top-shape-y-offset-percentage="0.2"
-					data-margin-top-percentage-of-top-shape-height="-0.7"
-					data-bottom-shape-svg-url="/assets/svg/curve/curve-c-bottom.svg"
-					data-bottom-shape-y-offset-percentage="0"
-					data-margin-bottom-percentage-of-bottom-shape-height="0"
-				></canvas>
-			</div>
-			<div class="container body-curve-content pt-150 pb-50 df-pb-t-100">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="font-weight-semi-bold mb-20 font-color-brand-aux-five" data-aos="fade-right">The Rosetta Platform difference</p>
-					</div>
-				</div>
-				<div class="row mb-20">
-					<div class="col-lg-5 mb-15">
-						<h2 class="font-color-brand-aux-two font-size-l5r" data-aos="fade-right">Leveraging the power of the Rosetta DSL
-						</h2>
-					</div>
-					<div class="col-lg-6 pb-ld-o-100 pb-xld-o-80">
-						<p class="font-color-brand-aux-two" data-aos="fade-left">The Rosetta DSL is an open-source, Domain Specific Language that abstracts 
-							away all the technical implementation noise of your data pipelines, so you can focus on modelling 
-							your business logic.
-						​</p>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="two-col-panel">
+      <div class="container pt-110 pt-ml-o-100 pb-90 df-pb-t-60">
+        <div class="row">
+          <div
+            class="col-md-6 two-col-panel__col-details df-pb-t-50 display-flex flex-direction-column justify-content-center"
+          >
+            <h2
+              class="two-col-panel__heading"
+              data-aos="fade-up"
+              id="instantly-executable"
+            >Instantly
+              <br /><span class="font-color-brand-one">executable processes</span></h2>
+            <p>The Rosetta DSL fully automates the generation of executable code
+              from your models and can even package it as API. Go beyond
+              diagrams and flowcharts. Build data pipelines that are immediately
+              operational, straight through from model to deployable software.</p>
+          </div>
+          <div class="col-md-6 two-col-panel__col-graphic">
+            <div class="two-col-panel__graphic-container scrolls-into-view">
+              <img
+                src="assets/images/screenshots/platform/focus-on-working-pipelines-not-code.png"
+                alt=""
+                data-action="zoom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- -->
+    <!-- -->
 
-		<section class="two-col-panel">
-			<div class="container pt-110 df-pt-ml-100 pb-90 df-pb-t-60">
-				<div class="row">
-					<div class="col-md-6 two-col-panel__col-details df-pb-t-50 display-flex flex-direction-column justify-content-center">
-						<h2 class="two-col-panel__heading" data-aos="fade-up" id="instantly-executable">Instantly <br><span class="font-color-brand-one">executable processes</span></h2>
-						<p>The Rosetta DSL fully automates the generation of executable code from your models and can even package it as API. 
-							Go beyond diagrams and flowcharts. Build data pipelines that are immediately operational, straight through from 
-							model to deployable software.</p>
-					</div>
-					<div class="col-md-6 two-col-panel__col-graphic">
-						<div class="two-col-panel__graphic-container scrolls-into-view">
-							<img src="assets/images/screenshots/platform/focus-on-working-pipelines-not-code.png" alt="" data-action="zoom">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="two-col-panel">
+      <div class="body-curve">
+        <canvas
+          data-primary-color="#bddc5e"
+          data-secondary-color="#e5f1bf"
+          data-top-shape-svg-url="/assets/svg/curve/curve-f-top.svg"
+          data-top-shape-y-offset-percentage="0.8"
+          data-margin-top-percentage-of-top-shape-height="0.8"
+          data-bottom-shape-svg-url="/assets/svg/curve/curve-f-bottom.svg"
+          data-bottom-shape-y-offset-percentage="0.5"
+          data-margin-bottom-percentage-of-bottom-shape-height="0.5"
+        ></canvas>
+      </div>
+      <div class="container body-curve-content pb-190 df-pb-t-100">
+        <div class="row two-col-panel--reverse">
+          <div
+            class="col-md-6 two-col-panel__col-details display-flex flex-direction-column justify-content-center"
+          >
+            <h2
+              class="two-col-panel__heading"
+              data-aos="fade-up"
+              id="for-all-and-any-technology"
+            >For all
+              <br /><span class="font-color-brand-one">and any technology</span></h2>
+            <p>The Rosetta DSL is designed to adapt to your tech stack, not the
+              other way around. Deploy on-cloud or on-prem, distributed or not,
+              on-chain or off-chain: your pipeline is truly platform-agnostic.
+              Code generators are already built for many modern software
+              languages. And if yours isn’t there, go for it – they’re all open
+              source.​</p>
+          </div>
+          <div class="col-md-6 two-col-panel__col-graphic">
+            <div
+              class="two-col-panel__graphic-container scrolls-into-view mirror-anim"
+            >
+              <img
+                src="assets/images/screenshots/platform/for-all-and-any-technology.png"
+                alt=""
+                data-action="zoom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- -->
+    <!-- -->
 
-		<section class="two-col-panel">
-			<div class="body-curve">
-				<canvas 
-					data-primary-color="#bddc5e"
-					data-secondary-color="#e5f1bf"
-					data-top-shape-svg-url="/assets/svg/curve/curve-f-top.svg"
-					data-top-shape-y-offset-percentage="0.8"
-					data-margin-top-percentage-of-top-shape-height="0.8"
-					data-bottom-shape-svg-url="/assets/svg/curve/curve-f-bottom.svg"
-					data-bottom-shape-y-offset-percentage="0.5"
-					data-margin-bottom-percentage-of-bottom-shape-height="0.5"
-				></canvas>
-			</div>
-			<div class="container body-curve-content pb-190 df-pb-t-100">
-				<div class="row two-col-panel--reverse">
-					<div class="col-md-6 two-col-panel__col-details display-flex flex-direction-column justify-content-center">
-						<h2 class="two-col-panel__heading" data-aos="fade-up" id="for-all-and-any-technology">For all <br><span class="font-color-brand-one">and any technology</span></h2>
-						<p>The Rosetta DSL is designed to adapt to your tech stack, not the other way around. Deploy on-cloud or on-prem, 
-							distributed or not, on-chain or off-chain: your pipeline is truly platform-agnostic. Code generators are already 
-							built for many modern software languages. And if yours isn’t there, go for it – they’re all open source.​</p>
-					</div>
-					<div class="col-md-6 two-col-panel__col-graphic">
-						<div class="two-col-panel__graphic-container scrolls-into-view mirror-anim">
-							<img src="assets/images/screenshots/platform/for-all-and-any-technology.png" alt="" data-action="zoom">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<!-- -->
+    <section class="two-col-panel">
+      <div class="container pt-10 pt-ml-o-100 pb-100 df-pb-t-90">
+        <div class="row">
+          <div
+            class="col-md-6 two-col-panel__col-details pb-30 display-flex flex-direction-column justify-content-center"
+          >
+            <h2
+              class="two-col-panel__heading"
+              data-aos="fade-up"
+              id="dyanmic-and-interactive"
+            >Dynamic
+              <br /><span class="font-color-brand-one">and interactive</span></h2>
+            <p>Rosetta is based on cloud-native technology and is built around
+              users. Empower your operational teams with live, continuous and
+              end-to-end transparency over their most complex processes. Data
+              pipelines become fully explicable and traceable from source to
+              output, with all the logic at their fingertips.
+            </p>
+          </div>
+          <div class="col-md-6 two-col-panel__col-graphic">
+            <div class="two-col-panel__graphic-container scrolls-into-view">
+              <img
+                data-apply-shadow
+                src="assets/images/screenshots/engine/become-a-test-driven-champion.gif"
+                alt=""
+                data-action="zoom"
+                data-action="zoom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section class="two-col-panel">
-			<div class="container pt-10 df-pt-ml-100 pb-100 df-pb-t-90">
-				<div class="row">
-					<div class="col-md-6 two-col-panel__col-details pb-30 display-flex flex-direction-column justify-content-center">
-						<h2 class="two-col-panel__heading" data-aos="fade-up" id="dyanmic-and-interactive">Dynamic <br><span class="font-color-brand-one">and interactive</span></h2>
-						<p>Rosetta is based on cloud-native technology and is built around users. Empower your operational teams with live, 
-							continuous and end-to-end transparency over their most complex processes. Data pipelines become fully explicable 
-							and traceable from source to output, with all the logic at their fingertips. </p>
-					</div>
-					<div class="col-md-6 two-col-panel__col-graphic">
-						<div class="two-col-panel__graphic-container scrolls-into-view">
-							<img data-apply-shadow src="assets/images/screenshots/engine/become-a-test-driven-champion.gif" alt="" data-action="zoom" data-action="zoom">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- -->
 
-		<!-- -->
+    <section class="two-col-panel">
+      <div class="body-curve">
+        <canvas
+          data-primary-color="#517088"
+          data-secondary-color="#517088"
+          data-top-shape-svg-url="/assets/svg/curve/curve-i-top.svg"
+          data-top-shape-y-offset-percentage="0.6"
+          data-margin-top-percentage-of-top-shape-height="0.6"
+          data-bottom-shape-svg-url="/assets/svg/curve/curve-g-bottom.svg"
+          data-bottom-shape-y-offset-percentage="0"
+          data-margin-bottom-percentage-of-bottom-shape-height="0"
+        ></canvas>
+      </div>
+      <div class="container body-curve-content df-pb-t-50 pb-140">
+        <div class="row two-col-panel--reverse">
+          <div
+            class="col-md-6 two-col-panel__col-details pb-30 display-flex flex-direction-column justify-content-center"
+          >
+            <h2
+              class="two-col-panel__heading"
+              data-aos="fade-up"
+              id="easy-and-fast-integration"
+            ><span class="font-color-brand-aux-two">Easy and fast </span><br
+              /><span class="font-color-brand-one">integration</span></h2>
+            <p class="font-color-brand-aux-two">No more painful integration and
+              upgrades. Rosetta is no-instal, web-based solution to develop
+              consistent application- and technology-agnostic data pipeline
+              models. Set-up new integration interfaces with your systems and
+              manage on-going changes at a fraction of their usual time and
+              cost, with a comprehensive self-service solution.​</p>
+          </div>
+          <div class="col-md-6 two-col-panel__col-graphic">
+            <div
+              class="two-col-panel__graphic-container scrolls-into-view mirror-anim"
+            >
+              <img
+                data-apply-shadow
+                src="assets/images/screenshots/home/integrate-all-your-enterprise-data-effortlessly.gif"
+                alt=""
+                data-action="zoom"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section class="two-col-panel">
-			<div class="body-curve">
-				<canvas 
-					data-primary-color="#517088"
-					data-secondary-color="#517088"
-					data-top-shape-svg-url="/assets/svg/curve/curve-i-top.svg"
-					data-top-shape-y-offset-percentage="0.6"
-					data-margin-top-percentage-of-top-shape-height="0.6"
-					data-bottom-shape-svg-url="/assets/svg/curve/curve-g-bottom.svg"
-					data-bottom-shape-y-offset-percentage="0"
-					data-margin-bottom-percentage-of-bottom-shape-height="0"
-				></canvas>
-			</div>
-			<div class="container body-curve-content df-pb-t-50 pb-140">
-				<div class="row two-col-panel--reverse">
-					<div class="col-md-6 two-col-panel__col-details pb-30 display-flex flex-direction-column justify-content-center">
-						<h2 class="two-col-panel__heading" data-aos="fade-up" id="easy-and-fast-integration"><span class="font-color-brand-aux-two">Easy and fast </span><br><span class="font-color-brand-one">integration</span></h2>
-						<p class="font-color-brand-aux-two">No more painful integration and upgrades. Rosetta is no-instal, web-based solution to develop consistent 
-							application- and technology-agnostic data pipeline models. Set-up new integration interfaces with your 
-							systems and manage on-going changes at a fraction of their usual time and cost, with a comprehensive 
-							self-service solution.​</p>
-					</div>
-					<div class="col-md-6 two-col-panel__col-graphic">
-						<div class="two-col-panel__graphic-container scrolls-into-view mirror-anim">
-							<img data-apply-shadow src="assets/images/screenshots/home/integrate-all-your-enterprise-data-effortlessly.gif" alt="" data-action="zoom">
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- -->
 
-        <!-- -->
+    <section class="pt-90 pb-10 text-align-center position-relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="font-weight-semi-bold mb-20" data-aos="fade-up">Ready to
+              roll?</p>
+          </div>
+        </div>
+        <div class="row mb-60">
+          <div class="col-md-12 mb-25">
+            <h2
+              class="font-size-l6r font-color-brand-aux-five"
+              data-aos="fade-up"
+            >Take Rosetta for a spin.
+              <br class="display-none d-b-m-o" /><span
+                class="font-color-brand-three"
+              >It's on us.</span>​
+            </h2>
+          </div>
+          <div class="col-md-12 mb-25">
+            <div class="button-card mb-20" data-aos="fade-up">
+              <a
+                href="{{ config.externalLinks.signUp }}"
+                class="button button--theme-a"
+              >Sign up for free</a>
+            </div>
+            <div class="button-card mb-20" data-aos="fade-up">
+              <a href="pricing.html" class="button button--theme-a">Buy now</a>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <p class="font-size-m2" data-aos="fade-up">Sign-up today and get
+              started on your model development in seconds.
+              <br class="d-n-m-o d-n-ml-o" />Our free version comes with no time
+              limit and no credit card required.
+              <br class="d-n-m-o d-n-i-o" />And Rosetta can then grow with your
+              enterprise use. ​​​</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section class="pt-90 pb-10 text-align-center position-relative">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="font-weight-semi-bold mb-20" data-aos="fade-up">Ready to roll?</p>
-					</div>
-				</div>
-				<div class="row mb-60">
-					<div class="col-md-12 mb-25">
-						<h2 class="font-size-l6r font-color-brand-aux-five" data-aos="fade-up">Take Rosetta for a spin. 
-							<br class="display-none d-b-m-o"><span class="font-color-brand-three">It's on us.</span>​
-						</h2>
-					</div>
-					<div class="col-md-12 mb-25">
-						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="{{ config.externalLinks.signUp }}" class="button button--theme-a">Sign up for free</a>
-						</div>
-						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="pricing" class="button button--theme-a">Buy now</a>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<p class="font-size-m2" data-aos="fade-up">Sign-up today and get started on your model development in seconds. 
-                            <br class="d-n-m-o d-n-ml-o">Our free version comes with no time limit and no credit card required. 
-                            <br class="d-n-m-o d-n-i-o">And Rosetta can then grow with your enterprise use.
-                        ​​​</p>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- -->
 
-		<!-- -->
+    {{> footer}}
 
-		{{> footer}}
+    <!-- -->
 
-		<!-- -->
+    <div class="mini-header-trigger"></div>
 
-		<div class="mini-header-trigger"></div>
+    <!-- -->
 
-		<!-- -->
+    {{> scripts}}
 
-		{{> breakpoint_assistant}}
-
-		<!-- -->
-
-		{{> scripts}}
-
-	</body>
+  </body>
 
 </html>

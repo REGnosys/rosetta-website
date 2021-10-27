@@ -1,265 +1,347 @@
-<!DOCTYPE html>
 <html lang="en">
 
-	{{> header title="Governance - Rosetta"}}
+  {{> header title="Governance - Rosetta"}}
 
-	<body>
-		
-		<!-- -->
+  <body>
 
-		{{> page_header}}
+    <!-- -->
 
-        <!-- -->
+    {{> page_header}}
 
-        <section class="pt-160 pb-60">
+    <!-- -->
 
-			<div class="graphic-header graphic-header--graphic-full-size graphic-header--governance">
-				<img class="graphic-header__curve graphic-header__curve--brand-one" src="assets/svg/common/header-curve.svg" alt="Graphic of curve for aesthetics">
-				<object 
-					data="assets/svg/governance/governance.svg" 
-					type="image/svg+xml" 
-					class="graphic-header__graphic"
-				></object>
-			</div>
+    <section class="pt-160 pb-60">
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="font-size-m7 mb-0">Open source native</p>
-                        <h1 class="font-size-xl2 font-color-brand-one mb-45">Governance</h1>
-                        <p>We are a community driven platform​ anchored in <br>open source principles​</p>
-                    </div>
+      <div
+        class="graphic-header graphic-header--graphic-full-size graphic-header--governance"
+      >
+        <img
+          class="graphic-header__curve graphic-header__curve--brand-one"
+          src="assets/svg/common/header-curve.svg"
+          alt="Graphic of curve for aesthetics"
+        />
+        <object
+          data="assets/svg/governance/governance.svg"
+          type="image/svg+xml"
+          class="graphic-header__graphic"
+        ></object>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="font-size-m7 mb-0">Open source native</p>
+            <h1 class="font-size-xl2 font-color-brand-one mb-45">Governance</h1>
+            <p>We are a community driven platform​ anchored in
+              <br />open source principles​</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -->
+
+    <section class="position-relative">
+      <div class="body-curve">
+        <canvas
+          data-primary-color="#bddc5e"
+          data-secondary-color="#e5f1bf"
+          data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
+          data-top-shape-y-offset-percentage="0"
+          data-margin-top-percentage-of-top-shape-height="0"
+          data-bottom-shape-svg-url="/assets/svg/curve/curve-d-bottom.svg"
+          data-bottom-shape-y-offset-percentage="0"
+          data-margin-bottom-percentage-of-bottom-shape-height="0"
+        ></canvas>
+      </div>
+      <div class="container body-curve-content pt-150 pb-40 df-pb-t-40">
+        <div class="row pb-40">
+          <div class="col-md-12">
+            <h2 class="two-col-panel__heading" data-aos="fade-up"><span
+                class="font-color-brand-one"
+              >A bit of history...</span></h2>
+            <p>The Rosetta Platform is developed by Financial Technology firm
+              <a href="{{ config.externalLinks.regnosys }}/" target="_blank">REGnosys</a>,
+              with an initial focus on the financial markets' industry.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-40">
+            <p class="font-size-m2">The platform brings radical operational
+              efficiency through standardisation, by enabling market
+              participants to define processing standards in digital form (i.e.
+              as "models") and to share them.</p>
+            <a
+              href="{{ config.externalLinks.domainModel }}"
+              class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
+              target="_blank"
+            >
+              What is a Domain Model
+              <i><img
+                  src="assets/svg/common/link-with-arrow.svg"
+                  alt="Link graphic"
+                /></i>
+            </a>
+          </div>
+          <div class="col-md-4 mb-40">
+            <p class="font-size-m2">The Rosetta Platform is based on a Domain
+              Specific Language called the Rosetta DSL, that is simple and
+              intuitive to use in a wide range of modelling applications.</p>
+            <a
+              href="{{ config.externalLinks.documentation }}"
+              class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
+              target="_blank"
+            >
+              Read the Rosetta DSL docs
+              <i><img
+                  src="assets/svg/common/link-with-arrow.svg"
+                  alt="Link graphic"
+                /></i>
+            </a>
+          </div>
+          <div class="col-md-4 mb-40">
+            <p class="font-size-m2">The Rosetta DSL was released in open source
+              in 2019, together with a first live model of the financial
+              markets' transaction lifecycle applied to derivatives: the ISDA
+              Common Domain Model.</p>
+            <a
+              href="{{ config.externalLinks.cdmDocs }}"
+              class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
+              target="_blank"
+            >
+              Read the CDM docs
+              <i><img
+                  src="assets/svg/common/link-with-arrow.svg"
+                  alt="Link graphic"
+                /></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -->
+
+    <section class="position-relative core-diagram">
+      <div class="container pt-80 pb-60">
+        <div class="row">
+          <div class="col-md-12 col-lg-5">
+            <p
+              class="font-weight-semi-bold mb-20 font-color-brand-aux-three"
+              data-aos="fade-right"
+            >Platform components​</p>
+            <h2
+              class="font-color-brand-one font-size-l5r"
+              data-aos="fade-right"
+            >Putting open source​ <br />at the core</h2>
+            <p data-aos="fade-left">The Rosetta Platform comprises three
+              <br class="d-n-t-o" />types of components:​</p>
+            <ul class="core-diagram__list df-mt-t-30 mt-90 ml-m-o-20 mr-m-o-20">
+              <li class="core-diagram__list-item">
+                <div
+                  class="core-diagram__list-item-content core-diagram__list-item-content--dsl"
+                  data-ring-selector="#inside-knockback"
+                  data-slide-index="1"
+                >
+                  <p class="core-diagram__list-item-title">Rosetta DSL</p>
+                  <p class="core-diagram__list-item-sub-title">Open source
+                    components</p>
+                  <span
+                    class="core-diagram__list-item-indicator core-diagram__list-item-indicator--dsl"
+                  ></span>
                 </div>
+              </li>
+              <li class="core-diagram__list-item">
+                <div
+                  class="core-diagram__list-item-content core-diagram__list-item-content--projects"
+                  data-ring-selector="#middle-knockback"
+                  data-slide-index="2"
+                >
+                  <p class="core-diagram__list-item-title">Projects</p>
+                  <p class="core-diagram__list-item-sub-title">Model components</p>
+                  <span
+                    class="core-diagram__list-item-indicator core-diagram__list-item-indicator--projects"
+                  ></span>
+                </div>
+                <div
+                  class="core-diagram__list-item-empty core-diagram__list-item-empty--first"
+                ></div>
+                <div
+                  class="core-diagram__list-item-empty core-diagram__list-item-empty--second"
+                ></div>
+              </li>
+              <li class="core-diagram__list-item">
+                <div
+                  class="core-diagram__list-item-content core-diagram__list-item-content--products"
+                  data-ring-selector="#outside-knockback"
+                  data-slide-index="3"
+                >
+                  <p class="core-diagram__list-item-title">Rosetta Products</p>
+                  <p class="core-diagram__list-item-sub-title">Application
+                    components</p>
+                  <span
+                    class="core-diagram__list-item-indicator core-diagram__list-item-indicator--products"
+                  ></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-12 col-lg-7">
+            <img
+              src="assets/svg/governance/core-diagram.svg"
+              alt="Diagram representing the structure of the Rosetta Platform"
+              class="core-diagram__graphic"
+            />
+          </div>
+        </div>
+        <div class="row mt-50">
+          <div class="col-md-12">
+            <div class="core-diagram__info-panels-wrapper swiper-container">
+              <div class="core-diagram__info-panels-content swiper-wrapper">
+                <div class="core-diagram__info-panel swiper-slide">
+                  <p class="font-size-l1 font-weight-semi-bold mb-20">For the
+                    open source fanatics</p>
+                  <p class="font-size-m2">The Rosetta DSL has been purposefully
+                    designed for techno-neutrality.​​</p>
+                  <p class="font-size-m2">It is based on the open source and
+                    widely adopted Eclipse Modelling Framework (EMF), that uses
+                    "Ecore" as meta-model. This ensures that any model can be
+                    represented as an Ecore. Ecore is the de facto reference
+                    implementation of the Meta Object Facility from the Object
+                    Management Group (OMG).​​</p>
+                  <p class="font-size-m2">Plainly, it means that a model
+                    developed using Rosetta is expressed into a format that is
+                    independent of the Rosetta DSL itself, openly available,
+                    widely used and supported by standard-setting bodies.</p>
+                  <a
+                    href="{{ config.externalLinks.eclipse }}"
+                    class="link-with-graphic font-size-m5 font-weight-semi-bold"
+                    target="_blank"
+                  >
+                    Read about EMF and Ecore
+                    <i><img
+                        src="assets/svg/common/link-with-arrow.svg"
+                        alt="Link graphic"
+                      /></i>
+                  </a>
+                </div>
+                <div class="core-diagram__info-panel swiper-slide">
+                  <p
+                    class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold"
+                  >Rosetta DSL</p>
+                  <p class="font-size-m2">The Rosetta DSL is an open-source
+                    project initially developed by REGnosys.</p>
+                  <p class="font-size-m2">REGnosys welcomes outside
+                    contributions that help keep it technology- and
+                    platform-agnostic. Code generators in several programming
+                    languages have already been contributed by the user
+                    community.</p>
+                </div>
+                <div class="core-diagram__info-panel swiper-slide">
+                  <p
+                    class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold"
+                  >Projects</p>
+                  <p class="font-size-m2">Model components are organised into
+                    "projects" in a source-control repository.</p>
+                  <p class="font-size-m2">Some projects are openly available on
+                    the platform, under license terms and a governance framework
+                    that reflect how their owners wish to control their
+                    distribution and contribution. Users can create new
+                    projects, choose how they share them, and contribute to
+                    existing ones if they have permission.</p>
+                </div>
+                <div class="core-diagram__info-panel swiper-slide">
+                  <p
+                    class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold"
+                  >Rosetta Products</p>
+                  <p class="font-size-m2">The Rosetta Products are connected to
+                    the source-control repository holding all the model
+                    components.</p>
+                  <p class="font-size-m2">The Rosetta Products provide a
+                    complete model development kit allowing users to view or
+                    edit existing projects, create new ones, or use the models
+                    to develop new applications and services.</p>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- -->
+    <!-- -->
 
-		<section class="position-relative">
-			<div class="body-curve">
-				<canvas 
-					data-primary-color="#bddc5e"
-					data-secondary-color="#e5f1bf"
-					data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
-					data-top-shape-y-offset-percentage="0"
-					data-margin-top-percentage-of-top-shape-height="0"
-					data-bottom-shape-svg-url="/assets/svg/curve/curve-d-bottom.svg"
-					data-bottom-shape-y-offset-percentage="0"
-					data-margin-bottom-percentage-of-bottom-shape-height="0"
-				></canvas>
-			</div>
-			<div class="container body-curve-content pt-150 pb-40 df-pb-t-40">
-				<div class="row pb-40">
-					<div class="col-md-12">
-						<h2 class="two-col-panel__heading" data-aos="fade-up"><span class="font-color-brand-aux-three">A bit of history...</span></h2>
-						<p>The Rosetta Platform is developed by Financial Technology firm <a href="{{ config.externalLinks.regnosys }}" target="_blank">REGnosys</a>, 
-							with an initial focus on the financial markets' industry.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 mb-40">
-						<p class="font-size-m2">The platform brings radical operational efficiency through standardisation, by enabling market participants 
-						to define processing standards in digital form (i.e. as "models") and to share them.</p>
-						<a 
-							href="{{ config.externalLinks.domainModel }}" 
-							class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
-							target="_blank"
-						>
-							What is a Domain Model
-							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
-						</a>
-					</div>
-					<div class="col-md-4 mb-40">
-						<p class="font-size-m2">The Rosetta Platform is based on a Domain Specific Language called the Rosetta DSL, that is simple and 
-							intuitive to use in a wide range of modelling applications.</p>
-						<a 
-							href="{{ config.externalLinks.documentation }}" 
-							class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
-							target="_blank"
-						>
-							Read the Rosetta DSL docs
-							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
-						</a>
-					</div>
-					<div class="col-md-4 mb-40">
-						<p class="font-size-m2">The Rosetta DSL was released in open source in 2019, together with a first live model of the financial 
-							markets' transaction lifecycle applied to derivatives: the ISDA Common Domain Model.</p>
-						<a 
-							href="{{ config.externalLinks.cdmDocs }}" 
-							class="link-with-graphic link-with-graphic--palette-a font-size-m5 font-weight-semi-bold"
-							target="_blank"
-						>
-							Read the CDM docs
-							<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="pt-110 pb-10 text-align-center position-relative">
+      <div class="body-curve">
+        <canvas
+          data-primary-color="#4d6f88"
+          data-secondary-color="#4d6f88"
+          data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
+          data-top-shape-y-offset-percentage="0"
+          data-margin-top-percentage-of-top-shape-height="0"
+          data-bottom-shape-svg-url="/assets/svg/curve/curve-e-bottom-alt-1.svg"
+          data-bottom-shape-y-offset-percentage="0.1"
+          data-margin-bottom-percentage-of-bottom-shape-height="0"
+        ></canvas>
+      </div>
+      <div class="container body-curve-content">
+        <div class="row">
+          <div class="col-md-12">
+            <p
+              class="font-weight-semi-bold mb-20 font-color-brand-aux-five"
+              data-aos="fade-up"
+            >Ready to roll?</p>
+          </div>
+        </div>
+        <div class="row mb-60">
+          <div class="col-md-12 mb-25">
+            <h2
+              class="font-size-l6r font-color-brand-aux-two"
+              data-aos="fade-up"
+            >Take Rosetta for a spin.
+              <br class="display-none d-b-m-o" /><span
+                class="font-color-brand-aux-five"
+              >It's on us.</span>​
+            </h2>
+          </div>
+          <div class="col-md-12 mb-25">
+            <div class="button-card mb-20" data-aos="fade-up">
+              <a
+                href="{{ config.externalLinks.signUp }}"
+                class="button button--theme-a"
+              >Sign up for free</a>
+            </div>
+            <div class="button-card mb-20" data-aos="fade-up">
+              <a href="pricing.html" class="button button--theme-a">Buy now</a>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <p
+              class="font-size-m2 font-color-brand-aux-two"
+              data-aos="fade-up"
+            >Sign-up today and get started on your model development in seconds.
+              <br class="d-n-m-o d-n-ml-o" />Our free version comes with no time
+              limit and no credit card required.
+              <br class="d-n-m-o d-n-i-o" />And Rosetta can then grow with your
+              enterprise use. ​​​</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<!-- -->
+    <!-- -->
 
-		<section class="position-relative core-diagram">
-			<div class="container pt-80 pb-60">
-				<div class="row">
-					<div class="col-md-12 col-lg-5">
-						<p class="font-weight-semi-bold mb-20 font-color-brand-aux-three" data-aos="fade-right">Platform components​</p>
-						<h2 class="font-color-brand-one font-size-l5r" data-aos="fade-right">Putting open source​ <br>at the core</h2>
-						<p data-aos="fade-left">The Rosetta Platform comprises three <br class="d-n-t-o">types of components:​</p>
-						<ul class="core-diagram__list df-mt-t-30 mt-90 ml-m-o-20 mr-m-o-20">
-							<li class="core-diagram__list-item">
-								<div 
-									class="core-diagram__list-item-content core-diagram__list-item-content--dsl" 
-									data-ring-selector="#inside-knockback"
-									data-slide-index="1"
-								>
-									<p class="core-diagram__list-item-title">Rosetta DSL</p>
-									<p class="core-diagram__list-item-sub-title">Open source components</p>
-									<span class="core-diagram__list-item-indicator core-diagram__list-item-indicator--dsl"></span>
-								</div>
-							</li>
-							<li class="core-diagram__list-item">
-								<div 
-									class="core-diagram__list-item-content core-diagram__list-item-content--projects" 
-									data-ring-selector="#middle-knockback"
-									data-slide-index="2"
-								>
-									<p class="core-diagram__list-item-title">Projects</p>
-									<p class="core-diagram__list-item-sub-title">Model components</p>
-									<span class="core-diagram__list-item-indicator core-diagram__list-item-indicator--projects"></span>
-								</div>
-								<div class="core-diagram__list-item-empty core-diagram__list-item-empty--first"></div>
-								<div class="core-diagram__list-item-empty core-diagram__list-item-empty--second"></div>
-							</li>
-							<li class="core-diagram__list-item">
-								<div 
-									class="core-diagram__list-item-content core-diagram__list-item-content--products" 
-									data-ring-selector="#outside-knockback"
-									data-slide-index="3"
-								>
-									<p class="core-diagram__list-item-title">Rosetta Products</p>
-									<p class="core-diagram__list-item-sub-title">Application components</p>
-									<span class="core-diagram__list-item-indicator core-diagram__list-item-indicator--products"></span>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="col-md-12 col-lg-7">
-						<img 
-							src="assets/svg/governance/core-diagram.svg" 
-							alt="Diagram representing the structure of the Rosetta Platform"
-							class="core-diagram__graphic"
-						>
-					</div>
-				</div>
-				<div class="row mt-50">
-					<div class="col-md-12">
-						<div class="core-diagram__info-panels-wrapper swiper-container">
-							<div class="core-diagram__info-panels-content swiper-wrapper">
-								<div class="core-diagram__info-panel swiper-slide">
-									<p class="font-size-l1 font-weight-semi-bold mb-20">For the open source fanatics</p>
-									<p class="font-size-m2">The Rosetta DSL has been purposefully designed for techno-neutrality.​​</p>
-									<p class="font-size-m2">It is based on the open source and widely adopted Eclipse Modelling Framework (EMF), that uses "Ecore" 
-										as meta-model. This ensures that any model can be represented as an Ecore. Ecore is the de facto reference 
-										implementation of the Meta Object Facility from the Object Management Group (OMG).​​</p>
-									<p class="font-size-m2">Plainly, it means that a model developed using Rosetta is expressed into a format that is independent 
-										of the Rosetta DSL itself, openly available, widely used and supported by standard-setting bodies.</p>
-									<a 
-										href="{{ config.externalLinks.eclipse }}" 
-										class="link-with-graphic font-size-m5 font-weight-semi-bold"
-										target="_blank"
-									>
-										Read about EMF and Ecore
-										<i><img src="assets/svg/common/link-with-arrow.svg" alt="Link graphic"></i>
-									</a>
-								</div>
-								<div class="core-diagram__info-panel swiper-slide">
-									<p class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold">Rosetta DSL</p>
-									<p class="font-size-m2">The Rosetta DSL is an open-source project initially developed by REGnosys.</p>
-									<p class="font-size-m2">REGnosys welcomes outside contributions that help keep it technology- and platform-agnostic. Code generators in several 
-										programming languages have already been contributed by the user community.</p>
-								</div>
-								<div class="core-diagram__info-panel swiper-slide">
-									<p class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold">Projects</p>
-									<p class="font-size-m2">Model components are organised into "projects" in a source-control repository.</p>
-									<p class="font-size-m2">Some projects are openly available on the platform, under license terms and a governance 
-										framework that reflect how their owners wish to control their distribution and contribution. Users 
-										can create new projects, choose how they share them, and contribute to existing ones if they have permission.</p>
-								</div>
-								<div class="core-diagram__info-panel swiper-slide">
-									<p class="core-diagram__info-panel-heading font-size-l1 font-weight-semi-bold">Rosetta Products</p>
-									<p class="font-size-m2">The Rosetta Products are connected to the source-control repository holding all the model components.</p>
-									<p class="font-size-m2">The Rosetta Products provide a complete model development kit allowing users to view or edit existing projects, create new ones, or use the models to develop new applications and services.</p>
-								</div>
-							</div>
-							<div class="swiper-pagination"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-        <!-- -->
+    {{> footer}}
 
-		<section class="pt-110 pb-10 text-align-center position-relative">
-			<div class="body-curve">
-				<canvas 
-					data-primary-color="#4d6f88"
-					data-secondary-color="#4d6f88"
-					data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
-					data-top-shape-y-offset-percentage="0"
-					data-margin-top-percentage-of-top-shape-height="0"
-					data-bottom-shape-svg-url="/assets/svg/curve/curve-e-bottom-alt-1.svg"
-					data-bottom-shape-y-offset-percentage="0.1"
-					data-margin-bottom-percentage-of-bottom-shape-height="0"
-				></canvas>
-			</div>
-			<div class="container body-curve-content">
-				<div class="row">
-					<div class="col-md-12">
-						<p class="font-weight-semi-bold mb-20 font-color-brand-aux-five" data-aos="fade-up">Ready to roll?</p>
-					</div>
-				</div>
-				<div class="row mb-60">
-					<div class="col-md-12 mb-25">
-						<h2 class="font-size-l6r font-color-brand-aux-two" data-aos="fade-up">Take Rosetta for a spin. 
-							<br class="display-none d-b-m-o"><span class="font-color-brand-aux-five">It's on us.</span>​
-						</h2>
-					</div>
-					<div class="col-md-12 mb-25">
-						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="{{ config.externalLinks.signUp }}" class="button button--theme-a">Sign up for free</a>
-						</div>
-						<div class="button-card mb-20" data-aos="fade-up">
-							<a href="pricing" class="button button--theme-a">Buy now</a>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<p class="font-size-m2 font-color-brand-aux-two" data-aos="fade-up">Sign-up today and get started on your model development in seconds. 
-                            <br class="d-n-m-o d-n-ml-o">Our free version comes with no time limit and no credit card required. 
-                            <br class="d-n-m-o d-n-i-o">And Rosetta can then grow with your enterprise use.
-                        ​​​</p>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- -->
 
-		<!-- -->
+    <div class="mini-header-trigger"></div>
 
-		{{> footer}}
+    <!-- -->
 
-		<!-- -->
+    {{> scripts}}
 
-		<div class="mini-header-trigger"></div>
-
-		<!-- -->
-
-		{{> breakpoint_assistant}}
-
-		<!-- -->
-
-		{{> scripts}}
-
-	</body>
+  </body>
 
 </html>

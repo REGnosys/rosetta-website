@@ -21,6 +21,7 @@
   "dependencies": {
     "@tanem/svg-injector": "^8.2.5",
     "animejs": "^3.2.1",
+    "breakpoint-sass": "^2.7.1",
     "country-data-list": "^1.2.1",
     "countup.js": "^2.0.8",
     "easydropdown": "^4.2.0",
@@ -43,7 +44,6 @@
     "@types/lodash": "^4.14.176",
     "@types/waypoints": "^4.0.4",
     "babel-loader": "^8.2.3",
-    "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.27.5",
     "css-loader": "^5.1.1",
     "event-stream": "^4.0.1",
