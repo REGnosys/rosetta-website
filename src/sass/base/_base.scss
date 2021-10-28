@@ -11,13 +11,21 @@ $fluid:                         max-width 575px;
  * body.
  */
 
-body {
+ body {
 
     /**
-     * Overflow.
+     * .site-wrapper.
      */
 
-    overflow-x: hidden;
+    .site-wrapper {
+
+        /**
+         * Overflow.
+         */
+
+        overflow: hidden;
+
+    }
 
 }
 

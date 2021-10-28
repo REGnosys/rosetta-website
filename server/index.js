@@ -32,7 +32,7 @@ const pages = [
 ];
 
 // servers any appropriate static files(i.e. css, js, etc)
-const publicPath = path.join(__dirname, "../assets");
+const publicPath = path.join(__dirname, "../web/assets");
 app.use("/assets", express.static(publicPath));
 
 // setups hbs view path, where express will look for files

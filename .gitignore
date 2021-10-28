@@ -1,3 +1,11 @@
 .DS_Store
 ._DS_Store
+
 *.tgz
+*.map
+
+node_modules
+
+/web/assets/css/styles.css
+/web/assets/js/bundle.js
+/web/*.html

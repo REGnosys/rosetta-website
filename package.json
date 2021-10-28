@@ -2,9 +2,9 @@
   "name": "Rosetta",
   "version": "1.0.0",
   "description": "Rosetta website.",
-  "main": "index.html",
+  "main": "server/index.js",
   "scripts": {
-    "dev": "cd server && nodemon index.js",
+    "dev": "nodemon server/index.js",
     "build": "webpack",
     "compile-sass": "gulp compileSass",
     "watch-sass": "gulp watchSass"
@@ -29,7 +29,6 @@
     "fabric": "^4.6.0",
     "hbs": "^4.1.2",
     "lottie-web": "^5.7.14",
-    "pm2": "^5.1.2",
     "scrollama": "^2.2.3",
     "swiper": "^6.5.7",
     "velocity-animate": "^2.0.6",
