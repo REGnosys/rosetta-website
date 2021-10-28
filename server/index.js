@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5000;
 const RECAPTCHA_SECRET_KEY = process.env.ROSETTA_RECAPTCHA_SECRET || "";
 const SENDGRID_API_KEY = process.env.ROSETTA_SENDGRID_API_KEY || "";
 const SCORE_THRESHOLD = 0.5;
+const MAIL_TO = process.env.ROSETTA_MAIL_TO;
 
 const countryList = countries.all.sort((a, b) =>
   a.name > b.name ? 1 : b.name > a.name ? -1 : 0
@@ -34,26 +35,23 @@ const pages = [
 ];
 
 const sendEmail = (formData) => {
+  if (!MAIL_TO) {
+    console.log('To mail to recipient not defined!');
+    return Promise.resolve();
+  }
+
   const msg = {
-    to: "contact@regnosys.com",
-    from: "contact@regnosys.com", // Use the email address or domain you verified above
+    to: MAIL_TO,
+    from: `${formData.firstName} ${formData.surname} <${formData.email}>`,
     subject: "Rosetta Website Query",
-    text: `
-      From: ${formData.firstName} ${formData.surname} <${formData.email}>
-      Subject: Rosetta Website Query
-
-      Message Body:
-      ${formData.firstName} ${formData.surname}
-      ${formData.website}
-      ${formData.phone}
-      ${formData.country}
-
-      ${formData.message}
-
-      --
-      This e-mail was sent from a contact form on Rosetta (https://rosetta-technology.io)
+    html: `
+      <p>${formData.message}</p>
+      <p>
+        Website: ${formData.website} </br >
+        Phone: <a href="tel:${formData.phone}">${formData.phone}</a> </br >
+        Country: ${formData.country} </br >
+      </p>
     `,
-    html: '<strong>and easy to do anywhere, even with Node.js</strong>',
   };
 
   return sgMail.send(msg);
@@ -79,8 +77,9 @@ const handleSend = (req, res) => {
         throw new Error("You are not human!")
       }
 
-      return sendEmail(formData).then((foo) => res.status(200));
+      return sendEmail(formData);
     })
+    .then(() => res.status(200).send({message: 'Email send successfully'}))
     .catch((error) => res.json({ error }));
 };
 
