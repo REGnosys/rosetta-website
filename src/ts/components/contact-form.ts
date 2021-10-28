@@ -2,6 +2,8 @@
  * 
  */
 
+declare const grecaptcha: ReCaptchaV2.ReCaptcha;
+
 /**
  * inteface FormData.
  */
@@ -13,7 +15,8 @@ interface FormData {
     phone     : string,
     website   : string,
     country   : string,
-    message   : string
+    message   : string,
+    token     : string
 }
 
 /**
@@ -58,31 +61,13 @@ export class ContactForm {
                  * 
                  */
 
-                ev.preventDefault()
+                 ev.preventDefault()
 
                 /**
                  * 
                  */
 
-                let submittedFormData = {} as FormData
-
-                /**
-                 * 
-                 */
-
-                submittedFormData.firstName = (contactForm.querySelector('#firstname') as HTMLInputElement).value
-                submittedFormData.surname   = (contactForm.querySelector('#surname') as HTMLInputElement).value
-                submittedFormData.email     = (contactForm.querySelector('#emailaddress') as HTMLInputElement).value
-                submittedFormData.phone     = (contactForm.querySelector('#workphone') as HTMLInputElement).value
-                submittedFormData.website   = (contactForm.querySelector('#companywebsite') as HTMLInputElement).value
-                submittedFormData.country   = (contactForm.querySelector('#country') as HTMLInputElement).value
-                submittedFormData.message   = (contactForm.querySelector('#message') as HTMLInputElement).value
-
-                /**
-                 * 
-                 */
-
-                this.postData(submittedFormData)
+                 this.postReCaptcha(contactForm)
 
             })
 
@@ -131,7 +116,8 @@ export class ContactForm {
          */
 
         let xhr = new XMLHttpRequest()
-        xhr.open('POST', '<TARGET_URL>', true)
+        xhr.open('POST', '/api/send', true)
+        xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify(formData))
 
         /**
@@ -200,6 +186,48 @@ export class ContactForm {
         
         }, false)
 
+    }
+
+    /**
+     * postReCaptcha.
+     */
+
+    postReCaptcha(contactForm : HTMLFormElement) {
+
+        /**
+         * 
+         */
+
+        let submittedFormData = {} as FormData
+
+        /**
+         * 
+         */
+
+        submittedFormData.firstName = (contactForm.querySelector('#firstname') as HTMLInputElement).value
+        submittedFormData.surname   = (contactForm.querySelector('#surname') as HTMLInputElement).value
+        submittedFormData.email     = (contactForm.querySelector('#emailaddress') as HTMLInputElement).value
+        submittedFormData.phone     = (contactForm.querySelector('#workphone') as HTMLInputElement).value
+        submittedFormData.website   = (contactForm.querySelector('#companywebsite') as HTMLInputElement).value
+        submittedFormData.country   = (contactForm.querySelector('#country') as HTMLInputElement).value
+        submittedFormData.message   = (contactForm.querySelector('#message') as HTMLInputElement).value
+
+        /**
+         * 
+         */
+
+        grecaptcha.ready(() => {
+            grecaptcha.execute('6LfCIeIcAAAAAKgTKA9QGstV6kusnO3mD29SWspz', {action: 'demo'})
+                .then((token: string) =>  {
+
+                    /**
+                     * 
+                     */
+
+                    submittedFormData.token = token
+                    this.postData(submittedFormData)
+                });
+        });
     }
 
 }

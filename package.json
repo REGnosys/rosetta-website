@@ -4,7 +4,8 @@
   "description": "Rosetta website.",
   "main": "server/index.js",
   "scripts": {
-    "dev": "nodemon server/index.js",
+    "predev": "run-p build compile-sass",
+    "dev": "nodemon --inspect server/index.js",
     "build": "webpack",
     "compile-sass": "gulp compileSass",
     "watch-sass": "gulp watchSass"
@@ -19,8 +20,10 @@
   "author": "Mike BTG <mike@breakthegrid.co.uk>",
   "license": "MIT",
   "dependencies": {
+    "@sendgrid/mail": "^7.5.0",
     "@tanem/svg-injector": "^8.2.5",
     "animejs": "^3.2.1",
+    "axios": "^0.24.0",
     "breakpoint-sass": "^2.7.1",
     "country-data-list": "^1.2.1",
     "countup.js": "^2.0.8",
@@ -40,6 +43,7 @@
     "@babel/preset-env": "^7.15.8",
     "@types/animejs": "^3.1.4",
     "@types/fabric": "^4.5.3",
+    "@types/grecaptcha": "^3.0.3",
     "@types/lodash": "^4.14.176",
     "@types/waypoints": "^4.0.4",
     "babel-loader": "^8.2.3",
@@ -55,6 +59,7 @@
     "lodash": "^4.17.21",
     "node-sass": "^5.0.0",
     "nodemon": "^2.0.14",
+    "npm-run-all": "^4.1.5",
     "postcss": "^8.3.11",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.3.0",
