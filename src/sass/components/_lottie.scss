@@ -29,6 +29,12 @@
         display: inline-block;
 
         /**
+         * 
+         */
+
+        position: relative;
+
+        /**
          * &.hidden.
          */
 
@@ -395,10 +401,10 @@
 .platform-hero {
 
     /**
-     * Overflow.
+     * Position.
      */
 
-    overflow: hidden;
+    position: relative;
 
     /**
      * Padding.
@@ -447,5 +453,11 @@
      */
 
     overflow-x: hidden;
+
+    /**
+     * Position.
+     */
+
+    position: relative;
 
 }
