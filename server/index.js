@@ -12,39 +12,38 @@ const SENDGRID_API_KEY = process.env.ROSETTA_SEND_GRID_KEY || "";
 const SCORE_THRESHOLD = 0.5;
 const MAIL_TO = process.env.ROSETTA_MAIL_TO;
 
-const countryList = countries.all.sort((a, b) =>
-  a.name > b.name ? 1 : b.name > a.name ? -1 : 0
-);
+const countryList = countries.all.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
 const pages = [
-  "index",
-  "pricing",
-  "platform",
-  "community",
-  "monitor",
-  "it-security",
-  "ingest-and-translate",
-  "governance",
-  "engine",
-  "design",
-  "deploy",
-  "contact-support",
-  "contact-sales-thankyou",
-  "contact-sales",
-  "contact",
+    "index",
+    "pricing",
+    "platform",
+    "community",
+    "monitor",
+    "it-security",
+    "ingest-and-translate",
+    "open-source",
+    "engine",
+    "design",
+    "deploy",
+    "contact-support",
+    "contact-sales-thankyou",
+    "contact-sales",
+    "contact",
+    "terms-of-use",
 ];
 
 const sendEmail = (formData) => {
-  if (!MAIL_TO) {
-    console.log('To mail to recipient not defined!');
-    return Promise.resolve();
-  }
+    if (!MAIL_TO) {
+        console.log("To mail to recipient not defined!");
+        return Promise.resolve();
+    }
 
-  const msg = {
-    to: MAIL_TO,
-    from: `${formData.firstName} ${formData.surname} <${formData.email}>`,
-    subject: "Rosetta Website Query",
-    html: `
+    const msg = {
+        to: MAIL_TO,
+        from: `${formData.firstName} ${formData.surname} <${formData.email}>`,
+        subject: "Rosetta Website Query",
+        html: `
       <p>${formData.message}</p>
       <p>
         Website: ${formData.website} </br >
@@ -52,35 +51,36 @@ const sendEmail = (formData) => {
         Country: ${formData.country} </br >
       </p>
     `,
-  };
+    };
 
-  return sgMail.send(msg);
+    return sgMail.send(msg);
 };
 
 const handleSend = (req, res) => {
-  if (!RECAPTCHA_SECRET_KEY) {
-    throw new Error("No secret key set!");
-  }
+    if (!RECAPTCHA_SECRET_KEY) {
+        throw new Error("No secret key set!");
+    }
 
-  const formData = req.body;
+    const formData = req.body;
 
-  const url = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${formData.token}`;
-  axios.post(url)
-    .then((googleResponse) => {
-      const data = googleResponse.data;
+    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${formData.token}`;
+    axios
+        .post(url)
+        .then((googleResponse) => {
+            const data = googleResponse.data;
 
-      if (!data.success) {
-        throw new Error(data["error-codes"]);
-      }
+            if (!data.success) {
+                throw new Error(data["error-codes"]);
+            }
 
-      if (data.score < SCORE_THRESHOLD) {
-        throw new Error("You are not human!")
-      }
+            if (data.score < SCORE_THRESHOLD) {
+                throw new Error("You are not human!");
+            }
 
-      return sendEmail(formData);
-    })
-    .then(() => res.status(200).send({message: 'Email send successfully'}))
-    .catch((error) => res.json({ error }));
+            return sendEmail(formData);
+        })
+        .then(() => res.status(200).send({ message: "Email send successfully" }))
+        .catch((error) => res.json({ error }));
 };
 
 // Email setup
@@ -105,13 +105,13 @@ app.set("views", viewPath);
 
 app.get("/", (req, res) => res.render("index.hbs", { config }));
 pages.forEach((page) =>
-  app.get(new RegExp(`/(${page}$|${page}.html$)`, "i"), (req, res) =>
-    res.render(page + ".hbs", { config, countryList })
-  )
+    app.get(new RegExp(`/(${page}$|${page}.html$)`, "i"), (req, res) =>
+        res.render(page + ".hbs", { config, countryList })
+    )
 );
 
 app.post("/api/send", handleSend);
 
 app.listen(PORT, () => {
-  console.log(`Server is up on port ${PORT}`);
+    console.log(`Server is up on port ${PORT}`);
 });
