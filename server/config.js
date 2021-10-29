@@ -28,7 +28,7 @@ const config = {
     ethereum:
       "https://axoni.com/press/axoni-and-regnosys-announce-scala-implementation-of-isda-common-domain-model/",
     corda:
-      "https://mondovisione.com/media-and-resources/news/fragmos-chain-collaborates-with-isda-and-regnosys-to-deliver-kotlin-code-generat/",
+      "https://www.regnosys.com/fragmos-chain-collaborates-with-isda-and-regnosys-to-deliver-cdm-in-kotlin/",
     postTrade:
       "https://www.ey.com/en_gl/banking-capital-markets/how-financial-services-can-accelerate-the-adoption-of-the-isda-common-domain-model",
     regulatoryReporting:
