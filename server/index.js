@@ -30,6 +30,8 @@ const pages = [
     "contact-sales-thankyou",
     "contact-sales",
     "contact",
+    "terms-of-use",
+    "privacy-policy",
 ];
 
 const sendEmail = (formData) => {
@@ -108,6 +110,7 @@ pages.forEach((page) =>
         res.render(page + ".hbs", { config, countryList })
     )
 );
+app.get("*", (req, res) => res.redirect("/"));
 
 app.post("/api/send", handleSend);
 
