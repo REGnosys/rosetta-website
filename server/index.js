@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 const RECAPTCHA_SECRET_KEY = process.env.ROSETTA_RECAPTCHA_SECRET || "";
 const SENDGRID_API_KEY = process.env.ROSETTA_SEND_GRID_KEY || "";
 const SCORE_THRESHOLD = 0.5;
-const MAIL_TO = process.env.ROSETTA_MAIL_TO;
+const MAIL_TO = process.env.ROSETTA_MAIL_TO || "contact@regnosys.com";
 
 const countryList = countries.all.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
@@ -30,12 +30,11 @@ const pages = [
     "contact-sales-thankyou",
     "contact-sales",
     "contact",
-    "terms-of-use",
 ];
 
 const sendEmail = (formData) => {
     if (!MAIL_TO) {
-        console.log("To mail to recipient not defined!");
+        console.log("Mail to recipient not defined!");
         return Promise.resolve();
     }
 
