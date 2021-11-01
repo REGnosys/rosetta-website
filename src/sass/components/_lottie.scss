@@ -3,7 +3,6 @@
  */
 
 .lottie-wrapper {
-
     /**
      * Margin.
      */
@@ -21,7 +20,6 @@
      */
 
     lottie-player {
-
         /**
          * Display.
          */
@@ -39,13 +37,11 @@
          */
 
         &.hidden {
-
             /**
              * Opacity.
              */
 
             opacity: 0;
-
         }
 
         /**
@@ -53,7 +49,6 @@
          */
 
         transition: opacity 0.3s ease;
-
     }
 
     /**
@@ -61,13 +56,11 @@
      */
 
     &--center {
-
         /**
          * Font related.
          */
 
         text-align: center;
-
     }
 
     /**
@@ -75,13 +68,11 @@
      */
 
     &--width-90pc lottie-player {
-
         /**
          * Sizing.
          */
 
         width: 90%;
-
     }
 
     /**
@@ -89,13 +80,11 @@
      */
 
     &--width-80pc lottie-player {
-
         /**
          * Sizing.
          */
 
         width: 80%;
-
     }
 
     /**
@@ -103,13 +92,11 @@
      */
 
     &--width-75pc lottie-player {
-
         /**
          * Sizing.
          */
 
         width: 75%;
-
     }
 
     /**
@@ -117,13 +104,11 @@
      */
 
     &--width-70pc lottie-player {
-
         /**
          * Sizing.
          */
 
         width: 70%;
-
     }
 
     /**
@@ -131,13 +116,11 @@
      */
 
     &--width-65pc lottie-player {
-
         /**
          * Sizing.
          */
 
         width: 65%;
-
     }
 
     /**
@@ -145,21 +128,17 @@
      */
 
     &--small {
-
         /**
          * lottie-player.
          */
 
         lottie-player {
-
             /**
              * Sizing.
              */
 
             height: 150px !important;
-
         }
-
     }
 
     /**
@@ -167,7 +146,6 @@
      */
 
     &--homepage {
-
         /**
          * Margin.
          */
@@ -199,13 +177,11 @@
          */
 
         @include breakpoint($b-df-tablet) {
-
             /**
              * Display.
              */
 
             display: none;
-
         }
 
         /**
@@ -213,15 +189,12 @@
          */
 
         lottie-player {
-
             /**
              * Sizing.
              */
-            
+
             width: 55vw;
-
         }
-
     }
 
     /**
@@ -229,7 +202,6 @@
      */
 
     &--hero {
-
         /**
          * Border.
          */
@@ -249,33 +221,30 @@
          */
 
         width: 150vw;
-        
+
         /**
          * Transform.
          */
 
         transform: translateY(-40%) translateX(10%);
-
     }
-    
+
     /**
      * &--design.
      */
 
     &--design {
-
         /**
          * Sizing.
          */
 
         width: 65vw;
-        
+
         /**
          * Transform.
          */
 
         transform: translateY(-8%) translateX(80%);
-
     }
 
     /**
@@ -283,19 +252,17 @@
      */
 
     &--deploy {
-
         /**
          * Sizing.
          */
 
         width: 120vw;
-        
+
         /**
          * Transform.
          */
 
         transform: translateY(-46%) translateX(30%);
-
     }
 
     /**
@@ -303,19 +270,17 @@
      */
 
     &--ingest {
-
         /**
          * Sizing.
          */
 
         width: 120vw;
-        
+
         /**
          * Transform.
          */
 
         transform: translateY(-10%) translateX(32%);
-
     }
 
     /**
@@ -323,19 +288,17 @@
      */
 
     &--engine {
-
         /**
          * Sizing.
          */
 
         width: 110vw;
-        
+
         /**
          * Transform.
          */
 
         transform: translateY(-18%) translateX(17%);
-
     }
 
     /**
@@ -343,19 +306,17 @@
      */
 
     &--monitor {
-
         /**
          * Sizing.
          */
 
         width: 100vw;
-        
+
         /**
          * Transform.
          */
 
         transform: translateY(-10%) translateX(16%);
-
     }
 
     /**
@@ -363,19 +324,17 @@
      */
 
     &--platform {
-
         /**
          * Sizing.
          */
 
         width: 100vw;
-        
+
         /**
          * Transform.
          */
 
         transform: translateY(0%) translateX(10%);
-
     }
 
     /**
@@ -383,15 +342,12 @@
      */
 
     &--center {
-
         /**
          * Background.
          */
 
         text-align: center;
-
     }
-
 }
 
 /**
@@ -399,7 +355,6 @@
  */
 
 .platform-hero {
-
     /**
      * Position.
      */
@@ -417,15 +372,12 @@
      */
 
     @include breakpoint($b-tablet-only) {
-
         /**
          * Padding.
          */
 
         padding-bottom: 10vw !important;
-
     }
-
 }
 
 /**
@@ -433,13 +385,11 @@
  */
 
 .z-index-above-graphic {
-
     /**
      * Z-index.
      */
 
     z-index: 51;
-
 }
 
 /**
@@ -447,17 +397,9 @@
  */
 
 .lottie-header {
-
-    /**
-     * Overflow.
-     */
-
-    overflow-x: hidden;
-
     /**
      * Position.
      */
 
     position: relative;
-
 }

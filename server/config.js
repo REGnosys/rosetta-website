@@ -19,16 +19,16 @@ const config = {
     linkedIn: "https://www.linkedin.com/company/regnosys",
     twitter: "https://twitter.com/regnosys",
     domainModel:
-      "https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353",
+      "https://ellipse.bisih.org/proof-of-concept/demonstration-of-the-mortgage-cdm",
     cdmDocs: "https://www.isda.org/2018/11/22/isda-cdm-factsheet/",
     eclipse: "https://www.eclipse.org/modeling/emf/",
-    isda: "https://www.isda.org/2019/10/14/isda-common-domain-model/",
+    isda: "https://www.isda.org/2021/10/21/common-domain-model-integrated-into-isda-create/",
     isla: "https://www.islaemea.org/regulation-and-policy/digital-fintech/common-domain-model-cdm/",
     icma: "https://www.icmagroup.org/News/news-in-brief/common-domain-model-cdm-for-repo-and-bonds/",
     ethereum:
       "https://axoni.com/press/axoni-and-regnosys-announce-scala-implementation-of-isda-common-domain-model/",
     corda:
-      "https://mondovisione.com/media-and-resources/news/fragmos-chain-collaborates-with-isda-and-regnosys-to-deliver-kotlin-code-generat/",
+      "https://www.regnosys.com/fragmos-chain-collaborates-with-isda-and-regnosys-to-deliver-cdm-in-kotlin/",
     postTrade:
       "https://www.ey.com/en_gl/banking-capital-markets/how-financial-services-can-accelerate-the-adoption-of-the-isda-common-domain-model",
     regulatoryReporting:
