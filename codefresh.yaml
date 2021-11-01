@@ -156,7 +156,11 @@ steps:
           --set rosetta-website-node.google.analytics=${{GOOGLE_ANALYTICS}}
           --set rosetta-website-node.google.tagManager=${{GOOGLE_TAG_MANAGER}}
           --debug --reset-values
-
+    when:
+      condition:
+        all:
+          shouldDeploy: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == false || "${{CF_BRANCH}}" == "master"'
+          
   restart:
     stage: release
     title: Restart
@@ -168,4 +172,8 @@ steps:
         - kubectl config use-context "${{CLUSTER_CONTEXT}}"
         - kubectl config current-context
         - kubectl version --short
-        - kubectl -n ${{NAMESPACE}} rollout restart deploy
+        - kubectl -n ${{NAMESPACE}} rollout restart deploy    
+    when:
+      condition:
+        all:
+          shouldDeploy: 'includes("${{TAG_NAME}}", "{{TAG_NAME}}") == false || "${{CF_BRANCH}}" == "master"'
