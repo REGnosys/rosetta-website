@@ -5,6 +5,7 @@
 
   <body>
 
+    {{#with config.pricing}}
     <div class="site-wrapper">
 
       <!-- -->
@@ -45,15 +46,15 @@
         <div class="container">
 
           <div class="row pricing-table__header-levels">
-            <div class="col-md-9 pricing-table__header-levels--core pr-7-5">
+            <div class="col-md-6 pricing-table__header-levels--core pr-7-5">
               <div class="inset">
-                <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two">Core SDK</p>
+                <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two">Open Source Use</p>
               </div>
               <div class="color-fill-expansion"></div>
             </div>
-            <div class="col-md-3 pricing-table__header-levels--advanced pl-7-5">
+            <div class="col-md-6 pricing-table__header-levels--advanced pl-7-5">
               <div class="inset">
-                <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two">Advanced</p>
+                <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two">Private Use</p>
               </div>
               <div class="color-fill-expansion"></div>
             </div>
@@ -70,9 +71,26 @@
                 </p>
                 <div class="pricing-table__header-column-price-container">
                   <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">Free</p>
-                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">For open source contribution</p>
+                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">For non commercial use</p>
                 </div>
                 <a href="{{ config.externalLinks.signUp }}" class="button button--theme-b pricing-table__header-column-button">Sign up today</a>
+              </div>
+            </div>
+            <div class="col-md-3 pricing-table__header-column pl-7-5 pr-7-5">
+              <div class="pricing-table__header-column-inset">
+                <p
+                  class="pricing-table__header-column-heading font-size-l3 font-weight-semi-bold mb-20 font-color-brand-aux-five"
+                  data-aos="fade-right"
+                >
+                  Essentials
+                </p>
+                <div class="pricing-table__header-column-price-container">
+                  {{#with essentials}}
+                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;{{addCommas yearly.amount }}<span class="font-size-m3">user/month</span></p>
+                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">(&pound;{{addCommas monthly.amount }} billed monthly)</p>
+                  {{/with}}
+                </div>
+                <a href="contact-sales" class="button button--theme-b pricing-table__header-column-button">Contact sales</a>
               </div>
             </div>
             <div class="col-md-3 pricing-table__header-column pl-7-5 pr-7-5">
@@ -84,23 +102,10 @@
                   Pro
                 </p>
                 <div class="pricing-table__header-column-price-container">
-                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;990</p>
-                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">License per user</p>
-                </div>
-                <a href="contact-sales" class="button button--theme-b pricing-table__header-column-button">Contact sales</a>
-              </div>
-            </div>
-            <div class="col-md-3 pricing-table__header-column pl-7-5 pr-7-5">
-              <div class="pricing-table__header-column-inset">
-                <p
-                  class="pricing-table__header-column-heading font-size-l3 font-weight-semi-bold mb-20 font-color-brand-aux-five"
-                  data-aos="fade-right"
-                >
-                  Enterprise
-                </p>
-                <div class="pricing-table__header-column-price-container">
-                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;1990</p>
-                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">Unlimited users</p>
+                  {{#with pro}}
+                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;{{addCommas yearly.amount }}<span class="font-size-m3">user/month</span></p>
+                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">(&pound;{{addCommas monthly.amount }} billed monthly)</p>
+                  {{/with}}
                 </div>
                 <a href="contact-sales" class="button button--theme-b pricing-table__header-column-button">Contact sales</a>
               </div>
@@ -111,11 +116,13 @@
                   class="pricing-table__header-column-heading font-size-l3 font-weight-semi-bold mb-20 font-color-brand-aux-five"
                   data-aos="fade-right"
                 >
-                  Control
+                  Enterprise
                 </p>
                 <div class="pricing-table__header-column-price-container">
-                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;2990</p>
-                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">Unlimited users</p>
+                  {{#with enterprise}}
+                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;{{addCommas yearly.amount }}<span class="font-size-m3">user/month</span></p>
+                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">(monthly: &pound;{{addCommas monthly.amount }})</p>
+                  {{/with}}
                 </div>
                 <a href="contact-sales" class="button button--theme-b pricing-table__header-column-button">Contact sales</a>
               </div>
@@ -134,25 +141,25 @@
             <div class="col-md-3 pr-7-5">
               <div class="inset background-shade-1">
                 <p class="font-weight-semi-bold">Engineering or Operations</p>
-                <p>Non-commercial use</p>
+                <p>Occasional contributor</p>
+              </div>
+            </div>
+            <div class="col-md-3 pl-7-5 pr-7-5">
+              <div class="inset background-shade-1">
+                <p class="font-weight-semi-bold">Engineering or Operations</p>
+                <p>Regular, Occasional contributor</p>
               </div>
             </div>
             <div class="col-md-3 pl-7-5 pr-7-5">
               <div class="inset background-shade-1">
                 <p class="font-weight-semi-bold">Engineering</p>
-                <p>Commercial use</p>
-              </div>
-            </div>
-            <div class="col-md-3 pl-7-5 pr-7-5">
-              <div class="inset background-shade-1">
-                <p class="font-weight-semi-bold">Engineering</p>
-                <p>Commercial use</p>
+                <p>Private, commercial use</p>
               </div>
             </div>
             <div class="col-md-3 pl-7-5">
               <div class="inset background-shade-1">
-                <p class="font-weight-semi-bold">Engineering or Operations</p>
-                <p>Commercial use</p>
+                <p class="font-weight-semi-bold">Engineering</p>
+                <p>Private, commercial use</p>
               </div>
             </div>
           </div>
@@ -166,13 +173,7 @@
           </div>
 
           <div class="row pricing-table__row-content">
-            <div class="col-md-3 pr-7-5">
-              <div class="inset background-shade-1">
-                <p class="font-weight-semi-bold">Hosted</p>
-                <p>On-Prem: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></p>
-              </div>
-            </div>
-            <div class="col-md-9 pl-7-5">
+            <div class="col-md-12">
               <div class="inset background-shade-1">
                 <p class="font-weight-semi-bold">Hosted</p>
                 <p>On-Prem: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></p>
@@ -191,7 +192,7 @@
           <div class="pricing-table__row-content-wrapper features-content-wrapper">
 
             <div class="row pricing-table__row-content">
-              <div class="col-md-3 pr-7-5">
+              <div class="col-md-6 pr-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-2">
                   <img src="assets/svg/product/icons-static/product-design.svg" alt="Icon representing the Design feature.">
                   <div>
@@ -204,12 +205,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-9 pl-7-5">
+              <div class="col-md-6 pl-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-3 padding-left-35pc">
                   <img src="assets/svg/product/icons-static/product-design.svg" alt="Icon representing the Design feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Design</p>
-                    <p class="subtitle unexpanded-content">Using Public Dictionary Only</p>
+                    <p class="subtitle unexpanded-content">Public + Private project</p>
                     <ul class="expanded-content">
                       <li>Public + Private Project</li>
                       <li>Unlimited Workspaces</li>
@@ -225,6 +226,19 @@
                   <img src="assets/svg/product/icons-static/product-ingest.svg" alt="Icon representing the Ingest feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Ingest</p>
+                    <p class="subtitle unexpanded-content">Read-Only Project Only</p>
+                    <ul class="expanded-content">
+                      <li>Read-Only Project Only</li>
+                      <li>Accessible via UI + API</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 pl-7-5">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-2">
+                  <img src="assets/svg/product/icons-static/product-ingest.svg" alt="Icon representing the Ingest feature.">
+                  <div>
+                    <p class="title font-weight-semi-bold">Ingest</p>
                     <p class="subtitle unexpanded-content">Using Public Dictionary Only</p>
                     <ul class="expanded-content">
                       <li>Using Public Dictionary Only</li>
@@ -233,7 +247,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-9 pl-7-5">
+              <div class="col-md-6 pl-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-3 padding-left-35pc">
                   <img src="assets/svg/product/icons-static/product-ingest.svg" alt="Icon representing the Ingest feature.">
                   <div>
@@ -249,7 +263,8 @@
             </div>
 
             <div class="row pricing-table__row-content">
-              <div class="col-md-3 pr-7-5">
+              <div class="col-md-3 pr-7-5"><div class="background-shade-1 height-100"></div></div>
+              <div class="col-md-3 pl-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-2">
                   <img src="assets/svg/product/icons-static/product-translate.svg" alt="Icon representing the Translate feature.">
                   <div>
@@ -262,7 +277,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-9 pl-7-5">
+              <div class="col-md-6 pl-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-3 padding-left-35pc">
                   <img src="assets/svg/product/icons-static/product-translate.svg" alt="Icon representing the Translate feature.">
                   <div>
@@ -283,11 +298,13 @@
                   <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Engine</p>
-                    <p class="subtitle unexpanded-content">Community Performance</p>
+                    <p class="subtitle unexpanded-content">Read-Only Project Only</p>
                     <ul class="expanded-content">
+                      {{#with community.api}}
+                      <li>1 Workspace per User</li>
                       <li>Shared H/W</li>
-                      <li>Manual Execution</li>
-                      <li>Volume Limit: [X/day]</li>
+                      <li>{{addCommas limit }} API Requests user/month</li>
+                      {{/with}}
                     </ul>
                   </div>
                 </div>
@@ -297,25 +314,48 @@
                   <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Engine</p>
-                    <p class="subtitle unexpanded-content">Pro Performance</p>
+                    <p class="subtitle unexpanded-content">Essentials Performance</p>
                     <ul class="expanded-content">
+                      {{#with essentials.api}}
+                      <li>1 Workspace per User</li>
                       <li>Shared H/W</li>
-                      <li>Manual Execution</li>
-                      <li>Volume Limit: [X/day]</li>
+                      <li>{{addCommas limit }} API Requests user/month</li>
+                      {{/with}}
                     </ul>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 pl-7-5">
-                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-4 padding-left-35pc">
+              <div class="col-md-3 pl-7-5">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-4">
+                  <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
+                  <div>
+                    <p class="title font-weight-semi-bold">Engine</p>
+                    <p class="subtitle unexpanded-content">Pro Performance</p>
+                    <ul class="expanded-content">
+                      {{#with pro.api}}
+                      <li>5 Workspaces per User</li>
+                      <li>Private H/W</li>
+                      <li>{{addCommas limit }} API Requests user/month</li>
+                      <li>Then: &pound;{{ amountPerRequest }} per API Request</li>
+                      {{/with}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 pl-7-5">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-4">
                   <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Engine</p>
                     <p class="subtitle unexpanded-content">Enterprise Performance</p>
                     <ul class="expanded-content">
-                      <li>Dedicated H/W</li>
-                      <li>Continuous Execution</li>
-                      <li>Volume Limit: [X/day]</li>
+                      {{#with enterprise.api}}
+                      <li>Unlimited Workspaces</li>
+                      <li>Private H/W</li>
+                      <li>{{addCommas limit }} API Requests user/month</li>
+                      <li>Then: &pound;{{ amountPerRequest }} per API Request</li>
+                      <li>1 Guest User* per User</li>
+                      {{/with}}
                     </ul>
                   </div>
                 </div>
@@ -323,12 +363,13 @@
             </div>
 
             <div class="row pricing-table__row-content">
-              <div class="offset-md-9 col-md-3 pl-7-5">
+              <div class="col-md-9 pr-7-5"><div class="height-100 background-shade-1 fade-50"></div></div>
+              <div class="col-md-3 pl-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-5">
                   <img src="assets/svg/product/icons-static/product-monitor.svg" alt="Icon representing the Monitor feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Monitor</p>
-                    <p class="subtitle unexpanded-content">Analyse Engine Results</p>
+                    <p class="subtitle unexpanded-content">Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact&nbsp;sales</a></p>
                     <ul class="expanded-content">
                       <li>Data Traceability Tool</li>
                       <li>Rule Auditability Tool</li>
@@ -340,7 +381,8 @@
             </div>
 
             <div class="row pricing-table__row-content">
-              <div class="offset-md-6 col-md-6 pl-7-5">
+              <div class="col-md-6 pr-7-5"><div class="height-100 background-shade-1"></div></div>
+              <div class="col-md-6 pl-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-6 padding-left-35pc">
                   <img src="assets/svg/product/icons-static/product-deploy.svg" alt="Icon representing the Deploy feature.">
                   <div>
@@ -369,7 +411,7 @@
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--core">
-              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Core SDK</p>
+              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Open Source Use</p>
             </div>
             <div class="pricing-block__header-package-level">
               <p class="font-size-l3 font-weight-semi-bold mb-0 font-color-brand-three">Community</p>
@@ -393,7 +435,7 @@
               <div class="mb-15 pricing-block__body-row-body">
                 <div class="pricing-block__body-row-body-inset pt-10 pb-10 background-shade-1 text-align-center">
                   <p class="mb-0 font-weight-semi-bold font-size-m4">Engineering or Operations</p>
-                  <p class="mb-0 font-size-m4">Non-commercial use</p>
+                  <p class="mb-0 font-size-m4">Occasional contributor</p>
                 </div>
               </div>
             </div>
@@ -450,69 +492,20 @@
                   </div>
 
                   <div class="pricing-block__body-row-body-feature mb-15">
-                    <div class="pricing-block__body-row-body-feature-inset background-shade-3">
-                      <div class="inset-content">
-                        <img src="assets/svg/product/icons-static/product-translate.svg" alt="Icon representing the Translate feature.">
-                        <div>
-                          <p class="title font-weight-semi-bold font-size-m6">Translate</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
-                          <ul class="expanded-content">
-                            <li>Public Project Only</li>
-                            <li>1 Workspace per Project</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="pricing-block__body-row-body-feature mb-15">
                     <div class="pricing-block__body-row-body-feature-inset background-shade-4">
                       <div class="inset-content">
                         <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Engine</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Read-Only Project Only</p>
                           <ul class="expanded-content">
-                            <li>Public Project Only</li>
+                            <li>Read-Only Project Only</li>
                             <li>1 Workspace per Project</li>
                           </ul>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <div class="pricing-block__body-row-body-feature mb-15">
-                    <div class="pricing-block__body-row-body-feature-inset background-shade-5">
-                      <div class="inset-content">
-                        <img src="assets/svg/product/icons-static/product-monitor.svg" alt="Icon representing the Monitor feature.">
-                        <div>
-                          <p class="title font-weight-semi-bold font-size-m6">Monitor</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
-                          <ul class="expanded-content">
-                            <li>Public Project Only</li>
-                            <li>1 Workspace per Project</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="pricing-block__body-row-body-feature mb-15">
-                    <div class="pricing-block__body-row-body-feature-inset background-shade-6">
-                      <div class="inset-content">
-                        <img src="assets/svg/product/icons-static/product-deploy.svg" alt="Icon representing the Deploy feature.">
-                        <div>
-                          <p class="title font-weight-semi-bold font-size-m6">Deploy</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
-                          <ul class="expanded-content">
-                            <li>Public Project Only</li>
-                            <li>1 Workspace per Project</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
               </div>
             </div>
@@ -525,19 +518,21 @@
 
         <div class="container block-divider"></div>
 
-        <!-- Pro. -->
+        <!-- Essentials. -->
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--core">
-              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Core SDK</p>
+              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Open Source Use</p>
             </div>
             <div class="pricing-block__header-package-level">
-              <p class="font-size-l3 font-weight-semi-bold mb-0 font-color-brand-three">Pro</p>
+              <p class="font-size-l3 font-weight-semi-bold mb-0 font-color-brand-three">Essentials</p>
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;990</p>
-                <p class="note mb-0 font-color-brand-aux-two font-size-m4">Unlimited users</p>
+                {{#with essentials}}
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{ yearly.amount }}<span class="font-size-m4">user/month</span></p>
+                <p class="note mb-0 font-color-brand-aux-two font-size-m4">(&pound;{{ monthly.amount }} billed monthly)</p>
+                {{/with}}
               </div>
               <div class="pricing-block__header-pricing-button">
                 <a href="{{ config.externalLinks.signUp }}" target="_blank" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
@@ -552,8 +547,8 @@
               </div>
               <div class="mb-15 pricing-block__body-row-body">
                 <div class="pricing-block__body-row-body-inset pt-10 pb-10 background-shade-1 text-align-center">
-                  <p class="mb-0 font-weight-semi-bold font-size-m4">Engineering</p>
-                  <p class="mb-0 font-size-m4">Commercial use</p>
+                  <p class="mb-0 font-weight-semi-bold font-size-m4">Engineering or Operations</p>
+                  <p class="mb-0 font-size-m4">Regular, commercial contributor​</p>
                 </div>
               </div>
             </div>
@@ -583,10 +578,10 @@
                         <img src="assets/svg/product/icons-static/product-design.svg" alt="Icon representing the Design feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Design</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Public + Private Project</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
                           <ul class="expanded-content">
-                            <li>Public + Private Project</li>
-                            <li>Unlimted Workspaces</li>
+                            <li>Public Project Only</li>
+                            <li>Unlimited Workspaces</li>
                           </ul>
                         </div>
                       </div>
@@ -599,9 +594,9 @@
                         <img src="assets/svg/product/icons-static/product-ingest.svg" alt="Icon representing the Ingest feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Ingest</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Using Public + Private Dictionary</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Using Public Dictionary Only</p>
                           <ul class="expanded-content">
-                            <li>Using Public + Private Dictionary</li>
+                            <li>Using Public Dictionary Only</li>
                             <li>Accessible via UI + API</li>
                           </ul>
                         </div>
@@ -615,9 +610,9 @@
                         <img src="assets/svg/product/icons-static/product-translate.svg" alt="Icon representing the Translate feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Translate</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Edit Public + Private Dictionary</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Edit Public Dictionary Only</p>
                           <ul class="expanded-content">
-                            <li>Edit Public + Private Dictionary</li>
+                            <li>Edit Public Dictionary Only</li>
                             <li>Edit Public + Private Test Pack</li>
                           </ul>
                         </div>
@@ -626,16 +621,16 @@
                   </div>
 
                   <div class="pricing-block__body-row-body-feature mb-15">
-                    <div class="pricing-block__body-row-body-feature-inset background-shade-4">
+                    <div class="pricing-block__body-row-body-feature-inset background-shade-3">
                       <div class="inset-content">
                         <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Engine</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Enterprise Performance</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Essentials Performance</p>
                           <ul class="expanded-content">
-                            <li>Dedicated H/W</li>
-                            <li>Continuous Execution</li>
-                            <li>Volume Limit: [X/day]</li>
+                            <li>Shared H/W</li>
+                            <li>Manual Execution</li>
+                            <li>Volume Limit: {{ volume.pro.limit }}</li>
                           </ul>
                         </div>
                       </div>
@@ -650,23 +645,25 @@
             </div>
           </div>
         </div>
-        <!-- End of Pro. -->
+        <!-- End of Essentials. -->
 
         <div class="container block-divider"></div>
 
-        <!-- Enterprise. -->
+        <!-- Pro. -->
         <div class="container pricing-block">
           <div class="pricing-block__header">
-            <div class="pricing-block__header-level pricing-block__header-level--core">
-              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Core SDK</p>
+            <div class="pricing-block__header-level pricing-block__header-level--advanced">
+              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Private Use</p>
             </div>
             <div class="pricing-block__header-package-level">
-              <p class="font-size-l3 font-weight-semi-bold mb-0 font-color-brand-three">Enterprise</p>
+              <p class="font-size-l3 font-weight-semi-bold mb-0 font-color-brand-three">Pro</p>
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;1990</p>
-                <p class="note mb-0 font-color-brand-aux-two font-size-m4">Unlimited users</p>
+                {{#with pro}}
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{ yearly.amount }}<span class="font-size-m4">user/month</span></p>
+                <p class="note mb-0 font-color-brand-aux-two font-size-m4">(&pound;{{ monthly.amount }} billed monthly)</p>
+                {{/with}}
               </div>
               <div class="pricing-block__header-pricing-button">
                 <a href="#" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
@@ -682,7 +679,7 @@
               <div class="mb-15 pricing-block__body-row-body">
                 <div class="pricing-block__body-row-body-inset pt-10 pb-10 background-shade-1 text-align-center">
                   <p class="mb-0 font-weight-semi-bold font-size-m4">Engineering</p>
-                  <p class="mb-0 font-size-m4">Commercial use</p>
+                  <p class="mb-0 font-size-m4">Private, commercial use</p>
                 </div>
               </div>
             </div>
@@ -715,7 +712,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public + Private Project</p>
                           <ul class="expanded-content">
                             <li>Public + Private Project</li>
-                            <li>Unlimted Workspaces</li>
+                            <li>Unlimited Workspaces</li>
                           </ul>
                         </div>
                       </div>
@@ -760,11 +757,11 @@
                         <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Engine</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Enterprise Performance</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Pro Performance</p>
                           <ul class="expanded-content">
-                            <li>Dedicated H/W</li>
+                            <li>Private H/W</li>
                             <li>Continuous Execution</li>
-                            <li>Volume Limit: [X/day]</li>
+                            <li>Volume Limit: {{ volume.advanced.limit }}</li>
                           </ul>
                         </div>
                       </div>
@@ -795,23 +792,25 @@
             </div>
           </div>
         </div>
-        <!-- End of Enterprise. -->
+        <!-- End of Pro. -->
 
         <div class="container block-divider"></div>
 
-        <!-- Control. -->
+        <!-- Enterprise. -->
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--advanced">
-              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Advanced</p>
+              <p class="mb-0 font-weight-semi-bold font-color-brand-aux-two text-transform-uppercase">Private Use</p>
             </div>
             <div class="pricing-block__header-package-level">
-              <p class="font-size-l3 font-weight-semi-bold mb-0 font-color-brand-three">Control</p>
+              <p class="font-size-l3 font-weight-semi-bold mb-0 font-color-brand-three">Enterprise</p>
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;2990</p>
-                <p class="note mb-0 font-color-brand-aux-two font-size-m4">Unlimited users</p>
+                {{#with enterprise}}
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{ yearly.amount }}<span class="font-size-m4">user/month</span></p>
+                <p class="note mb-0 font-color-brand-aux-two font-size-m4">(&pound;{{ monthly.amount }} billed monthly)</p>
+                {{/with}}
               </div>
               <div class="pricing-block__header-pricing-button">
                 <a href="contact-sales" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
@@ -860,7 +859,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public + Private Project</p>
                           <ul class="expanded-content">
                             <li>Public + Private Project</li>
-                            <li>Unlimted Workspaces</li>
+                            <li>Unlimited Workspaces</li>
                           </ul>
                         </div>
                       </div>
@@ -907,9 +906,9 @@
                           <p class="title font-weight-semi-bold font-size-m6">Engine</p>
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Enterprise Performance</p>
                           <ul class="expanded-content">
-                            <li>Dedicated H/W</li>
+                            <li>Private H/W</li>
                             <li>Continuous Execution</li>
-                            <li>Volume Limit: [X/day]</li>
+                            <li>Volume Limit: {{ volume.advanced.limit }}</li>
                           </ul>
                         </div>
                       </div>
@@ -922,7 +921,7 @@
                         <img src="assets/svg/product/icons-static/product-monitor.svg" alt="Icon representing the Monitor feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Monitor</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Analyse Engine Results</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></p>
                           <ul class="expanded-content">
                             <li>Data Traceability Tool</li>
                             <li>Rule Auditability Tool</li>
@@ -957,51 +956,9 @@
             </div>
           </div>
         </div>
-        <!-- End of Control. -->
+        <!-- End of Enterprise. -->
 
       </section>
-
-      <!-- -->
-
-      <!--<section class="pt-110 pb-10 text-align-center position-relative">
-        <div class="body-curve">
-          <canvas
-            data-primary-color="#ea409d"
-            data-secondary-color="#ee89c1"
-            data-top-shape-svg-url="/assets/svg/curve/curve-e-top.svg"
-            data-top-shape-y-offset-percentage="0"
-            data-margin-top-percentage-of-top-shape-height="0"
-            data-bottom-shape-svg-url="/assets/svg/curve/curve-e-bottom-alt-1.svg"
-            data-bottom-shape-y-offset-percentage="0.1"
-            data-margin-bottom-percentage-of-bottom-shape-height="0"
-          ></canvas>
-        </div>
-        <div class="container body-curve-content">
-          <div class="row">
-            <div class="col-md-12">
-              <p class="font-weight-semi-bold mb-20 font-color-brand-two" data-aos="fade-up">Ready to roll?</p>
-            </div>
-          </div>
-          <div class="row mb-60">
-            <div class="col-md-12 mb-25">
-              <h2 class="font-color-brand-aux-two font-size-l6r" data-aos="fade-up">Take Rosetta for a spin.
-                <br class="display-none d-b-m-o"><span class="font-color-brand-two">It's on us.</span>​
-              </h2>
-            </div>
-            <div class="col-md-12 mb-25">
-              <div class="button-card mb-20" data-aos="fade-up">
-                <a href="{{ config.externalLinks.signUp }}" class="button">Sign up for free</a>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <p class="font-size-m2 font-color-brand-aux-two" data-aos="fade-up">Sign-up today and get started on your model development in seconds.
-                <br class="d-n-m-o d-n-ml-o">Our free version comes with no time limit and no credit card required.
-                <br class="d-n-m-o d-n-i-o">And Rosetta can then grow with your enterprise use.
-              ​​​</p>
-            </div>
-          </div>
-        </div>
-      </section>-->
 
       <!-- -->
 
@@ -1012,7 +969,7 @@
       <div class="mini-header-trigger"></div>
 
     </div>
-
+    {{/with}}
     <!-- -->
 
     {{> scripts}}

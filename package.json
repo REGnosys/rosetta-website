@@ -30,6 +30,7 @@
     "easydropdown": "^4.2.0",
     "express": "^4.17.1",
     "fabric": "^4.6.0",
+    "handlebars-helpers": "^0.10.0",
     "hbs": "^4.1.2",
     "lottie-web": "^5.7.14",
     "scrollama": "^2.2.3",

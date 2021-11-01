@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
+const helpers = require("handlebars-helpers");
 const sgMail = require("@sendgrid/mail");
 const axios = require("axios");
 const countries = require("country-data-list").countries;
@@ -103,6 +104,9 @@ const viewPath = path.join(__dirname, "../src/views");
 hbs.registerPartials(partialPath);
 app.set("view engine", "hbs");
 app.set("views", viewPath);
+helpers.number({
+    handlebars: hbs,
+});
 
 app.get("/", (req, res) => res.render("index.hbs", { config }));
 pages.forEach((page) =>

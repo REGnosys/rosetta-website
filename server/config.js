@@ -31,6 +31,56 @@ const config = {
             "https://jwg-it.eu/working-group/global-derivatives-digital-regulatory-reporting-programme/",
         machineExecutable: "https://www.bis.org/press/p201006.htm",
     },
+    pricing: {
+        community: {
+            yearly: {
+                amount: "",
+            },
+            monthly: {
+                amount: "",
+            },
+            api: {
+                limit: 500,
+                amountPerRequest: false,
+            },
+        },
+        essentials: {
+            yearly: {
+                amount: 417,
+            },
+            monthly: {
+                amount: 500,
+            },
+            api: {
+                limit: 1000,
+                amountPerRequest: false,
+            },
+        },
+        pro: {
+            yearly: {
+                amount: 1333,
+            },
+            monthly: {
+                amount: 1600,
+            },
+            api: {
+                limit: 1000,
+                amountPerRequest: 0.01,
+            },
+        },
+        enterprise: {
+            yearly: {
+                amount: 2000,
+            },
+            monthly: {
+                amount: 2400,
+            },
+            api: {
+                limit: 10000,
+                amountPerRequest: 0.01,
+            },
+        },
+    },
 };
 
 module.exports = config;
