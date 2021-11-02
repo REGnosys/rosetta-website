@@ -20,6 +20,8 @@ export class CoreDiagram {
     private coreDiagram : HTMLElement
     private listItemsContentNodes : NodeListOf<HTMLElement>
     private siwperInstance : Swiper
+    private bulletRecentlyClicked : boolean
+    private touchEndRecentlyFired : boolean
 
     /**
      * constructor.
@@ -117,6 +119,66 @@ export class CoreDiagram {
             on: {
 
                 /**
+                 * touchEnd.
+                 */
+
+                touchEnd: () => {
+
+                    /**
+                     * Assign a flag to indicate that the user
+                     * just released their finger/cursor from
+                     * over the swiper.
+                     */
+
+                    this.touchEndRecentlyFired = true
+
+                    /**
+                     * Reset the flag within 50ms so that we 
+                     * can test temporal proximity to other events.
+                     */
+
+                    setTimeout(() => {
+                        this.touchEndRecentlyFired = false
+                    }, 50)
+                    
+                },
+
+                /**
+                 * slideChange.
+                 */
+
+                slideChange: () => {
+
+                    /**
+                     * 
+                     */
+
+                    if (this.bulletRecentlyClicked) {
+
+                        /**
+                         * Changed via Bullet press. This is already handled.
+                         */
+
+                    } else if (this.touchEndRecentlyFired) {
+
+                        /**
+                         * Changed via Swipe.
+                         */
+                
+                        this.handlePaginationBulletPressOrSwipe(this.siwperInstance.activeIndex)
+
+                    } else {
+
+                        /**
+                         * Change via another action, such as `mouseover` a ring.
+                         * This is already handled.
+                         */
+
+                    }
+
+                },
+
+                /**
                  * init.
                  */
 
@@ -146,48 +208,38 @@ export class CoreDiagram {
 
                         item.setAttribute('item-index', itemIndex.toString())
                         itemIndex++
-
+                
                         /**
                          * 
                          */
-
+                
                         item.addEventListener('click', () => {
-                            
+                
+                            /**
+                             * Flag to indicate a bullet was pressed.
+                             */
+
+                            this.bulletRecentlyClicked = true;
+
+                            /**
+                             * Reset the flag for temporal referencing purposes.
+                             */
+                    
+                            setTimeout(() => {
+                                this.bulletRecentlyClicked = false
+                            }, 50)
+                    
                             /**
                              * 
                              */
-
+                    
                             let index : number = parseInt(item.getAttribute('item-index'))
-
-                            /** 
+                    
+                            /**
                              * 
                              */
-
-                            if (index == 0) {
-                                
-                                /**
-                                 * 
-                                 */
-
-                                this.fullColorAllRings()
-                                this.fullColorAllListItems()
-
-                            } else {
-
-                                /**
-                                 * 
-                                 */
-
-                                let listItem : HTMLElement = this.listItemsContentNodes[index - 1]
-
-                                /**
-                                 * 
-                                 */
-
-                                this.highlightListItem(listItem)
-                                this.highlightRingCorrespondingToListItem(listItem)
-
-                            }
+                    
+                            this.handlePaginationBulletPressOrSwipe(index)
 
                         })
 
@@ -196,6 +248,44 @@ export class CoreDiagram {
                 }
             }
         })
+
+    }
+
+    /**
+     * handlePaginationBulletPressOrSwipe.
+     */
+    
+    handlePaginationBulletPressOrSwipe(index : number) {
+
+        /** 
+         * 
+         */
+
+         if (index == 0) {
+            
+            /**
+             * 
+             */
+
+            this.fullColorAllRings()
+            this.fullColorAllListItems()
+
+        } else {
+
+            /**
+             * 
+             */
+
+            let listItem : HTMLElement = this.listItemsContentNodes[index - 1]
+
+            /**
+             * 
+             */
+
+            this.highlightListItem(listItem)
+            this.highlightRingCorrespondingToListItem(listItem)
+
+        }
 
     }
 
