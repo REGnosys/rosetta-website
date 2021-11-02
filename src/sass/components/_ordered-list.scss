@@ -1,0 +1,64 @@
+/**
+ * .ordered-list.
+ */
+
+.ordered-list {
+    /**
+     * .ordered-list--large.
+     */
+
+    &--large {
+        list-style-type: none;
+        counter-reset: item;
+
+        > li {
+            display: table;
+            counter-increment: item;
+            margin-bottom: 0.6em;
+
+            @include font-size-l1();
+
+            &::before {
+                content: counters(item, ".") ". ";
+                display: table-cell;
+                padding-right: 0.8em;
+            }
+        }
+    }
+
+    &--medium {
+        list-style-type: none;
+        counter-reset: item;
+
+        > li {
+            display: table;
+            counter-increment: item;
+            margin-bottom: 0.6em;
+
+            @include font-size-m4();
+
+            &::before {
+                content: counters(item, ".") ". ";
+                display: table-cell;
+                padding-right: 0.6em;
+            }
+        }
+    }
+
+    &--alpha {
+        list-style-type: none;
+        counter-reset: letter;
+
+        > li {
+            display: table;
+            counter-increment: letter;
+            margin-bottom: 0.6em;
+
+            &::before {
+                content: "" counter(letter, lower-alpha) ".";
+                display: table-cell;
+                padding-right: 0.6em;
+            }
+        }
+    }
+}

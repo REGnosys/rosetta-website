@@ -9,21 +9,32 @@ $i: 0;
  * 0. Breakpoint independent.
  */
 
-.mt-#{$i} { margin-top: #{$i}px; }
-.mb-#{$i} { margin-bottom: #{$i}px; }
-.pb-#{$i} { padding-bottom: #{$i}px; }
-.pt-#{$i} { padding-top: #{$i}px; }
-.pr-#{$i} { padding-right: #{$i}px; }
-.pl-#{$i} { padding-left: #{$i}px; }
- 
+.mt-#{$i} {
+    margin-top: #{$i}px;
+}
+.mb-#{$i} {
+    margin-bottom: #{$i}px;
+}
+.pb-#{$i} {
+    padding-bottom: #{$i}px;
+}
+.pt-#{$i} {
+    padding-top: #{$i}px;
+}
+.pr-#{$i} {
+    padding-right: #{$i}px;
+}
+.pl-#{$i} {
+    padding-left: #{$i}px;
+}
+
 /**
  * Loop.
  */
 
 @while $i < $max {
-
     /**
-     * Unused declarations commented to speed up SCSS compliation.
+     * Unused declarations commented to speed up SCSS compilation.
 
     /**
      * Increment.
@@ -35,31 +46,55 @@ $i: 0;
      * Breakpoint independent.
      */
 
-    .mt-#{$i} { margin-top: #{$i}px; }
-    .mb-#{$i} { margin-bottom: #{$i}px; }
-    .pb-#{$i} { padding-bottom: #{$i}px; }
-    .pt-#{$i} { padding-top: #{$i}px; }
-    .pr-#{$i} { padding-right: #{$i}px; }
-    .pl-#{$i} { padding-left: #{$i}px; }
+    .mt-#{$i} {
+        margin-top: #{$i}px;
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$i}px;
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$i}px;
+    }
+    .pt-#{$i} {
+        padding-top: #{$i}px;
+    }
+    .pr-#{$i} {
+        padding-right: #{$i}px;
+    }
+    .pl-#{$i} {
+        padding-left: #{$i}px;
+    }
 
     /**
      * Extra large desktop.
      */
 
-    .pb-xld-o-#{$i} { @include breakpoint($b-extra-large-desktop) { padding-bottom: #{$i}px !important; } }
-    
+    .pb-xld-o-#{$i} {
+        @include breakpoint($b-extra-large-desktop) {
+            padding-bottom: #{$i}px !important;
+        }
+    }
+
     /**
      * Large desktop.
      */
 
-    .pb-ld-o-#{$i} { @include breakpoint($b-large-desktop-only) { padding-bottom: #{$i}px !important; } }
+    .pb-ld-o-#{$i} {
+        @include breakpoint($b-large-desktop-only) {
+            padding-bottom: #{$i}px !important;
+        }
+    }
     // .pt-ld-o-#{$i} { @include breakpoint($b-large-desktop-only) { padding-top: #{$i}px !important; } }
 
     /**
      * Desktop.
      */
 
-    .pb-d-#{$i} { @include breakpoint($b-desktop) { padding-bottom: #{$i}px !important; } }
+    .pb-d-#{$i} {
+        @include breakpoint($b-desktop) {
+            padding-bottom: #{$i}px !important;
+        }
+    }
     // .pb-d-o-#{$i} { @include breakpoint($b-desktop-only) { padding-bottom: #{$i}px !important; } }
     // .pt-d-o-#{$i} { @include breakpoint($b-desktop-only) { padding-top: #{$i}px !important; } }
 
@@ -67,72 +102,204 @@ $i: 0;
      * Tablet.
      */
 
-    .pb-t-o-#{$i}  { @include breakpoint($b-tablet-only) { padding-bottom: #{$i}px !important; } }
+    .pb-t-o-#{$i} {
+        @include breakpoint($b-tablet-only) {
+            padding-bottom: #{$i}px !important;
+        }
+    }
     // .pt-t-o-#{$i}  { @include breakpoint($b-tablet-only) { padding-top: #{$i}px !important; } }
     // .df-mb-t-#{$i} { @include breakpoint($b-df-tablet) { margin-bottom: #{$i}px; } }
-    .df-mt-t-#{$i} { @include breakpoint($b-df-tablet) { margin-top: #{$i}px !important; } }
-    .df-pb-t-#{$i} { @include breakpoint($b-df-tablet) { padding-bottom: #{$i}px !important; } }
+    .df-mt-t-#{$i} {
+        @include breakpoint($b-df-tablet) {
+            margin-top: #{$i}px !important;
+        }
+    }
+    .df-pb-t-#{$i} {
+        @include breakpoint($b-df-tablet) {
+            padding-bottom: #{$i}px !important;
+        }
+    }
     // .mb-t-#{$i}    { @include breakpoint($b-tablet) { margin-bottom: #{$i}px; } }
-    // .mb-t-o-#{$i}  { @include breakpoint($b-tablet-only) { margin-bottom: #{$i}px; } }   
-    .pl-t-o-#{$i} { @include breakpoint($b-df-tablet) { padding-left: #{$i}px !important; } }
-    .pb-t-#{$i} { @include breakpoint($b-tablet) { padding-left: #{$i}px !important; } }
+    // .mb-t-o-#{$i}  { @include breakpoint($b-tablet-only) { margin-bottom: #{$i}px; } }
+    .pl-t-o-#{$i} {
+        @include breakpoint($b-df-tablet) {
+            padding-left: #{$i}px !important;
+        }
+    }
+    .pb-t-#{$i} {
+        @include breakpoint($b-tablet) {
+            padding-left: #{$i}px !important;
+        }
+    }
 
     /**
      * Mobile landscape.
      */
 
-    .pb-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-bottom: #{$i}px !important; } }
-    .pt-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-top: #{$i}px !important; } }
-    .mb-ml-o-#{$i} { @include breakpoint($b-mobile-landscape-only) { margin-bottom: #{$i}px !important; } }
-    .df-mb-ml-#{$i} { @include breakpoint($b-df-mobile-landscape) { margin-bottom: #{$i}px !important; } } 
-    .pl-ml-#{$i} { @include breakpoint($b-mobile-landscape-only) { padding-left: #{$i}px !important; } }
-    .df-pt-ml-#{$i} { @include breakpoint($b-df-mobile-landscape) { padding-top: #{$i}px !important; } } 
-    
+    .pb-ml-o-#{$i} {
+        @include breakpoint($b-mobile-landscape-only) {
+            padding-bottom: #{$i}px !important;
+        }
+    }
+    .pt-ml-o-#{$i} {
+        @include breakpoint($b-mobile-landscape-only) {
+            padding-top: #{$i}px !important;
+        }
+    }
+    .mb-ml-o-#{$i} {
+        @include breakpoint($b-mobile-landscape-only) {
+            margin-bottom: #{$i}px !important;
+        }
+    }
+    .df-mb-ml-#{$i} {
+        @include breakpoint($b-df-mobile-landscape) {
+            margin-bottom: #{$i}px !important;
+        }
+    }
+    .pl-ml-#{$i} {
+        @include breakpoint($b-mobile-landscape-only) {
+            padding-left: #{$i}px !important;
+        }
+    }
+    .df-pt-ml-#{$i} {
+        @include breakpoint($b-df-mobile-landscape) {
+            padding-top: #{$i}px !important;
+        }
+    }
+
     /**
      * Mobile.
      */
 
-    .ml-m-o-#{$i} { @include breakpoint($b-mobile-only) { margin-left: #{$i}px !important; } }
-    .mr-m-o-#{$i} { @include breakpoint($b-mobile-only) { margin-right: #{$i}px !important; } }
-    .pb-m-o-#{$i} { @include breakpoint($b-mobile-only) { padding-bottom: #{$i}px !important; } }
-
+    .ml-m-o-#{$i} {
+        @include breakpoint($b-mobile-only) {
+            margin-left: #{$i}px !important;
+        }
+    }
+    .mr-m-o-#{$i} {
+        @include breakpoint($b-mobile-only) {
+            margin-right: #{$i}px !important;
+        }
+    }
+    .pb-m-o-#{$i} {
+        @include breakpoint($b-mobile-only) {
+            padding-bottom: #{$i}px !important;
+        }
+    }
 }
 
 /**
  * Flex.
  */
 
- .align-items-end { align-items: flex-end; }
-.flex-direction-column { flex-direction: column; }
-.display-flex { display: flex; }
-.justify-content-flex-end { justify-content: flex-end; }
-.justify-content-center { justify-content: center; }
-.flex-direction-column-reverse-df-ml { @include breakpoint($b-df-mobile-landscape) { flex-direction: column-reverse; } }
+.align-items-end {
+    align-items: flex-end;
+}
+.flex-direction-column {
+    flex-direction: column;
+}
+.display-flex {
+    display: flex;
+}
+.justify-content-flex-end {
+    justify-content: flex-end;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.flex-direction-column-reverse-df-ml {
+    @include breakpoint($b-df-mobile-landscape) {
+        flex-direction: column-reverse;
+    }
+}
 
 /**
  * Display.
  */
 
-.display-none                                   { display: none; }
-.display-none-large-desktop-only, .d-n-ld-o     { @include breakpoint($b-large-desktop-only)    { display: none; } }
-.display-none-desktop-only, .d-n-d-o            { @include breakpoint($b-desktop-only)          { display: none; } }
-.display-none-tablet-only, .d-n-t-o             { @include breakpoint($b-tablet-only)           { display: none; } }
-.display-none-mobile-landscape-only, .d-n-ml-o  { @include breakpoint($b-mobile-landscape-only) { display: none; } }
-.display-none-mobile-only, .d-n-m-o             { @include breakpoint($b-mobile-only)           { display: none; } }
-.display-block-large-desktop-only, .d-b-ld-o    { @include breakpoint($b-large-desktop-only)    { display: block; } }
-.display-block-tablet-only, .d-b-t-o            { @include breakpoint($b-tablet-only)           { display: block; } }
-.display-block-mobile-only, .d-b-m-o            { @include breakpoint($b-mobile-only)           { display: block; } }
-.display-block-mobile-landscape-only, .d-b-ml-o { @include breakpoint($b-mobile-landscape-only) { display: block; } }
-.display-inline-block                           { display: inline-block; }
+.display-none {
+    display: none;
+}
+.display-none-large-desktop-only,
+.d-n-ld-o {
+    @include breakpoint($b-large-desktop-only) {
+        display: none;
+    }
+}
+.display-none-desktop-only,
+.d-n-d-o {
+    @include breakpoint($b-desktop-only) {
+        display: none;
+    }
+}
+.display-none-tablet-only,
+.d-n-t-o {
+    @include breakpoint($b-tablet-only) {
+        display: none;
+    }
+}
+.display-none-mobile-landscape-only,
+.d-n-ml-o {
+    @include breakpoint($b-mobile-landscape-only) {
+        display: none;
+    }
+}
+.display-none-mobile-only,
+.d-n-m-o {
+    @include breakpoint($b-mobile-only) {
+        display: none;
+    }
+}
+.display-block-large-desktop-only,
+.d-b-ld-o {
+    @include breakpoint($b-large-desktop-only) {
+        display: block;
+    }
+}
+.display-block-tablet-only,
+.d-b-t-o {
+    @include breakpoint($b-tablet-only) {
+        display: block;
+    }
+}
+.display-block-mobile-only,
+.d-b-m-o {
+    @include breakpoint($b-mobile-only) {
+        display: block;
+    }
+}
+.display-block-mobile-landscape-only,
+.d-b-ml-o {
+    @include breakpoint($b-mobile-landscape-only) {
+        display: block;
+    }
+}
+.display-inline-block {
+    display: inline-block;
+}
 
 /**
  * Position.
  */
 
-.position-relative { position: relative; }
+.position-relative {
+    position: relative;
+}
+
+/**
+ * Height.
+ */
+
+.height-100 {
+    height: 100%;
+}
 
 /**
  * 
  */
 
-.df-w-t-80p { @include breakpoint($b-df-tablet) { width: 80%; } }
+.df-w-t-80p {
+    @include breakpoint($b-df-tablet) {
+        width: 80%;
+    }
+}

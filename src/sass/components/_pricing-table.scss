@@ -2,27 +2,44 @@
  * 
  */
 
-.background-shade-1 { background-color: #f3f3f4; }
-.background-shade-2 { background-color: #f1f8df; }
-.background-shade-3 { background-color: #ddedae; }
-.background-shade-4 { background-color: #c9e27e; }
-.background-shade-5 { background-color: #8ccfa7; }
-.background-shade-6 { background-color: #d2dde7; }
+.background-shade-1 {
+    background-color: #f3f3f4;
+}
+.background-shade-2 {
+    background-color: #f1f8df;
+}
+.background-shade-3 {
+    background-color: #ddedae;
+}
+.background-shade-4 {
+    background-color: #c9e27e;
+}
+.background-shade-5 {
+    background-color: #8ccfa7;
+}
+.background-shade-6 {
+    background-color: #d2dde7;
+}
 
 /**
  * 
  */
 
-.padding-left-35pc { padding-left: 35% !important; }
-.pl-7-5 { padding-left: 7.5px; }z
-.pr-7-5 { padding-right: 7.5px; }
+.padding-left-35pc {
+    padding-left: 35% !important;
+}
+.pl-7-5 {
+    padding-left: 7.5px;
+}
+z .pr-7-5 {
+    padding-right: 7.5px;
+}
 
 /**
  * .pricing-table.
  */
 
 .pricing-table {
-
     /**
      * Display.
      */
@@ -34,13 +51,11 @@
      */
 
     @include breakpoint($b-desktop) {
-
         /**
          * Display.
          */
 
         display: block;
-
     }
 
     /**
@@ -54,13 +69,11 @@
      */
 
     @include breakpoint(min-width 1300px) {
-
         /**
          * Margin.
          */
 
         margin-top: -50px;
-
     }
 
     /**
@@ -68,13 +81,11 @@
      */
 
     &__header-levels {
-
         /**
          * 
          */
 
         .inset {
-
             /**
              * Padding.
              */
@@ -89,7 +100,6 @@
 
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
-
         }
 
         /**
@@ -97,19 +107,16 @@
          */
 
         &--core {
-
             /**
              * .inset.
              */
 
             .inset {
-
                 /**
                  * Background.
                  */
 
                 background-color: #bbdb5e;
-
             }
 
             /**
@@ -117,15 +124,12 @@
              */
 
             .color-fill-expansion {
-
                 /**
                  * Sizng.
                  */
 
                 background-color: #bbdb5e;
-
             }
-
         }
 
         /**
@@ -133,19 +137,16 @@
          */
 
         &--advanced {
-
             /**
              * .inset.
              */
 
             .inset {
-
                 /**
                  * Background.
                  */
 
                 background-color: #5ca575;
-
             }
 
             /**
@@ -153,17 +154,13 @@
              */
 
             .color-fill-expansion {
-
                 /**
                  * Sizng.
                  */
 
                 background-color: #5ca575;
-
             }
-
         }
-
     }
 
     /**
@@ -171,27 +168,23 @@
      */
 
     &__header {
-
         /**
          * Margin.
          */
 
         margin-bottom: 15px;
-
     }
-    
+
     /**
      * &__header-column.
      */
 
     &__header-column {
-
         /**
          * Margin.
          */
 
         margin-bottom: 30px;
-
     }
 
     /**
@@ -199,7 +192,6 @@
      */
 
     &__header-column-inset {
-
         /**
          * Position.
          */
@@ -230,7 +222,6 @@
          */
 
         height: 100%;
-
     }
 
     /**
@@ -238,7 +229,6 @@
      */
 
     &__header-column-heading {
-
         /**
          * Background.
          */
@@ -264,7 +254,6 @@
          */
 
         color: $brand-three;
-
     }
 
     /**
@@ -272,7 +261,6 @@
      */
 
     &__header-column-price-container {
-
         /**
          * Padding.
          */
@@ -280,7 +268,6 @@
         padding-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
-
     }
 
     /**
@@ -288,13 +275,11 @@
      */
 
     &__header-column-price {
-
         /**
          * Margin.
          */
 
         margin-bottom: 0;
-
     }
 
     /**
@@ -302,13 +287,11 @@
      */
 
     &__header-column-price-note {
-
         /**
          * Margin.
          */
 
         margin-bottom: 0;
-
     }
 
     /**
@@ -316,7 +299,6 @@
      */
 
     &__header-column-button {
-
         /**
          * Padding.
          */
@@ -352,16 +334,13 @@
          */
 
         &::after {
-            
             /**
              * Position.
              */
 
             position: absolute;
             right: 22px;
-
         }
-
     }
 
     /**
@@ -369,7 +348,6 @@
      */
 
     &__row-header {
-
         /**
          * Margin.
          */
@@ -381,7 +359,6 @@
          */
 
         &--expandable {
-
             /**
              * Cursor.
              */
@@ -392,22 +369,19 @@
              * &:hover, &.expanded.
              */
 
-            &:hover, &.expanded {
-
+            &:hover,
+            &.expanded {
                 /**
                  * .inset.
                  */
 
                 .inset {
-
                     /**
                      * Background.
                      */
 
                     background-color: #515151;
-
                 }
-
             }
 
             /**
@@ -415,7 +389,6 @@
              */
 
             p {
-
                 /**
                  * @include.
                  */
@@ -427,11 +400,8 @@
                  */
 
                 &::after {
-
                     transform: translateX(5px) translateY(2px);
-
                 }
-
             }
 
             /**
@@ -439,27 +409,20 @@
              */
 
             &.expanded {
-
                 /**
                  * p.
                  */
-                
-                p {
 
+                p {
                     /**
                      * @include.
                      */
 
                     &::after {
-
                         transform: translateX(5px) translateY(2px) rotate(90deg);
-
                     }
-
                 }
-
             }
-
         }
 
         /**
@@ -467,7 +430,6 @@
          */
 
         .inset {
-
             /**
              * Background.
              */
@@ -493,7 +455,6 @@
              */
 
             p {
-
                 /**
                  * Margin.
                  */
@@ -506,12 +467,8 @@
 
                 @include font-weight-semi-bold();
                 color: #bed857;
-
             }
-
         }
-
-
     }
 
     /**
@@ -519,25 +476,21 @@
      */
 
     &__row-content-wrapper {
-
         /**
          * &.expanded.
          */
 
         &.expanded {
-
             /**
              * .expanded-content.
              */
 
             .expanded-content {
-
                 /**
                  * Display.
                  */
 
                 display: block;
-
             }
 
             /**
@@ -545,13 +498,11 @@
              */
 
             .unexpanded-content {
-
                 /**
                  * Display.
                  */
 
                 display: none;
-
             }
 
             /**
@@ -559,17 +510,13 @@
              */
 
             .pricing-table__row-content-inset {
-                
                 /**
                  * Padding.
                  */
 
                 padding-bottom: 3px;
-
             }
-
         }
-
     }
 
     /**
@@ -577,7 +524,6 @@
      */
 
     &__row-content {
-
         /**
          * Margin.
          */
@@ -589,7 +535,6 @@
          */
 
         .inset {
-
             /**
              * Padding.
              */
@@ -608,7 +553,6 @@
              */
 
             p {
-               
                 /**
                  * Font related.
                  */
@@ -620,11 +564,8 @@
                  */
 
                 margin-bottom: 0;
-
             }
-
         }
-
     }
 
     /**
@@ -632,11 +573,10 @@
      */
 
     &__row-content-inset {
-
         /**
          * Padding.
          */
-    
+
         padding-top: 15px;
         padding-bottom: 10px;
 
@@ -651,7 +591,6 @@
          */
 
         &--two-col-with-icon {
-
             /**
              * Display.
              */
@@ -674,15 +613,13 @@
             /**
              * p.
              */
-        
-            p {
 
+            p {
                 /**
                  * Margin.
                  */
 
                 margin-bottom: 5px;
-
             }
 
             /**
@@ -690,7 +627,6 @@
              */
 
             img {
-
                 /**
                  * Sizing.
                  */
@@ -702,7 +638,6 @@
                  */
 
                 margin-right: 8px;
-
             }
 
             /**
@@ -716,7 +651,6 @@
              */
 
             div {
-
                 /**
                  * 
                  */
@@ -728,7 +662,6 @@
                  */
 
                 ul {
-
                     /**
                      * Display.
                      */
@@ -752,7 +685,6 @@
                      */
 
                     li {
-
                         /**
                          * Display.
                          */
@@ -789,11 +721,8 @@
 
                         border-top: 1px solid $brand-three;
                         border-style: dotted;
-
-                    }                  
-
+                    }
                 }
-                
             }
 
             /**
@@ -801,13 +730,11 @@
              */
 
             .title {
-
                 /**
                  * Margin.
                  */
 
                 margin-bottom: 0;
-
             }
 
             /**
@@ -815,14 +742,12 @@
              */
 
             .subtitle {
-
                 /**
                  * Font related.
                  */
 
                 font-size: 14px;
                 line-height: 18px;
-
             }
 
             /**
@@ -830,19 +755,12 @@
              */
 
             .expanded-content {
-
                 /**
                  * Display.
                  */
 
                 display: none;
-
             }
-
         }
-
     }
-
 }
-
-
