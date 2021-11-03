@@ -86,8 +86,16 @@
                 </p>
                 <div class="pricing-table__header-column-price-container">
                   {{#with essentials}}
-                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;{{addCommas yearly.amount }}<span class="font-size-m3">user/month</span></p>
-                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">(&pound;{{addCommas monthly.amount }} billed monthly)</p>
+                  <p class="pricing-table__header-column-price font-color-brand-aux-two display-flex">
+                    <span class="font-size-l4 font-weight-light mr-2">&pound;{{addCommas yearly.amount }}</span>
+                    <span class="pricing-table__header-column-price-note font-size-m2">
+                      <span class="mr-1">user/month</span>
+                      <span>billed annually</span>
+                    </span>
+                  </p>
+                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3 mb-0">
+                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                  </p>
                   {{/with}}
                 </div>
                 <a href="contact-sales" class="button button--theme-b pricing-table__header-column-button">Contact sales</a>
@@ -103,8 +111,16 @@
                 </p>
                 <div class="pricing-table__header-column-price-container">
                   {{#with pro}}
-                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;{{addCommas yearly.amount }}<span class="font-size-m3">user/month</span></p>
-                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">(&pound;{{addCommas monthly.amount }} billed monthly)</p>
+                  <p class="pricing-table__header-column-price font-color-brand-aux-two">
+                    <span class="font-size-l4 font-weight-light mr-2">&pound;{{addCommas yearly.amount }}</span>
+                    <span class="pricing-table__header-column-price-note font-size-m2">
+                      <span class="mr-1">user/month</span>
+                      <span>billed annually</span>
+                    </span>
+                  </p>
+                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3 mb-0">
+                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                  </p>
                   {{/with}}
                 </div>
                 <a href="contact-sales" class="button button--theme-b pricing-table__header-column-button">Contact sales</a>
@@ -120,8 +136,16 @@
                 </p>
                 <div class="pricing-table__header-column-price-container">
                   {{#with enterprise}}
-                  <p class="pricing-table__header-column-price font-color-brand-aux-two font-size-l5 font-weight-light">&pound;{{addCommas yearly.amount }}<span class="font-size-m3">user/month</span></p>
-                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3">(monthly: &pound;{{addCommas monthly.amount }})</p>
+                  <p class="pricing-table__header-column-price font-color-brand-aux-two display-flex">
+                    <span class="font-size-l4 font-weight-light mr-2">&pound;{{addCommas yearly.amount }}</span>
+                    <span class="pricing-table__header-column-price-note font-size-m2">
+                      <span class="mr-1">user/month</span>
+                      <span>billed annually</span>
+                    </span>
+                  </p>
+                  <p class="pricing-table__header-column-price-note font-color-brand-aux-two font-size-m3 mb-0">
+                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                  </p>
                   {{/with}}
                 </div>
                 <a href="contact-sales" class="button button--theme-b pricing-table__header-column-button">Contact sales</a>
@@ -139,25 +163,25 @@
 
           <div class="row pricing-table__row-content pricing-table__row-content--simple">
             <div class="col-md-3 pr-7-5">
-              <div class="inset background-shade-1">
+              <div class="inset background-shade-1 height-100">
                 <p class="font-weight-semi-bold">Engineering or Operations</p>
                 <p>Occasional contributor</p>
               </div>
             </div>
             <div class="col-md-3 pl-7-5 pr-7-5">
-              <div class="inset background-shade-1">
+              <div class="inset background-shade-1 height-100">
                 <p class="font-weight-semi-bold">Engineering or Operations</p>
-                <p>Regular, Occasional contributor</p>
+                <p>Regular, commercial contributor</p>
               </div>
             </div>
             <div class="col-md-3 pl-7-5 pr-7-5">
-              <div class="inset background-shade-1">
+              <div class="inset background-shade-1 height-100">
                 <p class="font-weight-semi-bold">Engineering</p>
                 <p>Private, commercial use</p>
               </div>
             </div>
             <div class="col-md-3 pl-7-5">
-              <div class="inset background-shade-1">
+              <div class="inset background-shade-1 height-100">
                 <p class="font-weight-semi-bold">Engineering</p>
                 <p>Private, commercial use</p>
               </div>
@@ -205,8 +229,21 @@
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 pl-7-5">
-                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-3 padding-left-35pc">
+              <div class="col-md-3 pl-7-5">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-3">
+                  <img src="assets/svg/product/icons-static/product-design.svg" alt="Icon representing the Design feature.">
+                  <div>
+                    <p class="title font-weight-semi-bold">Design</p>
+                    <p class="subtitle unexpanded-content">Public + Private project</p>
+                    <ul class="expanded-content">
+                      <li>Public + Private Project</li>
+                      <li>5 Workspaces per Project</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 pl-7-5">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-3">
                   <img src="assets/svg/product/icons-static/product-design.svg" alt="Icon representing the Design feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Design</p>
@@ -214,6 +251,7 @@
                     <ul class="expanded-content">
                       <li>Public + Private Project</li>
                       <li>Unlimited Workspaces</li>
+                      <li>1 Guest User* per User</li>
                     </ul>
                   </div>
                 </div>
@@ -239,9 +277,9 @@
                   <img src="assets/svg/product/icons-static/product-ingest.svg" alt="Icon representing the Ingest feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Ingest</p>
-                    <p class="subtitle unexpanded-content">Using Public Dictionary Only</p>
+                    <p class="subtitle unexpanded-content">Using Public Dictionary&nbsp;Only</p>
                     <ul class="expanded-content">
-                      <li>Using Public Dictionary Only</li>
+                      <li>Using Public Dictionary&nbsp;Only</li>
                       <li>Accessible via UI + API</li>
                     </ul>
                   </div>
@@ -269,9 +307,9 @@
                   <img src="assets/svg/product/icons-static/product-translate.svg" alt="Icon representing the Translate feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Translate</p>
-                    <p class="subtitle unexpanded-content">Edit Public Dictionary Only</p>
+                    <p class="subtitle unexpanded-content">Edit Public Dictionary&nbsp;Only</p>
                     <ul class="expanded-content">
-                      <li>Edit Public Dictionary Only</li>
+                      <li>Edit Public Dictionary&nbsp;Only</li>
                       <li>Edit Public Test Pack Only</li>
                     </ul>
                   </div>
@@ -301,9 +339,8 @@
                     <p class="subtitle unexpanded-content">Read-Only Project Only</p>
                     <ul class="expanded-content">
                       {{#with community.api}}
-                      <li>1 Workspace per User</li>
-                      <li>Shared H/W</li>
-                      <li>{{addCommas limit }} API Requests user/month</li>
+                      <li>Read-Only Project Only</li>
+                      <li>{{addCommas limit }} API Requests User/Month</li>
                       {{/with}}
                     </ul>
                   </div>
@@ -317,9 +354,8 @@
                     <p class="subtitle unexpanded-content">Essentials Performance</p>
                     <ul class="expanded-content">
                       {{#with essentials.api}}
-                      <li>1 Workspace per User</li>
                       <li>Shared H/W</li>
-                      <li>{{addCommas limit }} API Requests user/month</li>
+                      <li>{{addCommas limit }} API Requests User/Month</li>
                       {{/with}}
                     </ul>
                   </div>
@@ -333,9 +369,8 @@
                     <p class="subtitle unexpanded-content">Pro Performance</p>
                     <ul class="expanded-content">
                       {{#with pro.api}}
-                      <li>5 Workspaces per User</li>
                       <li>Private H/W</li>
-                      <li>{{addCommas limit }} API Requests user/month</li>
+                      <li>{{addCommas limit }} API Requests User/Month</li>
                       <li>Then: &pound;{{ amountPerRequest }} per API Request</li>
                       {{/with}}
                     </ul>
@@ -350,30 +385,10 @@
                     <p class="subtitle unexpanded-content">Enterprise Performance</p>
                     <ul class="expanded-content">
                       {{#with enterprise.api}}
-                      <li>Unlimited Workspaces</li>
                       <li>Private H/W</li>
-                      <li>{{addCommas limit }} API Requests user/month</li>
+                      <li>{{addCommas limit }} API Requests User/Month</li>
                       <li>Then: &pound;{{ amountPerRequest }} per API Request</li>
-                      <li>1 Guest User* per User</li>
                       {{/with}}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row pricing-table__row-content">
-              <div class="col-md-9 pr-7-5"><div class="height-100 background-shade-1 fade-50"></div></div>
-              <div class="col-md-3 pl-7-5">
-                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-5">
-                  <img src="assets/svg/product/icons-static/product-monitor.svg" alt="Icon representing the Monitor feature.">
-                  <div>
-                    <p class="title font-weight-semi-bold">Monitor</p>
-                    <p class="subtitle unexpanded-content">Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact&nbsp;sales</a></p>
-                    <ul class="expanded-content">
-                      <li>Data Traceability Tool</li>
-                      <li>Rule Auditability Tool</li>
-                      <li>Accessible via UI + API</li>
                     </ul>
                   </div>
                 </div>
@@ -383,7 +398,7 @@
             <div class="row pricing-table__row-content">
               <div class="col-md-6 pr-7-5"><div class="height-100 background-shade-1"></div></div>
               <div class="col-md-6 pl-7-5">
-                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-6 padding-left-35pc">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-5 padding-left-35pc">
                   <img src="assets/svg/product/icons-static/product-deploy.svg" alt="Icon representing the Deploy feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Deploy</p>
@@ -391,6 +406,25 @@
                     <ul class="expanded-content">
                       <li>Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></li>
                       <li>Test, build and release automation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row pricing-table__row-content">
+              <div class="col-md-9 pr-7-5"><div class="height-100 background-shade-1 fade-50"></div></div>
+              <div class="col-md-3 pl-7-5">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-6">
+                  <img src="assets/svg/product/icons-static/product-monitor.svg" alt="Icon representing the Monitor feature.">
+                  <div>
+                    <p class="title font-weight-semi-bold">Monitor</p>
+                    <p class="subtitle unexpanded-content">Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact&nbsp;sales</a></p>
+                    <ul class="expanded-content">
+                      <li>Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact&nbsp;sales</a></li>
+                      <li>Data Traceability Tool</li>
+                      <li>Rule Auditability Tool</li>
+                      <li>Accessible via UI + API</li>
                     </ul>
                   </div>
                 </div>
@@ -408,6 +442,7 @@
       <section class="pricing-blocks">
 
         <!-- Community. -->
+        {{#with community}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--core">
@@ -481,10 +516,10 @@
                         <img src="assets/svg/product/icons-static/product-ingest.svg" alt="Icon representing the Ingest feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Ingest</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Read-Only Project Only</p>
                           <ul class="expanded-content">
-                            <li>Public Project Only</li>
-                            <li>1 Workspace per Project</li>
+                            <li>Read-Only Project Only</li>
+                            <li>Accessible via UI + API</li>
                           </ul>
                         </div>
                       </div>
@@ -492,7 +527,7 @@
                   </div>
 
                   <div class="pricing-block__body-row-body-feature mb-15">
-                    <div class="pricing-block__body-row-body-feature-inset background-shade-4">
+                    <div class="pricing-block__body-row-body-feature-inset background-shade-3">
                       <div class="inset-content">
                         <img src="assets/svg/product/icons-static/product-engine.svg" alt="Icon representing the Engine feature.">
                         <div>
@@ -500,7 +535,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Read-Only Project Only</p>
                           <ul class="expanded-content">
                             <li>Read-Only Project Only</li>
-                            <li>1 Workspace per Project</li>
+                            <li>{{addCommas api.limit }} API Requests</li>
                           </ul>
                         </div>
                       </div>
@@ -514,11 +549,13 @@
             </div>
           </div>
         </div>
+        {{/with}}
         <!-- End of Community. -->
 
         <div class="container block-divider"></div>
 
         <!-- Essentials. -->
+        {{#with essentials}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--core">
@@ -529,10 +566,11 @@
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                {{#with essentials}}
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{ yearly.amount }}<span class="font-size-m4">user/month</span></p>
-                <p class="note mb-0 font-color-brand-aux-two font-size-m4">(&pound;{{ monthly.amount }} billed monthly)</p>
-                {{/with}}
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas yearly.amount }}</p>
+                <p class="mb-0 font-color-brand-aux-two font-size-m2 display-flex flex-direction-column justify-content-flex-end">
+                    <span>user/month billed annually</span>
+                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                </p>
               </div>
               <div class="pricing-block__header-pricing-button">
                 <a href="{{ config.externalLinks.signUp }}" target="_blank" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
@@ -581,7 +619,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
                           <ul class="expanded-content">
                             <li>Public Project Only</li>
-                            <li>Unlimited Workspaces</li>
+                            <li>1 Workspace per Project</li>
                           </ul>
                         </div>
                       </div>
@@ -594,9 +632,9 @@
                         <img src="assets/svg/product/icons-static/product-ingest.svg" alt="Icon representing the Ingest feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Ingest</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Using Public Dictionary Only</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Using Public Dictionary&nbsp;Only</p>
                           <ul class="expanded-content">
-                            <li>Using Public Dictionary Only</li>
+                            <li>Using Public Dictionary&nbsp;Only</li>
                             <li>Accessible via UI + API</li>
                           </ul>
                         </div>
@@ -610,10 +648,10 @@
                         <img src="assets/svg/product/icons-static/product-translate.svg" alt="Icon representing the Translate feature.">
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Translate</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Edit Public Dictionary Only</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Edit Public Dictionary&nbsp;Only</p>
                           <ul class="expanded-content">
-                            <li>Edit Public Dictionary Only</li>
-                            <li>Edit Public + Private Test Pack</li>
+                            <li>Edit Public Dictionary&nbsp;Only</li>
+                            <li>Edit Public Test Pack Only</li>
                           </ul>
                         </div>
                       </div>
@@ -629,8 +667,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Essentials Performance</p>
                           <ul class="expanded-content">
                             <li>Shared H/W</li>
-                            <li>Manual Execution</li>
-                            <li>Volume Limit: {{ volume.pro.limit }}</li>
+                            <li>{{addCommas api.limit }} API Requests</li>
                           </ul>
                         </div>
                       </div>
@@ -645,11 +682,13 @@
             </div>
           </div>
         </div>
+        {{/with}}
         <!-- End of Essentials. -->
 
         <div class="container block-divider"></div>
 
         <!-- Pro. -->
+        {{#with pro}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--advanced">
@@ -660,10 +699,11 @@
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                {{#with pro}}
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{ yearly.amount }}<span class="font-size-m4">user/month</span></p>
-                <p class="note mb-0 font-color-brand-aux-two font-size-m4">(&pound;{{ monthly.amount }} billed monthly)</p>
-                {{/with}}
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas yearly.amount }}</p>
+                <p class="mb-0 font-color-brand-aux-two font-size-m2 display-flex flex-direction-column justify-content-flex-end">
+                    <span>user/month billed annually</span>
+                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                </p>
               </div>
               <div class="pricing-block__header-pricing-button">
                 <a href="#" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
@@ -712,7 +752,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public + Private Project</p>
                           <ul class="expanded-content">
                             <li>Public + Private Project</li>
-                            <li>Unlimited Workspaces</li>
+                            <li>5 Workspaces per Project</li>
                           </ul>
                         </div>
                       </div>
@@ -760,8 +800,8 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Pro Performance</p>
                           <ul class="expanded-content">
                             <li>Private H/W</li>
-                            <li>Continuous Execution</li>
-                            <li>Volume Limit: {{ volume.advanced.limit }}</li>
+                            <li>{{addCommas api.limit }} API Requests</li>
+                            <li>Then: &pound;{{ api.amountPerRequest }} per API Request</li>
                           </ul>
                         </div>
                       </div>
@@ -769,7 +809,7 @@
                   </div>
 
                   <div class="pricing-block__body-row-body-feature mb-15">
-                    <div class="pricing-block__body-row-body-feature-inset background-shade-6">
+                    <div class="pricing-block__body-row-body-feature-inset background-shade-5">
                       <div class="inset-content">
                         <img src="assets/svg/product/icons-static/product-deploy.svg" alt="Icon representing the Deploy feature.">
                         <div>
@@ -792,11 +832,13 @@
             </div>
           </div>
         </div>
+        {{/with}}
         <!-- End of Pro. -->
 
         <div class="container block-divider"></div>
 
         <!-- Enterprise. -->
+        {{#with enterprise}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--advanced">
@@ -807,10 +849,11 @@
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                {{#with enterprise}}
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{ yearly.amount }}<span class="font-size-m4">user/month</span></p>
-                <p class="note mb-0 font-color-brand-aux-two font-size-m4">(&pound;{{ monthly.amount }} billed monthly)</p>
-                {{/with}}
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas yearly.amount }}</p>
+                <p class="mb-0 font-color-brand-aux-two font-size-m2 display-flex flex-direction-column justify-content-flex-end">
+                    <span>user/month billed annually</span>
+                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                </p>
               </div>
               <div class="pricing-block__header-pricing-button">
                 <a href="contact-sales" class="button button--theme-b pricing-block__header-button block-expander">See details</a>
@@ -860,6 +903,7 @@
                           <ul class="expanded-content">
                             <li>Public + Private Project</li>
                             <li>Unlimited Workspaces</li>
+                            <li>1 Guest User* per User</li>
                           </ul>
                         </div>
                       </div>
@@ -907,8 +951,8 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Enterprise Performance</p>
                           <ul class="expanded-content">
                             <li>Private H/W</li>
-                            <li>Continuous Execution</li>
-                            <li>Volume Limit: {{ volume.advanced.limit }}</li>
+                            <li>{{addCommas api.limit }} API Requests</li>
+                            <li>Then: &pound;{{ api.amountPerRequest }} per API Request</li>
                           </ul>
                         </div>
                       </div>
@@ -917,6 +961,22 @@
 
                   <div class="pricing-block__body-row-body-feature mb-15">
                     <div class="pricing-block__body-row-body-feature-inset background-shade-5">
+                      <div class="inset-content">
+                        <img src="assets/svg/product/icons-static/product-deploy.svg" alt="Icon representing the Deploy feature.">
+                        <div>
+                          <p class="title font-weight-semi-bold font-size-m6">Deploy</p>
+                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></p>
+                          <ul class="expanded-content">
+                            <li>Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></li>
+                            <li>Test, build and release automation</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="pricing-block__body-row-body-feature mb-15">
+                    <div class="pricing-block__body-row-body-feature-inset background-shade-6">
                       <div class="inset-content">
                         <img src="assets/svg/product/icons-static/product-monitor.svg" alt="Icon representing the Monitor feature.">
                         <div>
@@ -932,22 +992,6 @@
                     </div>
                   </div>
 
-                  <div class="pricing-block__body-row-body-feature mb-15">
-                    <div class="pricing-block__body-row-body-feature-inset background-shade-6">
-                      <div class="inset-content">
-                        <img src="assets/svg/product/icons-static/product-deploy.svg" alt="Icon representing the Deploy feature.">
-                        <div>
-                          <p class="title font-weight-semi-bold font-size-m6">Deploy</p>
-                          <p class="subtitle unexpanded-content font-size-m3 mb-0">Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></p>
-                          <ul class="expanded-content">
-                            <li>Additional Option: <a href="contact-sales" class="font-weight-semi-bold">Contact sales</a></li>
-                            <li>Test, build and release automation</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
                 </div>
               </div>
             </div>
@@ -956,6 +1000,7 @@
             </div>
           </div>
         </div>
+        {{/with}}
         <!-- End of Enterprise. -->
 
       </section>

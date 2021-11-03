@@ -753,39 +753,39 @@
               </div>
               <div class="col-lg-6">
                 <p class="font-color-brand-aux-two" data-aos="fade-left">The new
-                  operating system for financial markets is open source. The
-                  industry is collaborating on Rosetta to build shared standards
-                  for mission-critical business processes.​​​</p>
+                  operating system for financial markets is open source. The&nbsp;industry 
+                  is collaborating on Rosetta to build shared standards
+                  for&nbsp;mission-critical business processes.​​​</p>
               </div>
             </div>
           </div>
           <div class="container">
             <div class="row">
+              {{#with config.metrics}}
               <div class="col-md-4 mb-40 df-mb-ml-25" data-aos="fade-up">
                 <p
-                  class="font-size-l3 font-weight-semi-bold font-color-brand-two pb-10 count-up"
-                ><span class="value">1000</span></p>
-                <p class="font-size-m2 font-color-brand-aux-two">Users across
+                  class="font-size-l3 font-weight-semi-bold font-color-brand-two mb-0 count-up"
+                ><span class="value">{{ users }}</span></p>
+                <p class="font-size-m4 font-color-brand-two mb-20">Users</p>
+                <p class="font-size-m2 font-color-brand-aux-two">Across
                   banks, asset managers, market infrastructure and their
-                  technology providers​</p>
+                  technology&nbsp;providers​</p>
               </div>
               <div class="col-md-4 mb-40 df-mb-ml-25" data-aos="fade-up">
                 <p
-                  class="font-size-l3 font-weight-semi-bold font-color-brand-two pb-10 count-up"
-                ><span class="value">80</span>%</p>
-                <p class="font-size-m2 font-color-brand-aux-two">Of global
-                  markets' activity on-boarded, from derivatives to securities
-                  finance​</p>
+                  class="font-size-l3 font-weight-semi-bold font-color-brand-two mb-0 count-up"
+                ><span class="value">{{ markets }}</span>%</p>
+                <p class="font-size-m4 font-color-brand-two mb-20">Global Markets</p>
+                <p class="font-size-m2 font-color-brand-aux-two">Activity on-boarded, from derivatives to securities&nbsp;finance​</p>
               </div>
               <div class="col-md-4 mb-40 df-mb-ml-25" data-aos="fade-up">
                 <p
-                  class="font-size-l3 font-weight-semi-bold font-color-brand-two pb-10 count-up"
-                ><span class="value">7</span></p>
-                <p class="font-size-m2 font-color-brand-aux-two">Widely used
-                  software languages supported,
-                  <br class="display-none d-b-ld-o" />and more being contributed
-                  by the community​</p>
+                  class="font-size-l3 font-weight-semi-bold font-color-brand-two mb-0 count-up"
+                ><span class="value">{{ languages }}</span></p>
+                <p class="font-size-m4 font-color-brand-two mb-20">Software Languages</p>
+                <p class="font-size-m2 font-color-brand-aux-two">Supported, and more being contributed by the&nbsp;community​</p>
               </div>
+              {{/with}}
             </div>
           </div>
         </div>
