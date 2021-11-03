@@ -16,8 +16,8 @@ const config = {
         coreDocumentation: "https://docs.rosetta-technology.io/core/",
         linkedIn: "https://www.linkedin.com/company/regnosys",
         twitter: "https://twitter.com/regnosys",
-        termsOfUse: "https://regnosys.com/terms-of-use",
-        privacyStatement: "https://regnosys.com/privacy-statement",
+        termsOfUse: "https://regnosys.com/regnosys-terms-of-use",
+        privacyStatement: "https://regnosys.com/regnosys-privacy-statement",
         domainModel:
             "https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353",
         cdmDocs: "https://www.isda.org/2018/11/22/isda-cdm-factsheet/",
