@@ -5,7 +5,6 @@
 
   <body>
 
-    {{#with config.pricing}}
     <div class="site-wrapper">
 
       <!-- -->
@@ -14,6 +13,7 @@
 
       <!-- -->
 
+      {{#with config.pricing}}
       <section class="pt-160 pb-90 position-relative">
 
         <div class="body-curve">
@@ -1004,7 +1004,7 @@
         <!-- End of Enterprise. -->
 
       </section>
-
+    {{/with}}
       <!-- -->
 
       {{> footer}}
@@ -1014,7 +1014,6 @@
       <div class="mini-header-trigger"></div>
 
     </div>
-    {{/with}}
     <!-- -->
 
     {{> scripts}}
