@@ -3,7 +3,6 @@
  */
 
 .product-header-curve {
-
     /**
      * Position.
      */
@@ -17,13 +16,22 @@
      */
 
     img {
-
         /**
          * Sizing.
          */
 
         width: 60vw;
 
-    }
+        /**
+         * Include.
+         */
 
+        @include breakpoint($b-mobile-only) {
+            /**
+             * Sizing.
+             */
+
+            width: 100vw;
+        }
+    }
 }

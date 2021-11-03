@@ -3,7 +3,6 @@
  */
 
 .graphic-header {
-
     /**
      * Position.
      */
@@ -17,13 +16,19 @@
      */
 
     &__curve {
-
         /**
          * Sizing.
          */
 
         width: 60vw;
 
+        /**
+         * Include.
+         */
+
+        @include breakpoint($b-mobile-only) {
+            width: 100vw;
+        }
     }
 
     /**
@@ -31,13 +36,13 @@
      */
 
     &__curve--brand-one {
-
         /**
          * path.
          */
 
-        path { fill: $brand-one; }
-
+        path {
+            fill: $brand-one;
+        }
     }
 
     /**
@@ -45,13 +50,11 @@
      */
 
     &--graphic-full-size {
-
         /**
          * .graphic-header__graphic.
          */
 
         .graphic-header__graphic {
-
             /**
              * Position.
              */
@@ -63,9 +66,7 @@
              */
 
             width: 90% !important;
-
         }
-
     }
 
     /**
@@ -73,7 +74,6 @@
      */
 
     &__graphic {
-
         /**
          * Position.
          */
@@ -93,15 +93,12 @@
          */
 
         @include breakpoint($b-df-mobile-landscape) {
-
             /**
              * Display.
              */
 
             display: none;
-
         }
-
     }
 
     /**
@@ -109,21 +106,16 @@
      */
 
     &--governance {
-        
         /**
          * .graphic-header__graphic.
          */
 
         .graphic-header__graphic {
-
             /**
              * Sizing.
              */
 
             width: 102% !important;
-
         }
-
     }
-
 }

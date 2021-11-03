@@ -245,6 +245,24 @@
          */
 
         transform: translateY(-8%) translateX(80%);
+
+        /**
+         * Include.
+         */
+
+        @include breakpoint($b-mobile-only) {
+            /**
+            * Sizing.
+            */
+
+            width: 100vw;
+
+            /**
+             * Transform.
+             */
+
+            transform: translateY(-1%) translateX(31%);
+        }
     }
 
     /**
@@ -263,6 +281,24 @@
          */
 
         transform: translateY(-46%) translateX(30%);
+
+        /**
+         * Include.
+         */
+
+        @include breakpoint($b-mobile-only) {
+            /**
+            * Sizing.
+            */
+
+            width: 170vw;
+
+            /**
+             * Transform.
+             */
+
+            transform: translateY(-43%) translateX(2%);
+        }
     }
 
     /**
@@ -281,6 +317,18 @@
          */
 
         transform: translateY(-10%) translateX(32%);
+
+        /**
+         * Include.
+         */
+
+        @include breakpoint($b-mobile-only) {
+            /**
+            * Transform.
+            */
+
+            transform: translateY(-2%) translateX(28%);
+        }
     }
 
     /**
@@ -299,6 +347,24 @@
          */
 
         transform: translateY(-18%) translateX(17%);
+
+        /**
+         * Include.
+         */
+
+        @include breakpoint($b-mobile-only) {
+            /**
+            * Sizing.
+            */
+
+            width: 170vw;
+
+            /**
+             * Transform.
+             */
+
+            transform: translateY(-13%) translateX(-16%);
+        }
     }
 
     /**
@@ -317,6 +383,24 @@
          */
 
         transform: translateY(-10%) translateX(16%);
+
+        /**
+         * Include.
+         */
+
+        @include breakpoint($b-mobile-only) {
+            /**
+            * Sizing.
+            */
+
+            width: 140vw;
+
+            /**
+             * Transform.
+             */
+
+            transform: translateY(-5%) translateX(-17%);
+        }
     }
 
     /**
@@ -335,6 +419,38 @@
          */
 
         transform: translateY(0%) translateX(10%);
+
+        /**
+         * Include.
+         */
+
+        @include breakpoint($b-tablet-only) {
+            /**
+            * Sizing.
+            */
+
+            width: 80vw;
+
+            /**
+             * Transform.
+             */
+
+            transform: translateY(-25%) translateX(40%);
+        }
+
+        @include breakpoint($b-mobile-only) {
+            /**
+            * Sizing.
+            */
+
+            width: 70vw;
+
+            /**
+             * Transform.
+             */
+
+            transform: translateY(13%) translateX(50%);
+        }
     }
 
     /**
