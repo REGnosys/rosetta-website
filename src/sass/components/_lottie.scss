@@ -247,7 +247,7 @@
         transform: translateY(-8%) translateX(80%);
 
         /**
-         * Include.
+         * @include.
          */
 
         @include breakpoint($b-mobile-only) {
@@ -283,7 +283,7 @@
         transform: translateY(-46%) translateX(30%);
 
         /**
-         * Include.
+         * @include.
          */
 
         @include breakpoint($b-mobile-only) {
@@ -319,7 +319,7 @@
         transform: translateY(-10%) translateX(32%);
 
         /**
-         * Include.
+         * @include.
          */
 
         @include breakpoint($b-mobile-only) {
@@ -349,7 +349,7 @@
         transform: translateY(-18%) translateX(17%);
 
         /**
-         * Include.
+         * @include.
          */
 
         @include breakpoint($b-mobile-only) {
@@ -385,7 +385,7 @@
         transform: translateY(-10%) translateX(16%);
 
         /**
-         * Include.
+         * @include.
          */
 
         @include breakpoint($b-mobile-only) {
@@ -421,7 +421,7 @@
         transform: translateY(0%) translateX(10%);
 
         /**
-         * Include.
+         * @include.
          */
 
         @include breakpoint($b-tablet-only) {
@@ -435,21 +435,19 @@
              * Transform.
              */
 
-            transform: translateY(-25%) translateX(40%);
+            transform: translateY(32%) translateX(40%);
         }
 
-        @include breakpoint($b-mobile-only) {
-            /**
-            * Sizing.
-            */
+        /**
+         * @include.
+         */
 
-            width: 70vw;
-
+        @include breakpoint($b-df-mobile-landscape) {
             /**
-             * Transform.
+             * Display.
              */
 
-            transform: translateY(13%) translateX(50%);
+            display: none;
         }
     }
 
