@@ -412,7 +412,10 @@
          * Sizing.
          */
 
-        width: 100vw;
+        width: auto;
+        height: 720px;
+        display: flex;
+        align-items: center;
 
         /**
          * Transform.
@@ -424,30 +427,17 @@
          * @include.
          */
 
-        @include breakpoint($b-tablet-only) {
-            /**
-            * Sizing.
-            */
-
-            width: 80vw;
-
-            /**
-             * Transform.
-             */
-
-            transform: translateY(32%) translateX(40%);
+        @include breakpoint(min-width 1000px) {
+            height: 900px;
         }
-
-        /**
-         * @include.
-         */
-
         @include breakpoint($b-df-mobile-landscape) {
-            /**
-             * Display.
-             */
-
-            display: none;
+            width: 650px;
+            height: auto;
+            transform: translateY(90%) translateX(30px);
+        }
+        @include breakpoint($b-mobile-only) {
+            width: 525px;
+            transform: translateY(392px) translateX(6%);
         }
     }
 
