@@ -213,7 +213,7 @@
          */
 
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
 
         /**
@@ -221,12 +221,30 @@
          */
 
         width: 150vw;
-
+        max-width: 1500px;
         /**
          * Transform.
          */
 
         transform: translateY(-40%) translateX(10%);
+
+        @include breakpoint($b-df-tablet) {
+            display: none;
+        }
+    }
+
+    &--inline {
+        display: none;
+        padding: 0 10%;
+        margin: -20% 0;
+
+        lottie-player {
+            z-index: 50;
+        }
+
+        @include breakpoint($b-df-tablet) {
+            display: block;
+        }
     }
 
     /**
@@ -239,30 +257,7 @@
          */
 
         width: 65vw;
-
-        /**
-         * Transform.
-         */
-
-        transform: translateY(-8%) translateX(80%);
-
-        /**
-         * @include.
-         */
-
-        @include breakpoint($b-mobile-only) {
-            /**
-            * Sizing.
-            */
-
-            width: 100vw;
-
-            /**
-             * Transform.
-             */
-
-            transform: translateY(-1%) translateX(31%);
-        }
+        transform: translateY(-8%) translateX(35%);
     }
 
     /**
@@ -274,30 +269,11 @@
          * Sizing.
          */
 
-        width: 120vw;
-
-        /**
-         * Transform.
-         */
-
+        width: 90vw;
         transform: translateY(-46%) translateX(30%);
 
-        /**
-         * @include.
-         */
-
-        @include breakpoint($b-mobile-only) {
-            /**
-            * Sizing.
-            */
-
-            width: 170vw;
-
-            /**
-             * Transform.
-             */
-
-            transform: translateY(-43%) translateX(2%);
+        &--inline {
+            margin: -40% 0 -32% 0;
         }
     }
 
@@ -316,18 +292,10 @@
          * Transform.
          */
 
-        transform: translateY(-10%) translateX(32%);
+        transform: translateY(-15%) translateX(42%);
 
-        /**
-         * @include.
-         */
-
-        @include breakpoint($b-mobile-only) {
-            /**
-            * Transform.
-            */
-
-            transform: translateY(-2%) translateX(28%);
+        &--inline {
+            margin: -20% 0 -38% 0;
         }
     }
 
@@ -341,29 +309,10 @@
          */
 
         width: 110vw;
-
-        /**
-         * Transform.
-         */
-
         transform: translateY(-18%) translateX(17%);
 
-        /**
-         * @include.
-         */
-
-        @include breakpoint($b-mobile-only) {
-            /**
-            * Sizing.
-            */
-
-            width: 170vw;
-
-            /**
-             * Transform.
-             */
-
-            transform: translateY(-13%) translateX(-16%);
+        &--inline {
+            margin: -24% 0 -42% 0;
         }
     }
 
@@ -377,29 +326,10 @@
          */
 
         width: 100vw;
-
-        /**
-         * Transform.
-         */
-
         transform: translateY(-10%) translateX(16%);
 
-        /**
-         * @include.
-         */
-
-        @include breakpoint($b-mobile-only) {
-            /**
-            * Sizing.
-            */
-
-            width: 140vw;
-
-            /**
-             * Transform.
-             */
-
-            transform: translateY(-5%) translateX(-17%);
+        &--inline {
+            margin: -20% 0 -30% 0;
         }
     }
 
@@ -412,32 +342,12 @@
          * Sizing.
          */
 
-        width: auto;
-        height: 720px;
-        display: flex;
-        align-items: center;
+        width: 100vw;
+        max-width: 1400px;
+        transform: translateY(10%) translateX(10%);
 
-        /**
-         * Transform.
-         */
-
-        transform: translateY(0%) translateX(10%);
-
-        /**
-         * @include.
-         */
-
-        @include breakpoint(min-width 1000px) {
-            height: 900px;
-        }
-        @include breakpoint($b-df-mobile-landscape) {
-            width: 650px;
-            height: auto;
-            transform: translateY(90%) translateX(30px);
-        }
-        @include breakpoint($b-mobile-only) {
-            width: 525px;
-            transform: translateY(392px) translateX(6%);
+        &--inline {
+            margin: -16% 0 -24% 0;
         }
     }
 
