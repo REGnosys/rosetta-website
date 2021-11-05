@@ -7,13 +7,36 @@ metadata:
 data:
   nginx-proxy.conf: |-
 
-    server {
-        location / {
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
+    # Cache for static files
+    proxy_cache_path /tmp/nginx-cache levels=1:2 keys_zone=staticcache:8m max_size=1000m inactive=60m use_temp_path=off;
+    # keyzone size 8MB, cache size 1000MB, inactive delete 60min
+    proxy_cache_key "$scheme$request_method$host$request_uri";
+    proxy_cache_valid 200 302 60m; # cache successful responses for 60 minutes
+    proxy_cache_valid 404 1m; # expire 404 responses 1 minute
 
-            proxy_pass http://{{ .Release.Name }}-{{ .Values.global.node.name }}:{{ .Values.global.node.port }};
-        }
+    server {
+      
+      location / {
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        proxy_pass http://{{ .Release.Name }}-{{ .Values.global.node.name }}:{{ .Values.global.node.port }};
+      }
+
+      # Only cache static files; don't cache the dynamic API response!
+      location ~* ^.+\.(jpg|jpeg|gif|png|ico|svg|css|bmp|js|html|htm)$ {
+          proxy_cache staticcache; # Use "staticcache" we defined above
+          proxy_cache_bypass $http_cache_control; # Support client "Cache-Control: no-cache" directive
+          add_header X-Proxy-Cache $upstream_cache_status; # Hit or Miss
+
+          # Nginx cache to ignore Node.js default "Cache-Control: public, max-age=0"
+          # and don't pass it on to clients
+          proxy_ignore_headers Cache-Control;
+          proxy_hide_header Cache-Control;
+          expires 60m; # "Cache-Control: max-age=3600" tells client to cache for 60 minutes
+
+          proxy_pass http://{{ .Release.Name }}-{{ .Values.global.node.name }}:{{ .Values.global.node.port }};
+       }
     }

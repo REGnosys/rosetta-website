@@ -20,7 +20,7 @@
   "author": "Mike BTG <mike@breakthegrid.co.uk>",
   "license": "MIT",
   "dependencies": {
-    "@sendgrid/mail": "^7.5.0",
+    "@sendgrid/mail": "^7.6.0",
     "@tanem/svg-injector": "^8.2.5",
     "animejs": "^3.2.1",
     "axios": "^0.24.0",
@@ -39,16 +39,16 @@
     "zoom-vanilla.js": "^2.0.6"
   },
   "devDependencies": {
-    "@babel/cli": "^7.15.7",
-    "@babel/core": "^7.15.8",
-    "@babel/preset-env": "^7.15.8",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
     "@types/animejs": "^3.1.4",
-    "@types/fabric": "^4.5.3",
+    "@types/fabric": "^4.5.4",
     "@types/grecaptcha": "^3.0.3",
     "@types/lodash": "^4.14.176",
     "@types/waypoints": "^4.0.4",
     "babel-loader": "^8.2.3",
-    "browser-sync": "^2.27.5",
+    "browser-sync": "^2.27.7",
     "css-loader": "^5.1.1",
     "event-stream": "^4.0.1",
     "find-process": "^1.4.5",
@@ -65,6 +65,7 @@
     "style-loader": "^2.0.0",
     "ts-loader": "^8.3.0",
     "typescript": "^4.4.4",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0"
   }
