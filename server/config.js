@@ -1,4 +1,7 @@
+const hash = require("../web/assets/js/build-hash.json").hash;
+
 const config = {
+    hash: hash,
     env: process.env.ROSETTA_ENV || false,
     ga: process.env.ROSETTA_GA || "",
     gtm: process.env.ROSETTA_GTM || "",
