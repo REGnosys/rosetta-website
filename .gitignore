@@ -6,8 +6,8 @@
 
 node_modules
 
-/web/assets/css/styles.css
-/web/assets/js/bundle.js
+/web/assets/css
+/web/assets/js
 /web/*.html
 
 .idea

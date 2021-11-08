@@ -13,7 +13,6 @@
 
       <!-- -->
 
-      {{#with config.pricing}}
       <section class="pt-160 pb-90 position-relative">
 
         <div class="body-curve">
@@ -85,7 +84,7 @@
                   Essentials
                 </p>
                 <div class="pricing-table__header-column-price-container">
-                  {{#with essentials}}
+                  {{#with config.pricing.essentials}}
                   <p class="pricing-table__header-column-price font-color-brand-aux-two display-flex">
                     <span class="font-size-l4 font-weight-light mr-2">&pound;{{addCommas yearly.amount }}</span>
                     <span class="pricing-table__header-column-price-note font-size-m2">
@@ -110,7 +109,7 @@
                   Pro
                 </p>
                 <div class="pricing-table__header-column-price-container">
-                  {{#with pro}}
+                  {{#with config.pricing.pro}}
                   <p class="pricing-table__header-column-price font-color-brand-aux-two">
                     <span class="font-size-l4 font-weight-light mr-2">&pound;{{addCommas yearly.amount }}</span>
                     <span class="pricing-table__header-column-price-note font-size-m2">
@@ -135,7 +134,7 @@
                   Enterprise
                 </p>
                 <div class="pricing-table__header-column-price-container">
-                  {{#with enterprise}}
+                  {{#with config.pricing.enterprise}}
                   <p class="pricing-table__header-column-price font-color-brand-aux-two display-flex">
                     <span class="font-size-l4 font-weight-light mr-2">&pound;{{addCommas yearly.amount }}</span>
                     <span class="pricing-table__header-column-price-note font-size-m2">
@@ -338,7 +337,7 @@
                     <p class="title font-weight-semi-bold">Engine</p>
                     <p class="subtitle unexpanded-content">Read-Only Project Only</p>
                     <ul class="expanded-content">
-                      {{#with community.api}}
+                      {{#with config.pricing.community.api}}
                       <li>Read-Only Project Only</li>
                       <li>{{addCommas limit }} API Requests User/Month</li>
                       {{/with}}
@@ -353,7 +352,7 @@
                     <p class="title font-weight-semi-bold">Engine</p>
                     <p class="subtitle unexpanded-content">Essentials Performance</p>
                     <ul class="expanded-content">
-                      {{#with essentials.api}}
+                      {{#with config.pricing.essentials.api}}
                       <li>Shared H/W</li>
                       <li>{{addCommas limit }} API Requests User/Month</li>
                       {{/with}}
@@ -368,7 +367,7 @@
                     <p class="title font-weight-semi-bold">Engine</p>
                     <p class="subtitle unexpanded-content">Pro Performance</p>
                     <ul class="expanded-content">
-                      {{#with pro.api}}
+                      {{#with config.pricing.pro.api}}
                       <li>Private H/W</li>
                       <li>{{addCommas limit }} API Requests User/Month</li>
                       <li>Then: &pound;{{ amountPerRequest }} per API Request</li>
@@ -384,7 +383,7 @@
                     <p class="title font-weight-semi-bold">Engine</p>
                     <p class="subtitle unexpanded-content">Enterprise Performance</p>
                     <ul class="expanded-content">
-                      {{#with enterprise.api}}
+                      {{#with config.pricing.enterprise.api}}
                       <li>Private H/W</li>
                       <li>{{addCommas limit }} API Requests User/Month</li>
                       <li>Then: &pound;{{ amountPerRequest }} per API Request</li>
@@ -442,7 +441,6 @@
       <section class="pricing-blocks">
 
         <!-- Community. -->
-        {{#with community}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--core">
@@ -535,7 +533,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Read-Only Project Only</p>
                           <ul class="expanded-content">
                             <li>Read-Only Project Only</li>
-                            <li>{{addCommas api.limit }} API Requests</li>
+                            <li>{{addCommas config.pricing.community.api.limit }} API Requests</li>
                           </ul>
                         </div>
                       </div>
@@ -549,13 +547,11 @@
             </div>
           </div>
         </div>
-        {{/with}}
         <!-- End of Community. -->
 
         <div class="container block-divider"></div>
 
         <!-- Essentials. -->
-        {{#with essentials}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--core">
@@ -566,10 +562,10 @@
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas yearly.amount }}</p>
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas config.pricing.essentials.yearly.amount }}</p>
                 <p class="mb-0 font-color-brand-aux-two font-size-m2 display-flex flex-direction-column justify-content-flex-end">
                     <span>user/month billed annually</span>
-                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                    <span class="opacity-50">(&pound;{{addCommas config.pricing.essentials.monthly.amount }} billed monthly)</span>
                 </p>
               </div>
               <div class="pricing-block__header-pricing-button">
@@ -667,7 +663,7 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Essentials Performance</p>
                           <ul class="expanded-content">
                             <li>Shared H/W</li>
-                            <li>{{addCommas api.limit }} API Requests</li>
+                            <li>{{addCommas config.pricing.essentials.api.limit }} API Requests</li>
                           </ul>
                         </div>
                       </div>
@@ -678,17 +674,15 @@
               </div>
             </div>
             <div class="pricing-block__body-row pb-20">
-              <a href="{{ config.externalLinks.signUp }}" class="button button--theme-b pricing-block__body-button">Sign up today</a>
+              <a href="contact-sales" class="button button--theme-b pricing-block__body-button">Contact sales</a>
             </div>
           </div>
         </div>
-        {{/with}}
         <!-- End of Essentials. -->
 
         <div class="container block-divider"></div>
 
         <!-- Pro. -->
-        {{#with pro}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--advanced">
@@ -699,10 +693,10 @@
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas yearly.amount }}</p>
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas config.pricing.pro.yearly.amount }}</p>
                 <p class="mb-0 font-color-brand-aux-two font-size-m2 display-flex flex-direction-column justify-content-flex-end">
                     <span>user/month billed annually</span>
-                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                    <span class="opacity-50">(&pound;{{addCommas config.pricing.pro.monthly.amount }} billed monthly)</span>
                 </p>
               </div>
               <div class="pricing-block__header-pricing-button">
@@ -800,8 +794,8 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Pro Performance</p>
                           <ul class="expanded-content">
                             <li>Private H/W</li>
-                            <li>{{addCommas api.limit }} API Requests</li>
-                            <li>Then: &pound;{{ api.amountPerRequest }} per API Request</li>
+                            <li>{{addCommas config.pricing.pro.api.limit }} API Requests</li>
+                            <li>Then: &pound;{{ config.pricing.pro.api.amountPerRequest }} per API Request</li>
                           </ul>
                         </div>
                       </div>
@@ -828,17 +822,15 @@
               </div>
             </div>
             <div class="pricing-block__body-row pb-20">
-              <a href="contact-sales" class="button button--theme-b pricing-block__body-button" target="_blank">Sign up today</a>
+              <a href="contact-sales" class="button button--theme-b pricing-block__body-button">Contact sales</a>
             </div>
           </div>
         </div>
-        {{/with}}
         <!-- End of Pro. -->
 
         <div class="container block-divider"></div>
 
         <!-- Enterprise. -->
-        {{#with enterprise}}
         <div class="container pricing-block">
           <div class="pricing-block__header">
             <div class="pricing-block__header-level pricing-block__header-level--advanced">
@@ -849,10 +841,10 @@
             </div>
             <div class="pricing-block__header-pricing">
               <div class="pricing-block__header-pricing-text">
-                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas yearly.amount }}</p>
+                <p class="price mb-0 font-color-brand-aux-two font-weight-light">&pound;{{addCommas config.pricing.enterprise.yearly.amount }}</p>
                 <p class="mb-0 font-color-brand-aux-two font-size-m2 display-flex flex-direction-column justify-content-flex-end">
                     <span>user/month billed annually</span>
-                    <span class="opacity-50">(&pound;{{addCommas monthly.amount }} billed monthly)</span>
+                    <span class="opacity-50">(&pound;{{addCommas config.pricing.enterprise.monthly.amount }} billed monthly)</span>
                 </p>
               </div>
               <div class="pricing-block__header-pricing-button">
@@ -951,8 +943,8 @@
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Enterprise Performance</p>
                           <ul class="expanded-content">
                             <li>Private H/W</li>
-                            <li>{{addCommas api.limit }} API Requests</li>
-                            <li>Then: &pound;{{ api.amountPerRequest }} per API Request</li>
+                            <li>{{addCommas config.pricing.enterprise.api.limit }} API Requests</li>
+                            <li>Then: &pound;{{ config.pricing.enterprise.api.amountPerRequest }} per API Request</li>
                           </ul>
                         </div>
                       </div>
@@ -996,15 +988,13 @@
               </div>
             </div>
             <div class="pricing-block__body-row pb-20">
-              <a href="contact-sales" class="button button--theme-b pricing-block__body-button">Sign up today</a>
+              <a href="contact-sales" class="button button--theme-b pricing-block__body-button">Contact sales</a>
             </div>
           </div>
         </div>
-        {{/with}}
         <!-- End of Enterprise. -->
 
       </section>
-    {{/with}}
       <!-- -->
 
       {{> footer}}

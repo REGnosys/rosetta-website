@@ -1,39 +1,33 @@
 /**
- * 
+ *
  */
 
-import anime from 'animejs'
+import anime from "animejs";
 
 /**
  * TouchAreaBridge.
  */
 
 class TouchAreaBridge {
-
     /**
      * Variables.
      */
 
-    private element : HTMLElement
-    private headerSubNavigation : HeaderSubNavigation
+    private element: HTMLElement;
+    private headerSubNavigation: HeaderSubNavigation;
 
     /**
      * constructor.
      */
 
-    constructor(
-        touchAreaBridgeElement : HTMLElement, 
-        headerSubNavigation : HeaderSubNavigation
-    ) {
-
+    constructor(touchAreaBridgeElement: HTMLElement, headerSubNavigation: HeaderSubNavigation) {
         /**
          *
          */
 
-        this.element = touchAreaBridgeElement
-        this.headerSubNavigation = headerSubNavigation
-        this.addEventListeners()
-
+        this.element = touchAreaBridgeElement;
+        this.headerSubNavigation = headerSubNavigation;
+        this.addEventListeners();
     }
 
     /**
@@ -41,7 +35,6 @@ class TouchAreaBridge {
      */
 
     showAlignAndResizeToMainNav(): void {
-        
         /**
          *
          */
@@ -49,20 +42,19 @@ class TouchAreaBridge {
         anime({
             targets: this.element,
             translateX: {
-                value: this.headerSubNavigation.getMainNavigation().getBoundingClientRect().left
+                value: this.headerSubNavigation.getMainNavigation().getBoundingClientRect().left,
             },
             translateY: {
-                value: this.headerSubNavigation.getMainNavigation().getBoundingClientRect().bottom
+                value: this.headerSubNavigation.getMainNavigation().getBoundingClientRect().bottom,
             },
             width: this.headerSubNavigation.getMainNavigation().offsetWidth,
             height: 80,
             duration: 0,
             opacity: 1,
             complete: () => {
-                this.element.classList.add('visible')
-            }
-        })
-
+                this.element.classList.add("visible");
+            },
+        });
     }
 
     /**
@@ -70,7 +62,6 @@ class TouchAreaBridge {
      */
 
     hide(): void {
-
         /**
          *
          */
@@ -80,10 +71,9 @@ class TouchAreaBridge {
             duration: 0,
             opacity: 0,
             complete: () => {
-                this.element.classList.remove('visible')
-            }
-        })
-
+                this.element.classList.remove("visible");
+            },
+        });
     }
 
     /**
@@ -91,25 +81,22 @@ class TouchAreaBridge {
      */
 
     private addEventListeners(): void {
-
         /**
          * mouseenter.
          */
 
-        this.element.addEventListener('mouseenter', (mouseEvent : MouseEvent) => {
-            this.headerSubNavigation.cancelSubNavCloseTimeout()
-        })
+        this.element.addEventListener("mouseenter", (mouseEvent: MouseEvent) => {
+            this.headerSubNavigation.cancelSubNavCloseTimeout();
+        });
 
         /**
          * mouseleave.
          */
 
-        this.element.addEventListener('mouseleave', (mouseEvent : MouseEvent) => {
-            this.headerSubNavigation.initiateSubNavClose()
-        })
-
+        this.element.addEventListener("mouseleave", (mouseEvent: MouseEvent) => {
+            this.headerSubNavigation.initiateSubNavClose();
+        });
     }
-
 }
 
 /**
@@ -117,50 +104,42 @@ class TouchAreaBridge {
  */
 
 class SubNavArrow {
-
     /**
      * Variables.
      */
 
-    private element : HTMLElement
-    private headerSubNavigation : HeaderSubNavigation
+    private element: HTMLElement;
+    private headerSubNavigation: HeaderSubNavigation;
 
     /**
      * constructor.
      */
 
-    constructor(
-        element : HTMLElement, 
-        headerSubNavigation : HeaderSubNavigation
-    ) {
-
+    constructor(element: HTMLElement, headerSubNavigation: HeaderSubNavigation) {
         /**
-         * 
+         *
          */
 
-        this.element = element
-        this.headerSubNavigation = headerSubNavigation
-
+        this.element = element;
+        this.headerSubNavigation = headerSubNavigation;
     }
 
     /**
      * alignToNavListItem.
      */
 
-    alignToNavListItem(navListItem : NavListItem, animate : boolean = true): void {
-
+    alignToNavListItem(navListItem: NavListItem, animate: boolean = true): void {
         /**
-         * 
+         *
          */
 
-        let duration : number = 0
+        let duration: number = 0;
 
         /**
-         * 
+         *
          */
 
-        if (animate)
-            duration = 350
+        if (animate) duration = 350;
 
         /**
          *
@@ -171,10 +150,9 @@ class SubNavArrow {
             translateX: {
                 value: navListItem.getMiddle() - this.element.clientWidth,
                 duration: duration,
-                easing: 'easeInOutSine'
-            }
-        })
-
+                easing: "easeInOutSine",
+            },
+        });
     }
 
     /**
@@ -182,7 +160,6 @@ class SubNavArrow {
      */
 
     alignToTopOfSubNav(): void {
-
         /**
          *
          */
@@ -190,32 +167,31 @@ class SubNavArrow {
         anime({
             targets: this.element,
             translateY: {
-                value: this.headerSubNavigation.getSubNavWrapperBoundingRect().top - this.element.offsetHeight,
-                duration: 0
-            }
-        })
-
+                value:
+                    this.headerSubNavigation.getSubNavWrapperBoundingRect().top -
+                    this.element.offsetHeight,
+                duration: 0,
+            },
+        });
     }
 
     /**
      * show.
      */
 
-    show(animate : boolean = true): void {
-
+    show(animate: boolean = true): void {
         /**
-         * 
+         *
          */
 
-        let duration = 350
+        let duration = 350;
 
         /**
          *
          */
 
-        if (! animate) 
-            duration = 0
-            
+        if (!animate) duration = 0;
+
         /**
          *
          */
@@ -224,30 +200,27 @@ class SubNavArrow {
             targets: this.element,
             opacity: 1,
             duration: duration,
-            easing: 'easeInOutSine'
-        })
-
+            easing: "easeInOutSine",
+        });
     }
 
     /**
      * hide.
      */
 
-    hide(animate : boolean = true): void {
-
+    hide(animate: boolean = true): void {
         /**
-         * 
+         *
          */
 
-        let duration = 350
+        let duration = 350;
 
         /**
          *
          */
 
-        if (! animate) 
-            duration = 0
-            
+        if (!animate) duration = 0;
+
         /**
          *
          */
@@ -256,11 +229,9 @@ class SubNavArrow {
             targets: this.element,
             opacity: 0,
             duration: duration,
-            easing: 'easeInOutSine'
-        })
-
+            easing: "easeInOutSine",
+        });
     }
-
 }
 
 /**
@@ -268,41 +239,38 @@ class SubNavArrow {
  */
 
 class SubNavArea {
-
     /**
      * Variables.
      */
 
-    private element             : HTMLElement
-    private headerSubNavigation : HeaderSubNavigation
-    private showAnimation       : anime.AnimeInstance
-    private navListItem         : NavListItem
+    private element: HTMLElement;
+    private headerSubNavigation: HeaderSubNavigation;
+    private showAnimation: anime.AnimeInstance;
+    private navListItem: NavListItem;
 
     /**
      * constructor.
      */
 
     constructor(
-        subNavArea : HTMLElement, 
-        headerSubNavigation : HeaderSubNavigation,
-        navListItem : NavListItem
+        subNavArea: HTMLElement,
+        headerSubNavigation: HeaderSubNavigation,
+        navListItem: NavListItem
     ) {
+        /**
+         *
+         */
+
+        this.element = subNavArea;
+        this.headerSubNavigation = headerSubNavigation;
+        this.addEventListeners();
+        this.navListItem = navListItem;
 
         /**
          *
          */
 
-        this.element = subNavArea
-        this.headerSubNavigation = headerSubNavigation
-        this.addEventListeners()
-        this.navListItem = navListItem
-
-        /**
-         *
-         */
-
-        this.hide()
-
+        this.hide();
     }
 
     /**
@@ -310,7 +278,7 @@ class SubNavArea {
      */
 
     getWidth(): Number {
-        return this.element.offsetWidth
+        return this.element.offsetWidth;
     }
 
     /**
@@ -318,7 +286,7 @@ class SubNavArea {
      */
 
     getHeight(): Number {
-        return this.element.offsetHeight
+        return this.element.offsetHeight;
     }
 
     /**
@@ -326,35 +294,32 @@ class SubNavArea {
      */
 
     getNavListItem(): NavListItem {
-        return this.navListItem
+        return this.navListItem;
     }
 
     /**
      * hide.
      */
 
-    hide(animate : boolean = false): void {
+    hide(animate: boolean = false): void {
+        /**
+         *
+         */
+
+        let duration = 200;
 
         /**
          *
          */
 
-        let duration = 200
-
-        /**
-         *
-         */
-
-        if (! animate)
-            duration = 0
+        if (!animate) duration = 0;
 
         /**
          * If the area is currently being animated
          * up/visible, then stop it.
          */
 
-        if (this.showAnimation) 
-            this.showAnimation.pause()
+        if (this.showAnimation) this.showAnimation.pause();
 
         /**
          *
@@ -365,17 +330,16 @@ class SubNavArea {
             opacity: 0,
             duration: duration,
             translateX: {
-                value: '-52%'
+                value: "-52%",
             },
-            easing: 'easeInOutSine'
-        })
+            easing: "easeInOutSine",
+        });
 
         /**
          * Used in CSS to disable pointer events.
          */
 
-        this.element.classList.add('hidden')
-
+        this.element.classList.add("hidden");
     }
 
     /**
@@ -383,13 +347,12 @@ class SubNavArea {
      */
 
     show(): void {
-
         /**
-         * 
+         *
          */
 
-        this.headerSubNavigation.onAreaShown(this)
-        
+        this.headerSubNavigation.onAreaShown(this);
+
         /**
          *
          */
@@ -397,10 +360,10 @@ class SubNavArea {
         anime({
             targets: this.element,
             translateX: {
-                value: '-52%'
+                value: "-52%",
             },
-            duration: 0
-        })        
+            duration: 0,
+        });
 
         /**
          *
@@ -410,18 +373,17 @@ class SubNavArea {
             targets: this.element,
             opacity: 1,
             translateX: {
-                value: '-50%'
+                value: "-50%",
             },
             duration: 350,
-            easing: 'easeInOutSine'
-        })
+            easing: "easeInOutSine",
+        });
 
         /**
          * Used in CSS to disable pointer events.
          */
 
-        this.element.classList.remove('hidden')
-
+        this.element.classList.remove("hidden");
     }
 
     /**
@@ -429,25 +391,22 @@ class SubNavArea {
      */
 
     private addEventListeners(): void {
-
         /**
          * mouseenter.
          */
 
-        this.element.addEventListener('mouseenter', (mouseEvent : MouseEvent) => {
-            this.headerSubNavigation.cancelSubNavCloseTimeout()
-        })
+        this.element.addEventListener("mouseenter", (mouseEvent: MouseEvent) => {
+            this.headerSubNavigation.cancelSubNavCloseTimeout();
+        });
 
         /**
          * mouseleave.
          */
 
-        this.element.addEventListener('mouseleave', (mouseEvent : MouseEvent) => {
-            this.headerSubNavigation.initiateSubNavClose()
-        })
-
+        this.element.addEventListener("mouseleave", (mouseEvent: MouseEvent) => {
+            this.headerSubNavigation.initiateSubNavClose();
+        });
     }
-
 }
 
 /**
@@ -455,27 +414,22 @@ class SubNavArea {
  */
 
 class NavListItem {
-
     /**
      * Variables.
      */
 
-    private element             : HTMLElement
-    private headerSubNavigation : HeaderSubNavigation
-    private subNavArea          : SubNavArea
+    private element: HTMLElement;
+    private headerSubNavigation: HeaderSubNavigation;
+    private subNavArea: SubNavArea;
 
     /**
      * constructor.
      */
 
-    constructor(
-        navListItem : HTMLElement, 
-        headerSubNavigation : HeaderSubNavigation,
-
-    ) {
-        this.element = navListItem
-        this.headerSubNavigation = headerSubNavigation
-        this.addEventListeners()
+    constructor(navListItem: HTMLElement, headerSubNavigation: HeaderSubNavigation) {
+        this.element = navListItem;
+        this.headerSubNavigation = headerSubNavigation;
+        this.addEventListeners();
     }
 
     /**
@@ -483,15 +437,15 @@ class NavListItem {
      */
 
     private getRect(): DOMRect {
-        return this.element.getBoundingClientRect()
+        return this.element.getBoundingClientRect();
     }
 
     /**
      * setSubNavArea.
      */
 
-    setSubNavArea(subNavArea : SubNavArea) {
-        this.subNavArea = subNavArea
+    setSubNavArea(subNavArea: SubNavArea) {
+        this.subNavArea = subNavArea;
     }
 
     /**
@@ -499,7 +453,7 @@ class NavListItem {
      */
 
     getSubNavArea(): SubNavArea {
-        return this.subNavArea
+        return this.subNavArea;
     }
 
     /**
@@ -507,7 +461,7 @@ class NavListItem {
      */
 
     setActive(): void {
-        this.element.classList.add('active')
+        this.element.classList.add("active");
     }
 
     /**
@@ -515,7 +469,7 @@ class NavListItem {
      */
 
     setInactive(): void {
-        this.element.classList.remove('active')
+        this.element.classList.remove("active");
     }
 
     /**
@@ -523,46 +477,43 @@ class NavListItem {
      */
 
     private addEventListeners(): void {
-
         /**
          * mouseenter.
          */
 
-        this.element.addEventListener('mouseenter', (mouseEvent : MouseEvent) => {           
-            this.headerSubNavigation.openSubNav(this)
-            this.headerSubNavigation.cancelSubNavCloseTimeout()
-        })
+        this.element.addEventListener("mouseenter", (mouseEvent: MouseEvent) => {
+            this.headerSubNavigation.openSubNav(this);
+            this.headerSubNavigation.cancelSubNavCloseTimeout();
+        });
 
         /**
          * mouseleave.
          */
 
-        this.element.addEventListener('mouseleave', (mouseEvent : MouseEvent) => {
-            this.headerSubNavigation.initiateSubNavClose()
-        })
-
+        this.element.addEventListener("mouseleave", (mouseEvent: MouseEvent) => {
+            this.headerSubNavigation.initiateSubNavClose();
+        });
     }
 
     /**
      * getLeft.
      */
 
-    getLeft(withOffset : boolean = false): Number {
-        if (!withOffset) return this.getRect().left
-        if (withOffset) return this.getRect().left - 100
-    }   
+    getLeft(withOffset: boolean = false): Number {
+        if (!withOffset) return this.getRect().left;
+        if (withOffset) return this.getRect().left - 100;
+    }
 
     /**
      * getMiddle.
      */
 
     getMiddle(): number {
-        const width : number = this.getRect().right - this.getRect().left
-        const paddingRight : number = parseFloat(getComputedStyle(this.element).paddingRight)
-        const middle : number = this.getRect().left + ((width-paddingRight)/2)
-        return middle
+        const width: number = this.getRect().right - this.getRect().left;
+        const paddingRight: number = parseFloat(getComputedStyle(this.element).paddingRight);
+        const middle: number = this.getRect().left + (width - paddingRight) / 2;
+        return middle;
     }
-
 }
 
 /**
@@ -571,9 +522,9 @@ class NavListItem {
 
 enum SubNavState {
     Closing = "CLOSING",
-    Closed  = "CLOSED",
+    Closed = "CLOSED",
     Opening = "OPENING",
-    Open    = "OPEN"
+    Open = "OPEN",
 }
 
 /**
@@ -581,81 +532,80 @@ enum SubNavState {
  */
 
 export class HeaderSubNavigation {
-
     /**
-     * 
+     *
      */
 
-    private mainNavigation : HTMLElement
+    private mainNavigation: HTMLElement;
 
     /**
      * Main wrapper.
      */
 
-    private subNavigationWrapper : HTMLElement
-    private subNavHideAnimation  : anime.AnimeInstance
-    private subNavShowAnimation  : anime.AnimeInstance
+    private subNavigationWrapper: HTMLElement;
+    private subNavHideAnimation: anime.AnimeInstance;
+    private subNavShowAnimation: anime.AnimeInstance;
 
     /**
      * Areas.
      */
 
-    private areas : SubNavArea[]
-    private productsArea : SubNavArea
-    private aboutArea  : SubNavArea 
+    private areas: SubNavArea[];
+    private productsArea: SubNavArea;
+    private aboutArea: SubNavArea;
 
     /**
      * Nav items.
      */
 
-    private productNavListItem : NavListItem
-    private aboutNavListItem : NavListItem
+    private productNavListItem: NavListItem;
+    private aboutNavListItem: NavListItem;
 
     /**
      * The active objects.
      */
 
-    private activeArea : SubNavArea
-    private activeNavListItem : NavListItem
+    private activeArea: SubNavArea;
+    private activeNavListItem: NavListItem;
 
     /**
      * Nav arrow.
      */
 
-    private subNavArrow : SubNavArrow
+    private subNavArrow: SubNavArrow;
 
     /**
      * Touch area bridge.
      */
 
-    private touchAreaBridge : TouchAreaBridge
+    private touchAreaBridge: TouchAreaBridge;
 
     /**
      * Sub nav state.
      */
 
-    public subNavState : SubNavState = SubNavState.Closed
+    public subNavState: SubNavState = SubNavState.Closed;
 
     /**
-     * 
+     *
      */
 
-    private subNavCloseTimeout : number
-        
+    private subNavCloseTimeout: NodeJS.Timeout;
+
     /**
      * constructor.
      */
 
     constructor() {
-        this.areas = []
+        this.areas = [];
     }
 
     /**
      * setActiveArea.
      */
 
-    private setActiveArea(area : SubNavArea) {
-        this.activeArea = area
+    private setActiveArea(area: SubNavArea) {
+        this.activeArea = area;
     }
 
     /**
@@ -663,7 +613,7 @@ export class HeaderSubNavigation {
      */
 
     private getActiveArea(): SubNavArea {
-        return this.activeArea
+        return this.activeArea;
     }
 
     /**
@@ -671,15 +621,15 @@ export class HeaderSubNavigation {
      */
 
     private getSubNavArrow(): SubNavArrow {
-        return this.subNavArrow
+        return this.subNavArrow;
     }
 
     /**
      * setActiveNavListItem.
      */
 
-    private setActiveNavListItem(navListItem : NavListItem) {
-        this.activeNavListItem = navListItem
+    private setActiveNavListItem(navListItem: NavListItem) {
+        this.activeNavListItem = navListItem;
     }
 
     /**
@@ -687,7 +637,7 @@ export class HeaderSubNavigation {
      */
 
     private getActiveNavListItem(): NavListItem {
-        return this.activeNavListItem
+        return this.activeNavListItem;
     }
 
     /**
@@ -695,7 +645,7 @@ export class HeaderSubNavigation {
      */
 
     getSubNavWrapperWidth(): number {
-        return this.subNavigationWrapper.offsetWidth
+        return this.subNavigationWrapper.offsetWidth;
     }
 
     /**
@@ -703,7 +653,7 @@ export class HeaderSubNavigation {
      */
 
     getSubNavWrapperBoundingRect(): DOMRect {
-        return this.subNavigationWrapper.getBoundingClientRect()
+        return this.subNavigationWrapper.getBoundingClientRect();
     }
 
     /**
@@ -711,7 +661,7 @@ export class HeaderSubNavigation {
      */
 
     getMainNavigation(): HTMLElement {
-        return this.mainNavigation
+        return this.mainNavigation;
     }
 
     /**
@@ -719,81 +669,93 @@ export class HeaderSubNavigation {
      */
 
     start(): void {
-
         /**
          * Grab the main navigation element.
          */
 
-        this.mainNavigation = document.querySelector('[data-nav]')
+        this.mainNavigation = document.querySelector("[data-nav]");
 
         /**
          * Grab the div that wraps the sub navigation.
          */
 
-        this.subNavigationWrapper = document.querySelector('.header-sub-navigation')
+        this.subNavigationWrapper = document.querySelector(".header-sub-navigation");
 
         /**
          * Grab the two nav list items and create objects.
          */
 
-        this.productNavListItem = new NavListItem(document.querySelector('[data-nav-list-item][data-sub-nav-ref="products"]'), this)
-        this.aboutNavListItem = new NavListItem(document.querySelector('[data-nav-list-item][data-sub-nav-ref="about"]'), this)
+        this.productNavListItem = new NavListItem(
+            document.querySelector('[data-nav-list-item][data-sub-nav-ref="products"]'),
+            this
+        );
+        this.aboutNavListItem = new NavListItem(
+            document.querySelector('[data-nav-list-item][data-sub-nav-ref="about"]'),
+            this
+        );
 
         /**
          * Grab the divs that contain each 'area' and create objects . Add them to an array.
          */
 
-        this.productsArea = new SubNavArea(document.querySelector('[data-sub-nav-name="products"]'), this, this.productNavListItem)
-        this.aboutArea = new SubNavArea(document.querySelector('[data-sub-nav-name="about"]'), this, this.aboutNavListItem)
-        this.areas.push(this.productsArea, this.aboutArea)
+        this.productsArea = new SubNavArea(
+            document.querySelector('[data-sub-nav-name="products"]'),
+            this,
+            this.productNavListItem
+        );
+        this.aboutArea = new SubNavArea(
+            document.querySelector('[data-sub-nav-name="about"]'),
+            this,
+            this.aboutNavListItem
+        );
+        this.areas.push(this.productsArea, this.aboutArea);
 
         /**
          * Assign the corresponding area to the nav list items.
          */
 
-        this.productNavListItem.setSubNavArea(this.productsArea)
-        this.aboutNavListItem.setSubNavArea(this.aboutArea)
+        this.productNavListItem.setSubNavArea(this.productsArea);
+        this.aboutNavListItem.setSubNavArea(this.aboutArea);
 
         /**
          * Grab the sub nav arrow element and create a new object.
          */
 
-        this.subNavArrow = new SubNavArrow(document.querySelector('[data-sub-nav-arrow]'), this)
+        this.subNavArrow = new SubNavArrow(document.querySelector("[data-sub-nav-arrow]"), this);
 
         /**
-         * 
+         *
          */
 
-        this.touchAreaBridge = new TouchAreaBridge(document.querySelector('[data-sub-nav-touch-area-bridge]'), this)
+        this.touchAreaBridge = new TouchAreaBridge(
+            document.querySelector("[data-sub-nav-touch-area-bridge]"),
+            this
+        );
 
         /**
          * Add the window resize listener.
          */
-    
-        this.addResizeListener()
+
+        this.addResizeListener();
 
         /**
-         * 
+         *
          */
 
-        document.querySelector('.page-header__sign-in').addEventListener('click', () => {
-            this.hideSubNav()
-        })
-
+        document.querySelector(".page-header__sign-in").addEventListener("click", () => {
+            this.hideSubNav();
+        });
     }
 
     /**
      * hideAllAreas.
      */
 
-    private hideAllAreas(
-        excludeArea : SubNavArea = null, 
-        animate : boolean = true): void 
-    {
-        this.areas.forEach(a => {
-            if (excludeArea && a == excludeArea) return
-            a.hide(animate)
-        })
+    private hideAllAreas(excludeArea: SubNavArea = null, animate: boolean = true): void {
+        this.areas.forEach((a) => {
+            if (excludeArea && a == excludeArea) return;
+            a.hide(animate);
+        });
     }
 
     /**
@@ -801,31 +763,25 @@ export class HeaderSubNavigation {
      */
 
     private addResizeListener(): void {
-
         /**
          * Add the resize listener to the window.
          */
 
-        window.addEventListener('resize', () => {
-
+        window.addEventListener("resize", () => {
             /**
              * Make sure that our sub nav is already open.
              */
 
             if (this.subNavState == SubNavState.Open) {
-            
                 /**
-                 * 
+                 *
                  */
 
-                this.setSubNavPosition(this.getActiveNavListItem().getLeft(true), false)
-                this.getSubNavArrow().alignToTopOfSubNav()
-                this.getSubNavArrow().alignToNavListItem(this.getActiveNavListItem(), false)
-
+                this.setSubNavPosition(this.getActiveNavListItem().getLeft(true), false);
+                this.getSubNavArrow().alignToTopOfSubNav();
+                this.getSubNavArrow().alignToNavListItem(this.getActiveNavListItem(), false);
             }
-
-        })
-
+        });
     }
 
     /**
@@ -833,25 +789,23 @@ export class HeaderSubNavigation {
      */
 
     private showSubNav(): void {
-
         /**
-         * 
+         *
          */
 
-        this.onSubNavShow()
+        this.onSubNavShow();
 
         /**
          * Set the state of the sub nav.
          */
 
-        this.subNavState = SubNavState.Opening
+        this.subNavState = SubNavState.Opening;
 
         /**
-         * 
+         *
          */
 
-        if (this.subNavHideAnimation)
-            this.subNavHideAnimation.pause()
+        if (this.subNavHideAnimation) this.subNavHideAnimation.pause();
 
         /**
          *
@@ -861,18 +815,17 @@ export class HeaderSubNavigation {
             targets: this.subNavigationWrapper,
             opacity: 1,
             duration: 350,
-            easing: 'easeInOutSine',
+            easing: "easeInOutSine",
             complete: () => {
-                this.subNavState = SubNavState.Open
-            }
-        })
-     
+                this.subNavState = SubNavState.Open;
+            },
+        });
+
         /**
          * `hidden` class used in CSS to disable pointer events.
          */
 
-        this.subNavigationWrapper.classList.remove('hidden')
-
+        this.subNavigationWrapper.classList.remove("hidden");
     }
 
     /**
@@ -880,32 +833,30 @@ export class HeaderSubNavigation {
      */
 
     private hideSubNav(): void {
-
         /**
-         * 
+         *
          */
 
-        this.onSubNavHide()
+        this.onSubNavHide();
 
         /**
          * Set the state of the sub nav.
          */
 
-        this.subNavState = SubNavState.Closing
-
-        /**
-         * 
-         */
-
-        if (this.subNavShowAnimation)
-            this.subNavShowAnimation.pause()
+        this.subNavState = SubNavState.Closing;
 
         /**
          *
          */
 
-        this.getSubNavArrow().hide()
-        
+        if (this.subNavShowAnimation) this.subNavShowAnimation.pause();
+
+        /**
+         *
+         */
+
+        this.getSubNavArrow().hide();
+
         /**
          *
          */
@@ -914,18 +865,17 @@ export class HeaderSubNavigation {
             targets: this.subNavigationWrapper,
             opacity: 0,
             duration: 350,
-            easing: 'easeInOutSine',
+            easing: "easeInOutSine",
             complete: () => {
-                this.subNavState = SubNavState.Closed
-            }
-        })
+                this.subNavState = SubNavState.Closed;
+            },
+        });
 
         /**
          * `hidden` class used in CSS to disable pointer events.
          */
 
-         this.subNavigationWrapper.classList.add('hidden')
-
+        this.subNavigationWrapper.classList.add("hidden");
     }
 
     /**
@@ -933,15 +883,13 @@ export class HeaderSubNavigation {
      */
 
     initiateSubNavClose(): void {
-
         /**
          *
          */
 
         this.subNavCloseTimeout = setTimeout(() => {
-            this.closeSubNav()
-        }, 50)
-
+            this.closeSubNav();
+        }, 50);
     }
 
     /**
@@ -949,40 +897,36 @@ export class HeaderSubNavigation {
      */
 
     cancelSubNavCloseTimeout(): void {
-        
         /**
-         * 
+         *
          */
 
-        clearTimeout(this.subNavCloseTimeout)
-
+        clearTimeout(this.subNavCloseTimeout);
     }
 
     /**
      * openSubNav.
      */
 
-    openSubNav(forNavListItem : NavListItem): void {
-
+    openSubNav(forNavListItem: NavListItem): void {
         /**
          * Return early if we already have this area open.
          */
 
-        if (this.getActiveNavListItem() == forNavListItem)
-            return
+        if (this.getActiveNavListItem() == forNavListItem) return;
 
         /**
-         * 
+         *
          */
 
-        this.cancelSubNavCloseTimeout()
+        this.cancelSubNavCloseTimeout();
 
         /**
          * Flag to detemine if the positional and sizing
          * changes should be animated.
          */
 
-        let shouldAnimate = true
+        let shouldAnimate = true;
 
         /**
          * We won't need to show the sub nav again because
@@ -991,63 +935,55 @@ export class HeaderSubNavigation {
          * show it.
          */
 
-
-        if (this.subNavState == SubNavState.Closed 
-            || this.subNavState == SubNavState.Closing) 
-        {
-            this.showSubNav()
-            shouldAnimate = false
-            this.subNavState = SubNavState.Open
+        if (this.subNavState == SubNavState.Closed || this.subNavState == SubNavState.Closing) {
+            this.showSubNav();
+            shouldAnimate = false;
+            this.subNavState = SubNavState.Open;
         }
 
         /**
          *
          */
 
-        if (this.subNavState != SubNavState.Open)
-            this.subNavState = SubNavState.Opening
+        if (this.subNavState != SubNavState.Open) this.subNavState = SubNavState.Opening;
 
         /**
-         * 
+         *
          */
 
-        this.setSubNavPosition(
-            forNavListItem.getLeft(true),
-            shouldAnimate
-        )
+        this.setSubNavPosition(forNavListItem.getLeft(true), shouldAnimate);
 
         /**
-         * 
+         *
          */
 
         this.setSubNavSize(
             forNavListItem.getSubNavArea().getWidth(),
             forNavListItem.getSubNavArea().getHeight(),
             shouldAnimate
-        )
+        );
 
         /**
          *
          */
 
-        this.setActiveNavListItem(forNavListItem)
-
-        /** 
-         * 
-         */
-
-        this.setActiveArea(forNavListItem.getSubNavArea())
-        this.hideAllAreas(this.getActiveArea())
-        this.getActiveArea().show()
+        this.setActiveNavListItem(forNavListItem);
 
         /**
-         * 
+         *
          */
 
-        this.getSubNavArrow().alignToTopOfSubNav()
-        this.getSubNavArrow().alignToNavListItem(forNavListItem, shouldAnimate)
-        this.getSubNavArrow().show()
+        this.setActiveArea(forNavListItem.getSubNavArea());
+        this.hideAllAreas(this.getActiveArea());
+        this.getActiveArea().show();
 
+        /**
+         *
+         */
+
+        this.getSubNavArrow().alignToTopOfSubNav();
+        this.getSubNavArrow().alignToNavListItem(forNavListItem, shouldAnimate);
+        this.getSubNavArrow().show();
     }
 
     /**
@@ -1055,43 +991,36 @@ export class HeaderSubNavigation {
      */
 
     closeSubNav(): void {
+        /**
+         *
+         */
+
+        this.subNavState = SubNavState.Closing;
+        this.setActiveNavListItem(null);
 
         /**
          *
          */
 
-        this.subNavState = SubNavState.Closing
-        this.setActiveNavListItem(null)
-
-        /**
-         * 
-         */
-
-        this.hideSubNav()
-
+        this.hideSubNav();
     }
 
     /**
      * setSubNavPosition.
      */
 
-    private setSubNavPosition(
-        left : Number, 
-        animate : boolean = true): void 
-    {
-
+    private setSubNavPosition(left: Number, animate: boolean = true): void {
         /**
-         * 
+         *
          */
 
-        let duration : number = 350
+        let duration: number = 350;
 
         /**
-         * 
+         *
          */
 
-        if (! animate) 
-            duration = 0
+        if (!animate) duration = 0;
 
         /**
          *
@@ -1102,34 +1031,27 @@ export class HeaderSubNavigation {
             translateX: {
                 value: left,
                 duration: duration,
-                easing: 'easeInOutSine'
-            }
-        })
-
+                easing: "easeInOutSine",
+            },
+        });
     }
 
     /**
      * setSubNavSize.
      */
 
-    private setSubNavSize(
-        width : Number, 
-        height : Number, 
-        animate : boolean = true): void    
-    {
-
+    private setSubNavSize(width: Number, height: Number, animate: boolean = true): void {
         /**
-         * 
+         *
          */
 
-        let duration : number = 350
+        let duration: number = 350;
 
         /**
-         * 
+         *
          */
 
-        if (! animate) 
-            duration = 0
+        if (!animate) duration = 0;
 
         /**
          *
@@ -1140,9 +1062,8 @@ export class HeaderSubNavigation {
             width: width,
             height: height,
             duration: duration,
-            easing: 'easeInOutSine'
-        })
-
+            easing: "easeInOutSine",
+        });
     }
 
     /**
@@ -1150,9 +1071,9 @@ export class HeaderSubNavigation {
      */
 
     private makeAllNavListItemsInactive(): void {
-        this.areas.forEach(a => {
-            a.getNavListItem().setInactive()
-        })
+        this.areas.forEach((a) => {
+            a.getNavListItem().setInactive();
+        });
     }
 
     /**
@@ -1160,7 +1081,7 @@ export class HeaderSubNavigation {
      */
 
     private onSubNavShow(): void {
-        this.touchAreaBridge.showAlignAndResizeToMainNav()
+        this.touchAreaBridge.showAlignAndResizeToMainNav();
     }
 
     /**
@@ -1168,17 +1089,16 @@ export class HeaderSubNavigation {
      */
 
     private onSubNavHide(): void {
-        this.makeAllNavListItemsInactive()
-        this.touchAreaBridge.hide()
+        this.makeAllNavListItemsInactive();
+        this.touchAreaBridge.hide();
     }
 
     /**
      * onAreaShown.
      */
 
-    onAreaShown(subNavArea : SubNavArea): void {
-        this.makeAllNavListItemsInactive()
-        subNavArea.getNavListItem().setActive()
+    onAreaShown(subNavArea: SubNavArea): void {
+        this.makeAllNavListItemsInactive();
+        subNavArea.getNavListItem().setActive();
     }
-
 }
