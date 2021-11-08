@@ -3,7 +3,7 @@
  */
 
 const path = require("path");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const BuildHashPlugin = require("build-hash-webpack-plugin");
 
 /**
  *
@@ -43,7 +43,13 @@ module.exports = {
      * mode.
      */
 
-    mode: "development",
+    mode: process.env.NODE_ENV === "production" ? "production" : "development",
+
+    /**
+     * plugins.
+     */
+
+    plugins: [new BuildHashPlugin({ filename: "build-hash.json" })],
 
     /**
      * module.
@@ -74,18 +80,6 @@ module.exports = {
                 test: /\.css$/i,
                 use: ["style-loader", "css-loader"],
             },
-        ],
-    },
-
-    optimization: {
-        minimizer: [
-            new UglifyJsPlugin({
-                uglifyOptions: {
-                    output: {
-                        comments: false,
-                    },
-                },
-            }),
         ],
     },
 };
