@@ -65,14 +65,10 @@ Create the name of the service account to use
 {{- printf "%s-%s-repo" (include "rosetta-website-nginx.fullname" . ) .Values.global.cluster }}
 {{- end }}
 
-{{- define "rosetta-website-nginx.hostPrefix" -}}
+{{- define "rosetta-website-nginx.hostname" -}}
 {{- if .Values.global.hostnameOverride }}
 {{- printf "%s" .Values.global.hostnameOverride }}
 {{- else }}
-{{- printf "%s.%s" .Release.Namespace .Values.global.cluster }}
+{{- printf "%s.%s.%s" .Release.Namespace .Values.global.cluster .Values.global.hostSuffix }}
 {{- end }}
-{{- end }}
-
-{{- define "rosetta-website-nginx.hostname" -}}
-{{- printf "%s.%s" (include "rosetta-website-nginx.hostPrefix" . ) .Values.global.hostSuffix }}
 {{- end }}
