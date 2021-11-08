@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 
 declare const grecaptcha: ReCaptchaV2.ReCaptcha;
@@ -9,14 +9,14 @@ declare const grecaptcha: ReCaptchaV2.ReCaptcha;
  */
 
 interface FormData {
-    firstName : string,
-    surname   : string,
-    email     : string,
-    phone     : string,
-    website   : string,
-    country   : string,
-    message   : string,
-    token     : string
+    firstName: string;
+    surname: string;
+    email: string;
+    phone: string;
+    website: string;
+    country: string;
+    message: string;
+    token: string;
 }
 
 /**
@@ -24,65 +24,54 @@ interface FormData {
  */
 
 export class ContactForm {
-
     /**
      * constructor.
      */
 
-    constructor() {
-
-    }
+    constructor() {}
 
     /**
      * start.
      */
 
     start(): void {
-
         /**
-         * 
+         *
          */
 
-        const contactForm : HTMLFormElement = document.querySelector('.contact-form')
+        const contactForm: HTMLFormElement = document.querySelector(".contact-form");
 
         /**
-         * 
+         *
          */
 
         if (contactForm) {
-
             /**
-             * 
+             *
              */
 
-            contactForm.addEventListener('submit', (ev : Event) => {
-
+            contactForm.addEventListener("submit", (ev: Event) => {
                 /**
-                 * 
+                 *
                  */
 
-                 ev.preventDefault()
+                ev.preventDefault();
 
                 /**
-                 * 
+                 *
                  */
 
-                 this.postReCaptcha(contactForm)
-
-            })
-
+                this.postReCaptcha(contactForm);
+            });
         }
-
     }
-    
+
     /**
      * showSuccessResponse.
      */
 
     showSuccessResponse(): void {
-        const responseContainer : HTMLElement = this.getResponseContainer()
-        responseContainer.classList.add('show')
-        responseContainer.classList.add('success')
+        window.location.replace("contact-sales-thankyou");
     }
 
     /**
@@ -90,9 +79,9 @@ export class ContactForm {
      */
 
     showFailResponse(): void {
-        const responseContainer : HTMLElement = this.getResponseContainer()
-        responseContainer.classList.add('show')
-        responseContainer.classList.add('fail')
+        const responseContainer: HTMLElement = this.getResponseContainer();
+        responseContainer.classList.add("show");
+        responseContainer.classList.add("fail");
     }
 
     /**
@@ -100,134 +89,136 @@ export class ContactForm {
      */
 
     getResponseContainer(): HTMLElement {
-        const contactForm : HTMLFormElement = document.querySelector('.contact-form')
-        const responseContainer : HTMLElement = contactForm.querySelector('.response-container')
-        return responseContainer
+        const contactForm: HTMLFormElement = document.querySelector(".contact-form");
+        const responseContainer: HTMLElement = contactForm.querySelector(".response-container");
+        return responseContainer;
     }
 
     /**
      * postData.
      */
 
-    postData(formData : FormData): void {
-
+    postData(formData: FormData): void {
         /**
-         * 
+         *
          */
 
-        let xhr = new XMLHttpRequest()
-        xhr.open('POST', '/api/send', true)
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "/api/send", true);
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(formData))
+        xhr.send(JSON.stringify(formData));
 
         /**
-         * 
+         *
          */
 
-        xhr.addEventListener("readystatechange", () => {
-
-            /**
-             * 4 = Done.
-             */
-
-            if (xhr.readyState == 4) {
-
+        xhr.addEventListener(
+            "readystatechange",
+            () => {
                 /**
-                 * 
+                 * 4 = Done.
                  */
 
-                if (xhr.status == 200) {
-
+                if (xhr.readyState == 4) {
                     /**
-                     * 
+                     *
                      */
 
-                    let response = JSON.parse(xhr.responseText)
-
-                    /**
-                     * Do some logic with the response here...
-                     */
-
-                    let successfulResponse : boolean = true
-
-                    /**
-                     * 
-                     */
-
-                    if (successfulResponse) {
-
+                    if (xhr.status == 200) {
                         /**
-                         * 
+                         *
                          */
 
-                        this.showSuccessResponse()
+                        let response = JSON.parse(xhr.responseText);
 
+                        /**
+                         * Do some logic with the response here...
+                         */
+
+                        let successfulResponse: boolean = true;
+
+                        /**
+                         *
+                         */
+
+                        if (successfulResponse) {
+                            /**
+                             *
+                             */
+
+                            this.showSuccessResponse();
+                        } else {
+                            /**
+                             *
+                             */
+
+                            this.showFailResponse();
+                        }
                     } else {
-
                         /**
-                         * 
+                         *
                          */
 
-                        this.showFailResponse()
-
+                        this.showFailResponse();
                     }
-
-                } else {
-
-                    /**
-                     * 
-                     */
-
-                    this.showFailResponse()
-
                 }
-
-            }
-        
-        }, false)
-
+            },
+            false
+        );
     }
 
     /**
      * postReCaptcha.
      */
 
-    postReCaptcha(contactForm : HTMLFormElement) {
-
+    postReCaptcha(contactForm: HTMLFormElement) {
         /**
-         * 
+         *
          */
 
-        let submittedFormData = {} as FormData
+        let submittedFormData = {} as FormData;
 
         /**
-         * 
+         *
          */
 
-        submittedFormData.firstName = (contactForm.querySelector('#firstname') as HTMLInputElement).value
-        submittedFormData.surname   = (contactForm.querySelector('#surname') as HTMLInputElement).value
-        submittedFormData.email     = (contactForm.querySelector('#emailaddress') as HTMLInputElement).value
-        submittedFormData.phone     = (contactForm.querySelector('#workphone') as HTMLInputElement).value
-        submittedFormData.website   = (contactForm.querySelector('#companywebsite') as HTMLInputElement).value
-        submittedFormData.country   = (contactForm.querySelector('#country') as HTMLInputElement).value
-        submittedFormData.message   = (contactForm.querySelector('#message') as HTMLInputElement).value
+        submittedFormData.firstName = (
+            contactForm.querySelector("#firstname") as HTMLInputElement
+        ).value;
+        submittedFormData.surname = (
+            contactForm.querySelector("#surname") as HTMLInputElement
+        ).value;
+        submittedFormData.email = (
+            contactForm.querySelector("#emailaddress") as HTMLInputElement
+        ).value;
+        submittedFormData.phone = (
+            contactForm.querySelector("#workphone") as HTMLInputElement
+        ).value;
+        submittedFormData.website = (
+            contactForm.querySelector("#companywebsite") as HTMLInputElement
+        ).value;
+        submittedFormData.country = (
+            contactForm.querySelector("#country") as HTMLInputElement
+        ).value;
+        submittedFormData.message = (
+            contactForm.querySelector("#message") as HTMLInputElement
+        ).value;
 
         /**
-         * 
+         *
          */
 
         grecaptcha.ready(() => {
-            grecaptcha.execute('6LfCIeIcAAAAAKgTKA9QGstV6kusnO3mD29SWspz', {action: 'demo'})
-                .then((token: string) =>  {
-
+            grecaptcha
+                .execute("6LfCIeIcAAAAAKgTKA9QGstV6kusnO3mD29SWspz", { action: "demo" })
+                .then((token: string) => {
                     /**
-                     * 
+                     *
                      */
 
-                    submittedFormData.token = token
-                    this.postData(submittedFormData)
+                    submittedFormData.token = token;
+                    this.postData(submittedFormData);
                 });
         });
     }
-
 }
