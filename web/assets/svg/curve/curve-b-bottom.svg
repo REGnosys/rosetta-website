@@ -1,14 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 471 125.2" style="enable-background:new 0 0 471 125.2;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#E4EDBE;}
-	.st1{fill:#A6D871;}
-</style>
-<title>curve-b-bottom</title>
-<g id="curve-b">
-	<path class="st0" d="M0,62.6c0,0,170.2-37.2,192.9-41.6c25.9-5,39.2-10.3,78.5,8.1C313.8,49,471,125.2,471,125.2V0H0V62.6z"/>
-	<path class="st1" d="M0,58.4C46.3,47.8,160.5,17.5,194.9,8.1c37.6-10.3,60,1.6,60,1.6L471,108V0H0V58.4z"/>
-</g>
-</svg>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 471 125.2" style="enable-background:new 0 0 471 125.2" xml:space="preserve"><style>.st0{fill:#E4EDBE;}
+	.st1{fill:#A6D871;}</style><g id="curve-b"><path class="st0" d="M0 62.6S170.2 25.4 192.9 21c25.9-5 39.2-10.3 78.5 8.1C313.8 49 471 125.2 471 125.2V0H0v62.6z"/><path class="st1" d="M0 58.4C46.3 47.8 160.5 17.5 194.9 8.1c37.6-10.3 60 1.6 60 1.6L471 108V0H0v58.4z"/></g></svg>

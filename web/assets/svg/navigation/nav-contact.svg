@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.69 56.69">
-  <g id="app-text">
-    <rect x="6.05" y="11.32" width="44.6" height="8.14" style="fill: #bf2f85"/>
-    <rect x="6.05" y="37.23" width="44.6" height="8.14" style="fill: #bf2f85"/>
-    <rect x="6.05" y="24.28" width="33.12" height="8.14" style="fill: #bf2f85"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.69 56.69"><g id="app-text"><path style="fill:#bf2f85" d="M6.05 11.32H50.65V19.46H6.05z"/><path style="fill:#bf2f85" d="M6.05 37.23H50.65V45.37H6.05z"/><path style="fill:#bf2f85" d="M6.05 24.28H39.169999999999995V32.42H6.05z"/></g></svg>

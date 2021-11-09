@@ -1,31 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Keyshape -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.79 16.63">
-    <defs>
-        <mask id="Mask-1">
-            <g transform="translate(10.615,7.16059) translate(-10.095,-6.62059)">
-                <path d="M20.9,8.51L20.9,3.29L0.81,3.29L0.81,12.19L0.81,12.19L0.89,15C0.89,15.4058,1.0512,15.7949,1.33813,16.0819C1.62506,16.3688,2.01422,16.53,2.42,16.53L19.42,16.53C19.8352,16.5464,20.2389,16.3922,20.5374,16.1031C20.8359,15.8141,21.0031,15.4155,21,15Z" fill="#ffffff" transform="translate(10.095,6.62059) translate(-10.905,-9.91059)"/>
-                <rect id="line_3" width="11.11" height="0.88" rx="0.27" fill="#000000" transform="translate(7.335,7.49) translate(-5.555,-0.44)"/>
-                <rect id="line_2" width="11.11" height="0.88" rx="0.27" fill="#000000" transform="translate(7.335,5.65) translate(-5.555,-0.44)"/>
-                <rect id="line_1" width="11.11" height="0.88" rx="0.27" fill="#000000" transform="translate(7.335,3.81) translate(-5.555,-0.44)"/>
-                <rect id="_a0" width="0.5" height="1.13333" fill="#ffffff" rx="0" stroke="none" transform="translate(2.17333,7.49333) translate(-1.1,-0.566667)"/>
-                <rect id="_a1" width="0.5" height="1.13333" fill="#ffffff" rx="0" stroke="none" transform="translate(12.7567,7.49333) rotate(180) translate(-1.1,-0.566667)"/>
-                <rect id="_a2" width="0.5" height="1.13333" fill="#ffffff" rx="0" stroke="none" transform="translate(2.17333,5.67663) translate(-1.1,-0.566667)"/>
-                <rect id="_a3" width="0.5" height="1.13333" fill="#ffffff" rx="0" stroke="none" transform="translate(12.7567,5.67663) rotate(180) translate(-1.1,-0.566667)"/>
-                <rect id="_a4" width="0.5" height="1.13333" fill="#ffffff" rx="0" stroke="none" transform="translate(2.17333,3.8433) translate(-1.1,-0.566667)"/>
-                <rect id="_a5" width="0.5" height="1.13333" fill="#ffffff" rx="0" stroke="none" transform="translate(12.7567,3.8433) rotate(180) translate(-1.1,-0.566667)"/>
-            </g>
-        </mask>
-    </defs>
-    <g transform="translate(10.895,8.30993) translate(-10.895,-8.30993)" style="isolation: isolate;">
-        <g id="app-text" transform="translate(10.895,8.30993) translate(-10.895,-8.30993)">
-            <rect width="21.21" height="13.82" fill="#ed4f9b" mask="url(#Mask-1)" transform="translate(10.895,9.66) translate(-10.605,-6.91)"/>
-            <g transform="translate(10.855,2.05493) translate(-10.855,-2.05493)" style="mix-blend-mode: multiply;">
-                <path d="M19.37,0.05L2.37,0.05C1.95984,0.0446644,1.5645,0.203183,1.27165,0.490405C0.978794,0.777627,0.812629,1.16981,0.81,1.58L0.81,4.06L20.9,4.06L20.9,1.58C20.9,0.735004,20.215,0.05,19.37,0.05M17.09,2.39C16.8433,2.39,16.6208,2.24138,16.5264,2.01344C16.432,1.7855,16.4842,1.52312,16.6587,1.34866C16.8331,1.17421,17.0955,1.12202,17.3234,1.21643C17.5514,1.31085,17.7,1.53328,17.7,1.78C17.7027,1.9426,17.6393,2.09935,17.5243,2.21435C17.4094,2.32934,17.2526,2.39273,17.09,2.39M18.77,2.39C18.5233,2.39,18.3008,2.24138,18.2064,2.01344C18.112,1.7855,18.1642,1.52312,18.3387,1.34866C18.5131,1.17421,18.7755,1.12202,19.0034,1.21643C19.2314,1.31085,19.38,1.53328,19.38,1.78C19.38,2.11689,19.1069,2.39,18.77,2.39" fill="#bf2f85" transform="translate(10.855,2.05493) translate(-10.855,-2.05493)"/>
-            </g>
-        </g>
-    </g>
-    <script><![CDATA[/*
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.79 16.63"><defs><mask id="Mask-1"><g transform="translate(10.615,7.16059) translate(-10.095,-6.62059)"><path d="M20.9 8.51V3.29H.81v8.9L.89 15a1.53 1.53 0 0 0 1.53 1.53h17A1.52 1.52 0 0 0 21 15Z" fill="#fff" transform="translate(10.095,6.62059) translate(-10.905,-9.91059)"/><rect id="line_3" width="11.11" height=".88" rx=".27" fill="#000" transform="translate(7.335,7.49) translate(-5.555,-0.44)"/><rect id="line_2" width="11.11" height=".88" rx=".27" fill="#000" transform="translate(7.335,5.65) translate(-5.555,-0.44)"/><rect id="line_1" width="11.11" height=".88" rx=".27" fill="#000" transform="translate(7.335,3.81) translate(-5.555,-0.44)"/><rect id="_a0" width=".5" height="1.133" fill="#fff" rx="0" stroke="none" transform="translate(2.17333,7.49333) translate(-1.1,-0.566667)"/><rect id="_a1" width=".5" height="1.133" fill="#fff" rx="0" stroke="none" transform="translate(12.7567,7.49333) rotate(180) translate(-1.1,-0.566667)"/><rect id="_a2" width=".5" height="1.133" fill="#fff" rx="0" stroke="none" transform="translate(2.17333,5.67663) translate(-1.1,-0.566667)"/><rect id="_a3" width=".5" height="1.133" fill="#fff" rx="0" stroke="none" transform="translate(12.7567,5.67663) rotate(180) translate(-1.1,-0.566667)"/><rect id="_a4" width=".5" height="1.133" fill="#fff" rx="0" stroke="none" transform="translate(2.17333,3.8433) translate(-1.1,-0.566667)"/><rect id="_a5" width=".5" height="1.133" fill="#fff" rx="0" stroke="none" transform="translate(12.7567,3.8433) rotate(180) translate(-1.1,-0.566667)"/></g></mask></defs><g transform="translate(10.895,8.30993) translate(-10.895,-8.30993)" style="isolation:isolate"><g id="app-text" transform="translate(10.895,8.30993) translate(-10.895,-8.30993)"><path fill="#ed4f9b" mask="url(#Mask-1)" transform="translate(10.895,9.66) translate(-10.605,-6.91)" d="M0 0H21.21V13.82H0z"/><g transform="translate(10.855,2.05493) translate(-10.855,-2.05493)" style="mix-blend-mode:multiply"><path d="M19.37.05h-17A1.54 1.54 0 0 0 .81 1.58v2.48H20.9V1.58A1.53 1.53 0 0 0 19.37.05m-2.28 2.34a.61.61 0 1 1 .61-.61.6.6 0 0 1-.61.61m1.68 0a.61.61 0 1 1 0-1.22.61.61 0 0 1 0 1.22" fill="#bf2f85" transform="translate(10.855,2.05493) translate(-10.855,-2.05493)"/></g></g></g><script><![CDATA[/*
  KeyshapeJS v1.1.1 (c) 2018-2021 Pixofield Ltd | pixofield.com/keyshapejs/mit-license */
 window.KeyshapeJS=function(){function t(a){return"undefined"!==typeof a}function x(a,b){return a&&0==a.indexOf(b)}function R(a){var b={},c;for(c in a)b[c]=a[c];return b}function H(a){if(!isFinite(a))throw Error("Non-finite value");}function S(a){if(14>=a)return 16;var b=T[a];b||(b=t(da[a])?0|(a.toLowerCase().indexOf("color")==a.length-5?48:0):1);return b}function K(a){return 0<=a?Math.pow(a,1/3):-Math.pow(-a,1/3)}function ea(a,b,c,d){if(0==a)return 0==b?b=-d/c:(a=Math.sqrt(c*c-4*b*d),d=(-c+a)/(2*
 b),0<=d&&1>=d?b=d:(d=(-c-a)/(2*b),b=0<=d&&1>=d?d:0)),b;var e=c/a-b*b/(a*a)/3;c=b*b*b/(a*a*a)/13.5-b*c/(a*a)/3+d/a;var n=c*c/4+e*e*e/27;b=-b/(3*a);if(0>=n){if(0==e&&0==c)return-K(d/a);a=Math.sqrt(c*c/4-n);d=Math.acos(-c/2/a);c=Math.cos(d/3);d=Math.sqrt(3)*Math.sin(d/3);a=K(a);e=2*a*c+b;if(0<=e&&1>=e)return e;e=-a*(c+d)+b;if(0<=e&&1>=e)return e;e=a*(d-c)+b;if(0<=e&&1>=e)return e}else{a=K(-c/2+Math.sqrt(n));c=K(-c/2-Math.sqrt(n));d=a+c+b;if(0<=d&&1>=d)return d;d=-(a+c)/2+b;if(0<=d&&1>=d)return d}return 0}
@@ -54,8 +27,7 @@ m[0]);for(var B=1;B<m.length;++B)if(!isFinite(m[B])||0>m[B]||m[B]<m[B-1])throw E
 z.push(parseFloat(D[2])),z.push(ja(D[3]))):1==F?z.push(D[0]):z.push(parseFloat(D[0]));r=r.substring(E+1).trim();D=r.indexOf("(")}else break;r=z}G[A]=r}else 64==w?"none"!=k[p]?/^[0-9 .]*$/.test(k[p])?k[p]=Y(k[p]," "):(console.warn("unsupported value: "+k[p]),k[p]=[0]):k[p]=[0]:32==w?(H(k[p]),k[p]=parseFloat(k[p])):0===C&&(k[p]=parseFloat(k[p]));C=J(g,"e","easing");k=m.length;for(C||(C=[]);C.length<k;)C.push([1,0,0,.58,1]);for(k=0;k<C.length;++k)C[k]=ia(C[k]);l=[f,l,B,v,m,u,C,y];m=J(g,"mp","motionPath");
 t(m)&&0===f&&(l[8]=[],l[8][0]=g.motionRotate,g=document.createElementNS("http://www.w3.org/2000/svg","path"),m||(m="M0,0"),g.setAttribute("d",m),l[8][1]=g,l[8][2]=g.getTotalLength());q.push(l)}0<q.length&&(a.A.push(e),a.C.push(q))}a.v=c;a.g=0;a.f=a.v;ba(a);return a},add:ba,remove:P,removeAll:function(){for(var a=w.length-1;0<=a;--a)P(w[a]);return this},timelines:function(){return w.slice()},globalPlay:function(){u&&(W=u-(new Date).getTime(),u=void 0,N());return this},globalPause:function(){u||(u=
 v,O(!1));return this},globalState:function(){return u?"paused":"running"}}}();
-]]></script>
-    <script><![CDATA[if(KeyshapeJS.version.indexOf('1.')!=0)throw Error('Expected KeyshapeJS v1.*.*');window.ks=document.ks=KeyshapeJS;(function(ks){
+]]></script><script><![CDATA[if(KeyshapeJS.version.indexOf('1.')!=0)throw Error('Expected KeyshapeJS v1.*.*');window.ks=document.ks=KeyshapeJS;(function(ks){
 ks.animate("#_a0",[{p:'width',t:[400,600,1400],v:[0.5,12,0.5],e:[[0],[2,1],[0]]}],
 "#_a1",[{p:'width',t:[400,600,1200,1400],v:[0.5,12.5,12.5,0.5],e:[[3,1],[0],[0],[0]]}],
 "#_a2",[{p:'width',t:[200,400,1300],v:[0.5,12,0.5],e:[[1,0.42,0,0.58,1],[2,1],[0]]}],
@@ -64,5 +36,4 @@ ks.animate("#_a0",[{p:'width',t:[400,600,1400],v:[0.5,12,0.5],e:[[0],[2,1],[0]]}
 "#_a5",[{p:'width',t:[0,200,900,1100],v:[0.5,12.5,12.5,0.5],e:[[3,1],[0],[1,0.42,0,0.58,1],[0]]}],
 {autoremove:false}).range(0,5000).loop(true);
 if(document.location.search.substr(1).split('&').indexOf('global=paused')>=0)ks.globalPause()})(KeyshapeJS);
-]]></script>
-</svg>
+]]></script></svg>

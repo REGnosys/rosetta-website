@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6">
-  <g id="app-text">
-    <polygon points="12 6 6 0 0 6 12 6" style="fill: #fff"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6"><g id="app-text"><path style="fill:#fff" d="M12 6 6 0 0 6 12 6z"/></g></svg>
