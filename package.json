@@ -6,8 +6,9 @@
         "predev": "npm run build",
         "dev": "nodemon --inspect server/index.js",
         "webpack": "webpack",
+        "webpack:prod": "webpack --mode=production",
         "build": "run-p webpack compile-sass",
-        "build:prod": "NODE_ENV=production npm run build",
+        "build:prod": "NODE_ENV=production run-p webpack:prod compile-sass",
         "compile-sass": "gulp compileSass",
         "watch-sass": "gulp watchSass"
     },
