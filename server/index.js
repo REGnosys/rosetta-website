@@ -27,7 +27,6 @@ const pages = [
     "design",
     "deploy",
     "contact-support",
-    "contact-sales-thankyou",
     "contact-sales",
     "contact",
     "terms-of-use",
