@@ -236,10 +236,14 @@
     &--inline {
         display: none;
         padding: 0 10%;
-        margin: -20% 0;
+        position: relative;
+        height: 7vw;
 
         lottie-player {
             z-index: 50;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         @include breakpoint($b-df-tablet) {
@@ -258,6 +262,15 @@
 
         width: 65vw;
         transform: translateY(-8%) translateX(35%);
+
+        &--inline {
+            width: 80vw;
+
+            lottie-player {
+                top: -232%;
+                left: 40%;
+            }
+        }
     }
 
     /**
@@ -273,7 +286,12 @@
         transform: translateY(-46%) translateX(30%);
 
         &--inline {
-            margin: -40% 0 -32% 0;
+            width: 120vw;
+
+            lottie-player {
+                top: -850%;
+                left: 26%;
+            }
         }
     }
 
@@ -295,7 +313,12 @@
         transform: translateY(-15%) translateX(42%);
 
         &--inline {
-            margin: -20% 0 -38% 0;
+            width: 140vw;
+
+            lottie-player {
+                top: -392%;
+                left: 14%;
+            }
         }
     }
 
@@ -312,7 +335,12 @@
         transform: translateY(-18%) translateX(17%);
 
         &--inline {
-            margin: -24% 0 -42% 0;
+            width: 130vw;
+
+            lottie-player {
+                top: -382%;
+                left: 10%;
+            }
         }
     }
 
@@ -329,7 +357,12 @@
         transform: translateY(-10%) translateX(16%);
 
         &--inline {
-            margin: -20% 0 -30% 0;
+            width: 110vw;
+
+            lottie-player {
+                top: -192%;
+                left: 6%;
+            }
         }
     }
 
@@ -347,7 +380,12 @@
         transform: translateY(10%) translateX(10%);
 
         &--inline {
-            margin: -16% 0 -24% 0;
+            width: 90vw;
+
+            lottie-player {
+                top: -242%;
+                left: 14%;
+            }
         }
     }
 

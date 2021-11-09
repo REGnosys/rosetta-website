@@ -359,6 +359,10 @@ z .pr-7-5 {
 
             position: absolute;
             right: 22px;
+
+            @include breakpoint($b-desktop-only) {
+                right: 14px;
+            }
         }
     }
 

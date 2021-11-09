@@ -220,6 +220,12 @@ $i: 0;
 .display-none {
     display: none;
 }
+.display-none-extra-large-desktop-only,
+.d-n-xld-o {
+    @include breakpoint($b-extra-large-desktop-only) {
+        display: none;
+    }
+}
 .display-none-large-desktop-only,
 .d-n-ld-o {
     @include breakpoint($b-large-desktop-only) {
