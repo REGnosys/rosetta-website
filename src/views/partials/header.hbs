@@ -4,23 +4,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.ico" />
     <meta name="format-detection" content="telephone=no" />
     <meta charset="utf-8" />
-
-    {{#if config.recaptcha_key}}
-        <script
-            defer
-            src="https://www.google.com/recaptcha/api.js?render={{config.recaptcha_key}}"
-        ></script>
-    {{/if}}
-    {{#if config.gtm}}
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script defer src="https://www.googletagmanager.com/gtag/js?id={{config.gtm}}"></script>
-    {{/if}}
-    {{#if config.ga}}
-        <script>
-            window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date()); gtag('config', '{{config.ga}}');
-        </script>
-    {{/if}}
+    
+    {{> snippet_gtm_header}}
+    {{> snippet_ga}}
+    {{> snippet_recaptcha}}
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
