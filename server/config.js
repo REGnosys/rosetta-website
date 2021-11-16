@@ -7,7 +7,7 @@ const config = {
     gtm: process.env.ROSETTA_GTM || "",
     recaptcha_secret: process.env.ROSETTA_RECAPTCHA_SECRET || "",
     public: {
-        recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "poop",
+        recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "",
     },
     externalLinks: {
         issueTracking: "https://airtable.com/shrFPVYrrJ0QjlCX2",
