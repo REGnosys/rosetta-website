@@ -105,6 +105,9 @@ app.set("views", viewPath);
 helpers.number({
     handlebars: hbs,
 });
+helpers.object({
+    handlebars: hbs,
+});
 
 app.get("/", (req, res) => res.render("index.hbs", { config }));
 pages.forEach((page) =>

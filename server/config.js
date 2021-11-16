@@ -5,8 +5,10 @@ const config = {
     env: process.env.ROSETTA_ENV || false,
     ga: process.env.ROSETTA_GA || "",
     gtm: process.env.ROSETTA_GTM || "",
-    recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "",
     recaptcha_secret: process.env.ROSETTA_RECAPTCHA_SECRET || "",
+    public: {
+        recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "poop",
+    },
     externalLinks: {
         issueTracking: "https://airtable.com/shrFPVYrrJ0QjlCX2",
         issueSubmit: "https://airtable.com/shrJM6FWeBbL4KrqO",
