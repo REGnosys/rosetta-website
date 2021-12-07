@@ -1,38 +1,39 @@
 /**
- * 
+ *
  */
 
-import { SVGInjector } from '@tanem/svg-injector'
-import 'swiper/swiper.min.css'
-import 'swiper/components/pagination/pagination.min.css'
-import Swiper, { Pagination } from 'swiper'
+import { SVGInjector } from "@tanem/svg-injector";
+import Swiper, { Pagination } from "swiper";
+import "swiper/swiper.min.css";
+
+/**
+ * Work around for swiper pagination styles not being added to the bundle
+ */
+const css = require("swiper/components/pagination/pagination.min.css");
 
 /**
  * CoreDiagram.
  */
 
 export class CoreDiagram {
-    
     /**
      * Private variables.
      */
 
-    private coreDiagram : HTMLElement
-    private listItemsContentNodes : NodeListOf<HTMLElement>
-    private siwperInstance : Swiper
-    private bulletRecentlyClicked : boolean
-    private touchEndRecentlyFired : boolean
+    private coreDiagram: HTMLElement;
+    private listItemsContentNodes: NodeListOf<HTMLElement>;
+    private siwperInstance: Swiper;
+    private bulletRecentlyClicked: boolean;
+    private touchEndRecentlyFired: boolean;
 
     /**
      * constructor.
      */
 
     constructor() {
-
         /**
-         * 
+         *
          */
-
     }
 
     /**
@@ -40,58 +41,54 @@ export class CoreDiagram {
      */
 
     start(): void {
-
         /**
-         * 
+         *
          */
 
-        this.coreDiagram = document.querySelector('.core-diagram')
+        this.coreDiagram = document.querySelector(".core-diagram");
 
         /**
-         * 
+         *
          */
 
         if (this.coreDiagram) {
-
             /**
-             * 
+             *
              */
 
-            this.listItemsContentNodes = this.coreDiagram.querySelectorAll('.core-diagram__list-item-content')
-
-            /**
-             * 
-             */
-
-            this.applyEventListenersToListItems()
-
-            /**
-             * Convert the img graphic to an SVG.
-             */
-
-            SVGInjector(document.querySelectorAll('.core-diagram__graphic'), {
-                cacheRequests: false,
-                evalScripts: 'once',
-                renumerateIRIElements: false,
-                afterAll: () => {
-
-                    /**
-                     * 
-                     */
-
-                    this.applyEventListenersToRing()
-
-                }
-            })
+            this.listItemsContentNodes = this.coreDiagram.querySelectorAll(
+                ".core-diagram__list-item-content"
+            );
 
             /**
              *
              */
 
-            this.configureInfoPanels()
+            this.applyEventListenersToListItems();
 
+            /**
+             * Convert the img graphic to an SVG.
+             */
+
+            SVGInjector(document.querySelectorAll(".core-diagram__graphic"), {
+                cacheRequests: false,
+                evalScripts: "once",
+                renumerateIRIElements: false,
+                afterAll: () => {
+                    /**
+                     *
+                     */
+
+                    this.applyEventListenersToRing();
+                },
+            });
+
+            /**
+             *
+             */
+
+            this.configureInfoPanels();
         }
-
     }
 
     /**
@@ -99,48 +96,44 @@ export class CoreDiagram {
      */
 
     configureInfoPanels() {
-
         /**
-         * 
+         *
          */
 
         Swiper.use([Pagination]);
 
         /**
-         * 
-         */         
+         *
+         */
 
-        this.siwperInstance = new Swiper('.swiper-container', {
+        this.siwperInstance = new Swiper(".swiper-container", {
             autoHeight: true,
             pagination: {
-                el: '.swiper-pagination',
-                clickable: true
+                el: ".swiper-pagination",
+                clickable: true,
             },
             on: {
-
                 /**
                  * touchEnd.
                  */
 
                 touchEnd: () => {
-
                     /**
                      * Assign a flag to indicate that the user
                      * just released their finger/cursor from
                      * over the swiper.
                      */
 
-                    this.touchEndRecentlyFired = true
+                    this.touchEndRecentlyFired = true;
 
                     /**
-                     * Reset the flag within 50ms so that we 
+                     * Reset the flag within 50ms so that we
                      * can test temporal proximity to other events.
                      */
 
                     setTimeout(() => {
-                        this.touchEndRecentlyFired = false
-                    }, 50)
-                    
+                        this.touchEndRecentlyFired = false;
+                    }, 50);
                 },
 
                 /**
@@ -148,34 +141,26 @@ export class CoreDiagram {
                  */
 
                 slideChange: () => {
-
                     /**
-                     * 
+                     *
                      */
 
                     if (this.bulletRecentlyClicked) {
-
                         /**
                          * Changed via Bullet press. This is already handled.
                          */
-
                     } else if (this.touchEndRecentlyFired) {
-
                         /**
                          * Changed via Swipe.
                          */
-                
-                        this.handlePaginationBulletPressOrSwipe(this.siwperInstance.activeIndex)
 
+                        this.handlePaginationBulletPressOrSwipe(this.siwperInstance.activeIndex);
                     } else {
-
                         /**
                          * Change via another action, such as `mouseover` a ring.
                          * This is already handled.
                          */
-
                     }
-
                 },
 
                 /**
@@ -183,38 +168,37 @@ export class CoreDiagram {
                  */
 
                 afterInit: () => {
-
                     /**
-                     * 
+                     *
                      */
 
-                    let paginationItems : NodeListOf<HTMLElement> = document.querySelectorAll('.swiper-pagination-bullet')
+                    let paginationItems: NodeListOf<HTMLElement> = document.querySelectorAll(
+                        ".swiper-pagination-bullet"
+                    );
 
                     /**
-                     * 
+                     *
                      */
 
-                    let itemIndex : number = 0
+                    let itemIndex: number = 0;
 
                     /**
-                     * 
+                     *
                      */
 
                     paginationItems.forEach((item) => {
-
                         /**
-                         * 
+                         *
                          */
 
-                        item.setAttribute('item-index', itemIndex.toString())
-                        itemIndex++
-                
+                        item.setAttribute("item-index", itemIndex.toString());
+                        itemIndex++;
+
                         /**
-                         * 
+                         *
                          */
-                
-                        item.addEventListener('click', () => {
-                
+
+                        item.addEventListener("click", () => {
                             /**
                              * Flag to indicate a bullet was pressed.
                              */
@@ -224,69 +208,59 @@ export class CoreDiagram {
                             /**
                              * Reset the flag for temporal referencing purposes.
                              */
-                    
+
                             setTimeout(() => {
-                                this.bulletRecentlyClicked = false
-                            }, 50)
-                    
+                                this.bulletRecentlyClicked = false;
+                            }, 50);
+
                             /**
-                             * 
+                             *
                              */
-                    
-                            let index : number = parseInt(item.getAttribute('item-index'))
-                    
+
+                            let index: number = parseInt(item.getAttribute("item-index"));
+
                             /**
-                             * 
+                             *
                              */
-                    
-                            this.handlePaginationBulletPressOrSwipe(index)
 
-                        })
-
-                    })
-
-                }
-            }
-        })
-
+                            this.handlePaginationBulletPressOrSwipe(index);
+                        });
+                    });
+                },
+            },
+        });
     }
 
     /**
      * handlePaginationBulletPressOrSwipe.
      */
-    
-    handlePaginationBulletPressOrSwipe(index : number) {
 
-        /** 
-         * 
+    handlePaginationBulletPressOrSwipe(index: number) {
+        /**
+         *
          */
 
-         if (index == 0) {
-            
+        if (index == 0) {
             /**
-             * 
+             *
              */
 
-            this.fullColorAllRings()
-            this.fullColorAllListItems()
-
+            this.fullColorAllRings();
+            this.fullColorAllListItems();
         } else {
-
             /**
-             * 
+             *
              */
 
-            let listItem : HTMLElement = this.listItemsContentNodes[index - 1]
+            let listItem: HTMLElement = this.listItemsContentNodes[index - 1];
 
             /**
-             * 
+             *
              */
 
-            this.highlightListItem(listItem)
-            this.highlightRingCorrespondingToListItem(listItem)
-
+            this.highlightListItem(listItem);
+            this.highlightRingCorrespondingToListItem(listItem);
         }
-
     }
 
     /**
@@ -294,129 +268,121 @@ export class CoreDiagram {
      */
 
     goToDefaultState() {
-
         /**
-         * 
+         *
          */
 
-        this.getRingOverlayElements().forEach(el => {
-            el.classList.remove('active')
-        })
-
-        /**
-         * 
-         */
-
-        this.hideOuterRingAnnotations()
+        this.getRingOverlayElements().forEach((el) => {
+            el.classList.remove("active");
+        });
 
         /**
          *
          */
 
-        this.siwperInstance.slideTo(0)
+        this.hideOuterRingAnnotations();
 
         /**
-         * 
+         *
          */
 
-        this.fullColorAllRings()
-        this.fullColorAllListItems()
+        this.siwperInstance.slideTo(0);
 
+        /**
+         *
+         */
+
+        this.fullColorAllRings();
+        this.fullColorAllListItems();
     }
 
     /**
      * highlightRingCorrespondingToListItem.
      */
 
-    highlightRingCorrespondingToListItem(listItem : HTMLElement) {
-
+    highlightRingCorrespondingToListItem(listItem: HTMLElement) {
         /**
-         * 
+         *
          */
 
-        const targetRingSelector = listItem.getAttribute('data-ring-selector')
+        const targetRingSelector = listItem.getAttribute("data-ring-selector");
 
         /**
-         * 
+         *
          */
 
-        this.getRingOverlayElements().forEach(el => {
-            if (('#' + el.getAttribute('id')) == targetRingSelector) {
-                this.highlightRing(el)
+        this.getRingOverlayElements().forEach((el) => {
+            if ("#" + el.getAttribute("id") == targetRingSelector) {
+                this.highlightRing(el);
             }
-        })
-
+        });
     }
 
     /**
      * highlightRing.
      */
 
-    highlightRing(ring : HTMLElement) {
-
+    highlightRing(ring: HTMLElement) {
         /**
-         * 
+         *
          */
 
-        this.knockBackAllRings()
+        this.knockBackAllRings();
 
         /**
-         * 
+         *
          */
 
-        ring.classList.remove('knocked-back')
+        ring.classList.remove("knocked-back");
 
         /**
-         * 
+         *
          */
 
-        const id : string = ring.id           
+        const id: string = ring.id;
 
         /**
          * Check if the user moved their mouse over the outer ring.
          */
 
-        if (id.substr(0, 7) == 'outside') { 
-            this.showOuterRingAnnotations()
+        if (id.substr(0, 7) == "outside") {
+            this.showOuterRingAnnotations();
         } else {
-            this.hideOuterRingAnnotations()
+            this.hideOuterRingAnnotations();
         }
-
     }
 
     /**
      * highlightListItem.
      */
 
-    highlightListItem(target : HTMLElement) {
-
+    highlightListItem(target: HTMLElement) {
         /**
-         * 
+         *
          */
 
-        this.knockBackAllListItems()
+        this.knockBackAllListItems();
 
         /**
-         * 
+         *
          */
 
-        target.parentElement.classList.remove('knocked-back')
-        target.classList.add('active')
+        target.parentElement.classList.remove("knocked-back");
+        target.classList.add("active");
 
         /**
-         * 
+         *
          */
 
-        const graphic : HTMLElement = this.coreDiagram.querySelector('.core-diagram__graphic')
-        const ringSelector : string = target.getAttribute('data-ring-selector')
+        const graphic: HTMLElement = this.coreDiagram.querySelector(".core-diagram__graphic");
+        const ringSelector: string = target.getAttribute("data-ring-selector");
 
         /**
-         * 
+         *
          */
 
-        const ring : any = graphic.querySelector(ringSelector)
-        ring.classList.remove('knocked-back')
-
+        const ring: any = graphic.querySelector(ringSelector);
+        ring.classList.remove("knocked-back");
     }
 
     /**
@@ -424,65 +390,55 @@ export class CoreDiagram {
      */
 
     applyEventListenersToListItems() {
-
         /**
-         * 
+         *
          */
 
         if (this.listItemsContentNodes.length) {
-
             /**
              * Run through each list item.
              */
 
-            this.listItemsContentNodes.forEach(el => {
-
+            this.listItemsContentNodes.forEach((el) => {
                 /**
                  * mouseenter.
                  */
 
-                el.addEventListener('mouseenter', (event) => {
-
+                el.addEventListener("mouseenter", (event) => {
                     /**
-                     * 
-                     */
-                    
-                    const target : HTMLElement = event.target as HTMLElement
-                    this.highlightListItem(target)
-
-                    /**
-                     * 
+                     *
                      */
 
-                    this.highlightRingCorrespondingToListItem(target)
+                    const target: HTMLElement = event.target as HTMLElement;
+                    this.highlightListItem(target);
 
                     /**
-                     * 
+                     *
                      */
 
-                    const slideIndex : string = target.getAttribute('data-slide-index')
-                    this.siwperInstance.slideTo(parseInt(slideIndex))
+                    this.highlightRingCorrespondingToListItem(target);
 
-                })
+                    /**
+                     *
+                     */
+
+                    const slideIndex: string = target.getAttribute("data-slide-index");
+                    this.siwperInstance.slideTo(parseInt(slideIndex));
+                });
 
                 /**
                  * mouseleave.
                  */
 
-                el.addEventListener('mouseleave', (event) => {
-
+                el.addEventListener("mouseleave", (event) => {
                     /**
-                     * 
+                     *
                      */
 
-                    this.goToDefaultState()
-
-                })
-
-            })
-
+                    this.goToDefaultState();
+                });
+            });
         }
-
     }
 
     /**
@@ -490,66 +446,60 @@ export class CoreDiagram {
      */
 
     applyEventListenersToRing() {
-
         /**
-         * 
+         *
          */
 
-        this.getRingOverlayElements().forEach(el => {
-
+        this.getRingOverlayElements().forEach((el) => {
             /**
-             * 
+             *
              */
 
-            el.addEventListener('mouseenter', (event) => {
-
+            el.addEventListener("mouseenter", (event) => {
                 /**
-                 * 
+                 *
                  */
 
-                this.knockBackAllRings()
-                this.knockBackAllListItems()
+                this.knockBackAllRings();
+                this.knockBackAllListItems();
 
                 /**
-                 * 
+                 *
                  */
 
-                const ring : any = event.target
-                const id : string = ring.id
-                this.highlightRing(ring)
+                const ring: any = event.target;
+                const id: string = ring.id;
+                this.highlightRing(ring);
 
                 /**
-                 * 
+                 *
                  */
 
-                const listItem : HTMLElement = this.coreDiagram.querySelector('[data-ring-selector="#' + id + '"]')       
-                this.highlightListItem(listItem)
-                
+                const listItem: HTMLElement = this.coreDiagram.querySelector(
+                    '[data-ring-selector="#' + id + '"]'
+                );
+                this.highlightListItem(listItem);
+
                 /**
-                 * 
+                 *
                  */
 
-                const slideIndex : string = listItem.getAttribute('data-slide-index')
-                this.siwperInstance.slideTo(parseInt(slideIndex))
-
-            })
+                const slideIndex: string = listItem.getAttribute("data-slide-index");
+                this.siwperInstance.slideTo(parseInt(slideIndex));
+            });
 
             /**
-             * 
+             *
              */
 
-             el.addEventListener('mouseleave', (event) => {
-
+            el.addEventListener("mouseleave", (event) => {
                 /**
-                 * 
+                 *
                  */
 
-                this.goToDefaultState()
-
-            })
-
-        })
-
+                this.goToDefaultState();
+            });
+        });
     }
 
     /**
@@ -557,14 +507,14 @@ export class CoreDiagram {
      */
 
     showOuterRingAnnotations() {
-
         /**
-         * 
+         *
          */
 
-        const outsideRingAnnotations : HTMLElement = this.coreDiagram.querySelector('#annotation-text-and-lines')
-        outsideRingAnnotations.classList.add('show')
-
+        const outsideRingAnnotations: HTMLElement = this.coreDiagram.querySelector(
+            "#annotation-text-and-lines"
+        );
+        outsideRingAnnotations.classList.add("show");
     }
 
     /**
@@ -572,50 +522,46 @@ export class CoreDiagram {
      */
 
     hideOuterRingAnnotations() {
-
         /**
-         * 
+         *
          */
 
-        const outsideRingAnnotations : HTMLElement = this.coreDiagram.querySelector('#annotation-text-and-lines')
-        outsideRingAnnotations.classList.remove('show')
-
+        const outsideRingAnnotations: HTMLElement = this.coreDiagram.querySelector(
+            "#annotation-text-and-lines"
+        );
+        outsideRingAnnotations.classList.remove("show");
     }
 
     /**
      * onFullColor.
      */
 
-    onFullColor(ringSelectorId : String ) {
-
+    onFullColor(ringSelectorId: String) {
         /**
-         * 
+         *
          */
-
     }
 
     /**
      * onKnockback.
      */
 
-    onKnockback(ringSelectorId : String) {
-
+    onKnockback(ringSelectorId: String) {
         /**
-         * 
+         *
          */
-
     }
 
     /**
      * getRingOverlayElements.
      */
 
-    getRingOverlayElements() : Array<HTMLElement> {
+    getRingOverlayElements(): Array<HTMLElement> {
         return [
-            this.coreDiagram.querySelector('#inside-knockback') as HTMLElement,
-            this.coreDiagram.querySelector('#middle-knockback') as HTMLElement,
-            this.coreDiagram.querySelector('#outside-knockback') as HTMLElement
-        ]
+            this.coreDiagram.querySelector("#inside-knockback") as HTMLElement,
+            this.coreDiagram.querySelector("#middle-knockback") as HTMLElement,
+            this.coreDiagram.querySelector("#outside-knockback") as HTMLElement,
+        ];
     }
 
     /**
@@ -623,7 +569,7 @@ export class CoreDiagram {
      */
 
     knockBackAllRings() {
-        this.getRingOverlayElements().forEach(el => el.classList.add('knocked-back'))
+        this.getRingOverlayElements().forEach((el) => el.classList.add("knocked-back"));
     }
 
     /**
@@ -631,7 +577,7 @@ export class CoreDiagram {
      */
 
     fullColorAllRings() {
-        this.getRingOverlayElements().forEach(el => el.classList.remove('knocked-back'))
+        this.getRingOverlayElements().forEach((el) => el.classList.remove("knocked-back"));
     }
 
     /**
@@ -639,10 +585,10 @@ export class CoreDiagram {
      */
 
     knockBackAllListItems() {
-        this.listItemsContentNodes.forEach(el => {
-            el.classList.remove('active')
-            el.parentElement.classList.add('knocked-back')
-        })
+        this.listItemsContentNodes.forEach((el) => {
+            el.classList.remove("active");
+            el.parentElement.classList.add("knocked-back");
+        });
     }
 
     /**
@@ -650,10 +596,9 @@ export class CoreDiagram {
      */
 
     fullColorAllListItems() {
-        this.listItemsContentNodes.forEach(el => {
-            el.classList.remove('active')
-            el.parentElement.classList.remove('knocked-back')
-        })
+        this.listItemsContentNodes.forEach((el) => {
+            el.classList.remove("active");
+            el.parentElement.classList.remove("knocked-back");
+        });
     }
-
 }
