@@ -5,6 +5,7 @@ const config = {
     env: process.env.ROSETTA_ENV || false,
     ga: process.env.ROSETTA_GA || "",
     gtm: process.env.ROSETTA_GTM || "",
+    hideCookieBanner: false,
     recaptcha_secret: process.env.ROSETTA_RECAPTCHA_SECRET || "",
     public: {
         recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "",
@@ -23,6 +24,7 @@ const config = {
         twitter: "https://twitter.com/regnosys",
         termsOfUse: "https://regnosys.com/regnosys-terms-of-use",
         privacyStatement: "https://regnosys.com/regnosys-privacy-statement",
+        cookiePolicy: "https://regnosys.com/regnosys-privacy-statement/#cookie-policy",
         domainModel:
             "https://olegchursin.medium.com/a-brief-introduction-to-domain-modeling-862a30b38353",
         cdmDocs: "https://www.isda.org/2018/11/22/isda-cdm-factsheet/",
