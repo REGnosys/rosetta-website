@@ -52,6 +52,7 @@ spec:
               serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
             {{- else }}
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: {{ $fullName }}
