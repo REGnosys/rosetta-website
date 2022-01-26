@@ -32,7 +32,7 @@ spec:
         {{- range $tls.hosts }}
         - {{ $hostOverride }}
         {{- end }}
-      secretName: {{ $releaseName }}-{{ $tls.secretName }}
+      secretName: {{ $releaseName }}-{{ $tls.secretName }}-{{ $i }}
     {{- end }}
     {{- end }}
   {{- end }}
