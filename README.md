@@ -8,15 +8,9 @@ Basic instructions.
 
 ## Local Server
 
-To run a local server on port 3000 using BrowserSync:
+To run a local server on port 5000 using BrowserSync:
 
-`npm run browser-sync-static`
-
-## Compile SCSS
-
-To compile (and watch for changes of) SCSS:
-
-`npm run watch-sass`
+`npm run dev`
 
 ## Compile TypeScript
 

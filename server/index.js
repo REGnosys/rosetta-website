@@ -12,6 +12,7 @@ const RECAPTCHA_SECRET_KEY = process.env.ROSETTA_RECAPTCHA_SECRET || "";
 const SENDGRID_API_KEY = process.env.ROSETTA_SEND_GRID_KEY || "";
 const SCORE_THRESHOLD = 0.5;
 const MAIL_TO = process.env.ROSETTA_MAIL_TO || "contact@regnosys.com";
+const MAIL_FROM = process.env.ROSETTA_MAIL_FROM || "mail@regnosys.com";
 
 const countryList = countries.all.sort((a, b) => (a.name > b.name ? 1 : b.name > a.name ? -1 : 0));
 
@@ -41,7 +42,8 @@ const sendEmail = (formData) => {
 
     const msg = {
         to: MAIL_TO,
-        from: `${formData.firstName} ${formData.surname} <${formData.email}>`,
+        from: `${formData.firstName} ${formData.surname} <${MAIL_FROM}>`,
+        replyTo : { name: `${formData.firstName} ${formData.surname}`, email: formData.email },
         subject: "Rosetta Website Query",
         html: `
       <p>${formData.message}</p>
