@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 const path = require("path");
 const hbs = require("hbs");
 const helpers = require("handlebars-helpers");
@@ -85,11 +86,14 @@ const handleSend = (req, res) => {
         .catch((error) => res.json({ error }));
 };
 
+const hasCookieBanner = (cookieObject) => cookieObject["cookie-consent"] === "accepted";
+
 // Email setup
 sgMail.setApiKey(SENDGRID_API_KEY);
 
 // Server setup
 const app = express();
+app.use(cookieParser());
 app.use(express.json());
 
 // servers any appropriate static files(i.e. css, js, etc)
@@ -111,11 +115,15 @@ helpers.object({
     handlebars: hbs,
 });
 
-app.get("/", (req, res) => res.render("index.hbs", { config }));
+app.get("/", (req, res) => {
+    config.hideCookieBanner = hasCookieBanner(req.cookies);
+    return res.render("index.hbs", { config });
+});
 pages.forEach((page) =>
-    app.get(new RegExp(`/(${page}$|${page}.html$)`, "i"), (req, res) =>
-        res.render(page + ".hbs", { config, countryList })
-    )
+    app.get(new RegExp(`/(${page}$|${page}.html$)`, "i"), (req, res) => {
+        config.hideCookieBanner = hasCookieBanner(req.cookies);
+        return res.render(page + ".hbs", { config, countryList });
+    })
 );
 app.get("*", (req, res) => res.redirect("/"));
 

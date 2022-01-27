@@ -2,10 +2,20 @@
 {{- $fullName := include "rosetta-website-nginx.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- $releaseName := .Release.Name -}}
-{{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
+{{- if and .Values.ingress.className (not (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion)) }}
+  {{- if not (hasKey .Values.ingress.annotations "kubernetes.io/ingress.class") }}
+  {{- $_ := set .Values.ingress.annotations "kubernetes.io/ingress.class" .Values.ingress.className}}
+  {{- end }}
+{{- end }}
+{{- $deprecate := false -}}
+{{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
+apiVersion: networking.k8s.io/v1
+{{- else if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
+{{- $deprecate = true -}}
 {{- else -}}
 apiVersion: extensions/v1beta1
+{{- $deprecate = true -}}
 {{- end }}
 kind: Ingress
 metadata:
@@ -25,7 +35,7 @@ spec:
         {{- range $tls.hosts }}
         - {{ $hostOverride }}
         {{- end }}
-      secretName: {{ $releaseName }}-{{ $tls.secretName }}
+      secretName: {{ $releaseName }}-{{ $tls.secretName }}-{{ $i }}
     {{- end }}
     {{- end }}
   {{- end }}
@@ -37,9 +47,18 @@ spec:
         paths:
           {{- range $host.paths }}
           - path: {{ .path }}
+            {{- if $deprecate }}
             backend:
               serviceName: {{ $fullName }}
               servicePort: {{ $svcPort }}
+            {{- else }}
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: {{ $fullName }}
+                port:
+                  number: {{ $svcPort }}
+            {{- end }}
           {{- end }}
     {{- end }}
     {{- end }}
