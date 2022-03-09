@@ -19,7 +19,7 @@ const config = {
         passwordReset: "https://ui.rosetta-technology.io/#/password-reset",
         regnosys: "https://www.regnosys.com",
         documentation: "https://docs.rosetta-technology.io/dsl/index.html",
-        coreDocumentation: "https://docs.rosetta-technology.io/core/",
+        coreDocumentation: "https://docs.rosetta-technology.io/",
         linkedIn: "https://www.linkedin.com/company/regnosys",
         twitter: "https://twitter.com/regnosys",
         termsOfUse: "https://regnosys.com/regnosys-terms-of-use",
