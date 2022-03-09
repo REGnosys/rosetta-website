@@ -18,7 +18,7 @@ const config = {
         signUp: "https://ui.rosetta-technology.io/#/register",
         passwordReset: "https://ui.rosetta-technology.io/#/password-reset",
         regnosys: "https://www.regnosys.com",
-        documentation: "https://docs.rosetta-technology.io/dsl/index.html",
+        documentation: "https://docs.rosetta-technology.io/rosetta/rosetta-dsl/",
         coreDocumentation: "https://docs.rosetta-technology.io/",
         linkedIn: "https://www.linkedin.com/company/regnosys",
         twitter: "https://twitter.com/regnosys",
