@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     padding: 24px;
-    z-index: 1;
+    z-index: 999;
     background: rgba(255, 255, 255, 0.9);
 
     &__inner {
@@ -12,8 +12,20 @@
         align-items: center;
         justify-content: center;
 
-        p {
-            margin: 0 24px 0 0;
+        @include breakpoint($bs-small) {
+            p {
+                margin: 0 24px 0 0;
+            }
+        }
+
+        .button-card {
+            flex: 1 0 auto;
+            text-align: left;
+            margin: 0;
+        }
+
+        @include breakpoint($b-mobile-only) {
+            flex-direction: column;
         }
     }
 }
