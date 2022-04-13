@@ -8,7 +8,7 @@ const axios = require("axios");
 const countries = require("country-data-list").countries;
 const config = require("./config.js");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 1313;
 const RECAPTCHA_SECRET_KEY = process.env.ROSETTA_RECAPTCHA_SECRET || "";
 const SENDGRID_API_KEY = process.env.ROSETTA_SEND_GRID_KEY || "";
 const SCORE_THRESHOLD = 0.5;
@@ -44,7 +44,7 @@ const sendEmail = (formData) => {
     const msg = {
         to: MAIL_TO,
         from: `${formData.firstName} ${formData.surname} <${MAIL_FROM}>`,
-        replyTo : { name: `${formData.firstName} ${formData.surname}`, email: formData.email },
+        replyTo: { name: `${formData.firstName} ${formData.surname}`, email: formData.email },
         subject: "Rosetta Website Query",
         html: `
       <p>${formData.message}</p>
