@@ -4,6 +4,7 @@ const config = {
     hash: hash,
     env: process.env.ROSETTA_ENV || false,
     ga: process.env.ROSETTA_GA || "",
+    hubspot: process.env.ROSETTA_HUBSPOT || "",
     gtm: process.env.ROSETTA_GTM || "",
     hideCookieBanner: false,
     recaptcha_secret: process.env.ROSETTA_RECAPTCHA_SECRET || "",
