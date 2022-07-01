@@ -7,4 +7,5 @@ metadata:
 data:
   ROSETTA_ENV: {{ .Values.global.env }}
   ROSETTA_GA: {{ .Values.google.analytics | quote }}
+  ROSETTA_HUBSPOT: {{ .Values.hubspot | quote }}
   ROSETTA_GTM: {{ .Values.google.tagManager | quote }}
