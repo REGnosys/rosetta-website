@@ -8,7 +8,7 @@ Basic instructions.
 
 ## Local Server
 
-To run a local server on port 5000 using BrowserSync:
+To run a local server on port 8000 using BrowserSync:
 
 `npm run dev`
 
