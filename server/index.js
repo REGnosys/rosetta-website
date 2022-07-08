@@ -8,7 +8,7 @@ const axios = require("axios");
 const countries = require("country-data-list").countries;
 const config = require("./config.js");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 const RECAPTCHA_SECRET_KEY = process.env.ROSETTA_RECAPTCHA_SECRET || "";
 const SENDGRID_API_KEY = process.env.ROSETTA_SEND_GRID_KEY || "";
 const SCORE_THRESHOLD = 0.5;
