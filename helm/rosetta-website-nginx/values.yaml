@@ -45,7 +45,6 @@ service:
 ingress:
   enabled: true
   annotations:
-    ingressClassName: nginx
     kubernetes.io/tls-acme: "true"
 
   hosts:
