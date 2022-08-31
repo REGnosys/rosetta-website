@@ -6,7 +6,6 @@ const config = {
     isProd: process.env.ROSETTA_ENV === 'prod',
     ga: process.env.ROSETTA_GA || "",
     gtm: process.env.ROSETTA_GTM || "",
-    hideCookieBanner: false,
     recaptcha_secret: process.env.ROSETTA_RECAPTCHA_SECRET || "",
     public: {
         recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "",
