@@ -25,7 +25,6 @@ import { BodyCurves } from "./components/body-curves";
 import { GraphicHeaders } from "./components/graphic-headers";
 import { BasicForms } from "./components/basic-forms";
 import { ContactForm } from "./components/contact-form";
-import { CookieBanner } from "./components/cookie-banner";
 
 /**
  * Effects.
@@ -64,7 +63,6 @@ export class App {
     private graphicHeaders: GraphicHeaders;
     private basicForms: BasicForms;
     private contactForm: ContactForm;
-    private cookieBanner: CookieBanner;
 
     /**
      * Effects.
@@ -103,7 +101,6 @@ export class App {
         this.graphicHeaders = new GraphicHeaders();
         this.basicForms = new BasicForms();
         this.contactForm = new ContactForm();
-        this.cookieBanner = new CookieBanner();
 
         /**
          * Effects.
@@ -147,7 +144,6 @@ export class App {
             this.graphicHeaders.start();
             this.basicForms.start();
             this.contactForm.start();
-            this.cookieBanner.start();
 
             /**
              * Start effects.

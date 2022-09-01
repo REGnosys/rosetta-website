@@ -86,8 +86,6 @@ const handleSend = (req, res) => {
         .catch((error) => res.json({ error }));
 };
 
-const hasCookieBanner = (cookieObject) => cookieObject["cookie-consent"] === "accepted";
-
 // Email setup
 sgMail.setApiKey(SENDGRID_API_KEY);
 
@@ -116,12 +114,10 @@ helpers.object({
 });
 
 app.get("/", (req, res) => {
-    config.hideCookieBanner = hasCookieBanner(req.cookies);
     return res.render("index.hbs", { config });
 });
 pages.forEach((page) =>
     app.get(new RegExp(`/(${page}$|${page}.html$)`, "i"), (req, res) => {
-        config.hideCookieBanner = hasCookieBanner(req.cookies);
         return res.render(page + ".hbs", { config, countryList });
     })
 );
