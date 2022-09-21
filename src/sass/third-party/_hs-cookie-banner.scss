@@ -1,11 +1,15 @@
 // Add this extra ID selector to ensure our styles take priority
 #rosetta-website {
     div#hs-eu-cookie-confirmation {
-        background-color: rgba($color: #ffffff, $alpha: 0.95);
+        background-color: rgba(255, 255, 255, 0.95);
         border-top: 3px solid $brand-one;
 
         div#hs-eu-cookie-confirmation-inner {
             background: transparent;
+
+            a {
+                color: $brand-one;
+            }
 
             p {
                 @include font-size-m2();
@@ -34,19 +38,20 @@
                 @include mini-arrow($brand-three, right);
 
                 &:hover {
-                    color: $brand-aux-two !important;
                     background-color: $brand-aux-one !important;
+                    color: $brand-aux-two !important;
                     @include mini-arrow($brand-aux-two, right, true);
                 }
             }
 
             a#hs-eu-decline-button {
-                @include mini-arrow($brand-one, right);
+                border: 0 !important;
+                color: $brand-aux-four !important;
+                @include mini-arrow($brand-aux-four, right);
 
                 &:hover {
-                    color: $brand-aux-two !important;
-                    background-color: $brand-aux-one !important;
-                    @include mini-arrow($brand-aux-two, right, true);
+                    color: $brand-three !important;
+                    @include mini-arrow($brand-three, right, true);
                 }
             }
         }
