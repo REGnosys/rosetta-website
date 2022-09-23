@@ -8,6 +8,7 @@ import { Ready } from "./utils/ready";
  * Layouts.
  */
 
+import { Body } from "./layouts/common/body";
 import { Header } from "./layouts/common/header";
 import { Footer } from "./layouts/common/footer";
 import { MobileNav } from "./layouts/common/mobile-nav";
@@ -46,6 +47,7 @@ export class App {
      * Layouts.
      */
 
+    private body: Body;
     private header: Header;
     private footer: Footer;
     private mobileNav: MobileNav;
@@ -84,6 +86,7 @@ export class App {
          * Layouts.
          */
 
+        this.body = new Body();
         this.header = new Header();
         this.footer = new Footer();
         this.mobileNav = new MobileNav();
@@ -128,6 +131,7 @@ export class App {
              * Start layouts.
              */
 
+            this.body.start();
             this.footer.start();
             this.mobileNav.start();
             this.coreDiagram.start();
