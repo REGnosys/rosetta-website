@@ -3,12 +3,14 @@ const hash = require("../web/assets/js/build-hash.json").hash;
 const config = {
     hash: hash,
     env: process.env.ROSETTA_ENV || false,
-    isProd: process.env.ROSETTA_ENV === 'prod',
+    isProd: process.env.ROSETTA_ENV === "prod",
     ga: process.env.ROSETTA_GA || "",
     gtm: process.env.ROSETTA_GTM || "",
     recaptcha_secret: process.env.ROSETTA_RECAPTCHA_SECRET || "",
     public: {
         recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "",
+        hs_portal_id: "4975376",
+        hs_form_guid: "5ea128f0-9a63-4904-b293-7ba62aa31d08",
     },
     externalLinks: {
         issueTracking: "https://airtable.com/shrFPVYrrJ0QjlCX2",

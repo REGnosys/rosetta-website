@@ -61,14 +61,13 @@ export class ContactForm {
                  *
                  */
 
-                let formData : FormData = this.grabSubmittedData(contactForm)
+                let formData: FormData = this.grabSubmittedData(contactForm);
 
                 /**
                  *
                  */
 
                 this.postReCaptcha(formData);
-
             });
         }
     }
@@ -109,23 +108,24 @@ export class ContactForm {
 
     getHubSpotFormAPIURLEndpoint() {
         /**
-         * 
-         */
-
-        let endpoint : string = 'https://api.hsforms.com/submissions/v3/integration/submit/:portalId/:formGuid'
-        
-        /**
          *
          */
 
-        endpoint = endpoint.replace(':portalId', '4975376')
-        endpoint = endpoint.replace(':formGuid', '5ea128f0-9a63-4904-b293-7ba62aa31d08')
+        let endpoint: string =
+            "https://api.hsforms.com/submissions/v3/integration/submit/:portalId/:formGuid";
 
         /**
          *
          */
 
-        return endpoint
+        endpoint = endpoint.replace(":portalId", window.ROSETTA_CONFIG.hs_portal_id);
+        endpoint = endpoint.replace(":formGuid", window.ROSETTA_CONFIG.hs_form_guid);
+
+        /**
+         *
+         */
+
+        return endpoint;
     }
 
     /**
@@ -134,13 +134,13 @@ export class ContactForm {
 
     postDataToHubSpot(formData: FormData): void {
         /**
-         * 
+         *
          */
 
-        let hubSpotData = this.packageDataForHubSpot(formData)
+        let hubSpotData = this.packageDataForHubSpot(formData);
 
         /**
-         * 
+         *
          */
 
         let xhr = new XMLHttpRequest();
@@ -170,7 +170,6 @@ export class ContactForm {
                          */
 
                         let response = JSON.parse(xhr.responseText);
-
                     }
                 }
             },
@@ -254,8 +253,7 @@ export class ContactForm {
          *
          */
 
-        this.postDataToHubSpot(formData)
-
+        this.postDataToHubSpot(formData);
     }
 
     /**
@@ -299,58 +297,56 @@ export class ContactForm {
          *
          */
 
-        return submittedFormData
+        return submittedFormData;
     }
 
     /**
      * packageDataForHubSpot.
      */
 
-    packageDataForHubSpot(data : FormData): {} {
+    packageDataForHubSpot(data: FormData): {} {
         /**
-         * 
+         *
          */
 
-        let dataForHubSpot = {} as any
-
-        /**
-         * 
-         */
-
-        let fieldData = []
+        let dataForHubSpot = {} as any;
 
         /**
          *
          */
 
-        fieldData.push({ name: 'firstname', value: data.firstName })
-        fieldData.push({ name: 'lastname',  value: data.surname })
-        fieldData.push({ name: 'email',     value: data.email })
-        fieldData.push({ name: 'phone',     value: data.phone })
-        fieldData.push({ name: 'website',   value: data.website})
-        fieldData.push({ name: 'country',   value: data.country })
-        fieldData.push({ name: 'message',   value: data.message })
+        let fieldData = [];
 
         /**
          *
          */
 
-        dataForHubSpot['fields'] = fieldData
+        fieldData.push({ name: "firstname", value: data.firstName });
+        fieldData.push({ name: "lastname", value: data.surname });
+        fieldData.push({ name: "email", value: data.email });
+        fieldData.push({ name: "phone", value: data.phone });
+        fieldData.push({ name: "website", value: data.website });
+        fieldData.push({ name: "country", value: data.country });
+        fieldData.push({ name: "message", value: data.message });
 
         /**
          *
          */
 
-        return dataForHubSpot
+        dataForHubSpot["fields"] = fieldData;
 
+        /**
+         *
+         */
+
+        return dataForHubSpot;
     }
 
-    
     /**
      * postReCaptcha.
      */
 
-    postReCaptcha(submittedFormData : FormData) {
+    postReCaptcha(submittedFormData: FormData) {
         /**
          *
          */
