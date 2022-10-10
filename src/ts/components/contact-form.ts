@@ -61,7 +61,14 @@ export class ContactForm {
                  *
                  */
 
-                this.postReCaptcha(contactForm);
+                let formData : FormData = this.grabSubmittedData(contactForm)
+
+                /**
+                 *
+                 */
+
+                this.postReCaptcha(formData);
+
             });
         }
     }
@@ -94,6 +101,81 @@ export class ContactForm {
         const contactForm: HTMLFormElement = document.querySelector(".contact-form");
         const responseContainer: HTMLElement = contactForm.querySelector(".response-container");
         return responseContainer;
+    }
+
+    /**
+     * getHubSpotFormAPIURLEndpoint.
+     */
+
+    getHubSpotFormAPIURLEndpoint() {
+        /**
+         * 
+         */
+
+        let endpoint : string = 'https://api.hsforms.com/submissions/v3/integration/submit/:portalId/:formGuid'
+        
+        /**
+         *
+         */
+
+        endpoint = endpoint.replace(':portalId', '4975376')
+        endpoint = endpoint.replace(':formGuid', '5ea128f0-9a63-4904-b293-7ba62aa31d08')
+
+        /**
+         *
+         */
+
+        return endpoint
+    }
+
+    /**
+     * postDataToHubSpot.
+     */
+
+    postDataToHubSpot(formData: FormData): void {
+        /**
+         * 
+         */
+
+        let hubSpotData = this.packageDataForHubSpot(formData)
+
+        /**
+         * 
+         */
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", this.getHubSpotFormAPIURLEndpoint(), true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify(hubSpotData));
+
+        /**
+         *
+         */
+
+        xhr.addEventListener(
+            "readystatechange",
+            () => {
+                /**
+                 * 4 = Done.
+                 */
+
+                if (xhr.readyState == 4) {
+                    /**
+                     *
+                     */
+
+                    if (xhr.status == 200) {
+                        /**
+                         *
+                         */
+
+                        let response = JSON.parse(xhr.responseText);
+
+                    }
+                }
+            },
+            false
+        );
     }
 
     /**
@@ -167,13 +249,20 @@ export class ContactForm {
             },
             false
         );
+
+        /**
+         *
+         */
+
+        this.postDataToHubSpot(formData)
+
     }
 
     /**
-     * postReCaptcha.
+     * grabSubmittedData
      */
 
-    postReCaptcha(contactForm: HTMLFormElement) {
+    grabSubmittedData(contactForm: HTMLFormElement): FormData {
         /**
          *
          */
@@ -206,6 +295,62 @@ export class ContactForm {
             contactForm.querySelector("#message") as HTMLInputElement
         ).value;
 
+        /**
+         *
+         */
+
+        return submittedFormData
+    }
+
+    /**
+     * packageDataForHubSpot.
+     */
+
+    packageDataForHubSpot(data : FormData): {} {
+        /**
+         * 
+         */
+
+        let dataForHubSpot = {} as any
+
+        /**
+         * 
+         */
+
+        let fieldData = []
+
+        /**
+         *
+         */
+
+        fieldData.push({ name: 'firstname', value: data.firstName })
+        fieldData.push({ name: 'lastname',  value: data.surname })
+        fieldData.push({ name: 'email',     value: data.email })
+        fieldData.push({ name: 'phone',     value: data.phone })
+        fieldData.push({ name: 'website',   value: data.website})
+        fieldData.push({ name: 'country',   value: data.country })
+        fieldData.push({ name: 'message',   value: data.message })
+
+        /**
+         *
+         */
+
+        dataForHubSpot['fields'] = fieldData
+
+        /**
+         *
+         */
+
+        return dataForHubSpot
+
+    }
+
+    
+    /**
+     * postReCaptcha.
+     */
+
+    postReCaptcha(submittedFormData : FormData) {
         /**
          *
          */
