@@ -5,7 +5,7 @@
 declare const grecaptcha: ReCaptchaV2.ReCaptcha;
 
 /**
- * inteface FormData.
+ * interface FormData.
  */
 
 interface FormData {
@@ -170,73 +170,12 @@ export class ContactForm {
                          */
 
                         let response = JSON.parse(xhr.responseText);
-                    }
-                }
-            },
-            false
-        );
-    }
-
-    /**
-     * postData.
-     */
-
-    postData(formData: FormData): void {
-        /**
-         *
-         */
-
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST", "/api/send", true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(JSON.stringify(formData));
-
-        /**
-         *
-         */
-
-        xhr.addEventListener(
-            "readystatechange",
-            () => {
-                /**
-                 * 4 = Done.
-                 */
-
-                if (xhr.readyState == 4) {
-                    /**
-                     *
-                     */
-
-                    if (xhr.status == 200) {
-                        /**
-                         *
-                         */
-
-                        let response = JSON.parse(xhr.responseText);
-
-                        /**
-                         * Do some logic with the response here...
-                         */
-
-                        let successfulResponse: boolean = true;
 
                         /**
                          *
                          */
 
-                        if (successfulResponse) {
-                            /**
-                             *
-                             */
-
-                            this.showSuccessResponse();
-                        } else {
-                            /**
-                             *
-                             */
-
-                            this.showFailResponse();
-                        }
+                        this.showSuccessResponse();
                     } else {
                         /**
                          *
@@ -248,12 +187,6 @@ export class ContactForm {
             },
             false
         );
-
-        /**
-         *
-         */
-
-        this.postDataToHubSpot(formData);
     }
 
     /**
@@ -352,6 +285,10 @@ export class ContactForm {
          */
 
         grecaptcha.ready(() => {
+            /**
+             *
+             */
+
             grecaptcha
                 .execute(window.ROSETTA_CONFIG.recaptcha_key, { action: "contact_form" })
                 .then((token: string) => {
@@ -360,7 +297,7 @@ export class ContactForm {
                      */
 
                     submittedFormData.token = token;
-                    this.postData(submittedFormData);
+                    this.postDataToHubSpot(submittedFormData);
                 });
         });
     }
