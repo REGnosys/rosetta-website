@@ -6,9 +6,9 @@ const config = {
     isProd: process.env.ROSETTA_ENV === "prod",
     ga: process.env.ROSETTA_GA || "",
     gtm: process.env.ROSETTA_GTM || "",
-    recaptcha_secret: process.env.ROSETTA_RECAPTCHA_SECRET || "",
     public: {
-        recaptcha_key: process.env.ROSETTA_RECAPTCHA_KEY || "",
+        recaptcha_key:
+            process.env.ROSETTA_RECAPTCHA_KEY || "6LfCIeIcAAAAAKgTKA9QGstV6kusnO3mD29SWspz",
         hs_portal_id: "4975376",
         hs_form_guid: "5ea128f0-9a63-4904-b293-7ba62aa31d08",
     },
