@@ -216,15 +216,32 @@
           <div class="pricing-table__row-content-wrapper features-content-wrapper">
 
             <div class="row pricing-table__row-content">
-              <div class="col-md-6 pr-7-5">
+              <div class="col-md-3 pr-7-5">
                 <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-2">
                   <img src="assets/svg/product/icons-static/product-design.svg" alt="Icon representing the Design feature.">
                   <div>
                     <p class="title font-weight-semi-bold">Design</p>
                     <p class="subtitle unexpanded-content">Public Project Only</p>
                     <ul class="expanded-content">
+                      {{#with config.pricing.essentials}}
                       <li>Public Project Only</li>
-                      <li>1 Workspace per Project</li>
+                      <li>{{workspaceLimit}} Workspace per User</li>
+                      {{/with}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 pr-7-5">
+                <div class="pricing-table__row-content-inset pricing-table__row-content-inset--two-col-with-icon background-shade-2">
+                  <img src="assets/svg/product/icons-static/product-design.svg" alt="Icon representing the Design feature.">
+                  <div>
+                    <p class="title font-weight-semi-bold">Design</p>
+                    <p class="subtitle unexpanded-content">Public Project Only</p>
+                    <ul class="expanded-content">
+                      {{#with config.pricing.essentials}}
+                      <li>Public Project Only</li>
+                      <li>{{workspaceLimit}} Workspace per User</li>
+                      {{/with}}
                     </ul>
                   </div>
                 </div>
@@ -236,8 +253,10 @@
                     <p class="title font-weight-semi-bold">Design</p>
                     <p class="subtitle unexpanded-content">Public + Private project</p>
                     <ul class="expanded-content">
+                      {{#with config.pricing.pro}}
                       <li>Public + Private Project</li>
-                      <li>5 Workspaces per Project</li>
+                      <li>{{workspaceLimit}} Workspace per User</li>
+                      {{/with}}
                     </ul>
                   </div>
                 </div>
@@ -249,10 +268,12 @@
                     <p class="title font-weight-semi-bold">Design</p>
                     <p class="subtitle unexpanded-content">Public + Private project</p>
                     <ul class="expanded-content">
+                      {{#with config.pricing.enterprise}}
                       <li>Public + Private Project</li>
-                      <li>Unlimited Workspaces</li>
+                      <li>{{workspaceLimit}} Workspace per User</li>
                       <li>1 Guest User* per User</li>
                       <li>Project Administration</li>
+                      {{/with}}
                     </ul>
                   </div>
                 </div>
@@ -501,10 +522,12 @@
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Design</p>
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
+                          {{#with config.pricing.community}}
                           <ul class="expanded-content">
                             <li>Public Project Only</li>
-                            <li>1 Workspace per Project</li>
+                            <li>{{workspaceLimit}} Workspace per User</li>
                           </ul>
+                          {{/with}}
                         </div>
                       </div>
                     </div>
@@ -615,10 +638,12 @@
                         <div>
                           <p class="title font-weight-semi-bold font-size-m6">Design</p>
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public Project Only</p>
+                          {{#with config.pricing.essentials}}
                           <ul class="expanded-content">
                             <li>Public Project Only</li>
-                            <li>1 Workspace per Project</li>
+                            <li>{{workspaceLimit}} Workspace per User</li>
                           </ul>
+                          {{/with}}
                         </div>
                       </div>
                     </div>
@@ -747,8 +772,10 @@
                           <p class="title font-weight-semi-bold font-size-m6">Design</p>
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public + Private Project</p>
                           <ul class="expanded-content">
+                            {{#with config.pricing.pro}}
                             <li>Public + Private Project</li>
-                            <li>5 Workspaces per Project</li>
+                            <li>{{workspaceLimit}} Workspaces per User</li>
+                            {{/with}}
                           </ul>
                         </div>
                       </div>
@@ -895,10 +922,12 @@
                           <p class="title font-weight-semi-bold font-size-m6">Design</p>
                           <p class="subtitle unexpanded-content font-size-m3 mb-0">Public + Private Project</p>
                           <ul class="expanded-content">
+                            {{#with config.pricing.enterprise}}
                             <li>Public + Private Project</li>
-                            <li>Unlimited Workspaces</li>
+                            <li>{{workspaceLimit}} Workspaces per User</li>
                             <li>1 Guest User* per User</li>
-			    <li>Project Administration</li>
+                            <li>Project Administration</li>
+                            {{/with}}
                           </ul>
                         </div>
                       </div>

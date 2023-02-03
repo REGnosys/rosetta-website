@@ -65,6 +65,7 @@ const config = {
                 limit: 500,
                 amountPerRequest: false,
             },
+            workspaceLimit: 3,
         },
         essentials: {
             yearly: {
@@ -77,6 +78,7 @@ const config = {
                 limit: 1000,
                 amountPerRequest: false,
             },
+            workspaceLimit: 5,
         },
         pro: {
             yearly: {
@@ -89,6 +91,7 @@ const config = {
                 limit: 1000,
                 amountPerRequest: 0.01,
             },
+            workspaceLimit: 10,
         },
         enterprise: {
             yearly: {
@@ -101,6 +104,7 @@ const config = {
                 limit: 10000,
                 amountPerRequest: 0.01,
             },
+            workspaceLimit: 50,
         },
     },
 };
