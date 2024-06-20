@@ -1,4 +1,0 @@
-*.yaml-e
-sealed-secret-*.yaml
-rosetta-website/charts
-rosetta-website/Chart.lock
